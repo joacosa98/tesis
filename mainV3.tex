@@ -99,10 +99,12 @@ Asimismo, agradecemos el tiempo dedicado a responder nuestras consultas y a comp
 \\\\
 \noindent Por otro lado, el comportamiento del robot durante la ejecución de las tareas fue especificado mediante árboles de comportamiento, los cuales permiten describir de forma jerárquica y flexible las acciones a realizar según las lecturas obtenidas por la cámara. Esta técnica facilitó la definición de secuencias como avanzar siguiendo una línea, detenerse ante un tag específico o validar la secuencia de tags mostrados por los usuarios.
 \\\\
+\noindent Complementariamente, se extendió el módulo de comunicación Bluetooth Low Energy (BLE) de Robotito para permitir la transferencia inalámbrica de configuraciones desde un configurador web desarrollado en el marco del proyecto. Esta herramienta permite a los docentes registrar etiquetas QR, definir secuencias de recorrido y enviarlas al robot sin modificar su firmware, con persistencia de datos en la memoria no volátil (NVS) del ESP32. Asimismo, se diseñó y modeló en tres dimensiones una carcasa específica para integrar la cámara HuskyLens en el robot, garantizando una posición y ángulo de inclinación fijos y reproducibles.
+\\\\
 \noindent La solución implementada fue evaluada en escenarios de prueba controlados, verificando la correcta integración entre hardware y software. Los resultados muestran que Robotito es capaz de ejecutar recorridos completos combinando seguimiento de trayectorias, reconocimiento visual y validación de secuencias, además de retornar feedback visual en base al recorrido armado. De esta manera, se logra extender la plataforma existente con nuevas funcionalidades que enriquecen su valor educativo y de investigación, al tiempo que se introducen formalismos modernos como los árboles de comportamiento en el diseño de sistemas robóticos.
 
 \hfill \break
-\keywords{Robótica educativa, Pensamiento computacional, ESP32, HuskyLens, I2C, Lua RTOS, C++, Árboles de comportamiento}
+\keywords{Robótica educativa, Pensamiento computacional, ESP32, HuskyLens, I2C, Lua RTOS, C++, Árboles de comportamiento, Bluetooth Low Energy, NVS}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
