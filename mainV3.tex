@@ -173,7 +173,7 @@ Desde el punto de vista pedagógico, promueve la enseñanza de estructuras jerá
 En conjunto, el proyecto consolida a Robotito como una plataforma que integra visión artificial, control modular y aprendizaje activo, alineada con las tendencias internacionales en educación STEM.
 
 \section{Organización del documento}
-El presente trabajo se estructura en doce capítulos. \\
+El presente trabajo se estructura en once capítulos. \\
 
 En el Capítulo 2 se desarrolla una revisión de antecedentes sobre robótica educativa, abordando experiencias previas tanto en el contexto nacional como internacional. Se analizan proyectos orientados al aprendizaje de la programación, la integración de sensores y el diseño de actividades didácticas mediadas por robots. \\
 
@@ -191,11 +191,10 @@ En el Capítulo 8 se presenta la creación del juego: reglas, dinámica y objeti
 
 En el Capítulo 9 se describe el configurador web desarrollado para la preparación de secuencias de Robotito. Se documenta la herramienta que permite registrar tags físicos, definir relaciones de equivalencia, construir secuencias de recorrido y transferir la configuración al robot de forma inalámbrica, sin necesidad de modificar el firmware. \\
 
-En el Capítulo 10 se documenta el modelado de la carcasa para Robotito, desarrollado para integrar de forma robusta y reproducible la cámara HuskyLens, cumpliendo requisitos de posición, ángulo y guiado del cableado. \\
 
-En el Capítulo 11 se documenta la experimentación realizada, tanto desde el punto de vista técnico como pedagógico: entrevistas con docentes, sesión práctica con estudiantes, análisis de resultados, ajustes realizados a partir del feedback y conclusiones del proceso de experimentación. \\
+En el Capítulo 10 se documenta la experimentación realizada, tanto desde el punto de vista técnico como pedagógico: entrevistas con docentes, sesión práctica con estudiantes, análisis de resultados, ajustes realizados a partir del feedback y conclusiones del proceso de experimentación. \\
 
-En el Capítulo 12 se presentan las conclusiones generales y las líneas de trabajo futuro, destacando los aportes del proyecto tanto en el desarrollo de una herramienta tecnológica accesible como en la generación de propuestas pedagógicas innovadoras que fortalezcan el aprendizaje de la robótica en edades tempranas. \\
+En el Capítulo 11 se presentan las conclusiones generales y las líneas de trabajo futuro, destacando los aportes del proyecto tanto en el desarrollo de una herramienta tecnológica accesible como en la generación de propuestas pedagógicas innovadoras que fortalezcan el aprendizaje de la robótica en edades tempranas. \\
 
 Las referencias bibliográficas se presentan al final del documento.
 
@@ -523,7 +522,7 @@ La incorporación de la cámara también requirió considerar la adaptación fí
 
 Por este motivo, se contempló el diseño de una solución física que permitiera fijar la cámara en una posición adecuada, proteger el cableado y mantener la robustez general del robot. Esta decisión resulta relevante porque una integración visual efectiva depende no solo del software y del protocolo de comunicación, sino también de la orientación, estabilidad y repetibilidad del montaje físico.
 
-Los aspectos específicos del diseño de la carcasa, el soporte y la validación física se desarrollan en el capítulo correspondiente al modelado de la carcasa para Robotito.
+Los aspectos específicos del diseño de la carcasa y el soporte se desarrollan en la sección correspondiente al modelado de la carcasa para Robotito.
 
 \section{Justificación de las decisiones de diseño}
 
@@ -1263,9 +1262,9 @@ Los nodos disponibles son los siguientes:
 \paragraph{2. Nodos compositores}
 
 \begin{itemize}
-    \item \textbf{\texttt{sequence(children)}}: Avanza de izquierda a derecha y solo pasa al siguiente hijo si el anterior devuelve \texttt{SUCCESS}. Si un hijo devuelve \texttt{RUNNING}, la secuencia se detiene y propaga ese estado. Si un hijo devuelve \texttt{FAILURE}, el nodo reinicia su puntero interno \texttt{self.counter} y ejecuta la función reset en todos sus hijos para garantizar modularidad en el próximo ciclo. La implementación de este nodo es con memoria. Una vez que un hijo tiene éxito, el nodo no vuelve a enviarle un "tick" en los ciclos siguientes. En su lugar, utiliza un puntero interno \texttt{self.counter} para saltar directamente al hijo que quedó en estado de ejecución o al siguiente en la lista
+    \item \textbf{\texttt{sequence(children)}}: Avanza de izquierda a derecha y solo pasa al siguiente hijo si el anterior devuelve \texttt{SUCCESS}. Si un hijo devuelve \texttt{RUNNING}, la secuencia se detiene y propaga ese estado. Si un hijo devuelve \texttt{FAILURE}, el nodo reinicia su puntero interno \texttt{self.counter} y ejecuta la función reset en todos sus hijos para garantizar modularidad en el próximo ciclo. La implementación de este nodo es con memoria. Una vez que un hijo tiene éxito, el nodo no vuelve a enviarle un "tick" en los ciclos siguientes. En su lugar, utiliza un puntero interno \texttt{self.counter} para saltar directamente al hijo que quedó en estado de ejecución o al siguiente en la lista.
    
-    \item \textbf{\texttt{selector(children)}}: Busca la primera alternativa exitosa. Ticks a sus hijos en orden; si uno devuelve \texttt{SUCCESS}, el selector termina con éxito inmediatamente. Si un hijo devuelve \texttt{RUNNING}, la secuencia se detiene y propaga ese estado. Devuelve \texttt{FAILURE} únicamente si todos sus hijos fallan. Al igual que la secuencia, limpia su memoria interna y resetea a los hijos al finalizar con éxito o tras agotar las opciones. La implementación de este nodo es con memoria. Si los primeros hijos de un Selector fallan, el nodo recuerda esos fallos y no vuelve a intentarlos en los siguientes ticks, centrándose únicamente en la alternativa que devolvió RUNNING o en las restantes
+    \item \textbf{\texttt{selector(children)}}: Busca la primera alternativa exitosa. Ticks a sus hijos en orden; si uno devuelve \texttt{SUCCESS}, el selector termina con éxito inmediatamente. Si un hijo devuelve \texttt{RUNNING}, la secuencia se detiene y propaga ese estado. Devuelve \texttt{FAILURE} únicamente si todos sus hijos fallan. Al igual que la secuencia, limpia su memoria interna y resetea a los hijos al finalizar con éxito o tras agotar las opciones. La implementación de este nodo es con memoria. Si los primeros hijos de un Selector fallan, el nodo recuerda esos fallos y no vuelve a intentarlos en los siguientes ticks, centrándose únicamente en la alternativa que devolvió RUNNING o en las restantes.
 \end{itemize}
 
 La implementación de nodos Sequence y Selector con memoria en el módulo responde a necesidades tanto teóricas como de eficiencia técnica. En este caso específico, su uso es necesario por las siguientes razones fundamentales:
@@ -1273,9 +1272,9 @@ La implementación de nodos Sequence y Selector con memoria en el módulo respon
 \begin{itemize}
     \item \textbf{Evitar la re-ejecución innecesaria de tareas}: en un árbol sin memoria, cada ``tick'' reinicia la evaluación desde el primer hijo de la izquierda. Sin embargo, en muchos escenarios de robótica, una vez que un sub-objetivo se ha alcanzado, no es necesario volver a comprobarlo en cada ciclo si el entorno es predecible. Este es el escenarios particular de nuestro robot, donde las secuencias son controladas y predecibles.
    
-    \item \textbf{Reducción del costo computacional}: al mantener el puntero interno \texttt{self.counter} hacia el hijo que devolvió \texttt{RUNNING}, el sistema no malgasta recursos re-evaluando ramas del árbol que ya terminaron su labor. Esto permite que el árbol funcione de manera más fluida en sistemas con recursos limitados
+    \item \textbf{Reducción del costo computacional}: al mantener el puntero interno \texttt{self.counter} hacia el hijo que devolvió \texttt{RUNNING}, el sistema no malgasta recursos re-evaluando ramas del árbol que ya terminaron su labor. Esto permite que el árbol funcione de manera más fluida en sistemas con recursos limitados.
    
-    \item \textbf{Continuidad de acciones en estado RUNNING}: técnicamente, en la implementación del módulo, cuando un hijo devuelve \texttt{RUNNING}, el nodo padre debe devolver lo mismo inmediatamente para ceder el control. Por lo tanto, la memoria es vital aquí para que, en el siguiente tick, el árbol sepa exactamente dónde retomar el trabajo. Sin memoria, el ``tick'' volvería al primer hijo, lo que podría interrumpir la acción que estaba en curso o causar comportamientos erráticos
+    \item \textbf{Continuidad de acciones en estado RUNNING}: técnicamente, en la implementación del módulo, cuando un hijo devuelve \texttt{RUNNING}, el nodo padre debe devolver lo mismo inmediatamente para ceder el control. Por lo tanto, la memoria es vital aquí para que, en el siguiente tick, el árbol sepa exactamente dónde retomar el trabajo. Sin memoria, el ``tick'' volvería al primer hijo, lo que podría interrumpir la acción que estaba en curso o causar comportamientos erráticos.
 \end{itemize}
 
 Es importante recordar que, esta memoria no es permanente: se limpia automáticamente en cuanto el nodo completo termina con éxito o falla, asegurando que el comportamiento pueda reiniciarse correctamente en el futuro
@@ -1286,7 +1285,7 @@ Es importante recordar que, esta memoria no es permanente: se limpia automática
     \item \textbf{\texttt{repeater(child, n)}}: repite la ejecución del nodo hijo \texttt{n} veces, o indefinidamente si \texttt{$n = -1$}. Entre repeticiones invoca \texttt{reset()} en el hijo para garantizar consistencia.
    
     \begin{itemize}
-        \item \texttt{Comportamiento del Tick}: cuando recibe un tick, ejecuta a su hijo. Si el hijo devuelve \texttt{RUNNING}, el repetidor propaga \texttt{RUNNING} hacia arriba. Si el hijo devuelve \texttt{SUCCESS} o \texttt{FAILURE}, el repetidor incrementa su contador interno, resetea al hijo para que pueda ejecutarse de nuevo en el siguiente ciclo y devuelve \texttt{RUNNING} para indicar que el proceso de repetición continúa
+        \item \texttt{Comportamiento del Tick}: cuando recibe un tick, ejecuta a su hijo. Si el hijo devuelve \texttt{RUNNING}, el repetidor propaga \texttt{RUNNING} hacia arriba. Si el hijo devuelve \texttt{SUCCESS} o \texttt{FAILURE}, el repetidor incrementa su contador interno, resetea al hijo para que pueda ejecutarse de nuevo en el siguiente ciclo y devuelve \texttt{RUNNING} para indicar que el proceso de repetición continúa.
        
         \item \texttt{Condición de Éxito}: solo devuelve \texttt{SUCCESS} cuando se ha alcanzado el límite de repeticiones definido \texttt{(max\_repeats)}. Si se configura con \texttt{$n = -1$}, se convierte en un bucle infinito.
 
@@ -1977,148 +1976,6 @@ PF-18 & Usabilidad básica del flujo completo & Seleccionar o configurar una act
 \end{longtable}
 
 
-
-\chapter{Modelado de carcasa para Robotito}
-
-Con el objetivo de obtener una versión final del robot más robusta, estética y reproducible a mayor escala, se diseñó una carcasa específica para la integración de Robotito con la cámara HuskyLens. En los prototipos iniciales los módulos se fijaban mediante soportes pegados o atornillados, con cables expuestos y componentes de sujeción visibles, lo que no garantizaba estabilidad mecánica ni una configuración consistente para el correcto funcionamiento del robot. El nuevo modelo permite encapsular los componentes en una estructura única compuesta por la carcasa original de Robotito modificada y una tapa adicional, de modo que el ensamblado sea directo y siempre resulte en la misma disposición validada durante las pruebas.
-
-El diseño se realizó en función de los requerimientos de la cámara HuskyLens, fijando su posición de forma rígida y definiendo un ángulo específico de inclinación respecto al piso, ya que estos parámetros resultaron críticos para el correcto funcionamiento de los algoritmos de visión. Además, se incorporaron orificios internos para el guiado del cableado, logrando que este quede completamente contenido dentro de la estructura. De esta manera se logra la protección de los componentes, la confiabilidad del sistema y la calidad visual del robot, resultando en un dispositivo final adaptado específicamente a la aplicación educativa.
-
-\section{Desarrollo del diseño de la carcasa}
-
-\subsection{Modelos utilizados}
-% dimensiones, componentes a alojar, campo de visión de la HuskyLens, fabricación
-
-Para evitar modificaciones internas a la disposición de los componentes ya existentes en Robotito, todo el trabajo de rediseño se realizó en la parte externa de la carcasa original. Para esto se trabajó sobre un modelo tridimensional de la carcasa exterior original de Robotito \cite{CarcasaRobotito}, que consiste de una única pieza con dimensiones aproximadas de 16.56cm x 16.42cm x 6.15cm (largo x ancho x alto).
-
-\begin{figure}[htbp]
-    \centering
-
-    % -------- Primera fila --------
-    \begin{subfigure}{0.4\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{images/modelos3d/carcasa-original-superior.png}
-        \caption{Vista superior}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}{0.4\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{images/modelos3d/carcasa-original-frontal.png}
-        \caption{Vista frontal}
-    \end{subfigure}
-
-    % -------- Segunda fila --------
-    \begin{subfigure}{0.6\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{images/modelos3d/carcasa-original-3d.png}
-        \caption{Vista isométrica}
-    \end{subfigure}
-
-    \caption{Vistas del modelo tridimensional de la carcasa original de Robotito utilizado como base para el rediseño.}
-    \label{fig:carcasa-original}
-\end{figure}
-
-Además se buscaron modelos de soporte para HuskyLens, llegando a la decisión de utilizar un modelo de dos piezas (incluyendo una base y una tapa) de carcasa externa de la cámara  \cite{CarcasaHuskylens}, con dimensiones aproximadas de 5.72cm x 4.82cm x 7.3cm para la base y 5.72cm x 4.12cm x 9.6cm para la tapa.
-
-\begin{figure}[htbp]
-    \centering
-
-    % -------- Primera fila --------
-    \begin{subfigure}{0.4\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{images/modelos3d/carcasa-husky-superior.png}
-        \caption{Vista superior}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}{0.4\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{images/modelos3d/carcasa-husky-lateral.png}
-        \caption{Vista Lateral}
-    \end{subfigure}
-
-    % -------- Segunda fila --------
-    \begin{subfigure}{0.5\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{images/modelos3d/carcasa-husky-3d.png}
-        \caption{Vista en perspectiva}
-    \end{subfigure}
-
-    \caption{Vistas del modelo tridimensional de la carcasa original de HuskyLens.}
-    \label{fig:carcasa-husky-original}
-\end{figure}
-
-\FloatBarrier 
-
-\subsection{Diseño conceptual}
-% estructura general, criterios de decisión, integración con el robot
-
-Con estos dos modelos como base para el diseño, se buscó fusionarlos en un solo modelo que permita agregar la cámara HuskyLens a su interior, manteniéndola fija en un ángulo determinado y de fácil acceso en caso de tener que configurarla o desarmar la estructura. Tomando como base las pruebas realizadas previas al rediseño de la carcasa, se definió el ángulo de inclinación de la cámara 16.5 grados con respecto al eje horizontal, que permite una visión cercana a Robotito, facilitando su funcionamiento, y que además logra mantener una coherencia estética y estructural con el modelo original, ya que un ángulo significativamente grande representa una pieza sobresaliente a la parte superior del robot que puede ser fácilmente rota al ser manipulada en un entorno educativo infantil.
-
-\subsection{Proceso de modelado CAD}
-% herramienta utilizada y metodología básica
-
-La herramienta utilizada para el modelado tridimensional de la nueva carcasa fue Blender \cite{Blender} en su versión para el sistema operativo Windows. Con esta herramienta se logró importar los archivos de extensión .stl (Stereolithography) de cada modelo y trabajar sobre las superficies geométricas definidas en cada uno.
-
-El primer paso para realizar el rediseño luego de obtenidos los dos modelos individuales de carcasa de Robotito y de cámara HuskyLens, fue ubicar a ambos en sus posiciones correspondientes al modelo objetivo. Para esto se ubica la carcasa de Robotito con el centro de su base en el origen (X=0, Y=0, Z=0) y luego se ubica el modelo de soporte de la cámara en la posición definida según las pruebas realizadas (ligeramente arriba de la parte superior de la carcasa de Robotito, sobre el borde del mismo, ubicando la zona correspondiente al lente de la cámara hacia la dirección ``frontal'' del robot, que además coincide con las ruedas frontales de Robotito, apuntando hacia ``abajo'' con una leve inclinación de 16.5 grados con respecto al plano horizontal).
-
-Una vez ubicados ambos modelos en las posiciones correctas, se implementa una tercera estructura que representa la ``unión'' física entre ambos. Para eso se busca mantener la coherencia estética del modelo, intentando no utilizar ángulos muy forzados y simplificando la geometría utilizada.
-
-Con los tres modelos presentes y ubicados en sus posiciones finales, se realizan repetidas operaciones booleanas de Unión de Blender. Esto logra unir dos piezas seleccionadas en una sola, haciendo que el modelo consista de la menor cantidad de piezas necesarias. Luego de ejecutadas las uniones se llega a un modelo de dos piezas que incluye la carcasa original de Robotito con una base para HuskyLens, y una tapa para asegurar la cámara luego de ubicada en el robot.
-
-Finalmente, para mejorar la estética del modelo y asegurar su funcionamiento seguro como aplicación en un entorno educativo infantil, se realizaron dos agujeros (en la herramienta Blender) en el modelo de la carcasa para permitir que todo el cableado de la cámara se ubique de forma interna a la estructura del robot. Cada agujero corresponde a una entrada física de cables que permite la cámara, con sus tamaños correspondientes.
-
-\subsection{Fabricación y ensamblado}
-% material, impresión 3D u otra técnica, montaje en el robot
-
-// Completar luego de realizado
-
-\subsection{Validación del prototipo}
-% ajuste mecánico, acceso a componentes, pruebas de funcionamiento
-
-// Completar luego de realizado
-
-\subsection{Resultados y mejoras futuras}
-% qué se logró y qué quedaría para una siguiente iteración
-
-El resultado obtenido se detalla a continuación, donde se puede observar el modelo terminado con ambas piezas (carcasa y tapa) ya ubicadas en sus respectivos lugares \\
-
-\begin{figure}[htbp]
-    \centering
-
-    % -------- Primera fila --------
-    \begin{subfigure}{0.4\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{images/modelos3d/carcasa-nueva-frontal.png}
-        \caption{Vista Frontal}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}{0.4\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{images/modelos3d/carcasa-nueva-lateral.png}
-        \caption{Vista Lateral}
-    \end{subfigure}
-
-    % -------- Segunda fila --------
-    \begin{subfigure}{0.4\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{images/modelos3d/carcasa-nueva-superior.png}
-        \caption{Vista Superior}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}{0.4\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{images/modelos3d/carcasa-nueva-3d.png}
-        \caption{Vista Isométrica}
-    \end{subfigure}
-
-    \caption{Vistas del modelo tridimensional de la carcasa nueva de Robotito con soporte para HuskyLens.}
-    \label{fig:carcasa-husky-nueva}
-\end{figure}
-
-\FloatBarrier 
-
-Como trabajo a futuro queda realizar un rediseño del mismo para mejorar su aspecto estético, y realizar pruebas estructurales para verificar su durabilidad.
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % experimentación
@@ -2356,7 +2213,7 @@ En conjunto, el proyecto consolida a Robotito como una plataforma abierta que in
 \textbf{Bifurcaciones en el mapa.} Incorporar intersecciones en el circuito de tatami donde el robot deba elegir un camino según el resultado de la validación introduciría nociones de condicionales y ramificación lógica de forma concreta y visible, ampliando las posibilidades pedagógicas de la plataforma hacia conceptos más avanzados de programación.
 
 \textbf{Evaluación a mayor escala.} Las dos sesiones realizadas constituyeron una validación inicial con grupos acotados en instituciones específicas. Una evaluación con múltiples docentes, niveles educativos e instituciones distintas permitiría obtener evidencia más robusta sobre el impacto pedagógico real y detectar aspectos de diseño que no emergen en contextos controlados.
-
+ 
 \textbf{Aplicación auxiliar para identificación de códigos QR.} Durante la experimentación, las docentes señalaron la necesidad de contar con una herramienta que les permita identificar el orden correcto de las tarjetas QR desde sus teléfonos móviles, sin depender del robot. Desarrollar una aplicación web o móvil con esta funcionalidad reduciría la complejidad de preparación de las actividades y minimizaría errores en la configuración de las secuencias.
 
 
@@ -2380,6 +2237,141 @@ En conjunto, el proyecto consolida a Robotito como una plataforma abierta que in
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % anexos
+
+\begin{appendix}
+
+\chapter{Modelado de carcasa para Robotito}
+
+Con el objetivo de obtener una versión final del robot más robusta, estética y reproducible a mayor escala, se propone el diseño de una carcasa específica para la integración de Robotito con la cámara HuskyLens. En los prototipos iniciales los módulos se fijaban mediante soportes pegados o atornillados, con cables expuestos y componentes de sujeción visibles, lo que no garantizaba estabilidad mecánica ni una configuración consistente para el correcto funcionamiento del robot. El nuevo modelo permite encapsular los componentes en una estructura única compuesta por la carcasa original de Robotito modificada y una tapa adicional, de modo que el ensamblado sea directo y siempre resulte en la misma disposición validada durante las pruebas.
+
+El diseño se realizó en función de los requerimientos de la cámara HuskyLens, fijando su posición de forma rígida y definiendo un ángulo específico de inclinación respecto al piso, ya que estos parámetros resultaron críticos para el correcto funcionamiento de los algoritmos de visión. Además, se incorporaron orificios internos para el guiado del cableado, logrando que este quede completamente contenido dentro de la estructura. De esta manera se logra la protección de los componentes, la confiabilidad del sistema y la calidad visual del robot, resultando en un dispositivo final adaptado específicamente a la aplicación educativa.
+
+\section{Desarrollo del diseño de la carcasa}
+
+\subsection{Modelos utilizados}
+% dimensiones, componentes a alojar, campo de visión de la HuskyLens, fabricación
+
+Para evitar modificaciones internas a la disposición de los componentes ya existentes en Robotito, todo el trabajo de rediseño se realizó en la parte externa de la carcasa original. Para esto se trabajó sobre un modelo trisimensional de la carcasa exterior original de Robotito \cite{CarcasaRobotito}, que consiste de una única pieza con dimensiones aproximadas de 16.56cm x 16.42cm x 6.15cm (largo x ancho x alto).
+
+\begin{figure}[htbp]
+    \centering
+
+    % -------- Primera fila --------
+    \begin{subfigure}{0.4\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/modelos3d/carcasa-original-superior.png}
+        \caption{Vista superior}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.4\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/modelos3d/carcasa-original-frontal.png}
+        \caption{Vista frontal}
+    \end{subfigure}
+
+    % -------- Segunda fila --------
+    \begin{subfigure}{0.6\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/modelos3d/carcasa-original-3d.png}
+        \caption{Vista isométrica}
+    \end{subfigure}
+
+    \caption{Vistas del modelo tridimensional de la carcasa original de Robotito utilizado como base para el rediseño.}
+    \label{fig:carcasa-original}
+\end{figure}
+
+Además se buscaron modelos de soporte para HuskyLens, llegando a la decisión de utilizar un modelo de dos piezas (incluyendo una base y una tapa) de carcasa externa de la cámara  \cite{CarcasaHuskylens}, con dimensiones aproximadas de 5.72cm x 4.82cm x 7.3cm para la base y 5.72cm x 4.12cm x 9.6cm para la tapa.
+
+\begin{figure}[htbp]
+    \centering
+
+    % -------- Primera fila --------
+    \begin{subfigure}{0.4\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/modelos3d/carcasa-husky-superior.png}
+        \caption{Vista superior}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.4\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/modelos3d/carcasa-husky-lateral.png}
+        \caption{Vista Lateral}
+    \end{subfigure}
+
+    % -------- Segunda fila --------
+    \begin{subfigure}{0.5\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/modelos3d/carcasa-husky-3d.png}
+        \caption{Vista en perspectiva}
+    \end{subfigure}
+
+    \caption{Vistas del modelo tridimensional de la carcasa original de HuskyLens.}
+    \label{fig:carcasa-husky-original}
+\end{figure}
+
+\FloatBarrier 
+
+\subsection{Diseño conceptual}
+% estructura general, criterios de decisión, integración con el robot
+
+Con estos dos modelos como base para el diseño, se buscó fusionarlos en un solo modelo que permita agregar la cámara HuskyLens a su interior, manteniéndola fija en un ángulo determinado y de fácil acceso en caso de tener que configurarla o desarmar la estructura. Tomando como base las pruebas realizadas previas al rediseño de la carcasa, se definió el ángulo de inclinación de la cámara 16.5 grados con respecto al eje horizontal, que permite una visión cercana a Robotito, facilitando su funcionamiento, y que además logra mantener una coherencia estética y estructural con el modelo original, ya que un ángulo significativamente grande representa una pieza sobresaliente a la parte superior del robot que puede ser fácilmente rota al ser manipulada en un entorno educativo infantil.
+
+\subsection{Proceso de modelado CAD}
+% herramienta utilizada y metodología básica
+
+La herramienta utilizada para el modelado tridimensional de la nueva carcasa fue Blender \cite{Blender} en su versión para el sistema operativo Windows. Con esta herramienta se logró importar los archivos de extensión .stl (Stereolithography) de cada modelo y trabajar sobre las superficies geométricas definidas en cada uno.
+
+El primer paso para realizar el rediseño luego de obtenidos los dos modelos individuales de carcasa de Robotito y de cámara HuskyLens, fue ubicar a ambos en sus posiciones correspondientes al modelo objetivo. Para esto se ubica la carcasa de Robotito con el centro de su base en el origen (X=0, Y=0, Z=0) y luego se ubica el modelo de soporte de la cámara en la posición definida según las pruebas realizadas (ligeramente arriba de la parte superior de la carcasa de Robotito, sobre el borde del mismo, ubicando la zona correspondiente al lente de la cámara hacia la dirección ``frontal'' del robot, que además coincide con las ruedas frontales de Robotito, apuntando hacia ``abajo'' con una leve inclinación de 16.5 grados con respecto al plano horizontal).
+
+Una vez ubicados ambos modelos en las posiciones correctas, se implementa una tercera estructura que respresenta la ``unión'' física entre ambos. Para eso se busca mantener la coherencia estética del modelo, intentando no utilizar ángulos muy forzados y simplificando la geometría utilizada.
+
+Con los tres modelos presentes y ubicados en sus posiciones finales, se realizan repetidas operaciones booleanas de Unión de Blender. Esto logra unir dos piezas seleccionadas en una sola, haciendo que el modelo consista de la menor cantidad de piezas necesarias. Luego de ejecutadas las uniones se llega a un modelo de dos piezas que incluye la carcasa original de Robotito con una base para HuskyLens, y una tapa para asegurar la cámara luego de ubicada en el robot.
+
+Finalmente, para mejorar la estética del modelo y asegurar su funcionamiento seguro como aplicación en un entorno educativo infantil, se realizaron dos agujeros (en la herramienta Blender) en el modelo de la carcasa para permitir que todo el cableado de la cámara se ubique de forma interna a la estructura del robot. Cada agujero corresponde a una entrada física de cables que permite la cámara, con sus tamaños correspondientes.
+
+\subsection{Resultados y mejoras futuras}
+% qué se logró y qué quedaría para una siguiente iteración
+
+El resultado obtenido se detalla a continuación, donde se puede observar el diseño terminado con ambas piezas (carcasa y tapa) ya ubicados en sus respectivos lugares \\
+
+\begin{figure}[htbp]
+    \centering
+
+    % -------- Primera fila --------
+    \begin{subfigure}{0.4\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/modelos3d/carcasa-nueva-frontal.png}
+        \caption{Vista Frontal}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.4\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/modelos3d/carcasa-nueva-lateral.png}
+        \caption{Vista Lateral}
+    \end{subfigure}
+
+    % -------- Segunda fila --------
+    \begin{subfigure}{0.4\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/modelos3d/carcasa-nueva-superior.png}
+        \caption{Vista Superior}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.4\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/modelos3d/carcasa-nueva-3d.png}
+        \caption{Vista Isométrica}
+    \end{subfigure}
+
+    \caption{Vistas del modelo tridimensional de la carcasa nueva de Robotito con soporte para HuskyLens.}
+    \label{fig:carcasa-husky-original}
+\end{figure}
+
+\FloatBarrier 
+
+Como trabajo a futuro queda la opción de realizar un rediseño del mismo para mejorar su aspecto estético y hacerlo más llamativo a un público objetivo infantil, y realizar pruebas estructurales para verificar su durabilidad.
+
+\end{appendix}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
