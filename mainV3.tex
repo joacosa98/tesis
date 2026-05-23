@@ -1296,7 +1296,7 @@ Es importante recordar que, esta memoria no es permanente: se limpia automática
    
         \item \texttt{Comportamiento del Tick}: si es activado, simplemente ejecuta a su hijo y devuelve su estado. Si no tiene un hijo asignado, devuelve \texttt{SUCCESS} por defecto al dispararse la condición.
        
-        \item \texttt{Condición de Éxito}: solo devuelve \texttt{SUCCESS} cuando se ha alcanzado el límite de repeticiones definido \texttt{(max\_repeats)}. Si se configura con \texttt{$n = -1$}, se convierte en un bucle infinito.
+        \item \texttt{Condición de Éxito}: devuelve \texttt{SUCCESS} cuando la condición se activa y su hijo devuelve \texttt{SUCCESS}. Si no tiene hijo asignado y la condición se activa, devuelve \texttt{SUCCESS} directamente.
 
         \item \texttt{Memoria}: su función es evaluativa e instantánea, aunque su hijo puede tener su propia lógica interna.
     \end{itemize}
