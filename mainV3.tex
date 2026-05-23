@@ -155,7 +155,7 @@ Se espera obtener una versión extendida de Robotito capaz de ejecutar comportam
 
 La librería desarrollada debe permitir que otros docentes e investigadores reutilicen los nodos de control en nuevos proyectos sin necesidad de modificar el código base. Desde el punto de vista pedagógico, esta arquitectura facilita la comprensión del flujo lógico de las acciones, permitiendo que los estudiantes visualicen la estructura de toma de decisiones de un robot.
 
-Los árboles de comportamiento permiten estructurar el control robótico de manera modular y escalables.
+Los árboles de comportamiento permiten estructurar el control robótico de manera modular y escalable.
 
 De este modo, el trabajo amplía las capacidades del Robotito e introduce una metodología de control moderna y flexible en el campo de la robótica educativa.
 
@@ -169,25 +169,31 @@ Desde el punto de vista pedagógico, promueve la enseñanza de estructuras jerá
 En conjunto, el proyecto consolida a Robotito como una plataforma que integra visión artificial, control modular y aprendizaje activo, alineada con las tendencias internacionales en educación STEM.
 
 \section{Organización del documento}
-El presente trabajo se estructura en nueve capítulos. \\
+El presente trabajo se estructura en doce capítulos. \\
 
 En el Capítulo 2 se desarrolla una revisión de antecedentes sobre robótica educativa, abordando experiencias previas tanto en el contexto nacional como internacional. Se analizan proyectos orientados al aprendizaje de la programación, la integración de sensores y el diseño de actividades didácticas mediadas por robots. \\
 
 En el Capítulo 3 se presenta un análisis del estado del arte en visión artificial aplicada a la robótica educativa. Allí se revisan las principales soluciones tecnológicas disponibles y se comparan sus capacidades de procesamiento, flexibilidad, facilidad de uso e integración con plataformas educativas. \\
 
-En el Capítulo 4 se describe el módulo HuskyLens: su hardware, conexión con la placa ESP32 por I2C, el protocolo de aplicación, la arquitectura del software (núcleo de protocolo, capa en C y binding Lua), el formato de datos que proporciona, los algoritmos de visión soportados y su uso desde la aplicación en C y Lua. \\
+En el Capítulo 4 se expone el análisis del problema abordado y el diseño de la solución propuesta. Se identifican los requerimientos principales de la extensión de Robotito, se justifican las decisiones arquitectónicas adoptadas en cuanto a percepción visual, control del comportamiento e integración física, y se presenta la tabla de relación entre restricciones y soluciones. \\
 
-En el Capítulo 5 se exponen los fundamentos teóricos de los árboles de comportamiento (\textit{Behavior Trees}) y se documenta la implementación del motor BT como librería reutilizable, incluyendo los tipos de nodos (acción, condición, compositores), la reactividad y la integración con el sistema. \\
+En el Capítulo 5 se describe el módulo HuskyLens: su hardware, conexión con la placa ESP32 por I2C, el protocolo de aplicación, la arquitectura del software (núcleo de protocolo, capa en C y binding Lua), el formato de datos que proporciona, los algoritmos de visión soportados y su uso desde la aplicación en C y Lua. \\
 
-En el Capítulo 6 se presenta la creación del juego: reglas, dinámica y objetivos pedagógicos. Se detalla el diseño del circuito sobre tatami, el seguimiento de línea, la detección de marcas rojas, la lectura de códigos QR y la verificación de secuencias, los modos pausa y reset, la implementación del juego mediante BT y los objetivos pedagógicos de la actividad. \\
+En el Capítulo 6 se documenta la extensión del módulo de comunicación Bluetooth Low Energy (BLE) de Robotito. Se describe el mecanismo de transferencia inalámbrica de configuraciones desde la aplicación web, la arquitectura del \textit{HuskyLens Mapper} para el desacoplamiento entre identificadores físicos y lógica del juego, y la persistencia de datos en memoria no volátil (NVS). \\
 
-En el Capítulo 7 se documenta el modelado de la carcasa para Robotito, desarrollado para integrar de forma robusta y reproducible la cámara HuskyLens, cumpliendo requisitos de posición, ángulo y guiado del cableado. \\
+En el Capítulo 7 se exponen los fundamentos teóricos de los árboles de comportamiento (\textit{Behavior Trees}) y se documenta la implementación del motor BT como librería reutilizable, incluyendo los tipos de nodos (acción, condición, compositores), la reactividad y la integración con el sistema. \\
 
-En el Capítulo 8 se documenta la experimentación realizada, tanto desde el punto de vista técnico como pedagógico: entrevistas con docentes, sesión práctica con estudiantes, análisis de resultados, ajustes realizados a partir del feedback y conclusiones del proceso de experimentación. \\
+En el Capítulo 8 se presenta la creación del juego: reglas, dinámica y objetivos pedagógicos. Se detalla el diseño del circuito sobre tatami, el seguimiento de línea, la detección de marcas rojas, la lectura de códigos QR y la verificación de secuencias, los modos pausa y reset, la implementación del juego mediante BT y los objetivos pedagógicos de la actividad. \\
 
-En el Capítulo 9 se presentan las conclusiones generales y las líneas de trabajo futuro, destacando los aportes del proyecto tanto en el desarrollo de una herramienta tecnológica accesible como en la generación de propuestas pedagógicas innovadoras que fortalezcan el aprendizaje de la robótica en edades tempranas. \\
+En el Capítulo 9 se describe el configurador web desarrollado para la preparación de secuencias de Robotito. Se documenta la herramienta que permite registrar tags físicos, definir relaciones de equivalencia, construir secuencias de recorrido y transferir la configuración al robot de forma inalámbrica, sin necesidad de modificar el firmware. \\
 
-Al final del documento se incluye un Anexo con material complementario.
+En el Capítulo 10 se documenta el modelado de la carcasa para Robotito, desarrollado para integrar de forma robusta y reproducible la cámara HuskyLens, cumpliendo requisitos de posición, ángulo y guiado del cableado. \\
+
+En el Capítulo 11 se documenta la experimentación realizada, tanto desde el punto de vista técnico como pedagógico: entrevistas con docentes, sesión práctica con estudiantes, análisis de resultados, ajustes realizados a partir del feedback y conclusiones del proceso de experimentación. \\
+
+En el Capítulo 12 se presentan las conclusiones generales y las líneas de trabajo futuro, destacando los aportes del proyecto tanto en el desarrollo de una herramienta tecnológica accesible como en la generación de propuestas pedagógicas innovadoras que fortalezcan el aprendizaje de la robótica en edades tempranas. \\
+
+Las referencias bibliográficas se presentan al final del documento.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1015,7 +1021,7 @@ La innovación central de la extensión es el \textit{HuskyLens Mapper}, una cap
 \subsection{Almacenamiento No Volátil (NVS)}
 Para que el robot sea usable en el aula sin configuraciones repetitivas, el módulo utiliza la memoria flash del ESP32 mediante el sistema \textit{Non-Volatile Storage} (NVS). 
 \begin{itemize}
-    \item \textbf{Namespace y Claves:} Los datos se persisten bajo el espacio de nombres \texttt{"apriltag"}, utilizando las claves \texttt{"map"} para las tablas de equivalencia de etiquetas y \texttt{"seq"} para las listas de secuencias de objetivos.
+    \item \textbf{Namespace y Claves:} Los datos se persisten bajo el espacio de nombres \texttt{``apriltag''}, utilizando las claves \texttt{"map"} para las tablas de equivalencia de etiquetas y \texttt{"seq"} para las listas de secuencias de objetivos.
     \item \textbf{Carga Automática:} Mediante la función \texttt{mapper\_init()}, el robot restaura automáticamente estos datos al encenderse, permitiendo retomar misiones previas de forma instantánea.
 \end{itemize}
 
@@ -1117,13 +1123,13 @@ El comportamiento de los nodos \textbf{Sequence} y \textbf{Selector} varía crí
         \centering
         \includegraphics[width=0.4\textwidth]{images/SequenceCompositionWithMemory..png}
         \caption{Secuencia con memoria}
-        \label{fig:mi_etiqueta}
+        \label{fig:bt-secuencia-con-memoria}
     \end{figure}
     \begin{figure}[h]
         \centering
         \includegraphics[width=0.8\textwidth]{images/SequenceCompositionWithMemoryEmulation.png}
-        \caption{BT que emula la ejecucion de una secuencia con memoria usando nodos sin memoria}
-        \label{fig:mi_etiqueta}
+        \caption{BT que emula la ejecución de una secuencia con memoria usando nodos sin memoria}
+        \label{fig:bt-secuencia-con-memoria-emulacion}
     \end{figure}
 
     \begin{itemize}
@@ -1253,9 +1259,9 @@ Los nodos disponibles son los siguientes:
 \paragraph{2. Nodos compositores}
 
 \begin{itemize}
-    \item \textbf{\texttt{sequence(children)}}: Avanza de izquierda a derecha y solo pasa al siguiente hijo si el anterior devuelve \texttt{SUCCESS}. Si un hijo devuelve \texttt{RUNNING}, la secuencia se detiene y propaga ese estado. Si un hijo devuelve \texttt{FAILURE}, el nodo reinicia su puntero interno \texttt{self.counter} y ejecuta la función reset en todos sus hijos para garantizar modularidad en el próximo ciclo. La implementacion de este nodo es con memoria. Una vez que un hijo tiene éxito, el nodo no vuelve a enviarle un "tick" en los ciclos siguientes. En su lugar, utiliza un puntero interno \texttt{self.counter} para saltar directamente al hijo que quedó en estado de ejecución o al siguiente en la lista
+    \item \textbf{\texttt{sequence(children)}}: Avanza de izquierda a derecha y solo pasa al siguiente hijo si el anterior devuelve \texttt{SUCCESS}. Si un hijo devuelve \texttt{RUNNING}, la secuencia se detiene y propaga ese estado. Si un hijo devuelve \texttt{FAILURE}, el nodo reinicia su puntero interno \texttt{self.counter} y ejecuta la función reset en todos sus hijos para garantizar modularidad en el próximo ciclo. La implementación de este nodo es con memoria. Una vez que un hijo tiene éxito, el nodo no vuelve a enviarle un "tick" en los ciclos siguientes. En su lugar, utiliza un puntero interno \texttt{self.counter} para saltar directamente al hijo que quedó en estado de ejecución o al siguiente en la lista
    
-    \item \textbf{\texttt{selector(children)}}: Busca la primera alternativa exitosa. Ticks a sus hijos en orden; si uno devuelve \texttt{SUCCESS}, el selector termina con éxito inmediatamente. Si un hijo devuelve \texttt{RUNNING}, la secuencia se detiene y propaga ese estado. Devuelve \texttt{FAILURE} únicamente si todos sus hijos fallan. Al igual que la secuencia, limpia su memoria interna y resetea a los hijos al finalizar con éxito o tras agotar las opciones. La implementacion de este nodo es con memoria. Si los primeros hijos de un Selector fallan, el nodo recuerda esos fallos y no vuelve a intentarlos en los siguientes ticks, centrándose únicamente en la alternativa que devolvió RUNNING o en las restantes
+    \item \textbf{\texttt{selector(children)}}: Busca la primera alternativa exitosa. Ticks a sus hijos en orden; si uno devuelve \texttt{SUCCESS}, el selector termina con éxito inmediatamente. Si un hijo devuelve \texttt{RUNNING}, la secuencia se detiene y propaga ese estado. Devuelve \texttt{FAILURE} únicamente si todos sus hijos fallan. Al igual que la secuencia, limpia su memoria interna y resetea a los hijos al finalizar con éxito o tras agotar las opciones. La implementación de este nodo es con memoria. Si los primeros hijos de un Selector fallan, el nodo recuerda esos fallos y no vuelve a intentarlos en los siguientes ticks, centrándose únicamente en la alternativa que devolvió RUNNING o en las restantes
 \end{itemize}
 
 La implementación de nodos Sequence y Selector con memoria en el módulo responde a necesidades tanto teóricas como de eficiencia técnica. En este caso específico, su uso es necesario por las siguientes razones fundamentales:
@@ -1263,9 +1269,9 @@ La implementación de nodos Sequence y Selector con memoria en el módulo respon
 \begin{itemize}
     \item \textbf{Evitar la re-ejecución innecesaria de tareas}: en un árbol sin memoria, cada ``tick'' reinicia la evaluación desde el primer hijo de la izquierda. Sin embargo, en muchos escenarios de robótica, una vez que un sub-objetivo se ha alcanzado, no es necesario volver a comprobarlo en cada ciclo si el entorno es predecible. Este es el escenarios particular de nuestro robot, donde las secuencias son controladas y predecibles.
    
-    \item \textbf{Reducción del costo computacional}: al mantener el puntero interno \texttt{self.counter} hacia el hijo que devolvió \texttt{RUNNING}, el sistema no malgasta recursos re-evaluando ramas del árbol que ya terminaron su labor. Esto permite que el árbol funcione de manera más fluida en sistemas con recursos limitado
+    \item \textbf{Reducción del costo computacional}: al mantener el puntero interno \texttt{self.counter} hacia el hijo que devolvió \texttt{RUNNING}, el sistema no malgasta recursos re-evaluando ramas del árbol que ya terminaron su labor. Esto permite que el árbol funcione de manera más fluida en sistemas con recursos limitados
    
-    \item \textbf{Continuidad de acciones en estado RUNNING}: técnicamente, en la implementación del modulo, cuando un hijo devuelve \texttt{RUNNING}, el nodo padre debe devolver lo mismo inmediatamente para ceder el control. Por lo tanto, la memoria es vital aquí para que, en el siguiente tick, el árbol sepa exactamente dónde retomar el trabajo. Sin memoria, el ``tick'' volvería al primer hijo, lo que podría interrumpir la acción que estaba en curso o causar comportamientos erráticos
+    \item \textbf{Continuidad de acciones en estado RUNNING}: técnicamente, en la implementación del módulo, cuando un hijo devuelve \texttt{RUNNING}, el nodo padre debe devolver lo mismo inmediatamente para ceder el control. Por lo tanto, la memoria es vital aquí para que, en el siguiente tick, el árbol sepa exactamente dónde retomar el trabajo. Sin memoria, el ``tick'' volvería al primer hijo, lo que podría interrumpir la acción que estaba en curso o causar comportamientos erráticos
 \end{itemize}
 
 Es importante recordar que, esta memoria no es permanente: se limpia automáticamente en cuanto el nodo completo termina con éxito o falla, asegurando que el comportamiento pueda reiniciarse correctamente en el futuro
@@ -1383,7 +1389,7 @@ Las reglas del juego se describen a continuación:
     \item \textbf{Final del recorrido}: al alcanzar la pieza final del circuito, el robot presenta un resultado global:
     \begin{itemize}
         \item Si toda la secuencia es correcta, activa un patrón de luces \textbf{verdes} y realiza un giro de celebración.
-        \item Si existen errores, ilumina un patrón combinado que refleja el estado de cada estación evaluada. Se divide el anillo LED en la misma cantidad de segmentos que estaciones visitadas. Luego, las estaciones que se encuentren en orden correcto mostrarán un color \textbf{verde} y las estaciones que no se encuentren en el orden incorrecto mostrarán un color \textbf{roja}.
+        \item Si existen errores, ilumina un patrón combinado que refleja el estado de cada estación evaluada. Se divide el anillo LED en la misma cantidad de segmentos que estaciones visitadas. Luego, las estaciones que se encuentren en orden correcto mostrarán un color \textbf{verde} y las estaciones que no se encuentren en el orden incorrecto mostrarán un color \textbf{rojo}.
     \end{itemize}
     
     \item \textbf{Estado de espera}: una vez finalizada la verificación global, el robot entra nuevamente en modo de espera, preparado para una nueva partida cuando se le muestre otra tarjeta de inicio.
@@ -1416,7 +1422,7 @@ La inclusión de los modos \emph{pausa}, \emph{continuar} y \emph{reset} aporta 
     \item \textbf{Comprensión profunda del proceso}: estos modos introducen a los estudiantes en nociones básicas de estados del sistema (pausa, ejecución, reinicio), similares a las empleadas en sistemas reales de robótica y programación.
 \end{itemize}
 
-\subsection{Implementacion del juego utilizando BT}
+\subsection{Implementación del juego utilizando BT}
 
 \begin{figure}[!htbp]
     \centering
@@ -1967,7 +1973,6 @@ PF-18 & Usabilidad básica del flujo completo & Seleccionar o configurar una act
 \end{longtable}
 
 
-\begin{appendix}
 
 \chapter{Modelado de carcasa para Robotito}
 
@@ -1980,7 +1985,7 @@ El diseño se realizó en función de los requerimientos de la cámara HuskyLens
 \subsection{Modelos utilizados}
 % dimensiones, componentes a alojar, campo de visión de la HuskyLens, fabricación
 
-Para evitar modificaciones internas a la disposición de los componentes ya existentes en Robotito, todo el trabajo de rediseño se realizó en la parte externa de la carcasa original. Para esto se trabajó sobre un modelo trisimensional de la carcasa exterior original de Robotito \cite{CarcasaRobotito}, que consiste de una única pieza con dimensiones aproximadas de 16.56cm x 16.42cm x 6.15cm (largo x ancho x alto).
+Para evitar modificaciones internas a la disposición de los componentes ya existentes en Robotito, todo el trabajo de rediseño se realizó en la parte externa de la carcasa original. Para esto se trabajó sobre un modelo tridimensional de la carcasa exterior original de Robotito \cite{CarcasaRobotito}, que consiste de una única pieza con dimensiones aproximadas de 16.56cm x 16.42cm x 6.15cm (largo x ancho x alto).
 
 \begin{figure}[htbp]
     \centering
@@ -2052,7 +2057,7 @@ La herramienta utilizada para el modelado tridimensional de la nueva carcasa fue
 
 El primer paso para realizar el rediseño luego de obtenidos los dos modelos individuales de carcasa de Robotito y de cámara HuskyLens, fue ubicar a ambos en sus posiciones correspondientes al modelo objetivo. Para esto se ubica la carcasa de Robotito con el centro de su base en el origen (X=0, Y=0, Z=0) y luego se ubica el modelo de soporte de la cámara en la posición definida según las pruebas realizadas (ligeramente arriba de la parte superior de la carcasa de Robotito, sobre el borde del mismo, ubicando la zona correspondiente al lente de la cámara hacia la dirección ``frontal'' del robot, que además coincide con las ruedas frontales de Robotito, apuntando hacia ``abajo'' con una leve inclinación de 16.5 grados con respecto al plano horizontal).
 
-Una vez ubicados ambos modelos en las posiciones correctas, se implementa una tercera estructura que respresenta la ``unión'' física entre ambos. Para eso se busca mantener la coherencia estética del modelo, intentando no utilizar ángulos muy forzados y simplificando la geometría utilizada.
+Una vez ubicados ambos modelos en las posiciones correctas, se implementa una tercera estructura que representa la ``unión'' física entre ambos. Para eso se busca mantener la coherencia estética del modelo, intentando no utilizar ángulos muy forzados y simplificando la geometría utilizada.
 
 Con los tres modelos presentes y ubicados en sus posiciones finales, se realizan repetidas operaciones booleanas de Unión de Blender. Esto logra unir dos piezas seleccionadas en una sola, haciendo que el modelo consista de la menor cantidad de piezas necesarias. Luego de ejecutadas las uniones se llega a un modelo de dos piezas que incluye la carcasa original de Robotito con una base para HuskyLens, y una tapa para asegurar la cámara luego de ubicada en el robot.
 
@@ -2071,7 +2076,7 @@ Finalmente, para mejorar la estética del modelo y asegurar su funcionamiento se
 \subsection{Resultados y mejoras futuras}
 % qué se logró y qué quedaría para una siguiente iteración
 
-El resultado obtenido se detalla a continuación, donde se puede observar el modelo terminado con ambas piezas (carcasa y tapa) ya ubicados en sus respectivos lugares \\
+El resultado obtenido se detalla a continuación, donde se puede observar el modelo terminado con ambas piezas (carcasa y tapa) ya ubicadas en sus respectivos lugares \\
 
 \begin{figure}[htbp]
     \centering
@@ -2103,7 +2108,7 @@ El resultado obtenido se detalla a continuación, donde se puede observar el mod
     \end{subfigure}
 
     \caption{Vistas del modelo tridimensional de la carcasa nueva de Robotito con soporte para HuskyLens.}
-    \label{fig:carcasa-husky-original}
+    \label{fig:carcasa-husky-nueva}
 \end{figure}
 
 \FloatBarrier 
@@ -2360,7 +2365,6 @@ En conjunto, el proyecto consolida a Robotito como una plataforma abierta que in
 % Parte final
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\end{appendix}
 
 { % inicio backmatter
 
