@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.23)  23 MAY 2026 16:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.23)  23 MAY 2026 19:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -916,27 +916,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 2335--2336
 
  []
 
-<images/modelos3d/carcasa-nueva-frontal.png, id=1499, 615.80063pt x 298.86656pt>
+<images/modelos3d/carcasa-nueva-frontal.png, id=1499, 666.99188pt x 277.78781pt>
 File: images/modelos3d/carcasa-nueva-frontal.png Graphic file (type png)
 <use images/modelos3d/carcasa-nueva-frontal.png>
 Package pdftex.def Info: images/modelos3d/carcasa-nueva-frontal.png  used on input line 2343.
-(pdftex.def)             Requested size: 137.9979pt x 66.973pt.
-<images/modelos3d/carcasa-nueva-lateral.png, id=1500, 719.68875pt x 302.63063pt>
+(pdftex.def)             Requested size: 169.0519pt x 70.40471pt.
+<images/modelos3d/carcasa-nueva-lateral.png, id=1500, 666.23906pt x 274.77657pt>
 File: images/modelos3d/carcasa-nueva-lateral.png Graphic file (type png)
 <use images/modelos3d/carcasa-nueva-lateral.png>
 Package pdftex.def Info: images/modelos3d/carcasa-nueva-lateral.png  used on input line 2349.
-(pdftex.def)             Requested size: 137.9979pt x 58.02684pt.
-<images/modelos3d/carcasa-nueva-superior.png, id=1501, 669.2503pt x 576.65437pt>
+(pdftex.def)             Requested size: 169.0519pt x 69.72119pt.
+<images/modelos3d/carcasa-nueva-superior.png, id=1501, 663.22781pt x 570.63188pt>
 File: images/modelos3d/carcasa-nueva-superior.png Graphic file (type png)
 <use images/modelos3d/carcasa-nueva-superior.png>
 Package pdftex.def Info: images/modelos3d/carcasa-nueva-superior.png  used on input line 2356.
-(pdftex.def)             Requested size: 137.9979pt x 118.90123pt.
-<images/modelos3d/carcasa-nueva-3d.png, id=1502, 657.2053pt x 444.91219pt>
+(pdftex.def)             Requested size: 169.0519pt x 145.4439pt.
+<images/modelos3d/carcasa-nueva-3d.png, id=1502, 647.41875pt x 423.83344pt>
 File: images/modelos3d/carcasa-nueva-3d.png Graphic file (type png)
 <use images/modelos3d/carcasa-nueva-3d.png>
 Package pdftex.def Info: images/modelos3d/carcasa-nueva-3d.png  used on input line 2362.
-(pdftex.def)             Requested size: 137.9979pt x 93.42073pt.
-[100] [101 <./images/modelos3d/carcasa-nueva-frontal.png> <./images/modelos3d/carcasa-nueva-lateral.png> <./images/modelos3d/carcasa-nueva-superior.png> <./images/modelos3d/carcasa-nueva-3d.png>] (./mainV3.aux
+(pdftex.def)             Requested size: 169.0519pt x 110.66618pt.
+[100] [101 <./images/modelos3d/carcasa-nueva-frontal.png> <./images/modelos3d/carcasa-nueva-lateral.png> <./images/modelos3d/carcasa-nueva-superior.png> <./images/modelos3d/carcasa-nueva-3d.png>] [102] (./mainV3.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
@@ -952,18 +952,18 @@ Package rerunfilecheck Info: File `mainV3.out' has not changed.
 (rerunfilecheck)             Checksum: E827EC4C36A5AFB7FAF9F6697D650380;29938.
  ) 
 Here is how much of TeX's memory you used:
- 14195 strings out of 467525
- 231519 string characters out of 5418982
+ 14196 strings out of 467525
+ 231527 string characters out of 5418982
  684552 words of memory out of 5000000
  42482 multiletter control sequences out of 15000+600000
  635460 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  90i,12n,93p,1240b,838s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/latxfont/lasy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on mainV3.pdf (111 pages, 2217118 bytes).
+Output written on mainV3.pdf (112 pages, 2180741 bytes).
 PDF statistics:
- 1700 PDF objects out of 1728 (max. 8388607)
- 1503 compressed objects within 16 object streams
- 459 named destinations out of 1000 (max. 500000)
+ 1704 PDF objects out of 1728 (max. 8388607)
+ 1506 compressed objects within 16 object streams
+ 460 named destinations out of 1000 (max. 500000)
  1084 words of extra memory for PDF output out of 10000 (max. 10000000)
 
