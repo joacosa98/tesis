@@ -139,7 +139,7 @@ En particular, la tesis aborda la necesidad de definir un mecanismo de control e
 \section{Objetivos}
 
 \subsection*{Objetivo general}
-Desarrollar una extensión de la plataforma educativa Robotito que integre una cámara inteligente HuskyLens y un sistema de control basado en árboles de comportamiento (\textit{Behavior Trees}), implementando una librería modular y reutilizable que sirva como base para futuros desarrollos robóticos y educativos.
+Desarrollar una extensión integral de la plataforma educativa Robotito que amplíe sus capacidades incorporando visión artificial mediante la cámara HuskyLens, un sistema de control reactivo basado en árboles de comportamiento (\textit{Behavior Trees}), y comunicación inalámbrica para la configuración dinámica desde una aplicación web; generando una base modular y reutilizable para futuros desarrollos robóticos y educativos.
 
 \subsection*{Objetivos específicos}
 \begin{itemize}
@@ -150,6 +150,8 @@ Desarrollar una extensión de la plataforma educativa Robotito que integre una c
     \item Desarrollar actividades educativas basadas en seguimiento de líneas y lectura de etiquetas QR.
     \item Evaluar la usabilidad y el potencial educativo de la plataforma mediante un estudio piloto.
     \item Validar el rendimiento técnico de la librería de \textit{Behavior Trees} y la integración del sensor en el ESP32.
+    \item Extender el módulo de comunicación Bluetooth Low Energy (BLE) de Robotito para permitir la transferencia inalámbrica de configuraciones de actividad, con persistencia de datos en la memoria no volátil (NVS) del ESP32.
+    \item Desarrollar un configurador web que permita a los docentes registrar etiquetas QR, definir secuencias de recorrido y enviarlas al robot sin necesidad de modificar el firmware.
 \end{itemize}
 
 \section{Resultados esperados}
@@ -1015,7 +1017,7 @@ Las constantes de algoritmo están disponibles en el módulo Lua para elegir el 
 Para dotar a Robotito de la flexibilidad necesaria en entornos educativos, se ha extendido la funcionalidad del módulo de comunicación \textit{Bluetooth Low Energy} (BLE) original. Esta extensión actúa como el puente de datos crítico entre el Configurador Web y el motor de decisiones en Lua, permitiendo que el robot reciba y almacene reglas de misión personalizadas sin necesidad de intervenciones físicas en el hardware.
 
 \section{Configuración Dinámica y Conexión con la App Web}
-El propósito fundamental de este módulo es cumplir con el requerimiento funcional de transferencia de configuración (RF-05), permitiendo que el docente envíe secuencias de etiquetas válidas de forma inalámbrica desde la aplicación web. Esta conexión dinámica transforma al robot de un autómata con rutas fijas en una plataforma adaptable a diversos desafíos pedagógicos.
+El propósito fundamental de este módulo es cumplir con el requerimiento funcional de transferencia de configuración al robot, permitiendo que el docente envíe secuencias de etiquetas válidas de forma inalámbrica desde la aplicación web. Esta conexión dinámica transforma al robot de un autómata con rutas fijas en una plataforma adaptable a diversos desafíos pedagógicos.
 
 \section{Gestión de Datos y Persistencia (HuskyLens Mapper)}
 La innovación central de la extensión es el \textit{HuskyLens Mapper}, una capa lógica que permite desacoplar los identificadores físicos leídos por la cámara de la lógica semántica del juego.
@@ -2339,7 +2341,7 @@ Este trabajo extendió la plataforma educativa Robotito en cuatro dimensiones co
 
 Desde el punto de vista técnico, se desarrollaron tres componentes reutilizables que extienden la plataforma de forma independiente. El módulo HuskyLens abstrae toda la complejidad del protocolo de comunicación con la cámara, exponiendo una API uniforme accesible desde C y desde Lua que permite incorporar percepción visual en futuros proyectos sin lidiar con los detalles del bus I2C ni del protocolo propietario del sensor. El motor de Árboles de Comportamiento provee una librería de control general desacoplada de cualquier lógica de dominio específica, lo que permite modelar nuevos comportamientos robóticos combinando los nodos existentes sin modificar el núcleo del sistema. El módulo Bluetooth transforma a Robotito de un autómata con rutas fijas en una plataforma configurable dinámicamente desde una aplicación web, con persistencia entre sesiones mediante NVS y protección ante accesos concurrentes desde FreeRTOS y Lua. La integración de los tres módulos en el juego implementado valida que la arquitectura funciona de forma coordinada en condiciones reales de uso.
 
-Desde el punto de vista pedagógico, la experimentación con dos maestras de nivel inicial y primaria y dos sesiones con estudiantes de entre 4 y 8 años demostró que la plataforma es accesible y motivadora para el público objetivo. Los niños de segundo año de primaria comprendieron rápidamente el mecanismo de seguimiento de línea y la lógica de secuencia correcta, apoyándose en analogías con señales de tránsito y en narrativas conocidas. Los niños de nivel inicial requirieron una mediación mayor, pero respondieron positivamente a la retroalimentación luminosa del anillo LED. En ambas sesiones el feedback inmediato en cada punto de parada ---verde para aciertos, rojo para errores--- resultó más efectivo pedagógicamente que esperar al final del recorrido. Las funciones de pausa y reset, incorporadas a partir del feedback docente, resultaron indispensables para que las maestras pudieran realizar intervenciones pedagógicas sin perder el estado del juego ni reiniciar el robot manualmente.
+Desde el punto de vista pedagógico, la experimentación con tres maestras de nivel inicial y primaria y dos sesiones con estudiantes de entre 4 y 8 años demostró que la plataforma es accesible y motivadora para el público objetivo. Los niños de segundo año de primaria comprendieron rápidamente el mecanismo de seguimiento de línea y la lógica de secuencia correcta, apoyándose en analogías con señales de tránsito y en narrativas conocidas. Los niños de nivel inicial requirieron una mediación mayor, pero respondieron positivamente a la retroalimentación luminosa del anillo LED. En ambas sesiones el feedback inmediato en cada punto de parada ---verde para aciertos, rojo para errores--- resultó más efectivo pedagógicamente que esperar al final del recorrido. Las funciones de pausa y reset, incorporadas a partir del feedback docente, resultaron indispensables para que las maestras pudieran realizar intervenciones pedagógicas sin perder el estado del juego ni reiniciar el robot manualmente.
 
 En conjunto, el proyecto consolida a Robotito como una plataforma abierta que integra visión artificial, control modular y conectividad inalámbrica, alineada con las tendencias internacionales en educación STEM y con capacidad real de adopción en el sistema educativo uruguayo.
 
