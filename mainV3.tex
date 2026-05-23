@@ -646,7 +646,7 @@ Cada mensaje (enviado o recibido) sigue una estructura fija:
   \item \textbf{Dirección} (1 byte): identificador dentro del protocolo de aplicación; en este módulo se envía siempre \texttt{0x11} y no se usa para decisiones al recibir.
   \item \textbf{Tamaño} (1 byte): número de bytes del contenido.
   \item \textbf{Comando} (1 byte): tipo de mensaje; p.\,ej. \texttt{0x2A} = bloque (rectángulo de detección), \texttt{0x2B} = flecha (vector).
-  \item \textbf{Contenido} (N bytes): en respuestas de detección, cinco enteros de 16 bits (véase sección 4.4).
+  \item \textbf{Contenido} (N bytes): en respuestas de detección, cinco enteros de 16 bits (véase sección 5.4).
   \item \textbf{Checksum} (1 byte): suma de todos los bytes anteriores del frame, módulo 256.
 \end{itemize}
 El ``tipo'' de detección (línea, tag, color, etc.) se infiere del comando (bloque vs.\ flecha) y del algoritmo seleccionado en el HuskyLens. La codificación y decodificación está en \texttt{HuskyLensProtocolCore}, compartida conceptualmente con la librería Arduino.
@@ -737,7 +737,7 @@ mensaje completo y válido ha sido recibido. Además de la codificación y
 decodificación de campos del protocolo (comandos, enteros de 16 bits y checksum),
 el parser administra buffering temporal y reutilización de bytes sobrantes
 (\textit{leftovers}) entre lecturas consecutivas.
-  \item \textbf{Capa de acceso en C} (\texttt{huskylens.c}): se adjunta al bus I2C, realiza el handshake, envía peticiones y procesa las respuestas; delega la codificación de frames en el núcleo de protocolo y utiliza funciones auxiliares para la gestión del bus y la temporización (véanse apartados 4.2 y 4.3.4).
+  \item \textbf{Capa de acceso en C} (\texttt{huskylens.c}): se adjunta al bus I2C, realiza el handshake, envía peticiones y procesa las respuestas; delega la codificación de frames en el núcleo de protocolo y utiliza funciones auxiliares para la gestión del bus y la temporización (véanse apartados 5.2 y 5.3.4).
   \item \textbf{Integración Lua} (\texttt{huskylens\_lua.c}): una única instancia global del dispositivo; las mismas operaciones se exponen como funciones del módulo Lua (p.\,ej. \texttt{huskylens.init()}, \texttt{huskylens.request()}, \texttt{huskylens.get\_results()}).
 \end{enumerate}
 
@@ -998,7 +998,7 @@ El detalle de cada función (firmas y parámetros) se encuentra en el código fu
 
 \section{Uso desde la aplicación (C y Lua)}
 
-\textbf{Desde C.} La aplicación declara una estructura de estado (\texttt{huskylens\_t}), llama a \texttt{huskylens\_init()} y luego utiliza las funciones de petición, acceso y configuración descritas en la sección 4.6.
+\textbf{Desde C.} La aplicación declara una estructura de estado (\texttt{huskylens\_t}), llama a \texttt{huskylens\_init()} y luego utiliza las funciones de petición, acceso y configuración descritas en la sección 5.6.
 
 \textbf{Desde Lua-RTOS.} El módulo se carga como librería (p.\,ej. \texttt{huskylens = require("huskylens")}) y se usa la misma instancia global. Uso típico:
 \begin{enumerate}[noitemsep]
