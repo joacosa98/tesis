@@ -197,32 +197,7 @@ DesignLabX, P.%
 \APAChowpublished
   {\url{https://www.printables.com/model/639502-huskylens-case}}.
 \newblock
-\APACrefnote{Accessed: 2025-10-02}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-{DFRobot}%
-}{%
-{DFRobot}%
-}{%
-{\protect \APACyear {{\protect \bibnodate {}}}}%
-}]{%
-dfrobotNDAhuskylensSeries}
-\APACinsertmetastar {%
-dfrobotNDAhuskylensSeries}%
-\begin{APACrefauthors}%
-{DFRobot}.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{{\protect \bibnodate {}}}{}{}.
-\newblock
-\APACrefbtitle {HUSKYLENS series: Simple, smart, and scalable AI vision
-  sensors.} {Huskylens series: Simple, smart, and scalable ai vision sensors.}
-\newblock
-\begin{APACrefURL} \url{https://www.dfrobot.com/huskyLens} \end{APACrefURL}
-\newblock
-\APACrefnote{Accessed 2026-05-19}
+\APACrefnote{Accedido: 2025-10-02}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -248,84 +223,7 @@ dfrobot2021huskylens}%
 \begin{APACrefURL} \url{https://www.dfrobot.com/product-1922.html}
   \end{APACrefURL}
 \newblock
-\APACrefnote{Accessed 2026-05-19}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-{DFRobot}%
-}{%
-{DFRobot}%
-}{%
-{\protect \APACyear {2026}}%
-}]{%
-dfrobot2026huskylens}
-\APACinsertmetastar {%
-dfrobot2026huskylens}%
-\begin{APACrefauthors}%
-{DFRobot}.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2026}{}{}.
-\newblock
-\APACrefbtitle {HUSKYLENS Series: Simple, Smart, and Scalable AI Vision
-  Sensors.} {Huskylens series: Simple, smart, and scalable ai vision sensors.}
-\newblock
-\begin{APACrefURL} \url{https://www.dfrobot.com/huskyLens} \end{APACrefURL}
-\newblock
 \APACrefnote{Accedido: 2026-05-19}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-{Espressif Systems}%
-}{%
-{Espressif Systems}%
-}{%
-{\protect \APACyear {{\protect \bibnodate {}}}}%
-}]{%
-espressifNDesp32}
-\APACinsertmetastar {%
-espressifNDesp32}%
-\begin{APACrefauthors}%
-{Espressif Systems}.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{{\protect \bibnodate {}}}{}{}.
-\newblock
-\APACrefbtitle {ESP32 series datasheet.} {Esp32 series datasheet.}
-\newblock
-\begin{APACrefURL}
-  \url{https://documentation.espressif.com/esp32_datasheet_en.html}
-  \end{APACrefURL}
-\newblock
-\APACrefnote{Accessed 2026-05-19}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-{Espressif Systems}%
-}{%
-{Espressif Systems}%
-}{%
-{\protect \APACyear {2020}}%
-}]{%
-espressif2020esp32cam}
-\APACinsertmetastar {%
-espressif2020esp32cam}%
-\begin{APACrefauthors}%
-{Espressif Systems}.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2020}{}{}.
-\newblock
-\APACrefbtitle {ESP32-CAM Datasheet.} {Esp32-cam datasheet.}
-\newblock
-\begin{APACrefURL}
-  \url{https://www.espressif.com/en/products/socs/esp32/resources}
-  \end{APACrefURL}
-\newblock
-\APACrefnote{Accessed 2026-05-19}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -377,7 +275,7 @@ CarcasaRobotito}%
 \APAChowpublished
   {\url{https://redata.anii.org.uy/dataset.xhtml?persistentId=doi:10.60895/redata/SRXZ42}}.
 \newblock
-\APACrefnote{Accessed: 2025-10-02}
+\APACrefnote{Accedido: 2025-10-02}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -495,7 +393,7 @@ Iovino, M.%
 \newblock
 \APAChowpublished {arXiv preprint}.
 \newblock
-\APACrefnote{Accessed 2026-05-19}
+\APACrefnote{Accedido: 2026-05-19}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -587,7 +485,7 @@ McLeod, S.%
 \newblock
 \APAChowpublished {Simply Psychology}.
 \newblock
-\APACrefnote{Accessed 2026-05-19}
+\APACrefnote{Accedido: 2026-05-19}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -635,7 +533,7 @@ openmvNDh7quickref}%
   \url{https://docs.openmv.io/openmvcam/quickref/openmv-cam-h7.html}
   \end{APACrefURL}
 \newblock
-\APACrefnote{Accessed 2026-05-19}
+\APACrefnote{Accedido: 2026-05-19}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -660,7 +558,7 @@ openmvNDDocs}%
 \newblock
 \begin{APACrefURL} \url{https://docs.openmv.io/} \end{APACrefURL}
 \newblock
-\APACrefnote{Accessed 2026-05-19}
+\APACrefnote{Accedido: 2026-05-19}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -687,7 +585,7 @@ openmv2022h7}%
   \url{https://openmv.io/collections/products/products/openmv-cam-h7}
   \end{APACrefURL}
 \newblock
-\APACrefnote{Accessed 2026-05-19}
+\APACrefnote{Accedido: 2026-05-19}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -822,7 +720,7 @@ pixycamNDsensor}%
 \newblock
 \begin{APACrefURL} \url{https://pixycam.com/pixy2/} \end{APACrefURL}
 \newblock
-\APACrefnote{Accessed 2026-05-19}
+\APACrefnote{Accedido: 2026-05-19}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -849,7 +747,7 @@ pixycamNDline}%
   \url{https://docs.pixycam.com/wiki/doku.php?id=wiki:v2:line_tracking}
   \end{APACrefURL}
 \newblock
-\APACrefnote{Accessed 2026-05-19}
+\APACrefnote{Accedido: 2026-05-19}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -873,7 +771,7 @@ pixycam2024cmucam5}%
 \newblock
 \begin{APACrefURL} \url{https://pixycam.com/pixy2/} \end{APACrefURL}
 \newblock
-\APACrefnote{Accessed 2026-05-19}
+\APACrefnote{Accedido: 2026-05-19}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%

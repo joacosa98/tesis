@@ -1,8 +1,58 @@
-This is BibTeX, Version 0.99d
-Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+This is BibTeX, Version 0.99e (TeX Live 2026)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: mainV3.aux
 The style file: apacite.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=200001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: referencias.bib
 apacite.bst [2013/07/21 v6.03 APA bibliography style]
 Warning--No address in benavides2013butia
+You've used 37 entries,
+            6951 wiz_defined-function locations,
+            1473 strings with 16412 characters,
+and the built_in function-call counts, 59098 in all, are:
+= -- 7311
+> -- 521
+< -- 2453
++ -- 2270
+- -- 108
+* -- 3465
+:= -- 9936
+add.period$ -- 167
+call.type$ -- 37
+change.case$ -- 581
+chr.to.int$ -- 0
+cite$ -- 75
+duplicate$ -- 1613
+empty$ -- 2731
+format.name$ -- 829
+if$ -- 11885
+int.to.chr$ -- 0
+int.to.str$ -- 119
+missing$ -- 0
+newline$ -- 934
+num.names$ -- 298
+pop$ -- 1980
+preamble$ -- 1
+purify$ -- 140
+quote$ -- 0
+skip$ -- 3603
+stack$ -- 0
+substring$ -- 2485
+swap$ -- 863
+text.length$ -- 88
+text.prefix$ -- 0
+top$ -- 1
+type$ -- 3216
+warning$ -- 1
+while$ -- 279
+width$ -- 0
+write$ -- 1108
 (There was 1 warning)
