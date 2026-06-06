@@ -138,8 +138,7 @@ En particular, la tesis aborda la necesidad de definir un mecanismo de control e
 
 \section{Objetivos}
 
-\subsection*{Objetivo general}
-Desarrollar una extensión integral de la plataforma educativa Robotito que amplíe sus capacidades incorporando visión artificial mediante la cámara HuskyLens, un sistema de control reactivo basado en árboles de comportamiento (\textit{Behavior Trees}), y comunicación inalámbrica para la configuración dinámica desde una aplicación web; generando una base modular y reutilizable para futuros desarrollos robóticos y educativos.
+El objetivo general es desarrollar una extensión integral de la plataforma educativa Robotito que amplíe sus capacidades incorporando visión artificial mediante la cámara HuskyLens, un sistema de control reactivo basado en árboles de comportamiento (\textit{Behavior Trees}), y comunicación inalámbrica para la configuración dinámica desde una aplicación web; generando una base modular y reutilizable para futuros desarrollos robóticos y educativos.
 
 \subsection*{Objetivos específicos}
 \begin{itemize}
@@ -209,27 +208,23 @@ La robótica educativa constituye un campo interdisciplinario consolidado en la 
 
 El análisis se organiza a través de un recorrido multidimensional que abarca desde los fundamentos psicopedagógicos clásicos y el construccionismo computacional, hasta los ecosistemas institucionales y tecnológicos específicos de Uruguay, tales como el Plan Ceibal y el proyecto Butiá. Asimismo, se evalúa el estado del arte de las plataformas escolares a nivel regional e internacional \cite{orlando2015robotica,pinto2010uso,quiroga2017preescolar,ferrada2021robotica,garcia2020robotica,kynigos2018stem}, y se examinan las tendencias contemporáneas en percepción avanzada (visión artificial en el borde), arquitecturas de control reactivo y diseño de interfaces de usabilidad tangible, delimitando el espacio de diseño en el cual se inserta la plataforma Robotito.
 
-\section{Marco teórico y fundamentos del aprendizaje activo}
-
-\subsection{Fundamentos psicopedagógicos clásicos: objeto tangible y andamiaje visual}
+\section{Fundamentos psicopedagógicos clásicos: objeto tangible y andamiaje visual}
 
 Desde la perspectiva de la ingeniería pedagógica, los aportes de la epistemología genética de Piaget \cite{mcleod2025piaget} y la escuela sociocultural de Vygotsky proveen las restricciones de diseño fundamentales para las interfaces físicas y lógicas de un robot didáctico. La premisa piagetiana de que el sujeto construye estructuras cognitivas complejas mediante la acción directa sobre los objetos justifica la necesidad de un sustrato material tangible. El robot actúa como un agente físico reactivo en el espacio real; la manipulación material y la observación empírica de sus desplazamientos proporcionan un lazo de realimentación inmediato que cierra el ciclo entre la ejecución de un algoritmo y la percepción sensoriomotora del usuario.
 
-Por otra parte, la teoría del aprendizaje mediado de Vygotsky introduce el concepto de andamiaje dentro de la Zona de Desarrollo Próximo (ZDP) \cite{springernatureNDzdp}, el cual se traduce directamente en requisitos de software. Las interfaces lógicas basadas en bloques visuales y lenguajes de programación icónicos operan como herramientas semióticas de mediación. Estas herramientas reducen la carga cognitiva del usuario al abstraer las restricciones sintácticas rígidas del código textual de bajo nivel. De este modo, actúan como un soporte estructural temporal que permite al estudiante focalizar su actividad intelectual en la resolución lógica y algorítmica del problema, facilitando un retiro progresivo del andamiaje hacia formas más complejas de abstracción computacional.
+Por otra parte, la teoría del aprendizaje mediado de Vygotsky introduce el concepto de andamiaje dentro de la Zona de Desarrollo Próximo \cite{springernatureNDzdp}, el cual se traduce directamente en requisitos de software. Las interfaces lógicas basadas en bloques visuales y lenguajes de programación icónicos operan como herramientas semióticas de mediación. Estas herramientas reducen la carga cognitiva del usuario al abstraer las restricciones sintácticas rígidas del código textual de bajo nivel. De este modo, actúan como un soporte estructural temporal que permite al estudiante focalizar su actividad intelectual en la resolución lógica y algorítmica del problema, facilitando un retiro progresivo del andamiaje hacia formas más complejas de abstracción computacional.
 
-\subsection{El construccionismo de Papert y el bucle de depuración}
+\section{El construccionismo de Papert y el bucle de depuración}
 
 El marco conceptual definitivo para la robótica educativa es formulado por Seymour Papert a través del construccionismo \cite{papert1980mindstorms,harel1991constructionism}, el cual extiende el constructivismo piagetiano hacia entornos computacionales. Papert introduce la noción de \enquote{objetos para pensar} (\textit{objects-to-think-with}), argumentando que el aprendizaje alcanza su mayor eficiencia cuando el estudiante se involucra activamente en la construcción de un artefacto externo, público y compartible (un programa, un mecanismo físico o una conducta robótica). La materialización del pensamiento en un dispositivo programable permite al usuario externalizar sus ideas, haciendo visibles sus estrategias cognitivas.
 
 Un núcleo de ingeniería clave derivado de la tradición construccionista es la cultura de la depuración (\textit{debugging}). En lugar de penalizar el fallo de forma binaria, el entorno computacional conceptualiza el error como una desviación de estado analizable. Cuando el comportamiento cinemático del robot diverge de la trayectoria esperada por el estudiante, este se ve forzado a ejecutar un bucle de revisión cibernético: contrastar su hipótesis mental con el comportamiento empírico del sistema, aislar la falla lógica en el flujo de instrucciones y reconfigurar el código. Este proceso iterativo de ensayo, detección y corrección constituye el mecanismo central de la apropiación metacognitiva en entornos robóticos.
 
-\section{Marcos de integración disciplinar y cognitiva}
-
-\subsection{Articulación curricular STEM/STEAM}
+\section{Articulación curricular STEM/STEAM}
 
 La robótica educativa representa una de las plataformas de instrumentación más eficientes para los marcos integrados de Ciencia, Tecnología, Ingeniería y Matemática (STEM) \cite{ncsesNDstem}. Un robot móvil unifica de manera nativa conceptos transdisciplinares: variables físicas y mediciones sensoriales (Ciencia), entornos de desarrollo y lógica computacional (Tecnología), diseño mecatrónico y optimización de sistemas bajo restricciones (Ingeniería), y nociones espaciales, proporcionalidad y geometría de trayectorias (Matemática). La transición contemporánea hacia el enfoque STEAM incorpora la dimensión del diseño, las artes expresivas y las capas de modelado conceptual \cite{yakman2019steam}.  Desde una perspectiva de ingeniería de interfaces, la capa \enquote{Arts/Design} no constituye un aditivo estético secundario, sino que define la envoltura de usabilidad del dispositivo: justifica el diseño de carcasas modulares impresas en 3D y la creación de narrativas interactivas que alteran significativamente los patrones de interacción y la ergonomía didáctica del sistema, sin complejizar la arquitectura de hardware base.
 
-\subsection{Taxonomía del pensamiento computacional aplicada}
+\section{Taxonomía del pensamiento computacional aplicada}
 
 El pensamiento computacional, definido por Jeannette Wing como una metodología universal de resolución de problemas basada en conceptos informáticos \cite{wing2006computational}, se operativiza en la robótica de suelo mediante un mapeo directo entre sus pilares taxonómicos y las funciones del sistema físico:
 
@@ -270,6 +265,8 @@ España (Granada) & mBot + Entorno Scratch \cite{scratchND} & Pensamiento Comput
 \end{longtable}
 
 \section{Ecosistema de robótica educativa en Uruguay}
+
+En los últimos años se ha visto un gran avance en la aplicación de inovaciones tecnológicas y robótica aplicadas a entornos educativos en Uruguay. En esta sección se profundiza sobre el Plan Ceibal, el proyecto Butiá, y las comunidades de práctica que los rodean.
 
 \subsection{Infraestructura pública del Plan Ceibal}
 
@@ -724,8 +721,6 @@ exacta con las operaciones de lectura realizadas por el microcontrolador.
 
 \section{Arquitectura del software y flujo de funcionamiento}
 
-\subsection{Capas del módulo}
-
 El módulo se organiza en tres capas:
 
 \begin{enumerate}[noitemsep]
@@ -1066,8 +1061,6 @@ Esta estructura asegura que la comunicación entre la web y el robot sea fluida,
 
 \section{Fundamentos teóricos}
 
-\subsection{Conceptos básicos}
-
 Los Árboles de Comportamiento (\emph{Behavior Trees}, BT) constituyen una arquitectura de control modular y jerárquica ampliamente utilizada en robótica moderna. Su principal ventaja es la capacidad de organizar comportamientos complejos mediante nodos bien definidos, manteniendo claridad, extensibilidad y una estructura altamente reutilizable.
 
 Un BT se ejecuta mediante \emph{ticks} periódicos. En cada tick se evalúan sus nodos desde la raíz, y cada nodo decide si:
@@ -1183,9 +1176,6 @@ Estos patrones permiten expresar comportamientos complejos de manera clara, incr
 % ===============================================================
 
 \section{Implementación del motor BT}
-
-\subsection{Implementación del Árbol de Comportamiento}
-\label{subsec:implementacion_del_arbol_de_comportamiento}
 
 El motor de árboles de comportamiento constituye uno de los pilares principales de este proyecto. Su función es proporcionar una estructura modular, jerárquica y extensible para la toma de decisiones, manteniéndose completamente independiente de la lógica de aplicación concreta. Esta desacoplación permite reutilizar el motor en distintos proyectos, modificar comportamientos sin alterar el núcleo del sistema e integrar nuevos sensores o actuadores sin comprometer la arquitectura general.
 
@@ -1361,8 +1351,6 @@ Esta independencia funcional convierte al BT en un componente reutilizable, adap
 El juego desarrollado propone una actividad didáctica en la que un robot móvil recorre un circuito establecido sobre un tatami, interpretando señales visuales y verificando el orden correcto de una serie de elementos colocados por los estudiantes. El diseño combina exploración autónoma, reconocimiento visual y retroalimentación inmediata, permitiendo que los niños participen activamente en la construcción del recorrido y la validación de la secuencia propuesta.
 
 \section{Diseño y dinámica del juego}
-
-\subsection{Descripción general del entorno}
 
 El escenario de juego está compuesto por una superficie de tatami sobre la cual se traza una línea guía que el robot debe seguir de manera autónoma. A lo largo del circuito se ubican distintas “estaciones visuales”, formadas por marcos laterales donde los estudiantes insertan imágenes, ilustraciones o símbolos. Cada marco contiene además un código QR con un identificador numérico (\emph{id} = 1, 2, 3, ...), el cual representa la posición correcta que debería ocupar ese elemento dentro de la secuencia.
 
@@ -1984,8 +1972,9 @@ PF-18 & Usabilidad básica del flujo completo & Seleccionar o configurar una act
 \section{Introducción}
 La validación de plataformas educativas requiere no solo verificar su funcionamiento técnico, sino también evaluar su adecuación pedagógica y usabilidad en contextos reales de enseñanza. En este capítulo se describe el proceso de experimentación llevado a cabo para validar la propuesta de extensión de Robotito, tanto desde la perspectiva docente como desde la experiencia directa con estudiantes.
 La experimentación se estructuró en dos etapas complementarias: primero, entrevistas semiestructuradas con docentes de nivel inicial y primaria para obtener retroalimentación sobre el diseño de las actividades y la viabilidad práctica de la propuesta; segundo, sesiones presenciales con grupos de estudiantes de educación inicial (entre 4 y 5 años de edad) y educación primaria (entre 7 y 8 años de edad) para observar la interacción directa con el robot y validar los supuestos de diseño.
-\section{Metodología}
-\subsection{Entrevistas con docentes}
+
+\section{Entrevistas con docentes}
+
 Se realizaron entrevistas semiestructuradas con dos maestras de educación inicial y primaria: Elisa y Cecilia. Ambas docentes cuentan con experiencia en la integración de tecnología en el aula y habían trabajado previamente con robótica educativa en sus instituciones. Si bien no es necesario tener conocimientos tecnológicos o haber realizado algún tipo de actividad similar para poder utilizar Robotito como herramienta de enseñanza, fue beneficioso que sí lo hayan hecho ya que pudieron brindar comentarios útiles en base a experiencias previas que aportaron valor a la versión final del robot y de las actividades definidas.
 Las entrevistas tuvieron una duración aproximada de 50 a 60 minutos cada una y siguieron un guión diseñado para abordar los siguientes aspectos:
 
@@ -2000,7 +1989,7 @@ Las entrevistas tuvieron una duración aproximada de 50 a 60 minutos cada una y 
 
 Las entrevistas se realizaron de forma remota mediante videollamada, con consentimiento explícito de las participantes para el uso de la información obtenida con fines de investigación educativa.
 
-\subsection{Primera sesión práctica con estudiantes}
+\section{Primera sesión práctica con estudiantes}
 Posteriormente se organizó una sesión presencial en coordinación con la maestra Cecilia, quien facilitó el acceso a dos grupos de estudiantes de segundo año de educación primaria (niños entre aproximadamente siete y ocho años) con aproximadamente treinta alumnos en total. La actividad se realizó en el salón de clases de la institución educativa.
 
 La sesión se estructuró en etapas progresivas, siguiendo las recomendaciones surgidas de las entrevistas:
@@ -2025,7 +2014,7 @@ Durante la sesión se realizaron observaciones sistemáticas sobre:
 \item Dinámicas de colaboración entre pares
 \end{itemize}
 
-\subsection{Segunda sesión práctica con estudiantes}
+\section{Segunda sesión práctica con estudiantes}
 En coordinación con la maestra Maria José se organizó otra instancia de actividad práctica, esta vez en otro jardín y con niños de educación inicial (entre cuatro y cinco años). La actividad se realizó en un salón neutro de la institución educativa, esta vez con un grupo reducido de aproximadamente diez alumnos.
 
 La sesión se estructuró en etapas progresivas con algunas diferencias con respecto a la actividad anterior, principalmente debido a la diferencia de edad entre los grupos:
@@ -2040,16 +2029,15 @@ La sesión se estructuró en etapas progresivas con algunas diferencias con resp
 
 En esta instancia no se pone énfasis en el concepto y utilidad de los códigos QR. Según comentarios de las maestras se decide mejor realizar la actividad teniendo como foco principal el manejo del robot y el concepto de secuencia correcta y secuencia errónea.
 
-\section{Resultados}
-\subsection{Retroalimentación de las entrevistas docentes}
-\subsubsection{Diseño de materiales y elementos visuales}
+\section{Retroalimentación de las entrevistas docentes}
+\subsection{Diseño de materiales y elementos visuales}
 Las docentes validaron positivamente la propuesta de usar piezas de tatami modulares como base física del juego. Consideraron que el formato de puzzle es familiar para los niños y facilita tanto el armado colaborativo como la reconfiguración del circuito para diferentes actividades. Sin embargo, sugirieron considerar la durabilidad de los materiales, especialmente de los pegotines de calle con línea negra adheridas, dado el uso intensivo esperado.
 Respecto a los puntos de parada, ambas docentes recomendaron reforzar la señal visual del círculo rojo con elementos adicionales que hagan más explícita la acción esperada. Propusieron agregar íconos complementarios como ojos, manos o señales de ``PARE'' que los niños puedan asociar inmediatamente con la acción de detenerse.
-\subsubsection{Sistema de tarjetas con códigos QR}
+\subsection{Sistema de tarjetas con códigos QR}
 El diseño propuesto de tarjetas---con un código QR pequeño para la validación técnica ubicado en una esquina y una imagen central grande para los niños---fue bien recibido. Las maestras destacaron que esta dualidad permite que el contenido educativo sea visualmente predominante, mientras que el aspecto técnico queda en segundo plano.
 Elisa y Cecilia plantearon la necesidad de contar con una herramienta auxiliar (aplicación móvil o sistema web) que les permita a los docentes identificar rápidamente qué código QR corresponde a cada tarjeta (o qué posición en la secuencia) al momento de preparar las actividades. Sugirieron también implementar un sistema de codificación visual en los bordes de las tarjetas (colores o patrones) que facilite la organización del material sin depender exclusivamente de la tecnología.
 Para evitar que los niños memoricen las secuencias por la ubicación física de las tarjetas, propusieron implementar un sistema de rotación de códigos QR, para que en distintas sesiones identifiquen distintos pasos de la secuencia propuesta.
-\subsubsection{Progresión pedagógica y etapas diferenciadas}
+\subsection{Progresión pedagógica y etapas diferenciadas}
 Una de las recomendaciones más consistentes fue la necesidad de presentar la actividad en etapas claramente diferenciadas, especialmente para niños más pequeños (3 a 5 años). Elisa propuso la siguiente secuencia de complejidad creciente:
 \begin{enumerate}
 \item \textbf{Etapa inicial}: Introducción al robot y seguimiento libre de líneas sin puntos de parada ni validación.
@@ -2057,7 +2045,7 @@ Una de las recomendaciones más consistentes fue la necesidad de presentar la ac
 \item \textbf{Etapa avanzada}: Introducción del sistema completo con validación de códigos QR y retroalimentación.
 \end{enumerate}
 Esta progresión permite que los niños comprendan gradualmente cada componente del sistema antes de enfrentarse a la actividad completa.
-\subsubsection{Retroalimentación del robot}
+\subsection{Retroalimentación del robot}
 Las docentes coincidieron en que la retroalimentación inmediata es fundamental para el aprendizaje, pero debe diseñarse cuidadosamente para no generar frustración excesiva. Recomendaron un sistema de retroalimentación visual mediante luces LED de colores:
 \begin{itemize}
 \item \textbf{Verde}: Imagen en la posición correcta dentro de la secuencia.
@@ -2065,7 +2053,7 @@ Las docentes coincidieron en que la retroalimentación inmediata es fundamental 
 \end{itemize}
 Para el manejo de errores, sugirieron evitar que el robot vuelva automáticamente al inicio tras cada error, ya que esto podría resultar frustrante. En su lugar, propusieron que el robot se detenga en el punto de error, emita la señal visual correspondiente y espere a que los niños corrijan la tarjeta antes de continuar. Esta estrategia mantiene el flujo de la actividad y convierte el error en una oportunidad de reflexión y corrección inmediata.
 Al completar exitosamente toda la secuencia, las maestras sugirieron una celebración multimodal: combinación de luces verdes parpadeantes, sonido festivo y, si es posible, algún movimiento expresivo del robot (giro, baile simple).
-\subsubsection{Control del flujo de la actividad}
+\subsection{Control del flujo de la actividad}
 Un aspecto crítico identificado durante las entrevistas fue la necesidad de que los docentes puedan controlar el flujo de ejecución de la actividad. Las maestras plantearon dos situaciones recurrentes en el aula que requerían funcionalidades específicas:
 \paragraph{Función de pausa} Los docentes necesitan poder detener el robot en cualquier momento del recorrido para realizar intervenciones pedagógicas oportunas. Situaciones típicas incluyen:
 \begin{itemize}
@@ -2082,16 +2070,16 @@ Un aspecto crítico identificado durante las entrevistas fue la necesidad de que
 \item Mantener el ritmo de la clase cuando se trabaja con actividades breves y repetitivas
 \end{itemize}
 Estas sugerencias evidenciaron que el robot no solo debe ejecutar secuencias de manera autónoma, sino también ofrecer puntos de control que permitan al docente mantener la gestión pedagógica de la actividad.
-\subsubsection{Aplicaciones curriculares}
+\subsection{Aplicaciones curriculares}
 Las docentes identificaron múltiples posibilidades de integración curricular. La plataforma permite trabajar con secuencias asociadas a diversas áreas: narrativas de cuentos tradicionales en lenguaje y literatura, procesos naturales como el ciclo de vida de una planta en ciencias naturales, secuencias numéricas y patrones en matemática, o recorridos espaciales que conecten diferentes contextos sociales. Particularmente valoraron la posibilidad de que los niños creen sus propias secuencias mediante dibujos, otorgando mayor sentido de autoría a la actividad.
 
-\subsubsection{Duración y organización de las actividades}
+\subsection{Duración y organización de las actividades}
 Las maestras recomendaron limitar las secuencias a 3-5 puntos de parada para niños de nivel inicial y primeros años de primaria. Actividades más largas podrían provocar pérdida de atención y dificultad para mantener en mente la secuencia completa.
 En cuanto a la duración total de la sesión, sugirieron bloques de 20 a 30 minutos, incluyendo tiempo para el armado colaborativo del circuito, la ejecución y la reflexión posterior. Consideraron fundamental incluir un momento final de cierre donde los niños puedan verbalizar lo que hicieron y aprendieron.
 Respecto a la organización, propusieron dinámicas de trabajo en pequeños grupos (3-4 niños) donde se puedan asignar roles rotativos: diseñador del circuito, colocador de tarjetas, observador del robot, y registrador de resultados. Esta distribución de roles fomenta la participación equitativa y el desarrollo de diferentes habilidades.
-\subsection{Observaciones de la primera sesión con estudiantes}
+\section{Observaciones de la primera sesión con estudiantes}
 La sesión presencial con los dos grupos de segundo año de primaria permitió validar varios de los supuestos de diseño y observar directamente la interacción de los niños con el sistema.
-\subsubsection{Comprensión del sistema}
+\subsection{Comprensión del sistema}
 Los estudiantes comprendieron rápidamente el concepto de seguimiento de línea y la función de los puntos de parada rojos. La analogía con las señales de tránsito (semáforo rojo = detenerse) facilitó la comprensión inmediata del sistema.
 
 Un aspecto interesante observado durante la actividad fue la tendencia de los niños a asimilar el robot, o algunas de sus partes, con características humanas. Por ejemplo, varios estudiantes interpretaron la cámara como los ``ojos'' del robot y las ruedas como sus ``piernas''. Estas asociaciones espontáneas facilitaron la construcción de una representación intuitiva del sistema, ya que permitieron vincular componentes técnicos con referencias corporales conocidas por los niños.
@@ -2101,34 +2089,34 @@ Esta forma de interpretación también permitió introducir, de manera implícit
 Por otro lado, el concepto de secuencia correcta fue inicialmente más abstracto. Algunos niños asumieron que cualquier orden de las tarjetas sería válido. Sin embargo, al presentar ejemplos concretos con narrativas conocidas, la lógica de la secuencia se volvió evidente.
 
 La función de los códigos QR como mecanismo de validación técnica no fue completamente comprendida por todos los niños, pero tampoco resultó necesario que lo comprendieran en profundidad. Para ellos, el robot ``sabía'' si la tarjeta era correcta, lo cual era suficiente para participar en la actividad.
-\subsubsection{Autonomía en el armado}
+\subsection{Autonomía en el armado}
 Los estudiantes de segundo año demostraron capacidad para armar circuitos simples de forma relativamente autónoma. Trabajando en grupos de 3-4 niños, lograron conectar las piezas de tatami siguiendo instrucciones básicas. Hubo algunos casos de piezas colocadas en orientaciones incorrectas (línea discontinua, ángulos cerrados), pero con mínima intervención del adulto lograron identificar y corregir los errores.
 La colocación de las tarjetas sobre los puntos de parada requirió mayor guía inicial. Algunos niños intentaron colocar múltiples tarjetas en un mismo punto o no alineaban correctamente la tarjeta para que el robot pudiera leer el código QR. Tras una demostración y práctica, mejoraron significativamente en esta tarea.
-\subsubsection{Motivación y compromiso}
+\subsection{Motivación y compromiso}
 El nivel de motivación fue consistentemente alto durante toda la sesión. Los niños mostraron gran entusiasmo al ver al robot en movimiento y mantuvieron la atención durante las explicaciones cuando estas estaban acompañadas de demostraciones prácticas.
 
 Los niños celebraban espontáneamente cuando el robot completaba exitosamente una secuencia, lo que sugiere que la actividad genera un sentido genuino de logro.
-\subsubsection{Reacción ante errores}
+\subsection{Reacción ante errores}
 Las señales de error (luz roja) no generaron frustración significativa. En la mayoría de los casos, los niños reaccionaron con curiosidad, intentando identificar qué tarjeta estaba en el lugar incorrecto. La recomendación docente de no hacer que el robot vuelva al inicio resultó acertada: permitir que los niños corrigieran el error in situ mantuvo el flujo de la actividad y convirtió el error en una oportunidad de aprendizaje inmediato.
-\subsubsection{Colaboración}
+\subsection{Colaboración}
 Las dinámicas colaborativas funcionaron bien en general. Los niños negociaban espontáneamente quién colocaba cada tarjeta y se ayudaban mutuamente a identificar errores. Sin embargo, en algunos grupos surgieron conflictos menores por el control del material o diferencias de opinión sobre el orden correcto.
 La maestra Cecilia intervino en estos casos sugiriendo turnos rotativos y promoviendo el diálogo sobre las razones de cada propuesta, lo que resultó en una experiencia más enriquecedora.
 
-\subsection{Observaciones de la segunda sesión con estudiantes}
+\section{Observaciones de la segunda sesión con estudiantes}
 La segunda sesión presencial, realizada con un grupo de educación inicial de entre cuatro y cinco años, permitió observar la interacción de niños más pequeños con la plataforma. A diferencia de la primera instancia, el grupo fue reducido, con aproximadamente diez estudiantes, lo que permitió una dinámica más controlada y un acompañamiento más cercano por parte de las maestras.
-\subsubsection{Comprensión del sistema}
+\subsection{Comprensión del sistema}
 Debido a la edad de los niños, la comprensión inicial del concepto de robot fue menos precisa que en la primera sesión. Algunos estudiantes asociaron Robotito con una aspiradora robot, utilizando como referencia un objeto tecnológico más familiar en su entorno cotidiano. Si bien estas asociaciones no describían correctamente el propósito del sistema, sí funcionaron como punto de partida para comprender que se trataba de un dispositivo capaz de desplazarse de forma autónoma.
 
 Los niños lograron identificar progresivamente que el robot podía moverse sobre el circuito y detenerse ante ciertas señales. Las señales de parada rojas resultaron especialmente comprensibles, ya que varios estudiantes las relacionaron con la idea de detenerse o esperar. Asimismo, manifestaron curiosidad por la cámara incorporada al robot, realizando preguntas o comentarios sobre su posible función.
-\subsubsection{Rol de las docentes durante la actividad}
+\subsection{Rol de las docentes durante la actividad}
 En esta instancia, la actividad requirió una mediación docente más fuerte que en la sesión anterior. Las maestras guiaron de forma más directa la presentación del robot, el armado del circuito y la interpretación de lo que ocurría durante el recorrido. Esta intervención fue necesaria debido a la edad de los estudiantes y permitió mantener la atención del grupo, ordenar la participación y traducir las consignas a explicaciones más concretas.
 
 A diferencia de la primera sesión, no se generaron instancias extensas de discusión o debate colectivo. Sin embargo, los niños sí participaron mediante comentarios breves, preguntas espontáneas e intentos de anticipar qué debía hacer el robot en cada paso. Esto evidenció que, aunque la actividad debió ser más guiada, seguía habilitando formas iniciales de razonamiento sobre movimiento, secuencia y respuesta del sistema.
-\subsubsection{Participación e interés}
+\subsection{Participación e interés}
 La respuesta general de los estudiantes fue muy positiva. Una gran mayoría del grupo se mostró interesada en el robot, observó con atención sus movimientos y participó activamente cuando se les preguntaba qué debía ocurrir a continuación. Varios niños realizaron aportes espontáneos sobre el recorrido, las señales de parada y la función de los elementos visibles del robot.
 
 El tamaño reducido del grupo favoreció que los estudiantes pudieran acercarse, observar el robot con mayor detalle y expresar ideas durante la actividad. Si bien las intervenciones no siempre fueron técnicamente acertadas, sí demostraron curiosidad y disposición a interactuar con la propuesta.
-\subsubsection{Adecuación de la actividad para educación inicial}
+\subsection{Adecuación de la actividad para educación inicial}
 La sesión permitió comprobar que la propuesta también resulta atractiva para niños de educación inicial, aunque requiere ajustes en la forma de presentación y en el grado de acompañamiento docente. Para este rango etario, la actividad debe apoyarse principalmente en consignas concretas, observación directa del comportamiento del robot y participación guiada en cada etapa del recorrido.
 
 En este sentido, la actividad funcionó adecuadamente cuando fue presentada de forma breve, visual y altamente mediada por las maestras. La experiencia mostró que los niños de cuatro y cinco años pueden comprender qué hace el robot, identificar situaciones simples como el movimiento y la detención ante señales, y participar en la toma de decisiones durante la actividad, aunque todavía no logren formular con precisión qué es un robot o explicar su funcionamiento de manera abstracta.
