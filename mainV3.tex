@@ -1147,23 +1147,20 @@ Para ilustrar su funcionamiento, pueden considerarse las siguientes estructuras 
 \paragraph{Sequence: Rutinas ordenadas}
 
 \begin{verbatim}
-Wake up → Brush teeth → Have breakfast
+Despertar → Cepillarse los dientes → Desayunar
 \end{verbatim}
 
-Cada paso depende del éxito del anterior.
+El nodo ejecuta cada acción en orden; si alguna falla, la secuencia completa se detiene y retorna fallo.
 
-\paragraph{Selector: Búsqueda de alternativas}
+\paragraph{Selector: búsqueda de alternativas}
 
 \begin{verbatim}
-Intentar obtener comida del refrigerador
-→ Si falla, ordenar comida
-→ Si falla, fallback a "pasar hambre"
+Buscar comida en la heladera → Pedir comida a domicilio → Resignarse
 \end{verbatim}
 
-El selector prueba opciones en orden de prioridad hasta que una resuelva la tarea.
+El nodo prueba cada opción en orden; en cuanto una tiene éxito, el selector retorna éxito sin evaluar las restantes.
 
 Estos patrones permiten expresar comportamientos complejos de manera clara, incremental y sin necesidad de programar grandes cantidades de transiciones explícitas entre estados, como ocurriría en una FSM.
-
 
 % ===============================================================
 
