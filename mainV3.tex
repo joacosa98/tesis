@@ -18,6 +18,7 @@
 \usepackage{longtable}
 \usepackage{booktabs}
 \usepackage{float}
+\usepackage{rotating}
 
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 
@@ -519,7 +520,7 @@ Los aspectos específicos del diseño de la carcasa y el soporte se desarrollan 
 
 La Tabla~\ref{tab:justificacion-diseno} resume la relación entre los principales problemas identificados y las decisiones de diseño adoptadas.
 
-\begin{table}[H]
+\begin{sidewaystable}
 \centering
 \begin{tabular}{|p{4.2cm}|p{4.2cm}|p{5.2cm}|}
 \hline
@@ -552,7 +553,7 @@ Permite mantener una orientación adecuada del sensor, proteger el cableado y pr
 \end{tabular}
 \caption{Relación entre restricciones del problema y decisiones de diseño adoptadas.}
 \label{tab:justificacion-diseno}
-\end{table}
+\end{sidewaystable}
 
 
 
@@ -565,7 +566,7 @@ El proyecto incorpora una cámara de visión artificial \textbf{HuskyLens} (DFRo
 
 La implementación se basó en la biblioteca oficial de Arduino para HuskyLens \cite{dfrobot2021huskylens}, adaptada al entorno ESP32/FreeRTOS y a la capa I2C del sistema. En esta sección se describe \emph{cómo funciona} el módulo y \emph{cómo está implementado}. \\
 
-El módulo se compone de tres partes principales: (i) un núcleo de protocolo (\texttt{HuskyLensProtocolCore}) que codifica y decodifica los mensajes del HuskyLens; (ii) la capa de acceso en C (\texttt{huskylens.c}/\texttt{huskylens.h}) que realiza la inicialización, las peticiones de datos y la gestión de resultados; y (iii) un binding Lua (\texttt{huskylens\_lua.c}) que permite usar la misma funcionalidad desde Lua-RTOS. La comunicación con el dispositivo es exclusivamente por \textbf{I2C}.
+El módulo se compone de tres partes principales: (i) un núcleo de protocolo (\texttt{HuskyLensProtocolCore}) que codifica y decodifica los mensajes del HuskyLens; (ii) la capa de acceso en C (\texttt{huskylens.c}, \texttt{huskylens.h}) que realiza la inicialización, las peticiones de datos y la gestión de resultados; y (iii) un binding Lua (\texttt{huskylens\_lua.c}) que permite usar la misma funcionalidad desde Lua-RTOS. La comunicación con el dispositivo es exclusivamente por \textbf{I2C}.
 
 
 \subsection{Asignación de pines (modo I2C)}
@@ -794,8 +795,7 @@ El módulo implementa varias funciones auxiliares que encapsulan los detalles de
 
 \subsection{Petición de datos y recepción de resultados}
 
-Todas las funciones de petición (solicitar todos los resultados, solo bloques,
-solo flechas, por identificador, objetos aprendidos, etc.) siguen el mismo
+Todas las funciones de petición siguen el mismo
 patrón: se construye el frame mediante el núcleo de protocolo
 (\texttt{husky\_lens\_protocol\_write\_begin()},
 \texttt{husky\_lens\_protocol\_write\_int16()} u otros,
@@ -1057,7 +1057,7 @@ Esta estructura asegura que la comunicación entre la web y el robot sea fluida,
 
 Los Árboles de Comportamiento (\emph{Behavior Trees}, BT) constituyen una arquitectura de control modular y jerárquica ampliamente utilizada en robótica moderna. Su principal ventaja es la capacidad de organizar comportamientos complejos mediante nodos bien definidos, manteniendo claridad, extensibilidad y una estructura altamente reutilizable.
 
-Un BT se ejecuta mediante \emph{ticks} periódicos. En cada tick se evalúan sus nodos desde la raíz, y cada nodo decide si:
+Un BT se ejecuta mediante \emph{ticks} periódicos. En cada tick se evalúan sus nodos desde la raíz, y cada nodo decide si retorna:
 
 \begin{itemize}
     \item \texttt{SUCCESS}: la tarea asignada se completó correctamente;
@@ -1246,7 +1246,7 @@ Los nodos disponibles son los siguientes:
 \paragraph{2. Nodos compositores}
 
 \begin{itemize}
-    \item \textbf{\texttt{sequence(children)}}: Avanza de izquierda a derecha y solo pasa al siguiente hijo si el anterior devuelve \texttt{SUCCESS}. Si un hijo devuelve \texttt{RUNNING}, la secuencia se detiene y propaga ese estado. Si un hijo devuelve \texttt{FAILURE}, el nodo reinicia su puntero interno \texttt{self.counter} y ejecuta la función reset en todos sus hijos para garantizar modularidad en el próximo ciclo. La implementación de este nodo es con memoria. Una vez que un hijo tiene éxito, el nodo no vuelve a enviarle un "tick" en los ciclos siguientes. En su lugar, utiliza un puntero interno \texttt{self.counter} para saltar directamente al hijo que quedó en estado de ejecución o al siguiente en la lista.
+    \item \textbf{\texttt{sequence(children)}}: Avanza de izquierda a derecha y solo pasa al siguiente hijo si el anterior devuelve \texttt{SUCCESS}. Si un hijo devuelve \texttt{RUNNING}, la secuencia se detiene y propaga ese estado. Si un hijo devuelve \texttt{FAILURE}, el nodo reinicia su puntero interno \texttt{self.counter} y ejecuta la función reset en todos sus hijos para garantizar modularidad en el próximo ciclo. La implementación de este nodo es con memoria. Una vez que un hijo tiene éxito, el nodo no vuelve a enviarle un ``tick'' en los ciclos siguientes. En su lugar, utiliza un puntero interno \texttt{self.counter} para saltar directamente al hijo que quedó en estado de ejecución o al siguiente en la lista.
    
     \item \textbf{\texttt{selector(children)}}: Busca la primera alternativa exitosa. Ticks a sus hijos en orden; si uno devuelve \texttt{SUCCESS}, el selector termina con éxito inmediatamente. Si un hijo devuelve \texttt{RUNNING}, la secuencia se detiene y propaga ese estado. Devuelve \texttt{FAILURE} únicamente si todos sus hijos fallan. Al igual que la secuencia, limpia su memoria interna y resetea a los hijos al finalizar con éxito o tras agotar las opciones. La implementación de este nodo es con memoria. Si los primeros hijos de un Selector fallan, el nodo recuerda esos fallos y no vuelve a intentarlos en los siguientes ticks, centrándose únicamente en la alternativa que devolvió RUNNING o en las restantes.
 \end{itemize}

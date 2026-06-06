@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.23)  6 JUN 2026 13:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.23)  6 JUN 2026 13:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -300,15 +300,22 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \float@box=\box61
 \@float@everytoks=\toks27
 \@floatcapt=\box62
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/rotating.sty
+Package: rotating 2025/01/14 v2.16e rotated objects in LaTeX
+\c@r@tfl@t=\count323
+\rotFPtop=\skip64
+\rotFPbot=\skip65
+\rot@float@box=\box63
+\rot@mess@toks=\toks28
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 58.
+Package hyperref Info: Option `colorlinks' set `true' on input line 59.
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'spanish'.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count323
+\l__color_backend_stack_int=\count324
 ) (./mainV3.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
@@ -321,26 +328,26 @@ LaTeX Warning: Label `fig:carcasa-husky-original' multiply defined.
 )
 \openout1 = `mainV3.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Info: Redefining \. on input line 61.
-LaTeX Info: Redefining \% on input line 61.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Info: Redefining \. on input line 62.
+LaTeX Info: Redefining \% on input line 62.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2025/01/14 v1.3e Standard LaTeX Color (DPC)
  (/usr/local/texlive/2026/texmf-dist/tex/latex/graphics-cfg/color.cfg
@@ -348,31 +355,31 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 149.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/mathcolor.ltx))
-Package hyperref Info: Link coloring ON on input line 61.
+Package hyperref Info: Link coloring ON on input line 62.
  (./mainV3.out) (./mainV3.out)
 \@outlinefile=\write3
 \openout3 = `mainV3.out'.
 
  (/usr/local/texlive/2026/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count324
+\scratchcounter=\count325
 \scratchdimen=\dimen186
-\scratchbox=\box63
-\nofMPsegments=\count325
-\nofMParguments=\count326
-\everyMPshowfont=\toks28
-\MPscratchCnt=\count327
+\scratchbox=\box64
+\nofMPsegments=\count326
+\nofMParguments=\count327
+\everyMPshowfont=\toks29
+\MPscratchCnt=\count328
 \MPscratchDim=\dimen187
-\MPnumerator=\count328
-\makeMPintoPDFobject=\count329
-\everyMPtoPDFconversion=\toks29
+\MPnumerator=\count329
+\makeMPintoPDFobject=\count330
+\everyMPtoPDFconversion=\toks30
 ) (/usr/local/texlive/2026/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-\c@maskedRefs=\count330
+\c@maskedRefs=\count331
  (/usr/local/texlive/2026/texmf-dist/tex/latex/apacite/spanish.apc
 File: spanish.apc 2013/07/21 v6.03 apacite language file
 LaTeX Info: Redefining \BPBI on input line 138.
@@ -384,27 +391,28 @@ Package caption Info: longtable package is loaded.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/caption/ltcaption.sty
 Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )
+Package caption Info: rotating package is loaded.
 Package caption Info: End \AtBeginDocument code.
 <figs/logo-udelar-fing.png, id=530, 668.4975pt x 171.64125pt>
 File: figs/logo-udelar-fing.png Graphic file (type png)
 <use figs/logo-udelar-fing.png>
-Package pdftex.def Info: figs/logo-udelar-fing.png  used on input line 70.
+Package pdftex.def Info: figs/logo-udelar-fing.png  used on input line 71.
 (pdftex.def)             Requested size: 332.44244pt x 85.35826pt.
  [1
 
 
 {/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./figs/logo-udelar-fing.png>]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 70.
+(Font)              <7> on input line 71.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 70.
+(Font)              <5> on input line 71.
 <figs/cc/by.png, id=541, 97.0827pt x 33.9669pt>
 File: figs/cc/by.png Graphic file (type png)
 <use figs/cc/by.png>
-Package pdftex.def Info: figs/cc/by.png  used on input line 70.
+Package pdftex.def Info: figs/cc/by.png  used on input line 71.
 (pdftex.def)             Requested size: 97.08244pt x 33.96681pt.
 
-Overfull \hbox (32.49855pt too wide) in paragraph at lines 70--71
+Overfull \hbox (32.49855pt too wide) in paragraph at lines 71--72
 [][] 
  []
 
@@ -415,32 +423,32 @@ Overfull \hbox (32.49855pt too wide) in paragraph at lines 70--71
 ] [4
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 96--105
+Underfull \hbox (badness 10000) in paragraph at lines 97--106
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 96--105
+Underfull \hbox (badness 10000) in paragraph at lines 97--106
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 96--105
+Underfull \hbox (badness 10000) in paragraph at lines 97--106
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 96--105
+Underfull \hbox (badness 10000) in paragraph at lines 97--106
 
  []
 
 [5]
-Overfull \hbox (9.18205pt too wide) in paragraph at lines 106--108
+Overfull \hbox (9.18205pt too wide) in paragraph at lines 107--109
 \OT1/cmr/bx/n/10 Palabras cla-ve: \OT1/cmr/m/n/10 Rob^^Soti-ca edu-ca-ti-va, Pen-sa-mien-to compu-tacio-nal, ESP32, Husky-
  []
 
 
-Overfull \hbox (2.97287pt too wide) in paragraph at lines 106--108
+Overfull \hbox (2.97287pt too wide) in paragraph at lines 107--109
 \OT1/cmr/m/n/10 Lens, I2C, Lua RTOS, C++, []Arbo-les de com-por-ta-mien-to, Blue-tooth Low Energy,
  []
 
@@ -464,57 +472,57 @@ Cap\'{\i }tulo 1.
 
 
 ] [2]
-Underfull \hbox (badness 10000) in paragraph at lines 173--174
+Underfull \hbox (badness 10000) in paragraph at lines 174--175
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 175--176
+Underfull \hbox (badness 10000) in paragraph at lines 176--177
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 177--178
+Underfull \hbox (badness 10000) in paragraph at lines 178--179
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 179--180
+Underfull \hbox (badness 10000) in paragraph at lines 180--181
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 181--182
+Underfull \hbox (badness 10000) in paragraph at lines 182--183
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 183--184
+Underfull \hbox (badness 10000) in paragraph at lines 184--185
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 185--186
+Underfull \hbox (badness 10000) in paragraph at lines 186--187
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 187--188
+Underfull \hbox (badness 10000) in paragraph at lines 188--189
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 189--190
+Underfull \hbox (badness 10000) in paragraph at lines 190--191
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 192--193
+Underfull \hbox (badness 10000) in paragraph at lines 193--194
 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 194--195
+Underfull \hbox (badness 10000) in paragraph at lines 195--196
 
  []
 
@@ -523,35 +531,35 @@ Underfull \hbox (badness 10000) in paragraph at lines 194--195
 ]
 Cap\'{\i }tulo 2.
 [7]
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 217.
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 218.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [8]
-Overfull \hbox (15.06451pt too wide) in paragraph at lines 237--237
+Overfull \hbox (15.06451pt too wide) in paragraph at lines 238--238
 []\OT1/cmr/bx/n/14.4 Estado del ar-te in-ter-na-cio-nal y re-gio-nal: an^^Sali-
  []
 
 [9]
-Overfull \hbox (20.40463pt too wide) in alignment at lines 244--249
+Overfull \hbox (20.40463pt too wide) in alignment at lines 245--250
  [] [] [] [] 
  []
 
 
-Overfull \hbox (20.40463pt too wide) in alignment at lines 249--253
+Overfull \hbox (20.40463pt too wide) in alignment at lines 250--254
  [] [] [] [] 
  []
 
 
-Overfull \hbox (20.40463pt too wide) in alignment at lines 253--263
+Overfull \hbox (20.40463pt too wide) in alignment at lines 254--264
  [] [] [] [] 
  []
 
 
 ignored: Infinite glue shrinkage found in box being split [10]
-Overfull \hbox (1.584pt too wide) in paragraph at lines 275--276
+Overfull \hbox (1.584pt too wide) in paragraph at lines 276--277
 \OT1/cmr/m/n/10 to Bu-ti^^Sa re-pre-sen-ta el prin-ci-pal hi-to tec-nol^^Sogi-co aut^^Soctono del cam-po [][][]Benavides,
  []
 
@@ -559,7 +567,7 @@ Overfull \hbox (1.584pt too wide) in paragraph at lines 275--276
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [11] [12]
-Overfull \hbox (8.37291pt too wide) in paragraph at lines 289--289
+Overfull \hbox (8.37291pt too wide) in paragraph at lines 290--290
 []\OT1/cmr/bx/n/14.4 Visi^^Son ar-ti-fi-cial y Ed-ge Com-pu-ting en rob^^Soti-
  []
 
@@ -568,47 +576,47 @@ Overfull \hbox (8.37291pt too wide) in paragraph at lines 289--289
 ]
 Cap\'{\i }tulo 3.
 [17]
-Overfull \hbox (0.97281pt too wide) in paragraph at lines 335--336
+Overfull \hbox (0.97281pt too wide) in paragraph at lines 336--337
 []\OT1/cmr/m/n/10 Su com-pa-ti-bi-li-dad con m^^Sulti-ples in-ter-fa-ces de co-mu-ni-ca-ci^^Son (SPI, I2C, UART
  []
 
 [18]
-Overfull \hbox (1.91539pt too wide) in paragraph at lines 432--432
+Overfull \hbox (1.91539pt too wide) in paragraph at lines 433--433
  []|\OT1/cmr/bx/n/9 OpenMV 
  []
 
 
-Overfull \hbox (9.84894pt too wide) in paragraph at lines 432--432
+Overfull \hbox (9.84894pt too wide) in paragraph at lines 433--433
  []|\OT1/cmr/bx/n/9 HuskyLens 
  []
 
 
-Overfull \hbox (4.39687pt too wide) in paragraph at lines 432--432
+Overfull \hbox (4.39687pt too wide) in paragraph at lines 433--433
  \OT1/cmr/m/n/9 croPython)| 
  []
 
 
-Overfull \hbox (10.33084pt too wide) in paragraph at lines 432--432
+Overfull \hbox (10.33084pt too wide) in paragraph at lines 433--433
  []|\OT1/cmr/m/n/9 Programable| 
  []
 
 
-Overfull \hbox (23.79535pt too wide) in paragraph at lines 432--432
+Overfull \hbox (23.79535pt too wide) in paragraph at lines 433--433
  []|[]| 
  []
 
 
-Overfull \hbox (11.8468pt too wide) in paragraph at lines 432--432
+Overfull \hbox (11.8468pt too wide) in paragraph at lines 433--433
  []|\OT1/cmr/m/n/9 MicroPython| 
  []
 
 
-Overfull \hbox (1.36494pt too wide) in paragraph at lines 432--432
+Overfull \hbox (1.36494pt too wide) in paragraph at lines 433--433
  []|\OT1/cmr/m/n/9 Prototipos 
  []
 
 
-Overfull \hbox (0.5219pt too wide) in paragraph at lines 432--432
+Overfull \hbox (0.5219pt too wide) in paragraph at lines 433--433
  []|\OT1/cmr/m/n/9 Educaci^^Son 
  []
 
@@ -617,66 +625,56 @@ Cap\'{\i }tulo 4.
 [21
 
 ] [22] [23] [24]
-Underfull \hbox (badness 10000) in paragraph at lines 528--528
+Underfull \hbox (badness 10000) in paragraph at lines 529--529
 []|\OT1/cmr/m/n/10 Recursos li-mi-ta-dos del
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 533--533
+Underfull \hbox (badness 10000) in paragraph at lines 534--534
 []|\OT1/cmr/m/n/10 Comunicaci^^Son me-dian-te
  []
 
 
-Underfull \hbox (badness 8075) in paragraph at lines 536--536
+Underfull \hbox (badness 8075) in paragraph at lines 537--537
 []|\OT1/cmr/m/n/10 Necesidad de com-por-ta-
  []
 
 
-Underfull \hbox (badness 4254) in paragraph at lines 541--541
+Underfull \hbox (badness 4254) in paragraph at lines 542--542
 []|\OT1/cmr/m/n/10 Separaci^^Son en-tre per-cep-
  []
 
 
-Underfull \hbox (badness 3668) in paragraph at lines 548--548
+Underfull \hbox (badness 3668) in paragraph at lines 549--549
 []|\OT1/cmr/m/n/10 Necesidad de in-te-gra-ci^^Son
  []
 
-
-Overfull \hbox (79.55717pt too wide) in paragraph at lines 524--553
- [][] 
- []
-
-[25] [26
-
-]
+[25] [26]
 Cap\'{\i }tulo 5.
 
-Underfull \hbox (badness 10000) in paragraph at lines 564--565
+Underfull \hbox (badness 10000) in paragraph at lines 565--566
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 566--567
+Underfull \hbox (badness 10000) in paragraph at lines 567--568
 
  []
 
-[27] [28] [29] [30]
-Overfull \hbox (45.11087pt too wide) in paragraph at lines 729--730
+[27
+
+] [28] [29] [30]
+Overfull \hbox (45.11087pt too wide) in paragraph at lines 730--731
 \OT1/cmr/m/n/10 Lua (p.ej. \OT1/cmtt/m/n/10 huskylens.init()\OT1/cmr/m/n/10 , \OT1/cmtt/m/n/10 huskylens.request()\OT1/cmr/m/n/10 , \OT1/cmtt/m/n/10 huskylens.get[]results()\OT1/cmr/m/n/10 ). 
  []
 
 [31]
-Overfull \hbox (59.37952pt too wide) in paragraph at lines 748--749
+Overfull \hbox (59.37952pt too wide) in paragraph at lines 749--750
 []\OT1/cmr/bx/n/10 Realizar el handsha-ke \OT1/cmr/m/n/10 con la Husky-lens: se env^^S^^Pa el co-man-do \OT1/cmtt/m/n/10 COMMAND[]REQUEST[]KNOCK
  []
 
 [32]
-Overfull \hbox (56.72995pt too wide) in paragraph at lines 797--804
-\OT1/cmr/m/n/10 se cons-tru-ye el fra-me me-dian-te el n^^Sucleo de pro-to-co-lo (\OT1/cmtt/m/n/10 husky[]lens[]protocol[]write[]begin()\OT1/cmr/m/n/10 ,
- []
-
-
-Overfull \hbox (22.6538pt too wide) in paragraph at lines 797--804
+Overfull \hbox (22.6538pt too wide) in paragraph at lines 798--804
 \OT1/cmtt/m/n/10 husky[]lens[]protocol[]write[]int16() \OT1/cmr/m/n/10 u otros, \OT1/cmtt/m/n/10 husky[]lens[]protocol[]write[]end()\OT1/cmr/m/n/10 ),
  []
 
@@ -789,7 +787,7 @@ Overfull \hbox (10.19426pt too wide) in paragraph at lines 1300--1301
 ]
 Cap\'{\i }tulo 8.
 [55] [56]
-<images/BTRobotito.png, id=1164, 5365.04375pt x 3361.55875pt>
+<images/BTRobotito.png, id=1163, 5365.04375pt x 3361.55875pt>
 File: images/BTRobotito.png Graphic file (type png)
 <use images/BTRobotito.png>
 Package pdftex.def Info: images/BTRobotito.png  used on input line 1416.
@@ -886,33 +884,33 @@ Underfull \hbox (badness 2310) in paragraph at lines 443--465
 
 ]
 Anexo A.
-<images/modelos3d/carcasa-original-superior.png, id=1483, 598.48593pt x 566.115pt>
+<images/modelos3d/carcasa-original-superior.png, id=1482, 598.48593pt x 566.115pt>
 File: images/modelos3d/carcasa-original-superior.png Graphic file (type png)
 <use images/modelos3d/carcasa-original-superior.png>
 Package pdftex.def Info: images/modelos3d/carcasa-original-superior.png  used on input line 2244.
 (pdftex.def)             Requested size: 137.9979pt x 130.53195pt.
-<images/modelos3d/carcasa-original-frontal.png, id=1484, 647.41875pt x 239.39438pt>
+<images/modelos3d/carcasa-original-frontal.png, id=1483, 647.41875pt x 239.39438pt>
 File: images/modelos3d/carcasa-original-frontal.png Graphic file (type png)
 <use images/modelos3d/carcasa-original-frontal.png>
 Package pdftex.def Info: images/modelos3d/carcasa-original-frontal.png  used on input line 2250.
 (pdftex.def)             Requested size: 137.9979pt x 51.02678pt.
-<images/modelos3d/carcasa-original-3d.png, id=1485, 710.655pt x 462.22687pt>
+<images/modelos3d/carcasa-original-3d.png, id=1484, 710.655pt x 462.22687pt>
 File: images/modelos3d/carcasa-original-3d.png Graphic file (type png)
 <use images/modelos3d/carcasa-original-3d.png>
 Package pdftex.def Info: images/modelos3d/carcasa-original-3d.png  used on input line 2257.
 (pdftex.def)             Requested size: 207.0021pt x 134.63481pt.
 [99] [100 <./images/modelos3d/carcasa-original-superior.png> <./images/modelos3d/carcasa-original-frontal.png> <./images/modelos3d/carcasa-original-3d.png>]
-<images/modelos3d/carcasa-husky-superior.png, id=1502, 682.04813pt x 429.85594pt>
+<images/modelos3d/carcasa-husky-superior.png, id=1501, 682.04813pt x 429.85594pt>
 File: images/modelos3d/carcasa-husky-superior.png Graphic file (type png)
 <use images/modelos3d/carcasa-husky-superior.png>
 Package pdftex.def Info: images/modelos3d/carcasa-husky-superior.png  used on input line 2273.
 (pdftex.def)             Requested size: 137.9979pt x 86.97319pt.
-<images/modelos3d/carcasa-husky-lateral.png, id=1503, 672.26157pt x 100.87688pt>
+<images/modelos3d/carcasa-husky-lateral.png, id=1502, 672.26157pt x 100.87688pt>
 File: images/modelos3d/carcasa-husky-lateral.png Graphic file (type png)
 <use images/modelos3d/carcasa-husky-lateral.png>
 Package pdftex.def Info: images/modelos3d/carcasa-husky-lateral.png  used on input line 2279.
 (pdftex.def)             Requested size: 137.9979pt x 20.7076pt.
-<images/modelos3d/carcasa-husky-3d.png, id=1504, 670.00313pt x 348.55219pt>
+<images/modelos3d/carcasa-husky-3d.png, id=1503, 670.00313pt x 348.55219pt>
 File: images/modelos3d/carcasa-husky-3d.png Graphic file (type png)
 <use images/modelos3d/carcasa-husky-3d.png>
 Package pdftex.def Info: images/modelos3d/carcasa-husky-3d.png  used on input line 2286.
@@ -922,22 +920,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 2317--2318
 
  []
 
-<images/modelos3d/carcasa-nueva-frontal.png, id=1515, 666.99188pt x 277.78781pt>
+<images/modelos3d/carcasa-nueva-frontal.png, id=1514, 666.99188pt x 277.78781pt>
 File: images/modelos3d/carcasa-nueva-frontal.png Graphic file (type png)
 <use images/modelos3d/carcasa-nueva-frontal.png>
 Package pdftex.def Info: images/modelos3d/carcasa-nueva-frontal.png  used on input line 2325.
 (pdftex.def)             Requested size: 169.0519pt x 70.40471pt.
-<images/modelos3d/carcasa-nueva-lateral.png, id=1516, 666.23906pt x 274.77657pt>
+<images/modelos3d/carcasa-nueva-lateral.png, id=1515, 666.23906pt x 274.77657pt>
 File: images/modelos3d/carcasa-nueva-lateral.png Graphic file (type png)
 <use images/modelos3d/carcasa-nueva-lateral.png>
 Package pdftex.def Info: images/modelos3d/carcasa-nueva-lateral.png  used on input line 2331.
 (pdftex.def)             Requested size: 169.0519pt x 69.72119pt.
-<images/modelos3d/carcasa-nueva-superior.png, id=1517, 663.22781pt x 570.63188pt>
+<images/modelos3d/carcasa-nueva-superior.png, id=1516, 663.22781pt x 570.63188pt>
 File: images/modelos3d/carcasa-nueva-superior.png Graphic file (type png)
 <use images/modelos3d/carcasa-nueva-superior.png>
 Package pdftex.def Info: images/modelos3d/carcasa-nueva-superior.png  used on input line 2338.
 (pdftex.def)             Requested size: 169.0519pt x 145.4439pt.
-<images/modelos3d/carcasa-nueva-3d.png, id=1518, 647.41875pt x 423.83344pt>
+<images/modelos3d/carcasa-nueva-3d.png, id=1517, 647.41875pt x 423.83344pt>
 File: images/modelos3d/carcasa-nueva-3d.png Graphic file (type png)
 <use images/modelos3d/carcasa-nueva-3d.png>
 Package pdftex.def Info: images/modelos3d/carcasa-nueva-3d.png  used on input line 2344.
@@ -958,18 +956,18 @@ Package rerunfilecheck Info: File `mainV3.out' has not changed.
 (rerunfilecheck)             Checksum: 1C90EBA5FA1406F637B158912BBC4EBA;31235.
  ) 
 Here is how much of TeX's memory you used:
- 14190 strings out of 467525
- 231422 string characters out of 5418982
- 684464 words of memory out of 5000000
- 42486 multiletter control sequences out of 15000+600000
+ 14269 strings out of 467525
+ 232789 string characters out of 5418982
+ 685754 words of memory out of 5000000
+ 42562 multiletter control sequences out of 15000+600000
  635460 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 90i,12n,93p,1297b,838s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/latxfont/lasy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on mainV3.pdf (114 pages, 2181194 bytes).
+ 90i,13n,93p,1297b,838s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/latxfont/lasy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
+Output written on mainV3.pdf (114 pages, 2173201 bytes).
 PDF statistics:
- 1718 PDF objects out of 1728 (max. 8388607)
- 1518 compressed objects within 16 object streams
+ 1713 PDF objects out of 1728 (max. 8388607)
+ 1515 compressed objects within 16 object streams
  450 named destinations out of 1000 (max. 500000)
  1124 words of extra memory for PDF output out of 10000 (max. 10000000)
 
