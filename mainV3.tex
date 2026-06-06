@@ -562,7 +562,7 @@ Permite mantener una orientación adecuada del sensor, proteger el cableado y pr
 
 \section{Hardware y conexión}
 
-El proyecto incorpora una cámara de visión artificial \textbf{HuskyLens} (DFRobot) para dotar al sistema de capacidades de detección visual: reconocimiento de rostros, seguimiento de objetos, detección de líneas, reconocimiento de colores o de marcas (tags), entre otros. Para integrar este dispositivo con el ESP32 que ejecuta Lua-RTOS se desarrolló un \textbf{módulo de software en C} que encapsula la comunicación con el HuskyLens y expone una API usable tanto desde código C como desde scripts Lua. \\
+El proyecto incorpora una cámara de visión artificial \textbf{HuskyLens} (DFRobot) para dotar al sistema de capacidades de detección visual: reconocimiento de rostros, seguimiento de objetos, detección de líneas, reconocimiento de colores o de marcas (tags), entre otros. El dispositivo cuenta además con una ranura microSD que permite persistir los modelos entrenados. Para integrar este dispositivo con el ESP32 que ejecuta Lua-RTOS se desarrolló un \textbf{módulo de software en C} que encapsula la comunicación con el HuskyLens y expone una API usable tanto desde código C como desde scripts Lua. \\
 
 La implementación se basó en la biblioteca oficial de Arduino para HuskyLens \cite{dfrobot2021huskylens}, adaptada al entorno ESP32/FreeRTOS y a la capa I2C del sistema. En esta sección se describe \emph{cómo funciona} el módulo y \emph{cómo está implementado}. \\
 
@@ -981,7 +981,7 @@ El módulo \texttt{huskylens.c} permite seleccionar el algoritmo de visión ejec
   \item Enviar datos de sensores externos al HuskyLens cuando la aplicación lo requiera.
 \end{itemize}
 
-El detalle de cada función (firmas y parámetros) se encuentra en el código fuente del proyecto.
+El detalle de cada función (firmas y parámetros) se encuentra en el código fuente del proyecto \cite{robotito2026hardware}.
 
 
 \section{Uso desde la aplicación (C y Lua)}
@@ -1246,9 +1246,9 @@ Los nodos disponibles son los siguientes:
 \paragraph{2. Nodos compositores}
 
 \begin{itemize}
-    \item \textbf{\texttt{sequence(children)}}: Avanza de izquierda a derecha y solo pasa al siguiente hijo si el anterior devuelve \texttt{SUCCESS}. Si un hijo devuelve \texttt{RUNNING}, la secuencia se detiene y propaga ese estado. Si un hijo devuelve \texttt{FAILURE}, el nodo reinicia su puntero interno \texttt{self.counter} y ejecuta la función reset en todos sus hijos para garantizar modularidad en el próximo ciclo. La implementación de este nodo es con memoria. Una vez que un hijo tiene éxito, el nodo no vuelve a enviarle un ``tick'' en los ciclos siguientes. En su lugar, utiliza un puntero interno \texttt{self.counter} para saltar directamente al hijo que quedó en estado de ejecución o al siguiente en la lista.
+    \item \textbf{\texttt{sequence(children)}}: Nodo con memoria (utilizando un puntero interno \texttt{self.counter} para saltar directamente al hijo que quedó en estado de ejecución o al siguiente en la lista) que avanza de ``izquierda'' a ``derecha'' (del primer nodo hijo al último) y solo pasa al siguiente si el anterior devuelve \texttt{SUCCESS}. Si un hijo devuelve \texttt{RUNNING}, la secuencia se detiene y propaga ese estado. Si un hijo devuelve \texttt{FAILURE}, el nodo reinicia su puntero \texttt{self.counter} y ejecuta la función reset en todos sus hijos para garantizar modularidad en el próximo ciclo.
    
-    \item \textbf{\texttt{selector(children)}}: Busca la primera alternativa exitosa. Ticks a sus hijos en orden; si uno devuelve \texttt{SUCCESS}, el selector termina con éxito inmediatamente. Si un hijo devuelve \texttt{RUNNING}, la secuencia se detiene y propaga ese estado. Devuelve \texttt{FAILURE} únicamente si todos sus hijos fallan. Al igual que la secuencia, limpia su memoria interna y resetea a los hijos al finalizar con éxito o tras agotar las opciones. La implementación de este nodo es con memoria. Si los primeros hijos de un Selector fallan, el nodo recuerda esos fallos y no vuelve a intentarlos en los siguientes ticks, centrándose únicamente en la alternativa que devolvió RUNNING o en las restantes.
+    \item \textbf{\texttt{selector(children)}}: Nodo con memoria que busca la primera alternativa exitosa, ejecutando a sus hijos en orden; si uno devuelve \texttt{SUCCESS}, el selector termina con éxito inmediatamente. Si un hijo devuelve \texttt{RUNNING}, la secuencia se detiene y propaga ese estado. Devuelve \texttt{FAILURE} únicamente si todos sus hijos fallan. Si los primeros hijos de un Selector fallan, el nodo recuerda esos fallos y no vuelve a intentarlos en los siguientes ticks, centrándose únicamente en la alternativa que devolvió RUNNING o en las restantes. Al igual que sequence, limpia su memoria interna y resetea a los hijos al finalizar con éxito o tras agotar las opciones.
 \end{itemize}
 
 La implementación de nodos Sequence y Selector con memoria en el módulo responde a necesidades tanto teóricas como de eficiencia técnica. En este caso específico, su uso es necesario por las siguientes razones fundamentales:
