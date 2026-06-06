@@ -288,19 +288,17 @@ Robotito (desarrollado inicialmente en la UdelaR en 2018) surge como una respues
 
 La arquitectura electrónica central está basada en el System-on-Chip (SoC) ESP32, un microcontrolador que integra conectividad inalámbrica y periféricos de bajo consumo \cite{espressif2025esp32datasheet}.  La topología de comunicación interna utiliza buses estándares de la industria, principalmente I2C (Inter-Integrated Circuit) para la interconexión síncrona de sensores avanzados (tales como sensores combinados de color, gestos y distancia de corto alcance) y enlaces de comunicación serie UART para la interfaz con submódulos periféricos. La periferia se completa con una matriz de sensores de proximidad por ultrasonido para la detección de obstáculos y drivers de potencia dedicados a la gestión de los motores de corriente continua. El software del ecosistema se instrumenta mediante Robotito VPL, una aplicación nativa para entornos Android que traduce el paradigma de programación orientada a bloques en comandos seriales empaquetados hacia el firmware del microcontrolador, preservando una curva de aprendizaje suave pero técnicamente robusta.
 
-\section{Percepción avanzada y paradigmas de control autónomo}
-
-\subsection{Visión artificial y Edge Computing en robótica educativa}
+\section{Visión artificial y Edge Computing en robótica educativa}
 
 La incorporación de visión artificial (CV) redefine la interacción didáctica al transitar de sensores lineales analógicos hacia sistemas de percepción semántica del contexto físico \cite{sophokleous2021computerVisionEducationalRobotics}.  Esto permite al robot procesar patrones bidimensionales complejos, clasificar objetos en tiempo real y reaccionar ante marcadores de entorno. 
 
-\subsection{Arquitecturas de control: Máquinas de Estados Finitos vs. Árboles de Comportamiento}
+\section{Arquitecturas de control: Máquinas de Estados Finitos vs. Árboles de Comportamiento}
 
 El modelado del comportamiento autónomo en plataformas dotadas de percepción avanzada expone las limitaciones de los paradigmas de control tradicionales. Las Máquinas de Estados Finitos (FSM) sufren de una rigidez estructural y un incremento exponencial de transiciones (explosión de estados) ante entornos dinámicos y ruidosos, lo que dificulta la legibilidad y escalabilidad del código. Los antecedentes en ciencias de la computación señalan a los Árboles de Comportamiento (\textit{Behavior Trees} -- BT) como una arquitectura alternativa altamente eficiente \cite{colledanchise2018bt,iovino2020survey} debido a sus propiedades de modularidad, reactividad y jerarquía.
 
 Un BT organiza las subtareas a través de nodos de control estructurados (Secuencias, Selectores, Condiciones y Acciones) que se evalúan cíclicamente a altas frecuencias (frecuencia de \textit{tick}). La ventaja crítica de los BT radica en su capacidad de interrupción reactiva: un nodo selector puede abortar inmediatamente una acción cinemática en curso si un sensor de visión detecta un cambio crítico en el entorno. Desde la perspectiva de la ingeniería pedagógica, el árbol de comportamiento no solo mejora la estabilidad funcional del firmware de Robotito, sino que ofrece una sintaxis jerárquica sumamente legible que obliga al estudiante a diseñar estrategias adaptativas no lineales, enriqueciendo las actividades orientadas al pensamiento computacional avanzado.
 
-\subsection{Usabilidad y mecanismos de retroalimentación en tiempo real}
+\section{Usabilidad y mecanismos de retroalimentación en tiempo real}
 
 La optimización de la Experiencia de Usuario (UX) define la viabilidad y sostenibilidad didáctica de una plataforma mecatrónica en el aula de clases reales. Un sistema tecnológico con alta opacidad lógica —donde el usuario no puede interpretar las transiciones internas de estado de la máquina— induce altos niveles de frustración y rompe el lazo construccionista de aprendizaje. Por tanto, el diseño de la plataforma exige la incorporación de mecanismos explícitos de retroalimentación multimodal e inmediata (matrices de luces LED, actuadores acústicos y pantallas de estado integradas). Estos componentes reducen la ambigüedad lógica al traducir eventos internos del microcontrolador (ej. pérdida de una línea guía, colisión inminente, emparejamiento inalámbrico) en señales sensoriales decodificables de forma directa por estudiantes y docentes.
 
@@ -318,15 +316,13 @@ Las trayectorias de éxito analizadas (como el Plan Ceibal y el proyecto Butiá 
 % antecedentes
 \chapter{Estado del arte}
 
-\section{Contexto y criterios de selección}
+\section{Contexto y criterios de selección de cámaras para visión artificial}
 
 Dado que uno de los requisitos fundamentales del proyecto es la utilización de procesamiento de imágenes, resulta esencial seleccionar un módulo de cámara adecuado para la interpretación visual del entorno.
 
 El objetivo es que Robotito sea capaz de reconocer en tiempo real elementos gráficos como objetos simples o colores, sin requerir intervención humana directa ni procesamiento externo.
 
 En este contexto, resulta fundamental evaluar qué módulo de cámara se adapta mejor a las necesidades del proyecto, considerando factores como la facilidad de integración, la capacidad de procesamiento local, la complejidad de patrones que puede reconocer, la flexibilidad en el entrenamiento de nuevas señales y la adecuación al entorno educativo. A continuación, se presenta un análisis comparativo de cuatro cámaras con potencial para ser utilizadas en el sistema: ESP32-CAM, Pixy2, OpenMV Cam H7 R2 y HuskyLens AI.
-
-\section{Estudio de cámaras para visión artificial}
 
 \subsection{ESP32-CAM}
 
@@ -2030,6 +2026,9 @@ La sesión se estructuró en etapas progresivas con algunas diferencias con resp
 En esta instancia no se pone énfasis en el concepto y utilidad de los códigos QR. Según comentarios de las maestras se decide mejor realizar la actividad teniendo como foco principal el manejo del robot y el concepto de secuencia correcta y secuencia errónea.
 
 \section{Retroalimentación de las entrevistas docentes}
+
+Las entrevistas arrojaron comentarios sobre varios aspectos del diseño que se detallan a continuación.
+
 \subsection{Diseño de materiales y elementos visuales}
 Las docentes validaron positivamente la propuesta de usar piezas de tatami modulares como base física del juego. Consideraron que el formato de puzzle es familiar para los niños y facilita tanto el armado colaborativo como la reconfiguración del circuito para diferentes actividades. Sin embargo, sugirieron considerar la durabilidad de los materiales, especialmente de los pegotines de calle con línea negra adheridas, dado el uso intensivo esperado.
 Respecto a los puntos de parada, ambas docentes recomendaron reforzar la señal visual del círculo rojo con elementos adicionales que hagan más explícita la acción esperada. Propusieron agregar íconos complementarios como ojos, manos o señales de ``PARE'' que los niños puedan asociar inmediatamente con la acción de detenerse.
@@ -2235,9 +2234,6 @@ Con el objetivo de obtener una versión final del robot más robusta, estética 
 El diseño se realizó en función de los requerimientos de la cámara HuskyLens, fijando su posición de forma rígida y definiendo un ángulo específico de inclinación respecto al piso, ya que estos parámetros resultaron críticos para el correcto funcionamiento de los algoritmos de visión. Además, se incorporaron orificios internos para el guiado del cableado, logrando que este quede completamente contenido dentro de la estructura. De esta manera se logra la protección de los componentes, la confiabilidad del sistema y la calidad visual del robot, resultando en un dispositivo final adaptado específicamente a la aplicación educativa.
 
 \section{Desarrollo del diseño de la carcasa}
-
-\subsection{Modelos utilizados}
-% dimensiones, componentes a alojar, campo de visión de la HuskyLens, fabricación
 
 Para evitar modificaciones internas a la disposición de los componentes ya existentes en Robotito, todo el trabajo de rediseño se realizó en la parte externa de la carcasa original. Para esto se trabajó sobre un modelo trisimensional de la carcasa exterior original de Robotito \cite{CarcasaRobotito}, que consiste de una única pieza con dimensiones aproximadas de 16.56cm x 16.42cm x 6.15cm (largo x ancho x alto).
 
