@@ -95,7 +95,7 @@ Asimismo, agradecemos el tiempo dedicado a responder nuestras consultas y a comp
 
 \noindent El presente trabajo describe la extensión de la plataforma educativa Robotito, un robot previamente desarrollado por docentes de la Facultad de Ingeniería de la Universidad de la República, cuyo diseño original busca introducir conceptos de robótica y pensamiento computacional en etapas tempranas de la formación. Robotito está basado en la placa Sparkfun ESP32 Thing y se programa mediante un entorno en Lua RTOS. Sobre esta base, se incorporó una cámara inteligente HuskyLens, conectada a través del bus I2C, con el objetivo de ampliar las capacidades del robot y permitir actividades educativas más complejas.
 \\\\
-\noindent HuskyLens ofrece múltiples modos de funcionamiento, entre los cuales se utilizaron: seguimiento de líneas, reconocimiento de colores y reconocimiento de etiquetas tipo QR (tags). A partir de estos modos, se diseñaron dinámicas en las que Robotito recorre un circuito compuesto por líneas de guiado, puntos de parada definidos por etiquetas específicas (QR) y la verificación del orden correcto de tarjetas identificadas mediante tags. Para realizar esta integración se adaptó una librería de comunicación para HuskyLens al entorno ESP32/FreeRTOS mediante una implementación en C compatible con Lua RTOS, y posteriormente se exportaron las funciones necesarias para su uso desde el entorno de programación en Lua de Robotito.
+\noindent HuskyLens ofrece múltiples modos de funcionamiento, entre los cuales se utilizaron: seguimiento de líneas, reconocimiento de colores y reconocimiento de etiquetas tipo QR (tags). A partir de estos modos, se diseñaron dinámicas en las que Robotito recorre un circuito compuesto por líneas de guiado, puntos de parada definidos por etiquetas específicas (QR) y la verificación del orden correcto de tarjetas identificadas mediante tags. Para realizar esta integración se adaptó una biblioteca de comunicación para HuskyLens al entorno ESP32/FreeRTOS mediante una implementación en C compatible con Lua RTOS, y posteriormente se exportaron las funciones necesarias para su uso desde el entorno de programación en Lua de Robotito.
 \\\\
 \noindent Por otro lado, el comportamiento del robot durante la ejecución de las tareas fue especificado mediante árboles de comportamiento, los cuales permiten describir de forma jerárquica y flexible las acciones a realizar según las lecturas obtenidas por la cámara. Esta técnica facilitó la definición de secuencias como avanzar siguiendo una línea, detenerse ante un tag específico o validar la secuencia de tags mostrados por los usuarios.
 \\\\
@@ -125,14 +125,12 @@ Asimismo, agradecemos el tiempo dedicado a responder nuestras consultas y a comp
 \section{Motivación}
 En las últimas décadas, la robótica educativa se ha consolidado como una herramienta clave para promover el desarrollo del pensamiento computacional, la resolución de problemas y la creatividad en contextos escolares \cite{anwar2019educational,ouyang2024effects}. Su implementación permite integrar la ciencia, la tecnología, la ingeniería y las matemáticas en entornos de aprendizaje activos, conocidos como enfoques STEM \cite{ncsesNDstem}.
 
-La experiencia internacional y regional demuestra que la robótica fomenta la curiosidad, el trabajo colaborativo y la experimentación guiada. Sin embargo, su verdadero valor no reside únicamente en la capacitación técnica, sino en la posibilidad de aprender a pensar con tecnología, comprendiendo sus implicaciones cognitivas y sociales.
-
 En Uruguay, el proceso de incorporación de la robótica educativa ha tenido un recorrido particular. Las primeras experiencias se remontan a los años noventa y se consolidaron tras la creación del Plan Ceibal, que universalizó el acceso a tecnologías digitales en el sistema público \cite{uruguay2007decreto144,anepNDceibal}. En ese contexto, la Facultad de Ingeniería de la Universidad de la República desarrolló dispositivos y propuestas propias, entre ellas el Robotito, concebido como una plataforma abierta para enseñar conceptos de robótica y programación en edades tempranas \cite{abeldano2024robotito}. 
 
 El presente trabajo se enmarca en la línea de esa evolución, con el propósito de extender las capacidades del Robotito mediante la incorporación de una cámara inteligente y un nuevo esquema de control basado en árboles de comportamiento (\textit{Behavior Trees}). Esta extensión busca no solo ampliar las posibilidades educativas del robot, sino también introducir una arquitectura de software modular, reutilizable y fácilmente extensible para futuros proyectos de investigación y docencia.
 
 \section{Planteo del problema}
-La incorporación de sensores avanzados y arquitecturas de control flexibles en plataformas educativas plantea múltiples desafíos. Desde el punto de vista técnico, es necesario asegurar la comunicación entre la placa ESP32 y la cámara HuskyLens, mientras se mantiene un entorno de programación accesible en Lua RTOS. Desde el punto de vista pedagógico, el reto consiste en diseñar experiencias donde los estudiantes puedan visualizar y comprender los principios de la autonomía robótica, aplicando pensamiento lógico, percepción visual y toma de decisiones.
+La incorporación de sensores avanzados y arquitecturas de control flexibles en plataformas educativas plantea múltiples desafíos. Desde el punto de vista técnico, es necesario asegurar la comunicación entre la placa de control del robot y la cámara HuskyLens, mientras se mantiene un entorno de programación accesible en Lua RTOS. Desde el punto de vista pedagógico, el reto consiste en diseñar experiencias donde los estudiantes puedan visualizar y comprender los principios de la autonomía robótica, aplicando pensamiento lógico, percepción visual y toma de decisiones.
 
 En particular, la tesis aborda la necesidad de definir un mecanismo de control estructurado, jerárquico y legible, que permita representar el comportamiento del robot de manera modular. Los árboles de comportamiento (\textit{Behavior Trees}) surgen como una solución idónea: combinan la claridad de las máquinas de estados con la flexibilidad de los planificadores jerárquicos, y se utilizan ampliamente en robótica y videojuegos por su capacidad de reutilizar y escalar comportamientos.
 
@@ -144,11 +142,11 @@ El objetivo general es desarrollar una extensión integral de la plataforma educ
 \begin{itemize}
     \item Implementar la comunicación entre la cámara HuskyLens y la placa SparkFun ESP32 Thing mediante el bus I2C.
     \item Traducir y adaptar el módulo de control de la cámara al entorno Lua RTOS de Robotito.
-    \item Diseñar e implementar un módulo propio de \textit{Behavior Trees}, que funcione como librería de control general reutilizable para futuros proyectos.
+    \item Diseñar e implementar un módulo propio de \textit{Behavior Trees}, que funcione como biblioteca de control general reutilizable para futuros proyectos.
     \item Integrar el sistema de percepción visual y el controlador BT dentro del flujo de tareas del robot.
     \item Desarrollar actividades educativas basadas en seguimiento de líneas y lectura de etiquetas QR.
     \item Evaluar la usabilidad y el potencial educativo de la plataforma mediante un estudio piloto.
-    \item Validar el rendimiento técnico de la librería de \textit{Behavior Trees} y la integración del sensor en el ESP32.
+    \item Validar el rendimiento técnico de la biblioteca de \textit{Behavior Trees} y la integración del sensor en el ESP32.
     \item Extender el módulo de comunicación Bluetooth Low Energy (BLE) de Robotito para permitir la transferencia inalámbrica de configuraciones de actividad, con persistencia de datos en la memoria no volátil (NVS) del ESP32.
     \item Desarrollar un configurador web que permita a los docentes registrar etiquetas QR, definir secuencias de recorrido y enviarlas al robot sin necesidad de modificar el firmware.
 \end{itemize}
@@ -156,7 +154,7 @@ El objetivo general es desarrollar una extensión integral de la plataforma educ
 \section{Resultados esperados}
 Se espera obtener una versión extendida de Robotito capaz de ejecutar comportamientos autónomos definidos mediante árboles de comportamiento, combinando seguimiento de líneas, reconocimiento visual de tags y validación de secuencias.
 
-La librería desarrollada debe permitir que otros docentes e investigadores reutilicen los nodos de control en nuevos proyectos sin necesidad de modificar el código base. Desde el punto de vista pedagógico, esta arquitectura facilita la comprensión del flujo lógico de las acciones, permitiendo que los estudiantes visualicen la estructura de toma de decisiones de un robot.
+La biblioteca desarrollada debe permitir que otros docentes e investigadores reutilicen los nodos de control en nuevos proyectos sin necesidad de modificar el código base. Desde el punto de vista pedagógico, esta arquitectura facilita la comprensión del flujo lógico de las acciones, permitiendo que los estudiantes visualicen la estructura de toma de decisiones de un robot.
 
 Los árboles de comportamiento permiten estructurar el control robótico de manera modular y escalable.
 
@@ -165,11 +163,11 @@ De este modo, el trabajo amplía las capacidades del Robotito e introduce una me
 \section{Conclusiones resumidas}
 El trabajo propuesto representa una contribución doble: técnica y educativa.
 
-Desde el punto de vista técnico, desarrolla una librería de \textit{Behavior Trees} adaptada al entorno de Robotito, demostrando su eficacia como herramienta flexible para modelar comportamientos robóticos. Además, integra una cámara HuskyLens con una placa ESP32, creando un módulo que permite interactuar con la misma.
+Desde el punto de vista técnico, desarrolla una biblioteca de \textit{Behavior Trees} adaptada al entorno de Robotito, demostrando su eficacia como herramienta flexible para modelar comportamientos robóticos. Además, integra una cámara HuskyLens con una placa ESP32, creando un módulo que permite interactuar con la misma.
 
-Desde el punto de vista pedagógico, promueve la enseñanza de estructuras jerárquicas de control y razonamiento lógico, acercando a los estudiantes a prácticas propias de la robótica contemporánea.
+Desde el punto de vista pedagógico, promueve la enseñanza de razonamiento lógico y toma de decisiones, acercando a los estudiantes a prácticas propias de la robótica contemporánea.
 
-En conjunto, el proyecto consolida a Robotito como una plataforma que integra visión artificial, control modular y aprendizaje activo, alineada con las tendencias internacionales en educación STEM.
+En conjunto, el proyecto extiende a Robotito incorporando visión artificial, control modular y una actividad de aprendizaje activo.
 
 \section{Organización del documento}
 El presente trabajo se estructura en once capítulos. \\
@@ -184,7 +182,7 @@ En el Capítulo 5 se describe el módulo HuskyLens: su hardware, conexión con l
 
 En el Capítulo 6 se documenta la extensión del módulo de comunicación Bluetooth Low Energy (BLE) de Robotito. Se describe el mecanismo de transferencia inalámbrica de configuraciones desde la aplicación web, la arquitectura del \textit{HuskyLens Mapper} para el desacoplamiento entre identificadores físicos y lógica del juego, y la persistencia de datos en memoria no volátil (NVS). \\
 
-En el Capítulo 7 se exponen los fundamentos teóricos de los árboles de comportamiento (\textit{Behavior Trees}) y se documenta la implementación del motor BT como librería reutilizable, incluyendo los tipos de nodos (acción, condición, compositores), la reactividad y la integración con el sistema. \\
+En el Capítulo 7 se exponen los fundamentos teóricos de los árboles de comportamiento (\textit{Behavior Trees}) y se documenta la implementación del motor BT como biblioteca reutilizable, incluyendo los tipos de nodos (acción, condición, compositores), la reactividad y la integración con el sistema. \\
 
 En el Capítulo 8 se presenta la creación del juego: reglas, dinámica y objetivos pedagógicos. Se detalla el diseño del circuito sobre tatami, el seguimiento de línea, la detección de marcas rojas, la lectura de códigos QR y la verificación de secuencias, los modos pausa y reset, la implementación del juego mediante BT y los objetivos pedagógicos de la actividad. \\
 
@@ -222,7 +220,7 @@ Un núcleo de ingeniería clave derivado de la tradición construccionista es la
 
 \section{Articulación curricular STEM/STEAM}
 
-La robótica educativa representa una de las plataformas de instrumentación más eficientes para los marcos integrados de Ciencia, Tecnología, Ingeniería y Matemática (STEM) \cite{ncsesNDstem}. Un robot móvil unifica de manera nativa conceptos transdisciplinares: variables físicas y mediciones sensoriales (Ciencia), entornos de desarrollo y lógica computacional (Tecnología), diseño mecatrónico y optimización de sistemas bajo restricciones (Ingeniería), y nociones espaciales, proporcionalidad y geometría de trayectorias (Matemática). La transición contemporánea hacia el enfoque STEAM incorpora la dimensión del diseño, las artes expresivas y las capas de modelado conceptual \cite{yakman2019steam}.  Desde una perspectiva de ingeniería de interfaces, la capa \enquote{Arts/Design} no constituye un aditivo estético secundario, sino que define la envoltura de usabilidad del dispositivo: justifica el diseño de carcasas modulares impresas en 3D y la creación de narrativas interactivas que alteran significativamente los patrones de interacción y la ergonomía didáctica del sistema, sin complejizar la arquitectura de hardware base.
+La robótica educativa representa una de las plataformas de instrumentación más eficientes para los marcos integrados de Ciencia, Tecnología, Ingeniería y Matemática (STEM) \cite{ncsesNDstem}. Un robot móvil unifica de manera nativa conceptos transdisciplinares: variables físicas y mediciones sensoriales (Ciencia), entornos de desarrollo y lógica computacional (Tecnología), diseño mecatrónico y optimización de sistemas bajo restricciones (Ingeniería), y nociones espaciales, proporcionalidad y geometría de trayectorias (Matemática). La transición contemporánea hacia el enfoque STEAM (Ciencia, Tecnología, Ingeniería, Artes y Matemática) incorpora la dimensión del diseño, las artes expresivas y las capas de modelado conceptual \cite{yakman2019steam}.  Desde una perspectiva de ingeniería de interfaces, la capa \enquote{Arts/Design} no constituye un aditivo estético secundario, sino que define la envoltura de usabilidad del dispositivo: justifica el diseño de carcasas modulares impresas en 3D y la creación de narrativas interactivas que alteran significativamente los patrones de interacción y la ergonomía didáctica del sistema, sin complejizar la arquitectura de hardware base.
 
 \section{Taxonomía del pensamiento computacional aplicada}
 
@@ -276,17 +274,17 @@ El diseño y escalabilidad de cualquier plataforma tecnológica educativa en Uru
 
 Iniciado en el año 2009 en la Facultad de Ingeniería (Fing-UdelaR), el proyecto Butiá representa el principal hito tecnológico autóctono del campo \cite{benavides2013butia,udelarNDbutia}. Su premisa fundamental consistió en diseñar una plataforma de hardware y software abierto capaz de reutilizar las computadoras portátiles XO como el núcleo de procesamiento central de un robot móvil de bajo costo. Esta decisión de ingeniería de sistemas resolvió de forma elegante las restricciones presupuestarias escolares y fomentó la soberanía tecnológica local.
 
-Desde la perspectiva de software, la integración de Butiá con entornos visuales de Sugar (como Tortugarte) permitió expandir las capacidades lógicas de los estudiantes. Un aporte metodológico crítico de Butiá documentado en la literatura de la Fing es su versatilidad transdisciplinar: la plataforma fue utilizada no solo para la enseñanza clásica de la computación, sino como un dispositivo mediador en talleres literarios, expresiones artísticas y debates éticos sobre inteligencia artificial. Butiá demostró que un robot abierto y modular puede operar como un catalizador de cultura digital extendida.
+Desde la perspectiva de software, la integración de Butiá con entornos visuales de Sugar, el entorno de programación de las laptops XO (como Tortugarte) permitió expandir las capacidades lógicas de los estudiantes. Un aporte metodológico crítico de Butiá documentado en la literatura de la Fing es su versatilidad transdisciplinar: la plataforma fue utilizada no solo para la enseñanza clásica de la computación, sino como un dispositivo mediador en talleres literarios, expresiones artísticas y debates éticos sobre inteligencia artificial. Butiá demostró que un robot abierto y modular puede operar como un catalizador de cultura digital extendida.
 
 \subsection{Comunidades de práctica y redes colaborativas}
 
-La sostenibilidad temporal del ecosistema uruguayo se sustenta en la creación de comunidades de aprendizaje horizontales. Estructuras como la RoboTeca y el certamen nacional de robótica sumo.uy (organizado anualmente por la Fing) operan como redes de intercambio socio-técnico. En estos espacios confluyen estudiantes escolares, docentes de aula, investigadores universitarios y desarrolladores independientes, posibilitando la circulación libre de librerías de código, planos mecánicos y estrategias didácticas. Este entramado comunitario garantiza la acumulación de conocimiento y la validación empírica en territorio de las nuevas soluciones de hardware educativo.
+La sostenibilidad temporal del ecosistema uruguayo se sustenta en la creación de comunidades de aprendizaje horizontales. Estructuras como la RoboTeca y el certamen nacional de robótica sumo.uy (organizado anualmente por la Fing) operan como redes de intercambio socio-técnico. En estos espacios confluyen estudiantes escolares, docentes de aula, investigadores universitarios y desarrolladores independientes, posibilitando la circulación libre de bibliotecas de código, planos mecánicos y estrategias didácticas. Este entramado comunitario promueve la acumulación de conocimiento y la validación empírica en territorio de las nuevas soluciones de hardware educativo.
 
 \section{Plataforma Robotito: arquitectura de hardware y software}
 
 Robotito (desarrollado inicialmente en la UdelaR en 2018) surge como una respuesta específica a las restricciones de la robótica de suelo en la educación temprana. Su diseño de ingeniería parte de una morfología cilíndrica y una configuración cinemática omnidireccional mediante ruedas especiales integradas en un chasis circular. Esta configuración mecatrónica elimina la complejidad de giro diferencial tradicional y optimiza la legibilidad del desplazamiento espacial para niños de edades iniciales, permitiendo traslaciones instantáneas en cualquier vector del plano.
 
-La arquitectura electrónica central está basada en el System-on-Chip (SoC) ESP32, un microcontrolador que integra conectividad inalámbrica y periféricos de bajo consumo \cite{espressif2025esp32datasheet}.  La topología de comunicación interna utiliza buses estándares de la industria, principalmente I2C (Inter-Integrated Circuit) para la interconexión síncrona de sensores avanzados (tales como sensores combinados de color, gestos y distancia de corto alcance) y enlaces de comunicación serie UART para la interfaz con submódulos periféricos. La periferia se completa con una matriz de sensores de proximidad por ultrasonido para la detección de obstáculos y drivers de potencia dedicados a la gestión de los motores de corriente continua. El software del ecosistema se instrumenta mediante Robotito VPL, una aplicación nativa para entornos Android que traduce el paradigma de programación orientada a bloques en comandos seriales empaquetados hacia el firmware del microcontrolador, preservando una curva de aprendizaje suave pero técnicamente robusta.
+La arquitectura electrónica central está basada en el System-on-Chip (SoC) ESP32, un microcontrolador que integra conectividad inalámbrica y periféricos de bajo consumo \cite{espressif2025esp32datasheet}.  La topología de comunicación interna utiliza buses estándares de la industria, principalmente I2C (Inter-Integrated Circuit) para la interconexión síncrona de sensores avanzados (tales como sensores combinados de color, gestos y distancia de corto alcance) y enlaces de comunicación serie UART para la interfaz con submódulos periféricos. La periferia se completa con una matriz de sensores de proximidad por Time-of-flight laser para la detección de obstáculos y drivers de potencia dedicados a la gestión de los motores de corriente continua. El software de Robotito tiene dos capas principales: el firmware, programable en Lua mediante scripts y máquinas de estados jerárquicas \cite{abeldano2024robotito}, y Robotito VPL, una aplicación Android de programación por bloques orientada al uso en aula.
 
 \section{Visión artificial y Edge Computing en robótica educativa}
 
@@ -296,7 +294,7 @@ La incorporación de visión artificial (CV) redefine la interacción didáctica
 
 El modelado del comportamiento autónomo en plataformas dotadas de percepción avanzada expone las limitaciones de los paradigmas de control tradicionales. Las Máquinas de Estados Finitos (FSM) sufren de una rigidez estructural y un incremento exponencial de transiciones (explosión de estados) ante entornos dinámicos y ruidosos, lo que dificulta la legibilidad y escalabilidad del código. Los antecedentes en ciencias de la computación señalan a los Árboles de Comportamiento (\textit{Behavior Trees} -- BT) como una arquitectura alternativa altamente eficiente \cite{colledanchise2018bt,iovino2020survey} debido a sus propiedades de modularidad, reactividad y jerarquía.
 
-Un BT organiza las subtareas a través de nodos de control estructurados (Secuencias, Selectores, Condiciones y Acciones) que se evalúan cíclicamente a altas frecuencias (frecuencia de \textit{tick}). La ventaja crítica de los BT radica en su capacidad de interrupción reactiva: un nodo selector puede abortar inmediatamente una acción cinemática en curso si un sensor de visión detecta un cambio crítico en el entorno. Desde la perspectiva de la ingeniería pedagógica, el árbol de comportamiento no solo mejora la estabilidad funcional del firmware de Robotito, sino que ofrece una sintaxis jerárquica sumamente legible que obliga al estudiante a diseñar estrategias adaptativas no lineales, enriqueciendo las actividades orientadas al pensamiento computacional avanzado.
+Un BT organiza las subtareas a través de nodos de control estructurados (Secuencias, Selectores, Condiciones y Acciones) que se evalúan cíclicamente a altas frecuencias (frecuencia de \textit{tick}). La ventaja crítica de los BT radica en su capacidad de interrupción reactiva: un nodo selector puede abortar inmediatamente una acción cinemática en curso si un sensor de visión detecta un cambio crítico en el entorno. Desde la perspectiva de la ingeniería pedagógica, el árbol de comportamiento no solo mejora la estabilidad funcional del firmware de Robotito, sino que ofrece una sintaxis jerárquica legible que motiva al desarrollador a diseñar estrategias adaptativas no lineales, enriqueciendo las actividades orientadas al pensamiento computacional avanzado.
 
 \section{Usabilidad y mecanismos de retroalimentación en tiempo real}
 
@@ -306,9 +304,9 @@ De igual forma, las funciones de control de flujo técnico como los comandos de 
 
 \section{Conclusiones de la revisión de antecedentes}
 
-La revisión sistemática de los antecedentes teóricos, históricos y tecnológicos permite concluir de manera concluyente que la robótica educativa constituye un dominio maduro y multidisciplinar estructurado sobre sólidos pilares de aprendizaje constructivista, construccionista y socio-cultural. La efectividad de una plataforma no reside en la complejidad aislada de su hardware, sino en la coherencia de su ecología de mediación: la articulación armónica entre una interfaz de software intuitiva (andamiaje), una arquitectura mecatrónica robusta y de bajo costo (accesibilidad), y un marco metodológico estructurado que traduzca la manipulación física en operaciones explícitas de pensamiento computacional.
+La revisión sistemática de los antecedentes teóricos, históricos y tecnológicos permite concluir que la robótica educativa constituye un dominio maduro y multidisciplinar estructurado sobre sólidos pilares de aprendizaje constructivista, construccionista y socio-cultural. La efectividad de una plataforma no reside en la complejidad aislada de su hardware, sino en la coherencia de su ecología de mediación: la articulación armónica entre una interfaz de software intuitiva (andamiaje), una arquitectura mecatrónica robusta y de bajo costo (accesibilidad), y un marco metodológico estructurado que traduzca la manipulación física en operaciones explícitas de pensamiento computacional.
 
-Las trayectorias de éxito analizadas (como el Plan Ceibal y el proyecto Butiá en el entorno nacional) demuestran que el desarrollo local apoyado en principios de hardware libre y software de código abierto es una condición indispensable para asegurar la soberanía tecnológica y la inclusión socioeducativa sostenible en la región. Las tendencias contemporáneas que introducen la visión artificial y las arquitecturas de control adaptativo (Árboles de Comportamiento) incrementan exponencialmente el potencial del robot como objeto para pensar, pero a su vez imponen demandas críticas de diseño sobre las interfaces de usabilidad y la retroalimentación en tiempo real para evitar que el dispositivo actúe como una caja negra opaca. Esta rigurosa delimitación de los antecedentes científicos y mecatrónicos fundamenta de manera unívoca las decisiones experimentales, de diseño de firmware, optimización de hardware y validación empírica en territorio que se detallarán y justificarán en los capítulos subsecuentes de la presente investigación.
+Las trayectorias analizadas (como el Plan Ceibal y el proyecto Butiá en el entorno nacional) demuestran que el desarrollo local apoyado en principios de hardware libre y software de código abierto es una condición indispensable para asegurar la soberanía tecnológica y la inclusión socioeducativa sostenible en la región. Las tendencias contemporáneas que introducen la visión artificial y las arquitecturas de control adaptativo (Árboles de Comportamiento) incrementan el potencial del robot como objeto para pensar, pero a su vez imponen demandas de diseño sobre las interfaces de usabilidad y la retroalimentación en tiempo real para evitar que el dispositivo actúe como una caja negra opaca. Esta delimitación de los antecedentes científicos y mecatrónicos fundamenta las decisiones experimentales, de diseño de firmware, optimización de hardware y validación empírica en territorio que se detallarán y justificarán en los capítulos subsecuentes de la presente investigación.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -318,11 +316,11 @@ Las trayectorias de éxito analizadas (como el Plan Ceibal y el proyecto Butiá 
 
 \section{Contexto y criterios de selección de cámaras para visión artificial}
 
-Dado que uno de los requisitos fundamentales del proyecto es la utilización de procesamiento de imágenes, resulta esencial seleccionar un módulo de cámara adecuado para la interpretación visual del entorno.
+Dado que uno de los requisitos del proyecto es la utilización de procesamiento de imágenes, es importante seleccionar un módulo de cámara adecuado para la interpretación visual del entorno.
 
 El objetivo es que Robotito sea capaz de reconocer en tiempo real elementos gráficos como objetos simples o colores, sin requerir intervención humana directa ni procesamiento externo.
 
-En este contexto, resulta fundamental evaluar qué módulo de cámara se adapta mejor a las necesidades del proyecto, considerando factores como la facilidad de integración, la capacidad de procesamiento local, la complejidad de patrones que puede reconocer, la flexibilidad en el entrenamiento de nuevas señales y la adecuación al entorno educativo. A continuación, se presenta un análisis comparativo de cuatro cámaras con potencial para ser utilizadas en el sistema: ESP32-CAM, Pixy2, OpenMV Cam H7 R2 y HuskyLens AI.
+En este contexto, es importante evaluar qué módulo de cámara se adapta mejor a las necesidades del proyecto, considerando factores como la facilidad de integración, la capacidad de procesamiento local, la complejidad de patrones que puede reconocer, la flexibilidad en el entrenamiento de nuevas señales y la adecuación al entorno educativo. A continuación, se presenta un análisis comparativo de cuatro cámaras con potencial para ser utilizadas en el sistema: ESP32-CAM, Pixy2, OpenMV Cam H7 R2 y HuskyLens AI.
 
 \subsection{ESP32-CAM}
 
@@ -539,7 +537,7 @@ Necesidad de comportamientos reactivos y extensibles &
 Control basado en Árboles de Comportamiento &
 Permite organizar la lógica de decisión de forma modular, jerárquica y reutilizable. \\
 \hline
-Evitar acoplamiento entre hardware y lógica del juego &
+Evitar acoplamiento entre hardware y lógica de la actividad &
 Separación entre percepción, decisión y acción &
 Facilita el mantenimiento del sistema y permite incorporar nuevos comportamientos o sensores sin modificar la arquitectura central. \\
 \hline
@@ -565,7 +563,7 @@ Permite mantener una orientación adecuada del sensor, proteger el cableado y pr
 
 El proyecto incorpora una cámara de visión artificial \textbf{HuskyLens} (DFRobot) para dotar al sistema de capacidades de detección visual: reconocimiento de rostros, seguimiento de objetos, detección de líneas, reconocimiento de colores o de marcas (tags), entre otros. Para integrar este dispositivo con el ESP32 que ejecuta Lua-RTOS se desarrolló un \textbf{módulo de software en C} que encapsula la comunicación con el HuskyLens y expone una API usable tanto desde código C como desde scripts Lua. \\
 
-La implementación se basó en la librería oficial de Arduino para HuskyLens \cite{dfrobot2021huskylens}, adaptada al entorno ESP32/FreeRTOS y a la capa I2C del sistema. En esta sección se describe \emph{cómo funciona} el módulo y \emph{cómo está implementado}. \\
+La implementación se basó en la biblioteca oficial de Arduino para HuskyLens \cite{dfrobot2021huskylens}, adaptada al entorno ESP32/FreeRTOS y a la capa I2C del sistema. En esta sección se describe \emph{cómo funciona} el módulo y \emph{cómo está implementado}. \\
 
 El módulo se compone de tres partes principales: (i) un núcleo de protocolo (\texttt{HuskyLensProtocolCore}) que codifica y decodifica los mensajes del HuskyLens; (ii) la capa de acceso en C (\texttt{huskylens.c}/\texttt{huskylens.h}) que realiza la inicialización, las peticiones de datos y la gestión de resultados; y (iii) un binding Lua (\texttt{huskylens\_lua.c}) que permite usar la misma funcionalidad desde Lua-RTOS. La comunicación con el dispositivo es exclusivamente por \textbf{I2C}.
 
@@ -628,7 +626,7 @@ APDS9960         & 0x39 & Sensor de gestos/proximidad \\ \hline
 
 \section{Comunicación I2C y protocolo de aplicación}
 
-Muchos dispositivos I2C utilizan un modelo de ``registros'': el maestro envía la dirección de un registro y luego lee o escribe datos. El HuskyLens utiliza un \textbf{protocolo orientado a mensajes}: cada intercambio es una \textbf{trama completa} (frame) con cabecera, comando, contenido y checksum. No hay byte de ``registro''; el primer byte útil es ya parte del protocolo (cabecera \texttt{0x55 0xAA}). Por ello la implementación usa \textbf{transferencias I2C sin byte de registro}: dirección del esclavo seguida del payload en escritura, y en lectura se solicitan N bytes y se lee la respuesta. Este esquema coincide con el de la librería Arduino (\texttt{Wire}) \cite{dfrobot2021huskylens}. En el código se usan las primitivas del driver I2C del sistema (\texttt{i2c\_start}, \texttt{i2c\_write\_address}, \texttt{i2c\_write}, \texttt{i2c\_read}, \texttt{i2c\_stop}), no una capa intermedia de ``registro + datos''.
+Muchos dispositivos I2C utilizan un modelo de ``registros'': el maestro envía la dirección de un registro y luego lee o escribe datos. El HuskyLens utiliza un \textbf{protocolo orientado a mensajes}: cada intercambio es una \textbf{trama completa} (frame) con cabecera, comando, contenido y checksum. No hay byte de ``registro''; el primer byte útil es ya parte del protocolo (cabecera \texttt{0x55 0xAA}). Por ello la implementación usa \textbf{transferencias I2C sin byte de registro}: dirección del esclavo seguida del payload en escritura, y en lectura se solicitan N bytes y se lee la respuesta. Este esquema coincide con el de la biblioteca Arduino (\texttt{Wire}) \cite{dfrobot2021huskylens}. En el código se usan las primitivas del driver I2C del sistema (\texttt{i2c\_start}, \texttt{i2c\_write\_address}, \texttt{i2c\_write}, \texttt{i2c\_read}, \texttt{i2c\_stop}), no una capa intermedia de ``registro + datos''.
 
 \subsection{Estructura de los frames del protocolo HuskyLens}
 
@@ -641,7 +639,7 @@ Cada mensaje (enviado o recibido) sigue una estructura fija:
   \item \textbf{Contenido} (N bytes): en respuestas de detección, cinco enteros de 16 bits (véase sección 5.4).
   \item \textbf{Checksum} (1 byte): suma de todos los bytes anteriores del frame, módulo 256.
 \end{itemize}
-El ``tipo'' de detección (línea, tag, color, etc.) se infiere del comando (bloque vs.\ flecha) y del algoritmo seleccionado en el HuskyLens. La codificación y decodificación está en \texttt{HuskyLensProtocolCore}, compartida conceptualmente con la librería Arduino.
+El ``tipo'' de detección (línea, tag, color, etc.) se infiere del comando (bloque vs.\ flecha) y del algoritmo seleccionado en el HuskyLens. La codificación y decodificación está en \texttt{HuskyLensProtocolCore}, compartida conceptualmente con la biblioteca Arduino.
 Sin embargo, los frames no necesariamente son recibidos completos en una única
 transacción I2C. Debido a ello, el módulo implementa un parser incremental que
 reconstruye progresivamente los mensajes a partir de múltiples lecturas parciales
@@ -700,7 +698,7 @@ como punto de partida en la siguiente iteración del parser.
 
 La implementación mantiene internamente un buffer estático de leftovers que conserva los bytes excedentes luego de completar un frame válido. Antes de iniciar una nueva lectura I2C, dichos bytes son reprocesados por el parser como continuación del flujo anterior. Esta estrategia evita perder información cuando múltiples frames llegan concatenados dentro de una misma transacción I2C.
 
-El mecanismo implementado replica conceptualmente el comportamiento observado en la librería oficial de Arduino para HuskyLens, adaptándolo al entorno ESP32/FreeRTOS y al modelo de acceso I2C utilizado por Lua-RTOS.
+El mecanismo implementado replica conceptualmente el comportamiento observado en la biblioteca oficial de Arduino para HuskyLens, adaptándolo al entorno ESP32/FreeRTOS y al modelo de acceso I2C utilizado por Lua-RTOS.
 
 Este mecanismo permite:
 
@@ -990,7 +988,7 @@ El detalle de cada función (firmas y parámetros) se encuentra en el código fu
 
 \textbf{Desde C.} La aplicación declara una estructura de estado (\texttt{huskylens\_t}), llama a \texttt{huskylens\_init()} y luego utiliza las funciones de petición, acceso y configuración descritas en la sección 5.6.
 
-\textbf{Desde Lua-RTOS.} El módulo se carga como librería (p.\,ej. \texttt{huskylens = require("huskylens")}) y se usa la misma instancia global. Uso típico:
+\textbf{Desde Lua-RTOS.} El módulo se carga como biblioteca (p.\,ej. \texttt{huskylens = require("huskylens")}) y se usa la misma instancia global. Uso típico:
 \begin{enumerate}[noitemsep]
   \item Llamar a \texttt{huskylens.init()} una vez.
   \item Opcionalmente, fijar el algoritmo con \texttt{huskylens.set\_algorithm()} usando las constantes expuestas en el módulo (p.\,ej. \texttt{huskylens.ALGORITHM\_OBJECT\_TRACKING}).
@@ -2183,7 +2181,7 @@ En conjunto, la experimentación valida que Robotito extendido con visión artif
 
 Este trabajo extendió la plataforma educativa Robotito en cuatro dimensiones concretas: un módulo de visión artificial basado en la cámara HuskyLens, un motor de Árboles de Comportamiento implementado en Lua RTOS, un módulo de comunicación Bluetooth con persistencia en NVS, y una carcasa rediseñada para integrar la cámara de forma robusta y reproducible.
 
-Desde el punto de vista técnico, se desarrollaron tres componentes reutilizables que extienden la plataforma de forma independiente. El módulo HuskyLens abstrae toda la complejidad del protocolo de comunicación con la cámara, exponiendo una API uniforme accesible desde C y desde Lua que permite incorporar percepción visual en futuros proyectos sin lidiar con los detalles del bus I2C ni del protocolo propietario del sensor. El motor de Árboles de Comportamiento provee una librería de control general desacoplada de cualquier lógica de dominio específica, lo que permite modelar nuevos comportamientos robóticos combinando los nodos existentes sin modificar el núcleo del sistema. El módulo Bluetooth transforma a Robotito de un autómata con rutas fijas en una plataforma configurable dinámicamente desde una aplicación web, con persistencia entre sesiones mediante NVS y protección ante accesos concurrentes desde FreeRTOS y Lua. La integración de los tres módulos en el juego implementado valida que la arquitectura funciona de forma coordinada en condiciones reales de uso.
+Desde el punto de vista técnico, se desarrollaron tres componentes reutilizables que extienden la plataforma de forma independiente. El módulo HuskyLens abstrae toda la complejidad del protocolo de comunicación con la cámara, exponiendo una API uniforme accesible desde C y desde Lua que permite incorporar percepción visual en futuros proyectos sin lidiar con los detalles del bus I2C ni del protocolo propietario del sensor. El motor de Árboles de Comportamiento provee una biblioteca de control general desacoplada de cualquier lógica de dominio específica, lo que permite modelar nuevos comportamientos robóticos combinando los nodos existentes sin modificar el núcleo del sistema. El módulo Bluetooth transforma a Robotito de un autómata con rutas fijas en una plataforma configurable dinámicamente desde una aplicación web, con persistencia entre sesiones mediante NVS y protección ante accesos concurrentes desde FreeRTOS y Lua. La integración de los tres módulos en el juego implementado valida que la arquitectura funciona de forma coordinada en condiciones reales de uso.
 
 Desde el punto de vista pedagógico, la experimentación con tres maestras de nivel inicial y primaria y dos sesiones con estudiantes de entre 4 y 8 años demostró que la plataforma es accesible y motivadora para el público objetivo. Los niños de segundo año de primaria comprendieron rápidamente el mecanismo de seguimiento de línea y la lógica de secuencia correcta, apoyándose en analogías con señales de tránsito y en narrativas conocidas. Los niños de nivel inicial requirieron una mediación mayor, pero respondieron positivamente a la retroalimentación luminosa del anillo LED. En ambas sesiones el feedback inmediato en cada punto de parada ---verde para aciertos, rojo para errores--- resultó más efectivo pedagógicamente que esperar al final del recorrido. Las funciones de pausa y reset, incorporadas a partir del feedback docente, resultaron indispensables para que las maestras pudieran realizar intervenciones pedagógicas sin perder el estado del juego ni reiniciar el robot manualmente.
 

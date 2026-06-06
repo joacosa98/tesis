@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.23)  6 JUN 2026 13:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.23)  6 JUN 2026 13:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -460,13 +460,15 @@ Overfull \hbox (2.55557pt too wide) detected at line 196
 
  [10]
 Cap\'{\i }tulo 1.
-
-Underfull \vbox (badness 2529) has occurred while \output is active []
-
- [1
+[1
 
 
 ] [2]
+Underfull \hbox (badness 10000) in paragraph at lines 173--174
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 175--176
 
  []
@@ -507,7 +509,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 189--190
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 191--192
+Underfull \hbox (badness 10000) in paragraph at lines 192--193
 
  []
 
@@ -516,45 +518,40 @@ Underfull \hbox (badness 10000) in paragraph at lines 194--195
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 196--197
-
- []
-
 [5] [6
 
 ]
 Cap\'{\i }tulo 2.
 [7]
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 219.
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 217.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [8]
-Overfull \hbox (15.06451pt too wide) in paragraph at lines 239--239
+Overfull \hbox (15.06451pt too wide) in paragraph at lines 237--237
 []\OT1/cmr/bx/n/14.4 Estado del ar-te in-ter-na-cio-nal y re-gio-nal: an^^Sali-
  []
 
 [9]
-Overfull \hbox (20.40463pt too wide) in alignment at lines 246--251
+Overfull \hbox (20.40463pt too wide) in alignment at lines 244--249
  [] [] [] [] 
  []
 
 
-Overfull \hbox (20.40463pt too wide) in alignment at lines 251--255
+Overfull \hbox (20.40463pt too wide) in alignment at lines 249--253
  [] [] [] [] 
  []
 
 
-Overfull \hbox (20.40463pt too wide) in alignment at lines 255--265
+Overfull \hbox (20.40463pt too wide) in alignment at lines 253--263
  [] [] [] [] 
  []
 
 
 ignored: Infinite glue shrinkage found in box being split [10]
-Overfull \hbox (1.584pt too wide) in paragraph at lines 277--278
+Overfull \hbox (1.584pt too wide) in paragraph at lines 275--276
 \OT1/cmr/m/n/10 to Bu-ti^^Sa re-pre-sen-ta el prin-ci-pal hi-to tec-nol^^Sogi-co aut^^Soctono del cam-po [][][]Benavides,
  []
 
@@ -562,7 +559,7 @@ Overfull \hbox (1.584pt too wide) in paragraph at lines 277--278
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [11] [12]
-Overfull \hbox (8.37291pt too wide) in paragraph at lines 291--291
+Overfull \hbox (8.37291pt too wide) in paragraph at lines 289--289
 []\OT1/cmr/bx/n/14.4 Visi^^Son ar-ti-fi-cial y Ed-ge Com-pu-ting en rob^^Soti-
  []
 
@@ -571,47 +568,47 @@ Overfull \hbox (8.37291pt too wide) in paragraph at lines 291--291
 ]
 Cap\'{\i }tulo 3.
 [17]
-Overfull \hbox (0.97281pt too wide) in paragraph at lines 337--338
+Overfull \hbox (0.97281pt too wide) in paragraph at lines 335--336
 []\OT1/cmr/m/n/10 Su com-pa-ti-bi-li-dad con m^^Sulti-ples in-ter-fa-ces de co-mu-ni-ca-ci^^Son (SPI, I2C, UART
  []
 
 [18]
-Overfull \hbox (1.91539pt too wide) in paragraph at lines 434--434
+Overfull \hbox (1.91539pt too wide) in paragraph at lines 432--432
  []|\OT1/cmr/bx/n/9 OpenMV 
  []
 
 
-Overfull \hbox (9.84894pt too wide) in paragraph at lines 434--434
+Overfull \hbox (9.84894pt too wide) in paragraph at lines 432--432
  []|\OT1/cmr/bx/n/9 HuskyLens 
  []
 
 
-Overfull \hbox (4.39687pt too wide) in paragraph at lines 434--434
+Overfull \hbox (4.39687pt too wide) in paragraph at lines 432--432
  \OT1/cmr/m/n/9 croPython)| 
  []
 
 
-Overfull \hbox (10.33084pt too wide) in paragraph at lines 434--434
+Overfull \hbox (10.33084pt too wide) in paragraph at lines 432--432
  []|\OT1/cmr/m/n/9 Programable| 
  []
 
 
-Overfull \hbox (23.79535pt too wide) in paragraph at lines 434--434
+Overfull \hbox (23.79535pt too wide) in paragraph at lines 432--432
  []|[]| 
  []
 
 
-Overfull \hbox (11.8468pt too wide) in paragraph at lines 434--434
+Overfull \hbox (11.8468pt too wide) in paragraph at lines 432--432
  []|\OT1/cmr/m/n/9 MicroPython| 
  []
 
 
-Overfull \hbox (1.36494pt too wide) in paragraph at lines 434--434
+Overfull \hbox (1.36494pt too wide) in paragraph at lines 432--432
  []|\OT1/cmr/m/n/9 Prototipos 
  []
 
 
-Overfull \hbox (0.5219pt too wide) in paragraph at lines 434--434
+Overfull \hbox (0.5219pt too wide) in paragraph at lines 432--432
  []|\OT1/cmr/m/n/9 Educaci^^Son 
  []
 
@@ -620,32 +617,32 @@ Cap\'{\i }tulo 4.
 [21
 
 ] [22] [23] [24]
-Underfull \hbox (badness 10000) in paragraph at lines 530--530
+Underfull \hbox (badness 10000) in paragraph at lines 528--528
 []|\OT1/cmr/m/n/10 Recursos li-mi-ta-dos del
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 535--535
+Underfull \hbox (badness 10000) in paragraph at lines 533--533
 []|\OT1/cmr/m/n/10 Comunicaci^^Son me-dian-te
  []
 
 
-Underfull \hbox (badness 8075) in paragraph at lines 538--538
+Underfull \hbox (badness 8075) in paragraph at lines 536--536
 []|\OT1/cmr/m/n/10 Necesidad de com-por-ta-
  []
 
 
-Underfull \hbox (badness 4254) in paragraph at lines 543--543
+Underfull \hbox (badness 4254) in paragraph at lines 541--541
 []|\OT1/cmr/m/n/10 Separaci^^Son en-tre per-cep-
  []
 
 
-Underfull \hbox (badness 3668) in paragraph at lines 550--550
+Underfull \hbox (badness 3668) in paragraph at lines 548--548
 []|\OT1/cmr/m/n/10 Necesidad de in-te-gra-ci^^Son
  []
 
 
-Overfull \hbox (79.55717pt too wide) in paragraph at lines 526--555
+Overfull \hbox (79.55717pt too wide) in paragraph at lines 524--553
  [][] 
  []
 
@@ -654,62 +651,62 @@ Overfull \hbox (79.55717pt too wide) in paragraph at lines 526--555
 ]
 Cap\'{\i }tulo 5.
 
+Underfull \hbox (badness 10000) in paragraph at lines 564--565
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 566--567
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 568--569
-
- []
-
 [27] [28] [29] [30]
-Overfull \hbox (45.11087pt too wide) in paragraph at lines 731--732
+Overfull \hbox (45.11087pt too wide) in paragraph at lines 729--730
 \OT1/cmr/m/n/10 Lua (p.ej. \OT1/cmtt/m/n/10 huskylens.init()\OT1/cmr/m/n/10 , \OT1/cmtt/m/n/10 huskylens.request()\OT1/cmr/m/n/10 , \OT1/cmtt/m/n/10 huskylens.get[]results()\OT1/cmr/m/n/10 ). 
  []
 
 [31]
-Overfull \hbox (59.37952pt too wide) in paragraph at lines 750--751
+Overfull \hbox (59.37952pt too wide) in paragraph at lines 748--749
 []\OT1/cmr/bx/n/10 Realizar el handsha-ke \OT1/cmr/m/n/10 con la Husky-lens: se env^^S^^Pa el co-man-do \OT1/cmtt/m/n/10 COMMAND[]REQUEST[]KNOCK
  []
 
 [32]
-Overfull \hbox (56.72995pt too wide) in paragraph at lines 799--806
+Overfull \hbox (56.72995pt too wide) in paragraph at lines 797--804
 \OT1/cmr/m/n/10 se cons-tru-ye el fra-me me-dian-te el n^^Sucleo de pro-to-co-lo (\OT1/cmtt/m/n/10 husky[]lens[]protocol[]write[]begin()\OT1/cmr/m/n/10 ,
  []
 
 
-Overfull \hbox (22.6538pt too wide) in paragraph at lines 799--806
+Overfull \hbox (22.6538pt too wide) in paragraph at lines 797--804
 \OT1/cmtt/m/n/10 husky[]lens[]protocol[]write[]int16() \OT1/cmr/m/n/10 u otros, \OT1/cmtt/m/n/10 husky[]lens[]protocol[]write[]end()\OT1/cmr/m/n/10 ),
  []
 
 
-Overfull \hbox (76.05963pt too wide) in paragraph at lines 825--830
+Overfull \hbox (76.05963pt too wide) in paragraph at lines 823--828
 []\OT1/cmr/m/n/10 Para ca-da re-sul-ta-do de-tec-ta-do, es-pe-ra un nue-vo fra-me del pro-to-co-lo (\OT1/cmtt/m/n/10 COMMAND[]RETURN[]BLOCK
  []
 
 [33]
-Overfull \hbox (4.16298pt too wide) in paragraph at lines 855--855
+Overfull \hbox (4.16298pt too wide) in paragraph at lines 853--853
 []\OT1/cmr/bx/n/14.4 Formato de da-tos pro-por-cio-na-do por Husky-
  []
 
 
-Overfull \hbox (3.09435pt too wide) in paragraph at lines 866--868
+Overfull \hbox (3.09435pt too wide) in paragraph at lines 864--866
 []\OT1/cmr/bx/n/10 Flechas \OT1/cmr/m/n/10 (\OT1/cmr/m/it/10 ARROW\OT1/cmr/m/n/10 ): co-rres-pon-den a vec-to-res di-rec-cio-na-les em-plea-dos prin-
  []
 
 [34]
-Overfull \hbox (38.06451pt too wide) in paragraph at lines 937--948
+Overfull \hbox (38.06451pt too wide) in paragraph at lines 935--946
  [][] 
  []
 
 [35] [36]
-Overfull \hbox (68.5866pt too wide) in paragraph at lines 996--997
+Overfull \hbox (68.5866pt too wide) in paragraph at lines 994--995
 \OT1/cmr/m/n/10 do las cons-tan-tes ex-pues-tas en el m^^Sodu-lo (p.ej. \OT1/cmtt/m/n/10 huskylens.ALGORITHM[]OBJECT[]TRACKING\OT1/cmr/m/n/10 ). 
  []
 
 
-Overfull \hbox (37.80597pt too wide) in paragraph at lines 997--998
+Overfull \hbox (37.80597pt too wide) in paragraph at lines 995--996
 []\OT1/cmr/m/n/10 Llamar a \OT1/cmtt/m/n/10 huskylens.request() \OT1/cmr/m/n/10 (o va-rian-tes co-mo \OT1/cmtt/m/n/10 huskylens.request[]blocks()\OT1/cmr/m/n/10 ,
  []
 
@@ -721,69 +718,69 @@ Cap\'{\i }tulo 6.
 Underfull \vbox (badness 2837) has occurred while \output is active []
 
  [39]
-Overfull \hbox (27.1237pt too wide) in paragraph at lines 1027--1028
+Overfull \hbox (27.1237pt too wide) in paragraph at lines 1025--1026
 \OT1/cmr/m/n/10 de \OT1/cmr/bx/n/10 Ring-buf-fer \OT1/cmr/m/n/10 (buf-fer cir-cu-lar) de 512 by-tes de-no-mi-na-do \OT1/cmtt/m/n/10 mapper[]evt[]buffer[]handle\OT1/cmr/m/n/10 . 
  []
 
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 1031.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 1029.
 [40] [41] [42
 
 ]
 Cap\'{\i }tulo 7.
 [43]
-Overfull \hbox (2.51488pt too wide) in paragraph at lines 1095--1096
+Overfull \hbox (2.51488pt too wide) in paragraph at lines 1093--1094
 []\OT1/cmr/bx/n/10 Nodos de Ac-ci^^Son\OT1/cmr/m/n/10 : En-cap-su-lan ope-ra-cio-nes con-cre-tas. De-vuel-ven \OT1/cmtt/m/n/10 SUCCESS
  []
 
 
-Overfull \hbox (7.93149pt too wide) in paragraph at lines 1096--1097
+Overfull \hbox (7.93149pt too wide) in paragraph at lines 1094--1095
 []\OT1/cmr/bx/n/10 Nodos de Con-di-ci^^Son\OT1/cmr/m/n/10 : eval^^Suan pre-di-ca-dos ins-tant^^Saneos y re-tor-nan \OT1/cmtt/m/n/10 SUCCESS
  []
 
 [44{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-<images/SequenceCompositionWithMemory..png, id=1083, 282.05376pt x 142.5325pt>
+<images/SequenceCompositionWithMemory..png, id=1085, 282.05376pt x 142.5325pt>
 File: images/SequenceCompositionWithMemory..png Graphic file (type png)
 <use images/SequenceCompositionWithMemory..png>
-Package pdftex.def Info: images/SequenceCompositionWithMemory..png  used on input line 1116.
+Package pdftex.def Info: images/SequenceCompositionWithMemory..png  used on input line 1114.
 (pdftex.def)             Requested size: 137.9979pt x 69.73495pt.
-<images/SequenceCompositionWithMemoryEmulation.png, id=1084, 536.0025pt x 161.60374pt>
+<images/SequenceCompositionWithMemoryEmulation.png, id=1086, 536.0025pt x 161.60374pt>
 File: images/SequenceCompositionWithMemoryEmulation.png Graphic file (type png)
 <use images/SequenceCompositionWithMemoryEmulation.png>
-Package pdftex.def Info: images/SequenceCompositionWithMemoryEmulation.png  used on input line 1122.
+Package pdftex.def Info: images/SequenceCompositionWithMemoryEmulation.png  used on input line 1120.
 (pdftex.def)             Requested size: 276.00105pt x 83.21329pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1128--1129
+Underfull \hbox (badness 10000) in paragraph at lines 1126--1127
 
  []
 
 [45 <./images/SequenceCompositionWithMemory..png> <./images/SequenceCompositionWithMemoryEmulation.png>] [46]
-Overfull \hbox (3.31238pt too wide) in paragraph at lines 1197--1198
+Overfull \hbox (3.31238pt too wide) in paragraph at lines 1195--1196
 []\OT1/cmr/bx/n/10 ejecuci^^Son coope-ra-ti-va\OT1/cmr/m/n/10 , don-de ning^^Sun com-po-nen-te de-be blo-quear la CPU; 
  []
 
 [47]
-Underfull \hbox (badness 10000) in paragraph at lines 1224--1225
+Underfull \hbox (badness 10000) in paragraph at lines 1222--1223
 
  []
 
 [48]
-Overfull \hbox (12.52739pt too wide) in paragraph at lines 1243--1244
+Overfull \hbox (12.52739pt too wide) in paragraph at lines 1241--1242
 \OT1/cmr/m/n/10 o \OT1/cmtt/m/n/10 self.counter\OT1/cmr/m/n/10 . Ca-da ac-ci^^Son im-ple-men-ta op-cio-nal-men-te un m^^Seto-do \OT1/cmtt/m/n/10 reset()
  []
 
 [49] [50]
-Overfull \hbox (33.47311pt too wide) in paragraph at lines 1284--1285
+Overfull \hbox (33.47311pt too wide) in paragraph at lines 1282--1283
 []\OT1/cmtt/m/n/10 Mecanismo Clave\OT1/cmr/m/n/10 : po-see un m^^Seto-do ^^Suni-co lla-ma-do \OT1/cmtt/m/n/10 should[]interrupt(ctx)\OT1/cmr/m/n/10 ,
  []
 
 
-Overfull \hbox (7.0022pt too wide) in paragraph at lines 1293--1297
+Overfull \hbox (7.0022pt too wide) in paragraph at lines 1291--1295
 []\OT1/cmtt/m/n/10 interruptible(child, interrupts, reset[]on[]interrupt)\OT1/cmr/m/n/10 : fun-cio-na co-
  []
 
 
-Overfull \hbox (10.19426pt too wide) in paragraph at lines 1302--1303
+Overfull \hbox (10.19426pt too wide) in paragraph at lines 1300--1301
 \OT1/cmr/m/n/10 ra^^S^^Pz. El ^^Sarbol man-tie-ne un con-ta-dor in-terno de ticks, eje-cu-ta \OT1/cmtt/m/n/10 root:tick(ctx)
  []
 
@@ -792,28 +789,28 @@ Overfull \hbox (10.19426pt too wide) in paragraph at lines 1302--1303
 ]
 Cap\'{\i }tulo 8.
 [55] [56]
-<images/BTRobotito.png, id=1162, 5365.04375pt x 3361.55875pt>
+<images/BTRobotito.png, id=1164, 5365.04375pt x 3361.55875pt>
 File: images/BTRobotito.png Graphic file (type png)
 <use images/BTRobotito.png>
-Package pdftex.def Info: images/BTRobotito.png  used on input line 1418.
+Package pdftex.def Info: images/BTRobotito.png  used on input line 1416.
 (pdftex.def)             Requested size: 448.50105pt x 280.9841pt.
  [57] [58 <./images/BTRobotito.png>]
-Overfull \hbox (38.86328pt too wide) in paragraph at lines 1445--1446
+Overfull \hbox (38.86328pt too wide) in paragraph at lines 1443--1444
 []\OT1/cmtt/m/n/10 arrow[]fault\OT1/cmr/m/n/10 : in-con-sis-ten-cias en la de-tec-ci^^Son o in-ter-pre-ta-ci^^Son de fle-chas/direcciones. 
  []
 
 [59] [60] [61] [62]
-Overfull \hbox (9.4759pt too wide) in paragraph at lines 1627--1628
+Overfull \hbox (9.4759pt too wide) in paragraph at lines 1625--1626
  []\OT1/cmtt/m/n/10 stop[]checkpoint[]sequence[] \OT1/cmr/m/n/10 Ra-ma es-pe-cia-li-za-da pa-ra el pro-ce-sa-mien-to de check-
  []
 
 [63] [64]
-Overfull \hbox (3.22282pt too wide) in paragraph at lines 1724--1725
+Overfull \hbox (3.22282pt too wide) in paragraph at lines 1722--1723
 []\OT1/cmr/m/n/10 Reactividad: las in-te-rrup-cio-nes per-mi-ten res-pon-der in-me-dia-ta-men-te a even-
  []
 
 
-Overfull \hbox (10.19511pt too wide) in paragraph at lines 1740--1741
+Overfull \hbox (10.19511pt too wide) in paragraph at lines 1738--1739
 []\OT1/cmr/m/n/10 El sis-te-ma pro-por-cio-na re-tro-ali-men-ta-ci^^Son in-me-dia-ta me-dian-te se~nales lum^^S^^Pni-
  []
 
@@ -822,17 +819,17 @@ Cap\'{\i }tulo 9.
 [67
 
 ] [68] [69] [70]
-Overfull \hbox (27.30084pt too wide) in alignment at lines 1892--1898
+Overfull \hbox (27.30084pt too wide) in alignment at lines 1890--1896
  [] [] [] [] 
  []
 
 
-Overfull \hbox (27.30084pt too wide) in alignment at lines 1898--1903
+Overfull \hbox (27.30084pt too wide) in alignment at lines 1896--1901
  [] [] [] [] 
  []
 
 
-Overfull \hbox (27.30084pt too wide) in alignment at lines 1903--1960
+Overfull \hbox (27.30084pt too wide) in alignment at lines 1901--1958
  [] [] [] [] 
  []
 
@@ -889,61 +886,61 @@ Underfull \hbox (badness 2310) in paragraph at lines 443--465
 
 ]
 Anexo A.
-<images/modelos3d/carcasa-original-superior.png, id=1481, 598.48593pt x 566.115pt>
+<images/modelos3d/carcasa-original-superior.png, id=1483, 598.48593pt x 566.115pt>
 File: images/modelos3d/carcasa-original-superior.png Graphic file (type png)
 <use images/modelos3d/carcasa-original-superior.png>
-Package pdftex.def Info: images/modelos3d/carcasa-original-superior.png  used on input line 2246.
+Package pdftex.def Info: images/modelos3d/carcasa-original-superior.png  used on input line 2244.
 (pdftex.def)             Requested size: 137.9979pt x 130.53195pt.
-<images/modelos3d/carcasa-original-frontal.png, id=1482, 647.41875pt x 239.39438pt>
+<images/modelos3d/carcasa-original-frontal.png, id=1484, 647.41875pt x 239.39438pt>
 File: images/modelos3d/carcasa-original-frontal.png Graphic file (type png)
 <use images/modelos3d/carcasa-original-frontal.png>
-Package pdftex.def Info: images/modelos3d/carcasa-original-frontal.png  used on input line 2252.
+Package pdftex.def Info: images/modelos3d/carcasa-original-frontal.png  used on input line 2250.
 (pdftex.def)             Requested size: 137.9979pt x 51.02678pt.
-<images/modelos3d/carcasa-original-3d.png, id=1483, 710.655pt x 462.22687pt>
+<images/modelos3d/carcasa-original-3d.png, id=1485, 710.655pt x 462.22687pt>
 File: images/modelos3d/carcasa-original-3d.png Graphic file (type png)
 <use images/modelos3d/carcasa-original-3d.png>
-Package pdftex.def Info: images/modelos3d/carcasa-original-3d.png  used on input line 2259.
+Package pdftex.def Info: images/modelos3d/carcasa-original-3d.png  used on input line 2257.
 (pdftex.def)             Requested size: 207.0021pt x 134.63481pt.
 [99] [100 <./images/modelos3d/carcasa-original-superior.png> <./images/modelos3d/carcasa-original-frontal.png> <./images/modelos3d/carcasa-original-3d.png>]
-<images/modelos3d/carcasa-husky-superior.png, id=1500, 682.04813pt x 429.85594pt>
+<images/modelos3d/carcasa-husky-superior.png, id=1502, 682.04813pt x 429.85594pt>
 File: images/modelos3d/carcasa-husky-superior.png Graphic file (type png)
 <use images/modelos3d/carcasa-husky-superior.png>
-Package pdftex.def Info: images/modelos3d/carcasa-husky-superior.png  used on input line 2275.
+Package pdftex.def Info: images/modelos3d/carcasa-husky-superior.png  used on input line 2273.
 (pdftex.def)             Requested size: 137.9979pt x 86.97319pt.
-<images/modelos3d/carcasa-husky-lateral.png, id=1501, 672.26157pt x 100.87688pt>
+<images/modelos3d/carcasa-husky-lateral.png, id=1503, 672.26157pt x 100.87688pt>
 File: images/modelos3d/carcasa-husky-lateral.png Graphic file (type png)
 <use images/modelos3d/carcasa-husky-lateral.png>
-Package pdftex.def Info: images/modelos3d/carcasa-husky-lateral.png  used on input line 2281.
+Package pdftex.def Info: images/modelos3d/carcasa-husky-lateral.png  used on input line 2279.
 (pdftex.def)             Requested size: 137.9979pt x 20.7076pt.
-<images/modelos3d/carcasa-husky-3d.png, id=1502, 670.00313pt x 348.55219pt>
+<images/modelos3d/carcasa-husky-3d.png, id=1504, 670.00313pt x 348.55219pt>
 File: images/modelos3d/carcasa-husky-3d.png Graphic file (type png)
 <use images/modelos3d/carcasa-husky-3d.png>
-Package pdftex.def Info: images/modelos3d/carcasa-husky-3d.png  used on input line 2288.
+Package pdftex.def Info: images/modelos3d/carcasa-husky-3d.png  used on input line 2286.
 (pdftex.def)             Requested size: 172.5pt x 89.73856pt.
  [101 <./images/modelos3d/carcasa-husky-superior.png> <./images/modelos3d/carcasa-husky-lateral.png> <./images/modelos3d/carcasa-husky-3d.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 2319--2320
+Underfull \hbox (badness 10000) in paragraph at lines 2317--2318
 
  []
 
-<images/modelos3d/carcasa-nueva-frontal.png, id=1513, 666.99188pt x 277.78781pt>
+<images/modelos3d/carcasa-nueva-frontal.png, id=1515, 666.99188pt x 277.78781pt>
 File: images/modelos3d/carcasa-nueva-frontal.png Graphic file (type png)
 <use images/modelos3d/carcasa-nueva-frontal.png>
-Package pdftex.def Info: images/modelos3d/carcasa-nueva-frontal.png  used on input line 2327.
+Package pdftex.def Info: images/modelos3d/carcasa-nueva-frontal.png  used on input line 2325.
 (pdftex.def)             Requested size: 169.0519pt x 70.40471pt.
-<images/modelos3d/carcasa-nueva-lateral.png, id=1514, 666.23906pt x 274.77657pt>
+<images/modelos3d/carcasa-nueva-lateral.png, id=1516, 666.23906pt x 274.77657pt>
 File: images/modelos3d/carcasa-nueva-lateral.png Graphic file (type png)
 <use images/modelos3d/carcasa-nueva-lateral.png>
-Package pdftex.def Info: images/modelos3d/carcasa-nueva-lateral.png  used on input line 2333.
+Package pdftex.def Info: images/modelos3d/carcasa-nueva-lateral.png  used on input line 2331.
 (pdftex.def)             Requested size: 169.0519pt x 69.72119pt.
-<images/modelos3d/carcasa-nueva-superior.png, id=1515, 663.22781pt x 570.63188pt>
+<images/modelos3d/carcasa-nueva-superior.png, id=1517, 663.22781pt x 570.63188pt>
 File: images/modelos3d/carcasa-nueva-superior.png Graphic file (type png)
 <use images/modelos3d/carcasa-nueva-superior.png>
-Package pdftex.def Info: images/modelos3d/carcasa-nueva-superior.png  used on input line 2340.
+Package pdftex.def Info: images/modelos3d/carcasa-nueva-superior.png  used on input line 2338.
 (pdftex.def)             Requested size: 169.0519pt x 145.4439pt.
-<images/modelos3d/carcasa-nueva-3d.png, id=1516, 647.41875pt x 423.83344pt>
+<images/modelos3d/carcasa-nueva-3d.png, id=1518, 647.41875pt x 423.83344pt>
 File: images/modelos3d/carcasa-nueva-3d.png Graphic file (type png)
 <use images/modelos3d/carcasa-nueva-3d.png>
-Package pdftex.def Info: images/modelos3d/carcasa-nueva-3d.png  used on input line 2346.
+Package pdftex.def Info: images/modelos3d/carcasa-nueva-3d.png  used on input line 2344.
 (pdftex.def)             Requested size: 169.0519pt x 110.66618pt.
 [102] [103 <./images/modelos3d/carcasa-nueva-frontal.png> <./images/modelos3d/carcasa-nueva-lateral.png> <./images/modelos3d/carcasa-nueva-superior.png> <./images/modelos3d/carcasa-nueva-3d.png>] [104] (./mainV3.aux
 LaTeX Info: Redefining \. on input line 11.
@@ -967,12 +964,12 @@ Here is how much of TeX's memory you used:
  42486 multiletter control sequences out of 15000+600000
  635460 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 90i,12n,93p,1240b,838s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,12n,93p,1297b,838s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/latxfont/lasy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on mainV3.pdf (114 pages, 2181477 bytes).
+Output written on mainV3.pdf (114 pages, 2181194 bytes).
 PDF statistics:
- 1716 PDF objects out of 1728 (max. 8388607)
- 1516 compressed objects within 16 object streams
+ 1718 PDF objects out of 1728 (max. 8388607)
+ 1518 compressed objects within 16 object streams
  450 named destinations out of 1000 (max. 500000)
  1124 words of extra memory for PDF output out of 10000 (max. 10000000)
 
