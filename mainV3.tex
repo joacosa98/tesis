@@ -1099,8 +1099,6 @@ En la teoría clásica de BT existen tres tipos principales de nodos:
     \end{itemize}
 \end{itemize}
 
-Si bien algunos motores BT incorporan nodos \emph{Parallel}, estos no se utilizan en este proyecto debido al carácter secuencial y determinista del entorno embebido sobre ESP32.
-
 \subsubsection{Reactividad y Memoria}
 
 El comportamiento de los nodos \textbf{Sequence} y \textbf{Selector} varía críticamente según su capacidad de recordar el progreso:
@@ -1112,13 +1110,13 @@ El comportamiento de los nodos \textbf{Sequence} y \textbf{Selector} varía crí
     \begin{figure}[h]
         \centering
         \includegraphics[width=0.4\textwidth]{images/SequenceCompositionWithMemory..png}
-        \caption{Secuencia con memoria}
+        \caption{Secuencia con memoria \protect\cite{colledanchise2018bt}}
         \label{fig:bt-secuencia-con-memoria}
     \end{figure}
     \begin{figure}[h]
         \centering
         \includegraphics[width=0.8\textwidth]{images/SequenceCompositionWithMemoryEmulation.png}
-        \caption{BT que emula la ejecución de una secuencia con memoria usando nodos sin memoria}
+        \caption{BT que emula la ejecución de una secuencia con memoria usando nodos sin memoria \protect\cite{colledanchise2018bt}}
         \label{fig:bt-secuencia-con-memoria-emulacion}
     \end{figure}
 
