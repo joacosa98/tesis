@@ -1811,6 +1811,15 @@ Para evitar registros incorrectos causados por movimientos, desenfoque, variacio
 
 Esta funcionalidad permite que el usuario trabaje directamente con los elementos físicos del entorno, vinculando cada marcador real con su representación dentro del configurador.
 
+\begin{figure}[!htbp]
+    \centering
+    \makebox[\textwidth][c]{%
+        \includegraphics[width=1.3\textwidth]{images/web/tags.jpeg}
+    }
+    \caption{Lectura de tags.}
+    \label{fig:web_tags}
+\end{figure}
+
 \section{Gestión lógica de tags e intercambiabilidad}
 
 El configurador permite asociar cada tag físico con un identificador lógico o alias. Esto facilita que el usuario trabaje con nombres comprensibles en lugar de depender únicamente de identificadores numéricos.
@@ -1828,6 +1837,15 @@ donde el conjunto de vértices \(V\) representa los tags registrados en el catá
 Cada relación entre dos tags se representa mediante una conexión bidireccional. A partir de estas conexiones, el configurador identifica grupos de tags equivalentes. La implementación utiliza una búsqueda en profundidad iterativa con pila para recorrer las relaciones entre tags y determinar qué tags pertenecen a un mismo grupo.
 
 En términos funcionales, esto permite que si el tag \(A\) es intercambiable con \(B\), y \(B\) es intercambiable con \(C\), entonces los tres puedan ser tratados como parte de una misma clase de equivalencia. Este mecanismo reduce la necesidad de duplicar manualmente secuencias y permite diseñar actividades más flexibles.
+
+\begin{figure}[!htbp]
+    \centering
+    \makebox[\textwidth][c]{%
+        \includegraphics[width=1.3\textwidth]{images/web/secuencias.jpeg}
+    }
+    \caption{Gestión de secuencias.}
+    \label{fig:web_secuencias}
+\end{figure}
 
 \section{Construcción y validación de secuencias}
 
