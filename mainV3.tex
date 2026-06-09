@@ -1361,7 +1361,9 @@ Además, en algunos tramos del tatami se adhieren pequeños adhesivos. Estas mar
 Las reglas de la actividad se describen a continuación:
 
 \begin{itemize}
-    \item \textbf{Inicio}: el robot se coloca en una casilla o pieza de inicio. Permanece en estado de espera activo hasta recibir la señal de comienzo, la cual consiste en mostrarle un indicador de color verde que contiene una etiqueta específica (QR) dentro. Una vez detectada esta señal, inicia el recorrido.
+    \item \textbf{Configuración}: el robot se enciende y activa el modo configuración. En este estado puede recibir datos de configuración por bluetooth. Permanece en este estado hasta recibir la señal de configuración finalizada.
+
+    \item \textbf{Inicio}: el robot se coloca en el inicio. Permanece en estado de espera activo hasta recibir la señal de comienzo. Una vez detectada esta señal, inicia el recorrido.
     
     \item \textbf{Seguimiento de línea}: el robot avanza siguiendo la línea trazada sobre el tatami. Esta línea define el trayecto general y garantiza que el robot atraviese todas las estaciones visuales.
     
@@ -1383,7 +1385,7 @@ Las reglas de la actividad se describen a continuación:
         \item Si existen errores, ilumina un patrón combinado que refleja el estado de cada estación evaluada. Se divide el anillo LED en la misma cantidad de segmentos que estaciones visitadas. Luego, las estaciones que se encuentren en orden correcto mostrarán un color \textbf{verde} y las estaciones que no se encuentren en el orden incorrecto mostrarán un color \textbf{rojo}.
     \end{itemize}
     
-    \item \textbf{Estado de espera}: una vez finalizada la verificación global, el robot entra nuevamente en modo de espera, preparado para una nueva partida cuando se le muestre otra tarjeta de inicio.
+    \item \textbf{Reseteo y estado de espera}: una vez finalizada la verificación global, el robot vuelve a colocarse en la casilla de inicio donde lee la señal de reset y entra en modo de espera. Aquí se puede iniciar un nuevo recorrido.
 \end{itemize}
 
 \subsection{Modo pausa y modo reset}
@@ -2253,7 +2255,7 @@ En conjunto, el proyecto consolida a Robotito como una plataforma abierta que in
 
 \section{Líneas de trabajo futuro}
 
-\textbf{Persistencia de modelos aprendidos en tarjeta SD.} Los modelos entrenados en la HuskyLens ---línea guía, etiqueta de inicio, etiqueta de fin y etiquetas de parada--- se almacenan en la memoria interna del dispositivo y pueden perderse si un usuario manipula accidentalmente el menú de la cámara. Guardarlos en una tarjeta SD permitiría restaurarlos automáticamente al encender el robot, eliminando la necesidad de reentrenar el sensor ante cada desconfiguración.
+\textbf{Persistencia de modelos aprendidos en tarjeta SD.} Los modelos entrenados en la HuskyLens ---línea guía, etiquetas de control y etiquetas de parada--- se almacenan en la memoria interna del dispositivo y pueden perderse si un usuario manipula accidentalmente el menú de la cámara. Guardarlos en una tarjeta SD permitiría restaurarlos automáticamente al encender el robot, eliminando la necesidad de reentrenar el sensor ante cada desconfiguración.
 
 \textbf{Cambio dinámico de asociación QR--secuencia.} El módulo Bluetooth ya permite configurar el mapeo entre identificadores QR y posiciones de la secuencia desde la aplicación web. Una extensión natural sería permitir reasignar ese mapeo entre sesiones para que el mismo conjunto físico de tarjetas pueda representar distintas secuencias, mitigando el riesgo de que los niños memoricen posiciones físicas en lugar de razonar sobre el orden lógico.
 
