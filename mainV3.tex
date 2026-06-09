@@ -181,11 +181,11 @@ En el Capítulo 4 se expone el análisis del problema abordado y el diseño de l
 
 En el Capítulo 5 se describe el módulo HuskyLens: su hardware, conexión con la placa ESP32 por I2C, el protocolo de aplicación, la arquitectura del software (núcleo de protocolo, capa en C y binding Lua), el formato de datos que proporciona, los algoritmos de visión soportados y su uso desde la aplicación en C y Lua. \\
 
-En el Capítulo 6 se documenta la extensión del módulo de comunicación Bluetooth Low Energy (BLE) de Robotito. Se describe el mecanismo de transferencia inalámbrica de configuraciones desde la aplicación web, la arquitectura del \textit{HuskyLens Mapper} para el desacoplamiento entre identificadores físicos y lógica del juego, y la persistencia de datos en memoria no volátil (NVS). \\
+En el Capítulo 6 se documenta la extensión del módulo de comunicación Bluetooth Low Energy (BLE) de Robotito. Se describe el mecanismo de transferencia inalámbrica de configuraciones desde la aplicación web, la arquitectura del \textit{HuskyLens Mapper} para el desacoplamiento entre identificadores físicos y lógica de la actividad, y la persistencia de datos en memoria no volátil (NVS). \\
 
 En el Capítulo 7 se exponen los fundamentos teóricos de los árboles de comportamiento (\textit{Behavior Trees}) y se documenta la implementación del motor BT como biblioteca reutilizable, incluyendo los tipos de nodos (acción, condición, compositores), la reactividad y la integración con el sistema. \\
 
-En el Capítulo 8 se presenta la creación del juego: reglas, dinámica y objetivos pedagógicos. Se detalla el diseño del circuito sobre tatami, el seguimiento de línea, la detección de marcas rojas, la lectura de códigos QR y la verificación de secuencias, los modos pausa y reset, la implementación del juego mediante BT y los objetivos pedagógicos de la actividad. \\
+En el Capítulo 8 se presenta la creación de la actividad: reglas, dinámica y objetivos pedagógicos. Se detalla el diseño del circuito sobre tatami, el seguimiento de línea, la detección de marcas rojas, la lectura de códigos QR y la verificación de secuencias, los modos pausa y reset, la implementación de la actividad mediante BT y los objetivos pedagógicos de la actividad. \\
 
 En el Capítulo 9 se describe el configurador web desarrollado para la preparación de secuencias de Robotito. Se documenta la herramienta que permite registrar tags físicos, definir relaciones de equivalencia, construir secuencias de recorrido y transferir la configuración al robot de forma inalámbrica, sin necesidad de modificar el firmware. \\
 
@@ -359,7 +359,7 @@ En contraste, la Pixy2 es una solución robusta y de rápida integración, dise�
 
 La OpenMV Cam H7 R2 y la HuskyLens AI se posicionan como alternativas más avanzadas en términos de procesamiento en el borde y flexibilidad. La primera ofrece un entorno de desarrollo programable en MicroPython, ideal para quienes buscan mayor control sobre el reconocimiento visual. La segunda, por su parte, permite el entrenamiento de nuevos patrones directamente desde el dispositivo, sin necesidad de programación, lo que la vuelve especialmente atractiva en contextos educativos con usuarios no expertos. Además, su capacidad para reconocer una mayor variedad de estímulos visuales, incluidos tipos de superficie o contextos más abstractos, la hace adecuada para ampliar el rango de interacción del robot con el entorno.
 
-En el marco del presente proyecto, donde se prioriza la simplicidad de la interacción, la confiabilidad del reconocimiento en tiempo real y la adaptabilidad del sistema a un público infantil, las cámaras con capacidades integradas de visión artificial (Pixy2, OpenMV Cam H7 R2 y HuskyLens AI) resultan más adecuadas que la ESP32-CAM. Dentro de ese conjunto, la elección final dependerá del equilibrio deseado entre facilidad de uso, escalabilidad del sistema y nivel de personalización requerido para los desafíos visuales propuestos en la dinámica del juego.
+En el marco del presente proyecto, donde se prioriza la simplicidad de la interacción, la confiabilidad del reconocimiento en tiempo real y la adaptabilidad del sistema a un público infantil, las cámaras con capacidades integradas de visión artificial (Pixy2, OpenMV Cam H7 R2 y HuskyLens AI) resultan más adecuadas que la ESP32-CAM. Dentro de ese conjunto, la elección final dependerá del equilibrio deseado entre facilidad de uso, escalabilidad del sistema y nivel de personalización requerido para los desafíos visuales propuestos en la dinámica de la actividad.
 
 \section{Tabla comparativa}
 
@@ -506,7 +506,7 @@ La arquitectura propuesta permite diseñar actividades en las que el entorno fí
 
 En la dinámica desarrollada en este proyecto, el robot recorre un circuito, interpreta marcas visuales y valida una secuencia definida previamente. Esta actividad permite trabajar conceptos como ordenamiento, reconocimiento de patrones, secuenciación, depuración y resolución colaborativa de problemas.
 
-El objetivo de esta integración no es únicamente técnico. La visión artificial se utiliza como medio para enriquecer la interacción pedagógica, generando un ciclo de prueba, observación, retroalimentación y corrección. Los detalles de la dinámica, sus reglas y objetivos educativos se presentan en el capítulo correspondiente a la creación del juego.
+El objetivo de esta integración no es únicamente técnico. La visión artificial se utiliza como medio para enriquecer la interacción pedagógica, generando un ciclo de prueba, observación, retroalimentación y corrección. Los detalles de la dinámica, sus reglas y objetivos educativos se presentan en el capítulo correspondiente a la creación de la actividad.
 
 \subsection{Integración física}
 
@@ -1008,7 +1008,7 @@ Para dotar a Robotito de la flexibilidad necesaria en entornos educativos, se ha
 El propósito fundamental de este módulo es cumplir con el requerimiento funcional de transferencia de configuración al robot, permitiendo que el docente envíe secuencias de etiquetas válidas de forma inalámbrica desde la aplicación web. Esta conexión dinámica transforma al robot de un autómata con rutas fijas en una plataforma adaptable a diversos desafíos pedagógicos.
 
 \section{Gestión de Datos y Persistencia (HuskyLens Mapper)}
-La innovación central de la extensión es el \textit{HuskyLens Mapper}, una capa lógica que permite desacoplar los identificadores físicos leídos por la cámara de la lógica semántica del juego.
+La innovación central de la extensión es el \textit{HuskyLens Mapper}, una capa lógica que permite desacoplar los identificadores físicos leídos por la cámara de la lógica semántica de la actividad.
 
 \subsection{Almacenamiento No Volátil (NVS)}
 Para que el robot sea usable en el aula sin configuraciones repetitivas, el módulo utiliza la memoria flash del ESP32 mediante el sistema \textit{Non-Volatile Storage} (NVS). 
@@ -1335,19 +1335,29 @@ La estructura del motor permite integrar nuevos módulos, acciones y comportamie
 Esta independencia funcional convierte al BT en un componente reutilizable, adaptable y adecuado para múltiples entornos educativos y robóticos.
 
 
-\chapter{Creación del juego (reglas, dinámica y objetivos pedagógicos)}
+\chapter{Creación de la actividad (reglas, dinámica y objetivos pedagógicos)}
 
 El juego desarrollado propone una actividad didáctica en la que un robot móvil recorre un circuito establecido sobre un tatami, interpretando señales visuales y verificando el orden correcto de una serie de elementos colocados por los estudiantes. El diseño combina exploración autónoma, reconocimiento visual y retroalimentación inmediata, permitiendo que los niños participen activamente en la construcción del recorrido y la validación de la secuencia propuesta.
 
-\section{Diseño y dinámica del juego}
+\section{Diseño y dinámica de la actividad}
 
 El escenario de juego está compuesto por una superficie de tatami sobre la cual se traza una línea guía que el robot debe seguir de manera autónoma. A lo largo del circuito se ubican distintas “estaciones visuales”, formadas por marcos laterales donde los estudiantes insertan imágenes, ilustraciones o símbolos. Cada marco contiene además un código QR con un identificador numérico (\emph{id} = 1, 2, 3, ...), el cual representa la posición correcta que debería ocupar ese elemento dentro de la secuencia.
 
 Además, en algunos tramos del tatami se adhieren pequeños adhesivos. Estas marcas cumplen la función de activar un evento dentro de la partida: cuando el robot las detecta, debe detenerse y ejecutar una verificación sobre la estación visual correspondiente.
 
-\subsection{Reglas del juego}
+\begin{figure}[!htbp]
+    \centering
+    \makebox[\textwidth][c]{%
+        \includegraphics[width=1\textwidth]{images/tablero/robotito-tablero-recorrido.png}
+    }
+    \caption{Tablero de actividad}
+    \label{fig:tablero}
+\end{figure}
 
-Las reglas del juego se describen a continuación:
+
+\subsection{Reglas de la actividad}
+
+Las reglas de la actividad se describen a continuación:
 
 \begin{itemize}
     \item \textbf{Inicio}: el robot se coloca en una casilla o pieza de inicio. Permanece en estado de espera activo hasta recibir la señal de comienzo, la cual consiste en mostrarle un indicador de color verde que contiene una etiqueta específica (QR) dentro. Una vez detectada esta señal, inicia el recorrido.
@@ -1377,12 +1387,12 @@ Las reglas del juego se describen a continuación:
 
 \subsection{Modo pausa y modo reset}
 
-Además del comportamiento principal del recorrido, el robot incorpora dos modos especiales de operación que permiten al docente intervenir en cualquier momento del juego sin perder el hilo de la actividad: \emph{pausa} y \emph{reset}.
+Además del comportamiento principal del recorrido, el robot incorpora dos modos especiales de operación que permiten al docente intervenir en cualquier momento de la actividad sin perder el hilo de la actividad: \emph{pausa} y \emph{reset}.
 
 \begin{itemize}
     \item \textbf{Modo pausa}: cuando el robot es levantado del tatami, detecta esta condición y entra automáticamente en un estado de pausa. En este modo deja de avanzar, detiene cualquier acción en curso y conserva íntegramente su estado interno (secuencia evaluada, posiciones visitadas y resultado parcial). Este modo resulta especialmente útil para que la maestra pueda detener la actividad, explicar un concepto, reorganizar una estación o asistir a un estudiante sin que el robot continúe moviéndose.
     
-    \item \textbf{Reanudación del juego}: al volver a apoyar el robot en el piso, éste queda a la espera de una señal externa. Si recibe la señal de \textbf{continuar}, retoma el recorrido exactamente en la etapa en la que lo había dejado antes de ser levantado, sin perder los datos de las estaciones ya evaluadas.
+    \item \textbf{Reanudación de la actividad}: al volver a apoyar el robot en el piso, éste queda a la espera de una señal externa. Si recibe la señal de \textbf{continuar}, retoma el recorrido exactamente en la etapa en la que lo había dejado antes de ser levantado, sin perder los datos de las estaciones ya evaluadas.
     
     \item \textbf{Modo reset}: si en lugar de la señal de continuar el robot recibe una señal de \textbf{reinicio}, borra su estado interno, reinicia contadores, vacía el registro de estaciones correctas/incorrectas y vuelve a su comportamiento inicial, como si la partida comenzara desde cero. Este modo permite reiniciar el juego de forma rápida y ordenada cuando se desea realizar una nueva prueba sin tener que reubicar manualmente al robot en la pieza de inicio.
 \end{itemize}
@@ -1393,16 +1403,16 @@ La inclusión de los modos \emph{pausa}, \emph{continuar} y \emph{reset} aporta 
 \begin{itemize}
     \item \textbf{Seguridad y control del entorno}: la maestra puede detener el robot inmediatamente ante cualquier situación (un niño cruza la trayectoria, se detecta un obstáculo inesperado, surge una pregunta importante, etc.).
     
-    \item \textbf{Continuidad pedagógica}: el modo pausa permite explicar conceptos en el momento exacto en que surgen, sin perder el contexto del juego.
+    \item \textbf{Continuidad pedagógica}: el modo pausa permite explicar conceptos en el momento exacto en que surgen, sin perder el contexto de la actividad.
     
-    \item \textbf{Gestión eficiente del tiempo de clase}: el modo continuar evita repetir partes del juego innecesariamente, evitando posible frustraciones o aburrimiento por parte de los estudiantes.
+    \item \textbf{Gestión eficiente del tiempo de clase}: el modo continuar evita repetir partes de la actividad innecesariamente, evitando posible frustraciones o aburrimiento por parte de los estudiantes.
     
-    \item \textbf{Flexibilidad en la dinámica del juego}: el modo reset habilita comenzar una nueva partida de forma instantánea, facilitando la repetición de actividades, la comparación de resultados o la experimentación con variantes del recorrido.
+    \item \textbf{Flexibilidad en la dinámica de la actividad}: el modo reset habilita comenzar una nueva partida de forma instantánea, facilitando la repetición de actividades, la comparación de resultados o la experimentación con variantes del recorrido.
     
     \item \textbf{Comprensión profunda del proceso}: estos modos introducen a los estudiantes en nociones básicas de estados del sistema (pausa, ejecución, reinicio), similares a las empleadas en sistemas reales de robótica y programación.
 \end{itemize}
 
-\subsection{Implementación del juego utilizando BT}
+\subsection{Implementación de la actividad utilizando BT}
 
 \begin{figure}[!htbp]
     \centering
@@ -1413,7 +1423,7 @@ La inclusión de los modos \emph{pausa}, \emph{continuar} y \emph{reset} aporta 
     \label{fig:bt_robotito}
 \end{figure}
 
-La lógica de control del juego fue implementada utilizando Árboles de Comportamiento (Behavior Trees, BT), debido a las ventajas que esta arquitectura ofrece en términos de modularidad, reactividad y claridad estructural. A diferencia de una Máquina de Estados Finitos (FSM), donde las transiciones entre estados pueden crecer exponencialmente a medida que aumenta la complejidad del sistema, los BT permiten encapsular comportamientos independientes en nodos reutilizables y organizarlos jerárquicamente.
+La lógica de control de la actividad fue implementada utilizando Árboles de Comportamiento (Behavior Trees, BT), debido a las ventajas que esta arquitectura ofrece en términos de modularidad, reactividad y claridad estructural. A diferencia de una Máquina de Estados Finitos (FSM), donde las transiciones entre estados pueden crecer exponencialmente a medida que aumenta la complejidad del sistema, los BT permiten encapsular comportamientos independientes en nodos reutilizables y organizarlos jerárquicamente.
 
 En el contexto de Robotito, esta decisión permitió integrar de forma ordenada el seguimiento de línea, la detección de tags visuales, las rutinas de checkpoint y los mecanismos de recuperación ante errores. Además, la estructura jerárquica del árbol facilita la comprensión del flujo lógico del robot, lo cual resulta especialmente valioso desde el punto de vista pedagógico, ya que los estudiantes pueden visualizar claramente cómo el robot toma decisiones y responde al entorno.
 
@@ -1431,7 +1441,7 @@ Este nodo posee asociada la interrupción:
     \item \texttt{fault\_recovery\_interrupt}
 \end{itemize}
 
-La interrupción monitorea permanentemente condiciones críticas del robot durante toda la ejecución del juego. Entre los eventos supervisados se encuentran:
+La interrupción monitorea permanentemente condiciones críticas del robot durante toda la ejecución de la actividad. Entre los eventos supervisados se encuentran:
 
 \begin{itemize}
     \item \texttt{proximity\_lost}: pérdida de referencia de proximidad o condiciones inseguras de navegación.
@@ -1453,7 +1463,7 @@ De esta forma, toda la lógica operacional queda encapsulada dentro de una estru
 
 El nodo \texttt{root\_sequence} corresponde a una secuencia principal de tipo \textit{sequence}.
 
-Su responsabilidad es gestionar el ciclo de vida completo del robot dentro del juego, organizando las diferentes etapas de funcionamiento:
+Su responsabilidad es gestionar el ciclo de vida completo del robot dentro de la actividad, organizando las diferentes etapas de funcionamiento:
 
 \begin{enumerate}
     \item Configuración inicial.
@@ -1462,7 +1472,7 @@ Su responsabilidad es gestionar el ciclo de vida completo del robot dentro del j
     \item Finalización y espera de reinicio.
 \end{enumerate}
 
-La secuencia garantiza que cada fase se complete exitosamente antes de permitir el avance hacia la siguiente. Esto resulta especialmente importante para evitar que el robot inicie la misión sin haber completado correctamente la inicialización del hardware o sin haber detectado el evento de comienzo del juego.
+La secuencia garantiza que cada fase se complete exitosamente antes de permitir el avance hacia la siguiente. Esto resulta especialmente importante para evitar que el robot inicie la misión sin haber completado correctamente la inicialización del hardware o sin haber detectado el evento de comienzo de la actividad.
 
 La lógica de transición entre fases se implementa mediante selectores denominados ``puertas'' (\textit{gate selectors}), los cuales habilitan o bloquean dinámicamente el avance según el estado interno del sistema.
 
@@ -1480,7 +1490,7 @@ Esta puerta permite reutilizar el árbol tanto en arranques completos como en re
 
 Gestiona el estado de espera previo al inicio de la actividad.
 
-Durante esta etapa el robot permanece en modo Standby hasta detectar el tag o condición visual que habilita el comienzo del juego. Esto permite que el docente o los estudiantes preparen el circuito antes de iniciar la ejecución.
+Durante esta etapa el robot permanece en modo Standby hasta detectar el tag o condición visual que habilita el comienzo de la actividad. Esto permite que el docente o los estudiantes preparen el circuito antes de iniciar la ejecución.
 
 \paragraph{\texttt{route\_loop\_gate\_selector}}
 
@@ -1724,7 +1734,7 @@ Además, el uso de BT permitió separar claramente la percepción visual, la tom
 
 \subsection{Dinámica interactiva}
 
-La dinámica del juego involucra activamente a los estudiantes:
+La dinámica de la actividad involucra activamente a los estudiantes:
 
 \begin{enumerate}
     \item Los niños eligen imágenes o dibujos relacionados con una temática propuesta (animales, letras, números, emociones, etc.).
@@ -1759,7 +1769,7 @@ El juego permite múltiples variantes educativas:
     \item Introducir estaciones sin pegotín rojo.
 \end{itemize}
 
-En conjunto, el diseño del juego sirve como puente entre el razonamiento lógico, la robótica educativa y la interacción con un sistema autónomo de manera accesible y motivadora.
+En conjunto, el diseño de la actividad sirve como puente entre el razonamiento lógico, la robótica educativa y la interacción con un sistema autónomo de manera accesible y motivadora.
 
 \chapter{Configurador web para la preparación de secuencias de Robotito}
 
@@ -2081,7 +2091,7 @@ En esta instancia no se pone énfasis en el concepto y utilidad de los códigos 
 Las entrevistas arrojaron comentarios sobre varios aspectos del diseño que se detallan a continuación.
 
 \subsection{Diseño de materiales y elementos visuales}
-Las docentes validaron positivamente la propuesta de usar piezas de tatami modulares como base física del juego. Consideraron que el formato de puzzle es familiar para los niños y facilita tanto el armado colaborativo como la reconfiguración del circuito para diferentes actividades. Sin embargo, sugirieron considerar la durabilidad de los materiales, especialmente de los pegotines de calle con línea negra adheridas, dado el uso intensivo esperado.
+Las docentes validaron positivamente la propuesta de usar piezas de tatami modulares como base física de la actividad. Consideraron que el formato de puzzle es familiar para los niños y facilita tanto el armado colaborativo como la reconfiguración del circuito para diferentes actividades. Sin embargo, sugirieron considerar la durabilidad de los materiales, especialmente de los pegotines de calle con línea negra adheridas, dado el uso intensivo esperado.
 Respecto a los puntos de parada, ambas docentes recomendaron reforzar la señal visual del círculo rojo con elementos adicionales que hagan más explícita la acción esperada. Propusieron agregar íconos complementarios como ojos, manos o señales de ``PARE'' que los niños puedan asociar inmediatamente con la acción de detenerse.
 \subsection{Sistema de tarjetas con códigos QR}
 El diseño propuesto de tarjetas---con un código QR pequeño para la validación técnica ubicado en una esquina y una imagen central grande para los niños---fue bien recibido. Las maestras destacaron que esta dualidad permite que el contenido educativo sea visualmente predominante, mientras que el aspecto técnico queda en segundo plano.
@@ -2236,7 +2246,7 @@ Este trabajo extendió la plataforma educativa Robotito en cuatro dimensiones co
 
 Desde el punto de vista técnico, se desarrollaron tres componentes reutilizables que extienden la plataforma de forma independiente. El módulo HuskyLens abstrae toda la complejidad del protocolo de comunicación con la cámara, exponiendo una API uniforme accesible desde C y desde Lua que permite incorporar percepción visual en futuros proyectos sin lidiar con los detalles del bus I2C ni del protocolo propietario del sensor. El motor de Árboles de Comportamiento provee una biblioteca de control general desacoplada de cualquier lógica de dominio específica, lo que permite modelar nuevos comportamientos robóticos combinando los nodos existentes sin modificar el núcleo del sistema. El módulo Bluetooth transforma a Robotito de un autómata con rutas fijas en una plataforma configurable dinámicamente desde una aplicación web, con persistencia entre sesiones mediante NVS y protección ante accesos concurrentes desde FreeRTOS y Lua. La integración de los tres módulos en el juego implementado valida que la arquitectura funciona de forma coordinada en condiciones reales de uso.
 
-Desde el punto de vista pedagógico, la experimentación con tres maestras de nivel inicial y primaria y dos sesiones con estudiantes de entre 4 y 8 años demostró que la plataforma es accesible y motivadora para el público objetivo. Los niños de segundo año de primaria comprendieron rápidamente el mecanismo de seguimiento de línea y la lógica de secuencia correcta, apoyándose en analogías con señales de tránsito y en narrativas conocidas. Los niños de nivel inicial requirieron una mediación mayor, pero respondieron positivamente a la retroalimentación luminosa del anillo LED. En ambas sesiones el feedback inmediato en cada punto de parada ---verde para aciertos, rojo para errores--- resultó más efectivo pedagógicamente que esperar al final del recorrido. Las funciones de pausa y reset, incorporadas a partir del feedback docente, resultaron indispensables para que las maestras pudieran realizar intervenciones pedagógicas sin perder el estado del juego ni reiniciar el robot manualmente.
+Desde el punto de vista pedagógico, la experimentación con tres maestras de nivel inicial y primaria y dos sesiones con estudiantes de entre 4 y 8 años demostró que la plataforma es accesible y motivadora para el público objetivo. Los niños de segundo año de primaria comprendieron rápidamente el mecanismo de seguimiento de línea y la lógica de secuencia correcta, apoyándose en analogías con señales de tránsito y en narrativas conocidas. Los niños de nivel inicial requirieron una mediación mayor, pero respondieron positivamente a la retroalimentación luminosa del anillo LED. En ambas sesiones el feedback inmediato en cada punto de parada ---verde para aciertos, rojo para errores--- resultó más efectivo pedagógicamente que esperar al final del recorrido. Las funciones de pausa y reset, incorporadas a partir del feedback docente, resultaron indispensables para que las maestras pudieran realizar intervenciones pedagógicas sin perder el estado de la actividad ni reiniciar el robot manualmente.
 
 En conjunto, el proyecto consolida a Robotito como una plataforma abierta que integra visión artificial, control modular y conectividad inalámbrica, alineada con las tendencias internacionales en educación STEM y con capacidad real de adopción en el sistema educativo uruguayo.
 
