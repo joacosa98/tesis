@@ -1,0 +1,761 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.23)  22 JUL 2026 10:35
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**/Users/cristian/Documents/Lucho/tesis/tesis/main
+(/Users/cristian/Documents/Lucho/tesis/tesis/main.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+(./prgrado.cls
+Document Class: prgrado 08/06/2023 2.1 Clase LaTeX Proyectos de Grado - InCo, FIng, UdelaR 
+(/usr/local/texlive/2026/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2025/01/22 v1.4n Standard LaTeX document class
+(/usr/local/texlive/2026/texmf-dist/tex/latex/base/bk10.clo
+File: bk10.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count275
+\c@chapter=\count276
+\c@section=\count277
+\c@subsection=\count278
+\c@subsubsection=\count279
+\c@paragraph=\count280
+\c@subparagraph=\count281
+\c@figure=\count282
+\c@table=\count283
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen148
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2024/02/08 v1.3d Input encoding file
+\inpenc@prehook=\toks17
+\inpenc@posthook=\toks18
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2026/03/08 v26.4 The multilingual framework for LuaLaTeX, pdfLaTeX and XeLaTeX
+\babel@savecnt=\count284
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input line 2078.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input line 2080.
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input line 2082.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input line 2083.
+LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) on input line 2084.
+LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) on input line 2086.
+LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) on input line 2111.
+\U@D=\dimen149
+\l@unhyphenated=\language91
+ (/usr/local/texlive/2026/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count285
+ (/usr/local/texlive/2026/texmf-dist/tex/generic/babel/locale/es/babel-spanish.tex)
+Package babel Info: Importing font and identification data for spanish
+(babel)             from babel-es.ini. Reported on input line 4330.
+ (/usr/local/texlive/2026/texmf-dist/tex/generic/babel-spanish/spanish.ldf
+Language: spanish.ldf 2021/05/27 v5.0q Spanish support from the babel system
+\es@quottoks=\toks19
+\es@quotdepth=\count286
+Package babel Info: Making " an active character on input line 570.
+Package babel Info: Making . an active character on input line 675.
+Package babel Info: Making < an active character on input line 722.
+Package babel Info: Making > an active character on input line 722.
+))
+LaTeX Encoding Info:    Redeclaring text command \guillemotleft (encoding OT1) on input line 22.
+LaTeX Encoding Info:    Redeclaring text command \guillemotright (encoding OT1) on input line 22.
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2026-01-29 v7.01p Hypertext links for LaTeX
+ (/usr/local/texlive/2026/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks20
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+ (/usr/local/texlive/2026/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+ (/usr/local/texlive/2026/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)) (/usr/local/texlive/2026/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2026-01-29 v2.58 Cross-referencing by name of section
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count287
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count288
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/stringenc/stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
+)
+\@linkdim=\dimen150
+\Hy@linkcounter=\count289
+\Hy@pagecounter=\count290
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2026-01-29 v7.01p Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count291
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2026-01-29 v7.01p Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Hyper figures OFF on input line 4201.
+Package hyperref Info: Link nesting OFF on input line 4206.
+Package hyperref Info: Hyper index ON on input line 4209.
+Package hyperref Info: Plain pages OFF on input line 4216.
+Package hyperref Info: Backreferencing OFF on input line 4221.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4468.
+\c@Hy@tempcnt=\count292
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4807.
+\XeTeXLinkMargin=\dimen151
+ (/usr/local/texlive/2026/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+ (/usr/local/texlive/2026/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
+))
+\Fld@menulength=\count293
+\Field@Width=\dimen152
+\Fld@charsize=\dimen153
+Package hyperref Info: Hyper figures OFF on input line 6084.
+Package hyperref Info: Link nesting OFF on input line 6089.
+Package hyperref Info: Hyper index ON on input line 6092.
+Package hyperref Info: backreferencing OFF on input line 6099.
+Package hyperref Info: Link coloring OFF on input line 6104.
+Package hyperref Info: Link coloring with OCG OFF on input line 6109.
+Package hyperref Info: PDF/A mode OFF on input line 6114.
+\Hy@abspage=\count294
+\c@Item=\count295
+\c@Hfootnote=\count296
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2026-01-29 v7.01p Hyperref driver for pdfTeX
+\Fld@listcount=\count297
+\c@bookmark@seq@number=\count298
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
+ (/usr/local/texlive/2026/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 284.
+)
+\Hy@SectionHShift=\skip51
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen154
+\Gin@req@width=\dimen155
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/apacite/apacite.sty
+Package: apacite 2013/07/21 v6.03 APA citation
+\c@BibCnt=\count299
+\bibleftmargin=\skip52
+\bibindent=\skip53
+\bibparsep=\skip54
+\bibitemsep=\skip55
+\biblabelsep=\skip56
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
+)) (/usr/local/texlive/2026/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/tools/array.sty
+Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
+\col@sep=\dimen156
+\ar@mcellbox=\box53
+\extrarowheight=\dimen157
+\NC@list=\toks21
+\extratabsurround=\skip57
+\backup@length=\skip58
+\ar@cellbox=\box54
+)
+\TX@col@width=\dimen158
+\TX@old@table=\dimen159
+\TX@old@col=\dimen160
+\TX@target=\dimen161
+\TX@delta=\dimen162
+\TX@cols=\count300
+\TX@ftn=\toks22
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen163
+\lightrulewidth=\dimen164
+\cmidrulewidth=\dimen165
+\belowrulesep=\dimen166
+\belowbottomsep=\dimen167
+\aboverulesep=\dimen168
+\abovetopsep=\dimen169
+\cmidrulesep=\dimen170
+\cmidrulekern=\dimen171
+\defaultaddspace=\dimen172
+\@cmidla=\count301
+\@cmidlb=\count302
+\@aboverulesep=\dimen173
+\@belowrulesep=\dimen174
+\@thisruleclass=\count303
+\@lastruleclass=\count304
+\@thisrulewidth=\dimen175
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2025/02/06 v3.11 Customized lists
+\labelindent=\skip59
+\enit@outerparindent=\dimen176
+\enit@toks=\toks23
+\enit@inbox=\box55
+\enit@count@id=\count305
+\enitdp@description=\count306
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2024/10/29 v1.0k Color table columns (DPC)
+\everycr=\toks24
+\minrowclearance=\skip60
+\rownum=\count307
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen177
+\captionmargin=\dimen178
+\caption@leftmargin=\dimen179
+\caption@rightmargin=\dimen180
+\caption@width=\dimen181
+\caption@indent=\dimen182
+\caption@parindent=\dimen183
+\caption@hangindent=\dimen184
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count308
+\c@continuedfloat=\count309
+Package caption Info: hyperref package is loaded.
+)
+Package caption Info: New subtype `subfigure' on input line 238.
+\c@subfigure=\count310
+Package caption Info: New subtype `subtable' on input line 238.
+\c@subtable=\count311
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/placeins/placeins.sty
+Package: placeins 2005/04/18  v 2.2
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/csquotes/csquotes.sty
+Package: csquotes 2024-04-04 v5.2o context-sensitive quotations (JAW)
+\csq@reset=\count312
+\csq@gtype=\count313
+\csq@glevel=\count314
+\csq@qlevel=\count315
+\csq@maxlvl=\count316
+\csq@tshold=\count317
+\csq@ltx@everypar=\toks25
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/csquotes/csquotes.def
+File: csquotes.def 2024-04-04 v5.2o csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/csquotes/csquotes.cfg
+File: csquotes.cfg 
+)) (/usr/local/texlive/2026/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2025-10-13 v4.24 Multi-page Table package (DPC)
+\LTleft=\skip61
+\LTright=\skip62
+\LTpre=\skip63
+\LTpost=\skip64
+\LTchunksize=\count318
+\LTcapwidth=\dimen185
+\LT@head=\box56
+\LT@firsthead=\box57
+\LT@foot=\box58
+\LT@lastfoot=\box59
+\LT@gbox=\box60
+\LT@cols=\count319
+\LT@rows=\count320
+\c@LT@tables=\count321
+\c@LT@chunks=\count322
+\LT@p@ftn=\toks26
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count323
+\float@exts=\toks27
+\float@box=\box61
+\@float@everytoks=\toks28
+\@floatcapt=\box62
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/rotating.sty
+Package: rotating 2025/01/14 v2.16e rotated objects in LaTeX
+\c@r@tfl@t=\count324
+\rotFPtop=\skip65
+\rotFPbot=\skip66
+\rot@float@box=\box63
+\rot@mess@toks=\toks29
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 60.
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... found 'babel' package.
+Package csquotes Info: Adjusting default style.
+Package csquotes Info: Redefining alias 'default' -> 'spanish'.
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count325
+) (./main.aux
+LaTeX Info: Redefining \. on input line 11.
+LaTeX Info: Redefining \% on input line 11.
+Package babel Info: 'spanish' activates 'spanish' shorthands.
+(babel)             Reported on input line 11.
+)
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Info: Redefining \. on input line 63.
+LaTeX Info: Redefining \% on input line 63.
+Package hyperref Info: Link coloring ON on input line 63.
+ (./main.out) (./main.out)
+\@outlinefile=\write3
+\openout3 = `main.out'.
+
+ (/usr/local/texlive/2026/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count326
+\scratchdimen=\dimen186
+\scratchbox=\box64
+\nofMPsegments=\count327
+\nofMParguments=\count328
+\everyMPshowfont=\toks30
+\MPscratchCnt=\count329
+\MPscratchDim=\dimen187
+\MPnumerator=\count330
+\makeMPintoPDFobject=\count331
+\everyMPtoPDFconversion=\toks31
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+\c@maskedRefs=\count332
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/apacite/spanish.apc
+File: spanish.apc 2013/07/21 v6.03 apacite language file
+LaTeX Info: Redefining \BPBI on input line 138.
+LaTeX Info: Redefining \BHBI on input line 139.
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: longtable package is loaded.
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/caption/ltcaption.sty
+Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
+)
+Package caption Info: rotating package is loaded.
+Package caption Info: End \AtBeginDocument code.
+<figs/logo-udelar-fing.png, id=257, 668.4975pt x 171.64125pt>
+File: figs/logo-udelar-fing.png Graphic file (type png)
+<use figs/logo-udelar-fing.png>
+Package pdftex.def Info: figs/logo-udelar-fing.png  used on input line 72.
+(pdftex.def)             Requested size: 332.44244pt x 85.35826pt.
+ [1
+
+
+{/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./figs/logo-udelar-fing.png>]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 72.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 72.
+<figs/cc/by.png, id=268, 97.0827pt x 33.9669pt>
+File: figs/cc/by.png Graphic file (type png)
+<use figs/cc/by.png>
+Package pdftex.def Info: figs/cc/by.png  used on input line 72.
+(pdftex.def)             Requested size: 97.08244pt x 33.96681pt.
+
+Overfull \hbox (32.49852pt too wide) in paragraph at lines 72--73
+[][] 
+ []
+
+[2
+
+ <./figs/cc/by.png>] [3
+
+] [4
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5] [6] (./main.toc
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
+(Font)              using `OT1/cmr/bx/n' instead on input line 2.
+
+
+Package spanish Warning: Replacing `OT1/cmr/bx/sc' by 
+(spanish)                faked small caps on input line 2.
+
+[7
+
+])
+\tf@toc=\write4
+\openout4 = `main.toc'.
+
+ [8]
+Cap\'{\i }tulo 1.
+
+LaTeX Warning: Citation `abeldano2024robotito' undefined on input line 156.
+
+[1
+
+
+] [2] [3] [4]
+Cap\'{\i }tulo 2.
+
+LaTeX Warning: Citation `bakala2019designing' undefined on input line 250.
+
+
+LaTeX Warning: Citation `fing2024manualesRobotito' undefined on input line 250.
+
+
+LaTeX Warning: Citation `robotito2019libro' undefined on input line 258.
+
+[5
+
+]
+
+LaTeX Warning: Citation `beebot' undefined on input line 268.
+
+
+LaTeX Warning: Citation `cubetto' undefined on input line 268.
+
+
+LaTeX Warning: Citation `qobo' undefined on input line 270.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 272--273
+
+ []
+
+<images/antecedentes/bee-bot.jpg, id=418, 1927.2pt x 1286.55656pt>
+File: images/antecedentes/bee-bot.jpg Graphic file (type jpg)
+<use images/antecedentes/bee-bot.jpg>
+Package pdftex.def Info: images/antecedentes/bee-bot.jpg  used on input line 278.
+(pdftex.def)             Requested size: 110.40253pt x 73.6957pt.
+<images/antecedentes/cubetto.jpg, id=419, 2509.375pt x 1673.25125pt>
+File: images/antecedentes/cubetto.jpg Graphic file (type jpg)
+<use images/antecedentes/cubetto.jpg>
+Package pdftex.def Info: images/antecedentes/cubetto.jpg  used on input line 284.
+(pdftex.def)             Requested size: 110.40253pt x 73.60796pt.
+<images/antecedentes/qobo.png, id=420, 846.16125pt x 523.9575pt>
+File: images/antecedentes/qobo.png Graphic file (type png)
+<use images/antecedentes/qobo.png>
+Package pdftex.def Info: images/antecedentes/qobo.png  used on input line 290.
+(pdftex.def)             Requested size: 110.40253pt x 68.3567pt.
+[6 <./images/antecedentes/bee-bot.jpg> <./images/antecedentes/cubetto.jpg> <./images/antecedentes/qobo.png>]
+Cap\'{\i }tulo 3.
+
+LaTeX Warning: Citation `hitta2022configuracionRobotito' undefined on input line 321.
+
+
+LaTeX Warning: Citation `silveira2024robotitoRFID' undefined on input line 321.
+
+[7
+
+] [8] [9] [10] [11] [12]
+Cap\'{\i }tulo 4.
+[13
+
+] [14] [15]
+
+LaTeX Warning: Citation `dfrobot2021huskylens' undefined on input line 525.
+
+
+LaTeX Warning: Citation `robotito2026hardware' undefined on input line 525.
+
+<images/huskylens/modulo_en_capas.png, id=494, 1541.76pt x 1027.84pt>
+File: images/huskylens/modulo_en_capas.png Graphic file (type png)
+<use images/huskylens/modulo_en_capas.png>
+Package pdftex.def Info: images/huskylens/modulo_en_capas.png  used on input line 541.
+(pdftex.def)             Requested size: 345.0pt x 229.99933pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[16] [17 <./images/huskylens/modulo_en_capas.png (PNG copy)>] [18{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [19]
+<images/BTRobotito.png, id=521, 5365.04375pt x 3361.55875pt>
+File: images/BTRobotito.png Graphic file (type png)
+<use images/BTRobotito.png>
+Package pdftex.def Info: images/BTRobotito.png  used on input line 636.
+(pdftex.def)             Requested size: 448.50105pt x 280.9841pt.
+
+
+LaTeX Warning: Citation `robotito2026software' undefined on input line 641.
+
+[20 <./images/BTRobotito.png>] [21]
+<images/web/tags.jpeg, id=541, 1606.0pt x 1044.90375pt>
+File: images/web/tags.jpeg Graphic file (type jpg)
+<use images/web/tags.jpeg>
+Package pdftex.def Info: images/web/tags.jpeg  used on input line 708.
+(pdftex.def)             Requested size: 448.50105pt x 291.80574pt.
+<images/web/secuencias.png, id=542, 1138.2525pt x 812.03375pt>
+File: images/web/secuencias.png Graphic file (type png)
+<use images/web/secuencias.png>
+Package pdftex.def Info: images/web/secuencias.png  used on input line 717.
+(pdftex.def)             Requested size: 448.50105pt x 319.96301pt.
+ [22] [23 <./images/web/tags.jpeg>] [24 <./images/web/secuencias.png>] [25] [26]
+Cap\'{\i }tulo 5.
+[27
+
+] [28]
+<images/experimentacion/Exp1_1.jpeg, id=594, 1606.0pt x 1204.5pt>
+File: images/experimentacion/Exp1_1.jpeg Graphic file (type jpg)
+<use images/experimentacion/Exp1_1.jpeg>
+Package pdftex.def Info: images/experimentacion/Exp1_1.jpeg  used on input line 816.
+(pdftex.def)             Requested size: 310.4979pt x 232.86403pt.
+<images/experimentacion/Exp1_2.jpeg, id=595, 1204.5pt x 1606.0pt>
+File: images/experimentacion/Exp1_2.jpeg Graphic file (type jpg)
+<use images/experimentacion/Exp1_2.jpeg>
+Package pdftex.def Info: images/experimentacion/Exp1_2.jpeg  used on input line 825.
+(pdftex.def)             Requested size: 310.4979pt x 413.99686pt.
+ [29] [30 <./images/experimentacion/Exp1_1.jpeg>] [31 <./images/experimentacion/Exp1_2.jpeg>]
+<images/experimentacion/Exp2_1.jpeg, id=617, 1396.21625pt x 1606.0pt>
+File: images/experimentacion/Exp2_1.jpeg Graphic file (type jpg)
+<use images/experimentacion/Exp2_1.jpeg>
+Package pdftex.def Info: images/experimentacion/Exp2_1.jpeg  used on input line 851.
+(pdftex.def)             Requested size: 310.4979pt x 357.14397pt.
+<images/experimentacion/Exp2_2.jpeg, id=618, 1539.7525pt x 1606.0pt>
+File: images/experimentacion/Exp2_2.jpeg Graphic file (type jpg)
+<use images/experimentacion/Exp2_2.jpeg>
+Package pdftex.def Info: images/experimentacion/Exp2_2.jpeg  used on input line 860.
+(pdftex.def)             Requested size: 310.4979pt x 323.84091pt.
+ [32
+
+] [33 <./images/experimentacion/Exp2_1.jpeg>] [34 <./images/experimentacion/Exp2_2.jpeg>] [35] [36] [37] [38] [39] [40] [41] [42]
+
+LaTeX Warning: Citation `marwan2022adaptiveFeedback' undefined on input line 988.
+
+[43] [44] [45] [46
+
+]
+Cap\'{\i }tulo 6.
+[47] [48
+
+]
+No file main.bbl.
+Anexo A.
+[49
+
+] [50
+
+]
+Anexo B.
+
+Package array Warning: Column L is already defined on input line 1069.
+
+
+Package array Warning: Column Y is already defined on input line 1071.
+
+[51] [52]
+Anexo C.
+
+LaTeX Warning: Citation `CarcasaRobotito' undefined on input line 1156.
+
+<images/modelos3d/carcasa-original-superior.png, id=765, 598.48593pt x 566.115pt>
+File: images/modelos3d/carcasa-original-superior.png Graphic file (type png)
+<use images/modelos3d/carcasa-original-superior.png>
+Package pdftex.def Info: images/modelos3d/carcasa-original-superior.png  used on input line 1164.
+(pdftex.def)             Requested size: 137.9979pt x 130.53195pt.
+<images/modelos3d/carcasa-original-frontal.png, id=766, 647.41875pt x 239.39438pt>
+File: images/modelos3d/carcasa-original-frontal.png Graphic file (type png)
+<use images/modelos3d/carcasa-original-frontal.png>
+Package pdftex.def Info: images/modelos3d/carcasa-original-frontal.png  used on input line 1170.
+(pdftex.def)             Requested size: 137.9979pt x 51.02678pt.
+<images/modelos3d/carcasa-original-3d.png, id=767, 710.655pt x 462.22687pt>
+File: images/modelos3d/carcasa-original-3d.png Graphic file (type png)
+<use images/modelos3d/carcasa-original-3d.png>
+Package pdftex.def Info: images/modelos3d/carcasa-original-3d.png  used on input line 1177.
+(pdftex.def)             Requested size: 207.0021pt x 134.63481pt.
+
+LaTeX Warning: Citation `CarcasaHuskylens' undefined on input line 1185.
+
+[53
+
+] [54 <./images/modelos3d/carcasa-original-superior.png> <./images/modelos3d/carcasa-original-frontal.png> <./images/modelos3d/carcasa-original-3d.png>]
+<images/modelos3d/carcasa-husky-superior.png, id=784, 682.04813pt x 429.85594pt>
+File: images/modelos3d/carcasa-husky-superior.png Graphic file (type png)
+<use images/modelos3d/carcasa-husky-superior.png>
+Package pdftex.def Info: images/modelos3d/carcasa-husky-superior.png  used on input line 1193.
+(pdftex.def)             Requested size: 137.9979pt x 86.97319pt.
+<images/modelos3d/carcasa-husky-lateral.png, id=785, 672.26157pt x 100.87688pt>
+File: images/modelos3d/carcasa-husky-lateral.png Graphic file (type png)
+<use images/modelos3d/carcasa-husky-lateral.png>
+Package pdftex.def Info: images/modelos3d/carcasa-husky-lateral.png  used on input line 1199.
+(pdftex.def)             Requested size: 137.9979pt x 20.7076pt.
+<images/modelos3d/carcasa-husky-3d.png, id=786, 670.00313pt x 348.55219pt>
+File: images/modelos3d/carcasa-husky-3d.png Graphic file (type png)
+<use images/modelos3d/carcasa-husky-3d.png>
+Package pdftex.def Info: images/modelos3d/carcasa-husky-3d.png  used on input line 1206.
+(pdftex.def)             Requested size: 172.5pt x 89.73856pt.
+
+
+LaTeX Warning: Citation `Blender' undefined on input line 1224.
+
+[55 <./images/modelos3d/carcasa-husky-superior.png> <./images/modelos3d/carcasa-husky-lateral.png> <./images/modelos3d/carcasa-husky-3d.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1237--1238
+
+ []
+
+<images/modelos3d/carcasa-nueva-frontal.png, id=799, 666.99188pt x 277.78781pt>
+File: images/modelos3d/carcasa-nueva-frontal.png Graphic file (type png)
+<use images/modelos3d/carcasa-nueva-frontal.png>
+Package pdftex.def Info: images/modelos3d/carcasa-nueva-frontal.png  used on input line 1245.
+(pdftex.def)             Requested size: 169.0519pt x 70.40471pt.
+<images/modelos3d/carcasa-nueva-lateral.png, id=800, 666.23906pt x 274.77657pt>
+File: images/modelos3d/carcasa-nueva-lateral.png Graphic file (type png)
+<use images/modelos3d/carcasa-nueva-lateral.png>
+Package pdftex.def Info: images/modelos3d/carcasa-nueva-lateral.png  used on input line 1251.
+(pdftex.def)             Requested size: 169.0519pt x 69.72119pt.
+<images/modelos3d/carcasa-nueva-superior.png, id=801, 663.22781pt x 570.63188pt>
+File: images/modelos3d/carcasa-nueva-superior.png Graphic file (type png)
+<use images/modelos3d/carcasa-nueva-superior.png>
+Package pdftex.def Info: images/modelos3d/carcasa-nueva-superior.png  used on input line 1258.
+(pdftex.def)             Requested size: 169.0519pt x 145.4439pt.
+<images/modelos3d/carcasa-nueva-3d.png, id=802, 647.41875pt x 423.83344pt>
+File: images/modelos3d/carcasa-nueva-3d.png Graphic file (type png)
+<use images/modelos3d/carcasa-nueva-3d.png>
+Package pdftex.def Info: images/modelos3d/carcasa-nueva-3d.png  used on input line 1264.
+(pdftex.def)             Requested size: 169.0519pt x 110.66618pt.
+[56] [57 <./images/modelos3d/carcasa-nueva-frontal.png> <./images/modelos3d/carcasa-nueva-lateral.png> <./images/modelos3d/carcasa-nueva-superior.png> <./images/modelos3d/carcasa-nueva-3d.png>] (./main.aux
+LaTeX Info: Redefining \. on input line 11.
+LaTeX Info: Redefining \% on input line 11.
+)
+ ***********
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+ ***********
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were undefined references.
+
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 642AB090D428F4325779D2A37B0F283E;13064.
+ ) 
+Here is how much of TeX's memory you used:
+ 14421 strings out of 467525
+ 235231 string characters out of 5418982
+ 679904 words of memory out of 5000000
+ 42919 multiletter control sequences out of 15000+600000
+ 635009 words of font info for 64 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 90i,13n,93p,1409b,838s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{cite.Blender} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.CarcasaHuskylens} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.CarcasaRobotito} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.marwan2022adaptiveFeedback} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.robotito2026software} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.robotito2026hardware} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.dfrobot2021huskylens} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.silveira2024robotitoRFID} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.hitta2022configuracionRobotito} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.qobo} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.cubetto} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.beebot} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.robotito2019libro} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.fing2024manualesRobotito} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.bakala2019designing} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.abeldano2024robotito} has been referenced but does not exist, replaced by a fixed one
+
+</usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on main.pdf (65 pages, 7201829 bytes).
+PDF statistics:
+ 946 PDF objects out of 1000 (max. 8388607)
+ 799 compressed objects within 8 object streams
+ 247 named destinations out of 1000 (max. 500000)
+ 620 words of extra memory for PDF output out of 10000 (max. 10000000)
+

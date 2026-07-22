@@ -1,0 +1,107 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {chapter}{Resumen}{\es@scroman {v}}{chapter*.2}%
+\contentsline {chapter}{\numberline {1}Introducción}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Motivación}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Actividad propuesta}{1}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Alcance funcional y límites}{2}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Planteo del problema}{2}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Objetivos}{2}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Resultados esperados}{3}{section.1.6}%
+\contentsline {section}{\numberline {1.7}Organización del documento}{4}{section.1.7}%
+\contentsline {chapter}{\numberline {2}Revisión de antecedentes}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Robotito}{5}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Actividades}{5}{subsection.2.1.1}%
+\contentsline {section}{\numberline {2.2}Robots educativos para actividades secuenciales}{6}{section.2.2}%
+\contentsline {chapter}{\numberline {3}Análisis del problema y diseño de la solución}{7}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Análisis del problema}{7}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Problemas identificados}{7}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Requerimientos de la solución}{8}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Diseño de la solución}{9}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Módulos a implementar}{9}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Diseño de la actividad}{10}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Actividad propuesta}{10}{subsection.3.2.3}%
+\contentsline {subsubsection}{Materiales}{12}{section*.6}%
+\contentsline {chapter}{\numberline {4}Implementación de la solución}{13}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Módulo de percepción visual con HuskyLens}{13}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Funcionamiento de HuskyLens}{13}{subsection.4.1.1}%
+\contentsline {subsubsection}{Algoritmos de visión}{13}{section*.7}%
+\contentsline {subsubsection}{Representación de las detecciones}{14}{section*.8}%
+\contentsline {subsection}{\numberline {4.1.2}Integración con Robotito}{15}{subsection.4.1.2}%
+\contentsline {subsubsection}{Conexión mediante I2C}{15}{section*.11}%
+\contentsline {subsubsection}{Implementación del módulo}{16}{section*.14}%
+\contentsline {section}{\numberline {4.2}Control del comportamiento con Behavior Trees}{17}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Fundamentos teóricos}{17}{subsection.4.2.1}%
+\contentsline {subsubsection}{Tipos de nodos}{18}{section*.16}%
+\contentsline {subsection}{\numberline {4.2.2}Arquitectura del módulo BT}{18}{subsection.4.2.2}%
+\contentsline {subsubsection}{Rol del BT dentro del sistema}{18}{section*.17}%
+\contentsline {subsubsection}{Estructura general del módulo}{19}{section*.18}%
+\contentsline {subsection}{\numberline {4.2.3}Implementación de nodos}{19}{subsection.4.2.3}%
+\contentsline {section}{\numberline {4.3}Configurador web para la preparación de secuencias}{20}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Rol del configurador web}{21}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Definición de tags y estaciones}{21}{subsection.4.3.2}%
+\contentsline {subsubsection}{Ejemplos de secuencias definidas en el configurador}{21}{section*.20}%
+\contentsline {subsection}{\numberline {4.3.3}Construcción y validación de secuencias}{22}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}Biblioteca de actividades y flujo de uso}{22}{subsection.4.3.4}%
+\contentsline {section}{\numberline {4.4}Configuración de actividades y comunicación BLE}{25}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Gestión de Datos y Persistencia}{25}{subsection.4.4.1}%
+\contentsline {subsubsection}{Almacenamiento No Volátil (NVS)}{25}{section*.23}%
+\contentsline {subsection}{\numberline {4.4.2}Arquitectura Multitarea y Sincronización}{25}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Integridad de Datos y Mutex}{25}{subsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.4.4}Interfaz con la Capa de Aplicación (API Lua)}{26}{subsection.4.4.4}%
+\contentsline {chapter}{\numberline {5}Experimentación}{27}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Introducción}{27}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Metodología}{27}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Entrevistas con docentes}{27}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Primera sesión práctica con estudiantes}{28}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Segunda sesión práctica con estudiantes}{32}{subsection.5.2.3}%
+\contentsline {section}{\numberline {5.3}Resultados}{35}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Retroalimentación de las entrevistas docentes}{35}{subsection.5.3.1}%
+\contentsline {subsubsection}{Diseño de materiales y elementos visuales}{35}{section*.28}%
+\contentsline {subsubsection}{Sistema de tarjetas con tags}{35}{section*.29}%
+\contentsline {subsubsection}{Progresión pedagógica y etapas diferenciadas}{35}{section*.30}%
+\contentsline {subsubsection}{Retroalimentación del robot}{36}{section*.31}%
+\contentsline {subsubsection}{Control del flujo de la actividad}{36}{section*.32}%
+\contentsline {paragraph}{Función de pausa}{36}{section*.33}%
+\contentsline {paragraph}{Función de reinicio (reset)}{37}{section*.34}%
+\contentsline {subsubsection}{Aplicaciones curriculares}{37}{section*.35}%
+\contentsline {subsubsection}{Duración y organización de las actividades}{37}{section*.36}%
+\contentsline {subsection}{\numberline {5.3.2}Observaciones de la primera sesión con estudiantes}{38}{subsection.5.3.2}%
+\contentsline {subsubsection}{Comprensión del sistema}{38}{section*.37}%
+\contentsline {subsubsection}{Autonomía en el armado}{38}{section*.38}%
+\contentsline {subsubsection}{Motivación y compromiso}{39}{section*.39}%
+\contentsline {subsubsection}{Reacción ante errores}{39}{section*.40}%
+\contentsline {subsubsection}{Colaboración}{39}{section*.41}%
+\contentsline {subsection}{\numberline {5.3.3}Observaciones de la segunda sesión con estudiantes}{39}{subsection.5.3.3}%
+\contentsline {subsubsection}{Comprensión del sistema}{39}{section*.42}%
+\contentsline {subsubsection}{Rol de las docentes durante la actividad}{40}{section*.43}%
+\contentsline {subsubsection}{Participación e interés}{40}{section*.44}%
+\contentsline {subsubsection}{Adecuación de la actividad para educación inicial}{40}{section*.45}%
+\contentsline {section}{\numberline {5.4}Análisis, discusión y ajustes}{41}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Fortalezas identificadas}{41}{subsection.5.4.1}%
+\contentsline {paragraph}{Tangibilidad y manipulación física}{41}{section*.46}%
+\contentsline {paragraph}{Retroalimentación inmediata y visible}{41}{section*.47}%
+\contentsline {paragraph}{Adaptabilidad curricular}{41}{section*.48}%
+\contentsline {paragraph}{Aprendizaje colaborativo}{41}{section*.49}%
+\contentsline {paragraph}{Progresión de complejidad}{41}{section*.50}%
+\contentsline {subsection}{\numberline {5.4.2}Desafíos y áreas de mejora}{41}{subsection.5.4.2}%
+\contentsline {paragraph}{Curva de aprendizaje inicial}{41}{section*.51}%
+\contentsline {paragraph}{Gestión de materiales}{42}{section*.52}%
+\contentsline {paragraph}{Necesidad de control del flujo de actividad}{42}{section*.53}%
+\contentsline {paragraph}{Dependencia de elementos técnicos}{42}{section*.54}%
+\contentsline {paragraph}{Necesidad de herramientas auxiliares para docentes}{42}{section*.55}%
+\contentsline {paragraph}{Riesgo de memorización}{42}{section*.56}%
+\contentsline {subsection}{\numberline {5.4.3}Validación de decisiones de diseño}{42}{subsection.5.4.3}%
+\contentsline {subsection}{\numberline {5.4.4}Ajustes realizados basados en el feedback}{43}{subsection.5.4.4}%
+\contentsline {paragraph}{Mejoras en señales visuales de parada}{43}{section*.57}%
+\contentsline {paragraph}{Calibración de retroalimentación luminosa}{43}{section*.58}%
+\contentsline {paragraph}{Implementación de controles de flujo}{43}{section*.59}%
+\contentsline {paragraph}{Documentación de progresión pedagógica}{44}{section*.60}%
+\contentsline {section}{\numberline {5.5}Conclusiones del proceso de experimentación}{44}{section.5.5}%
+\contentsline {chapter}{\numberline {6}Conclusiones y Trabajo Futuro}{47}{chapter.6}%
+\contentsline {chapter}{\numberline {A}Manual de usuario}{49}{appendix.Alph1}%
+\contentsline {chapter}{\numberline {B}Tabla comparativa de cámaras}{51}{appendix.Alph2}%
+\contentsline {chapter}{\numberline {C}Modelado de carcasa para Robotito}{53}{appendix.Alph3}%
+\contentsline {section}{\numberline {C.1}Desarrollo del diseño de la carcasa}{53}{section.Alph3.1}%
+\contentsline {subsection}{\numberline {C.1.1}Diseño conceptual}{55}{subsection.Alph3.1.1}%
+\contentsline {subsection}{\numberline {C.1.2}Proceso de modelado CAD}{55}{subsection.Alph3.1.2}%
+\contentsline {subsection}{\numberline {C.1.3}Resultados y mejoras futuras}{56}{subsection.Alph3.1.3}%
