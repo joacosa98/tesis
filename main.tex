@@ -378,15 +378,117 @@ Se propone entonces una actividad cuyo principal objetivo es generar una instanc
 
 \begin{itemize}
     \item Robotito con cámara HuskyLens integrada que recibe información visual del exterior y reacciona en base a los datos obtenidos.
+\end{itemize}
 
-    \item Un tablero que contiene un recorrido (definido por una línea contínua) y varios ``puntos de parada'' (la cantidad que sea necesaria, según la cantidad de elementos de la secuencia definida por el docente) que corresponden a cada posición de la secuencia a verificar por Robotito. Cada punto de parada se determina con un tag específico a lo largo del recorrido. Además, el tablero contiene un punto de partida y uno de fin, donde Robotito debe empezar y terminar el recorrido, respectivamente.
+\begin{itemize}
+    \item Un tablero que contiene un recorrido (definido por una línea contínua) y varios ``puntos de parada'' (la cantidad que sea necesaria, según la cantidad de elementos de la secuencia definida por el docente) que corresponden a cada posición de la secuencia a verificar por Robotito. Cada punto de parada se determina con un tag específico a lo largo del recorrido junto a una zona específica para ubicar las tarjetas. Además, el tablero contiene un punto de partida y uno de fin, donde Robotito debe empezar y terminar el recorrido, respectivamente.
+\end{itemize}
 
+\begin{figure}[htbp]
+    \centering
+
+    % Primera fila
+    \begin{subfigure}{0.25\textwidth}
+        \centering
+        \includegraphics[width=\linewidth, angle=180]{images/tablero/tablero-recta.png}
+        \caption{Pieza del tablero con recta}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.25\textwidth}
+        \centering
+        \includegraphics[width=\linewidth, angle=180]{images/tablero/tablero-curva-corta.png}
+        \caption{Pieza del tablero con curva corta}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.25\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/tablero/tablero-curva-larga.png}
+        \caption{Pieza del tablero con curva larga}
+    \end{subfigure}
+
+    \vspace{0.2cm}
+
+    % Segunda fila
+    \begin{subfigure}{0.25\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/tablero/tablero-recta-QR.png}
+        \caption{Pieza del tablero con punto de parada}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.25\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/tablero/tablero-start.png}
+        \caption{Pieza del tablero con curva corta}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.25\textwidth}
+        \centering
+        \includegraphics[width=\linewidth, angle=180]{images/tablero/tablero-end.png}
+        \caption{Pieza del tablero con curva larga}
+    \end{subfigure}
+
+    \caption{Piezas del tablero}
+    \label{fig:piezas-tablero}
+\end{figure}
+
+\begin{itemize}
     \item Tarjetas correspondientes a cada elemento de la secuencia determinada por el docente. Cada tarjeta contiene un tag específico que luego será leído por Robotito en cada punto de parada, además de una sección libre donde el estudiante puede hacer dibujos, pegar una imagen o ubicar otro objeto arriba.
 \end{itemize}
 
-% TODO: agregar imágenes de ejemplo de tablero y tarjetas
+\begin{figure}[htbp]
+    \centering
 
-Definidos los tres elementos principales, la actividad a desarrollar consiste en una serie de pasos. En primer lugar, el docente debe configurar previamente la secuencia que será verificada por Robotito en el recorrido. Esto se traduce a definir una lista ordenada de tags a ser leída por Robotito durante el recorrido (un tag de cada tarjeta a ubicar en el tablero) y enviarla al robot. Este paso es explicado con más detalle en la sección correspondiente al configurador web del Capítulo 4. En resúmen, en esta parte el docente define qué tarjeta debe ir ubicada en qué lugar del recorrido.
+    \begin{subfigure}{0.20\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/tablero/tarjeta-dibujo.png}
+    \end{subfigure}
+
+    \caption{Ejemplo de tarjeta con tags}
+    \label{fig:tarjeta-tags}
+\end{figure}
+
+Cada pieza del tablero es un cuadrado encastrable de goma EVA de dimensiones 50cm x 50cm, con borde recto (sin encastre) en la zona donde se unen las líneas del recorrido (para evitar errores de lectura del robot), facilitando el armado y guardado por parte de docentes y alumnos. Además, la decisión de separar cada elemento del recorrido en distintas piezas agrega la posibilidad de crear recorridos distintos con curvas y rectas a lo largo del espacio en el que se utiliza.
+
+Un ejemplo de recorrido completo se vería de la siguiente manera:
+
+\begin{figure}[htbp]
+    \centering
+
+    \begin{subfigure}{0.75\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/tablero/robotito-tablero-recorrido.png}
+    \end{subfigure}
+
+    \caption{Ejemplo de recorrido completo}
+    \label{fig:recorrido-completo}
+\end{figure}
+
+Además de estos materiales, la actividad cuenta con dos tarjetas adicionales, cada una con un tag específico a ser leído por el robot. El funcionamiento de cada una se explica en la sección~\ref{subsec:recorrido-completo} (Recorrido completo).
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[t]{0.22\textwidth}
+        \centering
+        \vspace{0pt}
+        \includegraphics[width=\linewidth]{images/tablero/tarjeta-start.png}
+        \caption{Tarjeta de Inicio}
+        \label{subfig:tarjetas-control-inicio}
+    \end{subfigure}
+    \hspace{0.1\textwidth}
+    \begin{subfigure}[t]{0.22\textwidth}
+        \centering
+        \vspace{0pt}
+        \includegraphics[width=\linewidth]{images/tablero/tarjeta-exit-config.png}
+        \caption{Tarjeta para salir de modo de Configuración}
+        \label{subfig:tarjetas-control-config}
+    \end{subfigure}
+
+    \label{fig:tarjetas-control}
+\end{figure}
+
+\subsection{Desarrollo de la actividad}
+
+Definidos los materiales, la actividad a desarrollar consiste en una serie de pasos. En primer lugar, el docente debe configurar previamente la secuencia que será verificada por Robotito en el recorrido. Esto se traduce a definir una lista ordenada de tags a ser leída por Robotito durante el recorrido (un tag de cada tarjeta a ubicar en el tablero) y enviarla al robot. Este paso es explicado con más detalle en la sección~\ref{sec:configurador-web}, correspondiente al configurador web. En resúmen, en esta parte el docente define qué tarjeta debe ir ubicada en qué lugar del recorrido.
 
 Luego de configurada la actividad, en una instancia con alumnos el docente presenta el concepto de secuencia ordenada, poniendo como ejemplo secuencias que sean entendibles por niños de educación inicial, como las partes de un cuento conocido, las estaciones del año, pasos de la rutina diaria, o incluso una secuencia ordenada de números, entre otros.
 
@@ -400,9 +502,97 @@ Terminado el paso anterior, se ubica a Robotito en el punto de partida y se da c
 
 Finalmente, al llegar al punto de fin del tablero, el robot devuelve una retroalimentación general del recorrido, con el objetivo de informar si este fue correcto o si hubo errores, indicando cuáles elementos leídos no se encontraban en la posición correcta. Esto permite que el recorrido se realice más de una vez, reubicando las tarjetas para indagar sobre cuál debería ser el comportamiento del robot en cada caso.
 
-\subsubsection{Materiales}
+\subsection{Recorrido completo}
+\label{subsec:recorrido-completo}
 
+Al encender Robotito, este se encuentra en modo ``Configuración'', con su anillo LED parpadeando en color azul. En este paso es posible conectarse al robot a través del protocolo BLE utilizando el configurador web y transmitir datos de secuencia esperada entre ambos. En caso de querer empezar el recorrido, el robot se debe ubicar en el punto de inicio del tablero apuntando la cámara hacia la línea del recorrido, y luego mostrarle (a la cámara) la tarjeta correspondiente a ``salir de modo Configuración'' (\ref{subfig:tarjetas-control-config}).
 
+A partir de ahora Robotito se encuentra en modo ``Esperando Inicio'' (con su anillo LED parpadeando en color blanco). Para empezar el recorrido se debe mostrar la tarjeta de Inicio (\ref{subfig:tarjetas-control-inicio}), y el robot empezará a moverse siguiendo la línea. \\
+
+\textbf{Nota:} Si durante el recorrido Robotito es levantado del tablero o pierde la línea que venía siguiendo, se pondrá automáticamente en modo ``Pausa'', con su anillo LED parpadeando en color amarillo. En este modo el robot recuerda la secuencia leída y verificada hasta el momento, por lo que solamente hay que reubicarlo en el lugar del tablero donde se perdió o levantó (con la cámara apuntando hacia la línea), y mostrar la tarjeta de Inicio para que este retome el recorrido. \\
+
+Como se mencionó anteriormente, los puntos de parada se representan con un tag específico que el robot reconoce durante su avance.
+
+\begin{figure}[htbp]
+    \centering
+
+    \begin{subfigure}{0.20\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/tablero/stop-qr.png}
+    \end{subfigure}
+
+    \caption{Ejemplo de punto de parada}
+    \label{fig:stop-qr}
+\end{figure}
+
+Se toma la decisión de representar estos puntos de parada de manera similar a una señal de tránsito ``PARE'' roja, como forma de hacer su significado más intuitivo, relacionable con el día a día, y agregar color al recorrido. Luego de realizar varias pruebas se agrega una segunda instancia del mismo tag dentro de la figura para evitar errores de lectura del robot, en caso que este no lea la primera.
+
+Una vez leído el tag correspondiente al punto de parada, el robot detiene su avance y empieza a rotar en sentido horario, hasta encontrar el tag de la tarjeta ubicada por el grupo en la zona específica. Con el objetivo de cumplir con que la tarjeta ubicada siempre se encuentre ``a la derecha'' del robot, se diseñan las piezas del tablero de manera que siempre se encastren de la misma forma, empezando con la pieza de ``Inicio'', seguida por rectas y curvas que solamente se encastrarán dejando el área específica para ubicar la tarjeta del lado derecho del recorrido, finalizando con la pieza de ``Fin''.
+
+De igual manera que con los tags del punto de parada, se ubican dos tags iguales en la esquina de cada tarjeta (como se puede observar en \ref{fig:tarjeta-tags}), evitando errores de lectura del robot. Una vez leído alguno de los dos tags de la tarjeta, Robotito ``pensará'' brevemente (modo representado por su anillo LED prendiéndose progresivamente con luz blanca hasta completar el anillo, también pensado para darle al grupo una representación visual de lo que está haciendo el robot que, en este caso, significa la validación en tiempo real de la secuencia) y decidirá si la tarjeta leída se encuentra en la posición correcta o no. Si la posición es la tarjeta es correcta, el anillo LED se encenderá completamente con luz verde. En el caso incorrecto, se encenderá con luz roja. 
+
+El feedback luminoso se mantiene por un breve período de tiempo, luego se apaga y el robot empieza su movimiento de rotación, esta vez en sentido antihorario buscando nuevamente los tags del punto de parada. Una vez encontrado nuevamente el tag, Robotito sigue su recorrido por la línea del tablero.
+
+Este proceso se repite la cantidad de veces que sea necesaria, según la cantidad de puntos de parada haya en el recorrido completo, finalmente llegando al punto de fin.
+
+\begin{figure}[htbp]
+    \centering
+
+    \begin{subfigure}{0.50\textwidth}
+        \centering
+        \includegraphics[width=\linewidth, angle=180]{images/tablero/tablero-end-real.png}
+    \end{subfigure}
+
+    \caption{Punto de fin utilizado en las pruebas}
+    \label{fig:tablero-fin-real}
+\end{figure}
+
+Como se puede observar en la figura~\ref{fig:tablero-fin-real}, el final del recorrido se representa por varias instancias del mismo tag formando una figura similar a una bandera de fin utilizada en carreras. Nuevamente, el objetivo es hacer la actividad intuitiva y relacionable con situaciones y símbolos del dia a día.
+
+Al realizar la lectura de alguno de los tags ubicados en el punto de fin del recorrido, Robotito evalúa si todas las estaciones fueron visitadas en el orden correcto y retorna feedback de la verificación completa. En caso que la secuencia haya tenido errores de posición, Robotito se detiene y muestra en su anillo LED el resultado de cada posición en los colores rojo o verde, representando error o acierto, sucesivamente.
+
+\begin{figure}[htbp]
+    \centering
+
+    \begin{subfigure}{0.25\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/robotito/robotito-segmento-1.png}
+        \caption{Feedback final con error, dos posiciones en total}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.25\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/robotito/robotito-segmento-2.png}
+        \caption{Feedback final con error, tres posiciones en total}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.25\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/robotito/robotito-segmento-3.png}
+        \caption{Feedback final con error, cuatro posiciones en total}
+    \end{subfigure}
+
+    \caption{Ejemplos de feedback final con error, con distintas cantidades de puntos de parada en el recorrido}
+    \label{fig:feedback-final}
+\end{figure}
+
+En caso que la secuencia verificada sea correcta, Robotito sigue avanzando brevemente (pasando la zona representada por la ``bandera final'' de tags), y luego realiza giros en forma de ``festejo'' con su anillo LED encendido completamente en color verde.
+
+Finalmente, en caso de querer reiniciar el recorrido, Robotito debe ser ubicado en el punto de Inicio del tablero, que además cuenta con un tag específico para reiniciar la actividad. Una vez leído ese tag, el historial de la secuencia validada hasta ese momento se descarta y el robot vuelve a modo ``Esperando Inicio'' (con su anillo LED parpadeando con luz blanca) listo para empezar un nuevo recorrido.
+
+\begin{figure}[htbp]
+    \centering
+
+    \begin{subfigure}{0.50\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/tablero/tablero-start-real.png}
+    \end{subfigure}
+
+    \caption{Punto de inicio utilizado en las pruebas (con tag de reinicio)}
+    \label{fig:tablero-start-real}
+\end{figure}
+
+% TODO agregar info sobre ejecución del robot en el juego
 
 
 % ================== FIN CAP 3 (ANALISIS & DISEÑO)  ==================
@@ -643,6 +833,7 @@ Para conocer en profunida la implementación del modulo de BT, puede visitar el 
 
 % ===== WEB =====
 \section{Configurador web para la preparación de secuencias}
+\label{sec:configurador-web}
 
 Una vez definida la actividad como una secuencia de estaciones identificadas mediante tags, este capítulo presenta la herramienta web utilizada para preparar dicha secuencia antes de transferirla al robot.
 
