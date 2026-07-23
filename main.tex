@@ -1251,14 +1251,35 @@ En conjunto, la experimentación valida que Robotito extendido con visión artif
 
 %conclusiones
 \chapter{Conclusiones y Trabajo Futuro}
-\label{cap:conclusiones}
-Reforzar el alcance real del proyecto.
-Describir el aporte como una extensión concreta de Robotito:
-percepción visual acotada a línea y tags;
-configuración inalámbrica de actividades;
-control modular mediante Behavior Trees;
-integración en una actividad educativa.
-Presentar el trabajo futuro como extensión natural del alcance actual.
+
+\section{Conclusiones}
+
+Este trabajo aporta una extensión concreta y acotada de la plataforma educativa Robotito, desarrollada sobre cuatro frentes: percepción visual limitada al seguimiento de línea y a la lectura de tags mediante la cámara HuskyLens, configuración inalámbrica de actividades mediante un configurador web y un módulo de comunicación Bluetooth con persistencia en NVS, control modular del comportamiento del robot mediante Árboles de Comportamiento e integración de estas tres piezas en una actividad educativa concreta, puesta a prueba en dos instancias con estudiantes de entre 4 y 8 años.
+
+Desde el punto de vista técnico, se desarrollaron tres componentes reutilizables e independientes entre sí, que en conjunto sostienen estos cuatro frentes. El módulo HuskyLens abstrae la complejidad del protocolo de comunicación con la cámara, exponiendo una interfaz uniforme accesible desde C y desde Lua, acotada a las dos capacidades utilizadas en este trabajo: seguimiento de línea y lectura de tags. El motor de Árboles de Comportamiento provee una biblioteca de control general, desacoplada de cualquier lógica de dominio específica, que permite modelar nuevos comportamientos robóticos combinando los nodos existentes sin modificar el núcleo del sistema. La extensión del módulo Bluetooth, junto con el configurador web, resuelve la configuración inalámbrica de actividades: permite preparar una secuencia desde una aplicación externa y transferirla al robot sin modificar su firmware, con persistencia entre sesiones. La integración de estos tres componentes en la actividad implementada muestra que la arquitectura funciona de forma coordinada en un escenario similar al de una clase real, y es la instancia donde efectivamente se validó el aporte del proyecto.
+
+Un resultado adicional del proceso de desarrollo fue la importancia de iterar sobre decisiones técnicas a partir de la puesta a prueba con usuarios reales, dentro de ese mismo frente de integración: la primera sesión con estudiantes evidenció que la detección de puntos de parada basada en reconocimiento de colores era sensible a las condiciones de iluminación del aula, lo que llevó a rediseñar esa lógica para depender exclusivamente de la lectura de tags. Este cambio fue validado en la segunda sesión, donde no se observaron problemas de lectura asociados a la iluminación, y confirma que someter la solución a condiciones de uso reales permitió detectar y corregir un problema que no era evidente desde un análisis puramente técnico.
+
+Desde el punto de vista pedagógico, la experimentación con tres maestras de nivel inicial y primaria y dos sesiones con estudiantes de entre 4 y 8 años permitió observar indicios de accesibilidad y motivación en los grupos participantes, dentro del alcance acotado de la actividad propuesta. Los niños de segundo año de primaria comprendieron rápidamente el mecanismo de seguimiento de línea y el significado de los puntos de parada; el concepto de secuencia correcta resultó inicialmente más abstracto, pero se volvió comprensible al presentarlo mediante ejemplos concretos y narrativas conocidas. Los niños de nivel inicial, por su parte, requirieron una mediación docente más fuerte para seguir la dinámica de la actividad, aunque mostraron interés y participación activa durante toda la sesión. En ambas instancias el nivel de motivación fue alto, y el feedback inmediato en cada punto de parada resultó, según lo observado y lo señalado por las docentes, útil para sostener la dinámica de corrección durante la actividad.
+
+Las entrevistas y sesiones prácticas permitieron además identificar necesidades que no formaban parte del diseño original, en particular la falta de mecanismos para que las y los docentes pausaran o reiniciaran el recorrido sin perder el estado de la actividad. A partir de ese feedback se incorporaron al sistema funciones de pausa y reset, dentro del mismo frente de integración con la actividad educativa.
+
+En conjunto, este trabajo constituye una extensión concreta y acotada de Robotito en percepción visual, configuración inalámbrica, control modular y una actividad educativa que integra las tres capacidades anteriores. La experimentación realizada es una validación inicial, en dos instituciones y con grupos reducidos, de que esta extensión es técnica y pedagógicamente viable dentro de ese alcance. Su desempeño en otros contextos, edades e instituciones queda abierto, y se retoma a continuación como líneas de trabajo futuro que extienden naturalmente los cuatro frentes ya desarrollados.
+
+\section{Líneas de trabajo futuro}
+
+Las siguientes líneas se plantean como extensiones naturales del alcance actual del proyecto: cada una toma uno de los cuatro frentes ya desarrollados (percepción visual, configuración inalámbrica, control modular o integración educativa) y propone profundizarlo, sin implicar un cambio de enfoque respecto de lo ya construido.
+
+\textbf{Persistencia de modelos aprendidos en tarjeta SD (percepción visual).} Los modelos entrenados en la HuskyLens para líneas y tags se almacenan en la memoria interna del dispositivo y pueden perderse si un usuario manipula accidentalmente el menú de la cámara. Guardarlos en una tarjeta SD permitiría restaurarlos, eliminando la necesidad de reentrenar el sensor ante cada desconfiguración, sin modificar el alcance de percepción ya definido.
+
+
+\textbf{Bifurcaciones en el mapa (control modular).} Incorporar intersecciones en el circuito de tatami, donde el robot deba elegir un camino según el resultado de la validación, es una extensión directa del motor de Árboles de Comportamiento ya desarrollado: implicaría agregar nuevos nodos de decisión sin modificar el núcleo del sistema, introduciendo nociones de condicionales y ramificación lógica de forma concreta y visible.
+
+\textbf{Retroalimentación sonora (integración educativa).} Complementar el feedback visual de los LEDs con señales sonoras diferenciadas para aciertos y errores, dentro de la misma actividad ya implementada, enriquecería la experiencia especialmente en grupos numerosos o con niños de menor edad, donde captar y mantener la atención del grupo completo es más desafiante.
+
+
+
+\textbf{Evaluación a mayor escala (integración educativa).} Las dos sesiones realizadas constituyeron una validación inicial con grupos acotados en dos instituciones específicas. Una evaluación con múltiples docentes, niveles educativos e instituciones distintas, manteniendo la misma actividad como base, permitiría obtener evidencia más robusta sobre el impacto pedagógico real y detectar aspectos de diseño que no emergen en contextos controlados. Esta línea no busca demostrar que la solución escala a un uso masivo, sino ampliar de forma gradual la evidencia disponible sobre su viabilidad.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
