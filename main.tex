@@ -672,7 +672,7 @@ Una vez presentado el funcionamiento de HuskyLens, se describe a continuación s
 
 El primer paso para integrar HuskyLens a Robotito consiste en conectar la cámara a la placa ESP32. La cámara dispone de un conector de cuatro pines que puede operar en modo UART o I2C. En este proyecto se utiliza el protocolo I2C, ya que es el mismo que emplean otros periféricos del robot, como el sensor de proximidad.
 
-Una ventaja de esta elección es que no fue necesario desarrollar una nueva implementación del protocolo I2C, sino que se reutilizó la infraestructura de software ya existente en el proyecto. En \ref{tab:huskylens_pines_i2c} y \ref{tab:conexion_huskylens_esp32}  se presenta la asignación de los pines utilizados para establecer la conexión entre la cámara y la placa ESP32.
+Una ventaja de esta elección es que no fue necesario desarrollar una nueva implementación del protocolo I2C, sino que se reutilizó la infraestructura de software ya existente en el proyecto. En la Tabla~\ref{tab:huskylens_pines_i2c} y en la Tabla~\ref{tab:conexion_huskylens_esp32}  se presenta la asignación de los pines utilizados para establecer la conexión entre la cámara y la placa ESP32.
 
 \begin{table}[H]
 \centering
@@ -706,21 +706,57 @@ Con la cámara conectada, resta implementar el módulo de software que permite i
 
 \subsubsection{Implementación del módulo}
 
-El siguiente paso consiste en implementar un módulo en C que permita el intercambio de información entre la cámara y el robot.
+El siguiente paso consiste en implementar un módulo en C que permita el
+intercambio de información entre la cámara y el robot.
 
-La implementación se basa en la biblioteca oficial de Arduino para HuskyLens \cite{dfrobot2021huskylens}, adaptada al entorno ESP32/FreeRTOS y a la capa de comunicación I2C del sistema. En esta sección se describe el funcionamiento del módulo y su implementación a alto nivel. Para una descripción más detallada, puede consultarse el repositorio de \cite{robotito2026hardware}, donde se encuentra el código completo.
+La implementación se basa en la biblioteca oficial de Arduino para Husky-
+Lens \cite{dfrobot2021huskylens}, adaptada al entorno ESP32/FreeRTOS y a la capa de
+comunicación I2C del sistema. En esta sección se describe el funcionamiento
+del módulo y su implementación a alto nivel. Para una descripción más deta-
+llada, puede consultarse el repositorio de \cite{robotito2026hardware}, donde se encuentra el código completo.
 
-La implementación del módulo se organizó en tres capas, cada una con una responsabilidad claramente definida. Esta separación permite desacoplar la lógica de comunicación de la interfaz utilizada por la aplicación, facilitando el mantenimiento del código y la incorporación de futuras modificaciones.
+La implementación del módulo se organizó en tres capas, cada una con una
+responsabilidad claramente definida. Esta separación permite desacoplar la lógi-
+ca de comunicación de la interfaz utilizada por la aplicación, facilitando el man-
+tenimiento del código y la incorporación de futuras modificaciones.
 
-La \textbf{Capa 1}, correspondiente al protocolo de comunicación, implementa el protocolo utilizado por la cámara. Su función es construir los mensajes que serán enviados a HuskyLens e interpretar las respuestas recibidas, verificando que la información obtenida sea válida antes de entregarla al resto del sistema. Esta capa no realiza acceso directo al hardware, sino que trabaja únicamente con el formato de los datos intercambiados.
+La \textbf{Capa 1}, correspondiente al protocolo de comunicación, implementa el
+protocolo utilizado por la cámara. Su función es construir los mensajes que serán
+enviados a HuskyLens y reconstruir las respuestas recibidas, verificando que la
+información esté completa y sea válida antes de entregarla al resto del sistema.
+Esta capa trabaja únicamente con el formato de los datos intercambiados, sin
+interpretar su significado; no realiza acceso directo al hardware.
 
-Sobre esta se encuentra la \textbf{Capa 2}, correspondiente a la interfaz de acceso en C, que constituye el núcleo del módulo. Es la responsable de inicializar la comunicación con la cámara, enviar las solicitudes correspondientes, recibir las respuestas e interpretar la información obtenida. Además, mantiene internamente los resultados de las detecciones para que puedan ser consultados posteriormente por la aplicación.
+Sobre esta se encuentra la \textbf{Capa 2}, correspondiente a la interfaz de acceso en
+C, que constituye el núcleo del módulo y coordina a las otras dos partes. Es la
+responsable de inicializar la comunicación con la cámara, enviar las solicitudes
+correspondientes apoyándose en la Capa 1 para construir los mensajes, recibir
+las respuestas y, a partir de los datos que la Capa 1 reconstruye, interpretar su
+significado. Además, mantiene internamente los resultados de las detecciones
+para que puedan ser consultados posteriormente por la aplicación.
 
-Finalmente, la \textbf{Capa 3}, correspondiente a la interfaz para Lua, proporciona la funcionalidad utilizada por los programas escritos en este lenguaje. Su objetivo es adaptar las funciones implementadas en C al entorno de ejecución de Lua empleado por Robotito, ofreciendo una interfaz sencilla y ocultando los detalles internos de la comunicación con la cámara.
+Finalmente, la \textbf{Capa 3}, correspondiente a la interfaz para Lua, proporciona
+la funcionalidad utilizada por los programas escritos en este lenguaje. Su objeti-
+vo es adaptar las funciones implementadas en C al entorno de ejecución de Lua
+empleado por Robotito, ofreciendo una interfaz sencilla y ocultando los detalles
+internos de la comunicación con la cámara.
 
-El funcionamiento general del módulo comienza cuando la aplicación solicita información a la cámara mediante la interfaz disponible en Lua o directamente desde código C. La Capa 2 prepara la solicitud y la envía utilizando el controlador I2C del sistema. Una vez recibida la respuesta de HuskyLens, el módulo la procesa con ayuda de la Capa 1, interpreta la información obtenida y actualiza su estado interno. Posteriormente, la aplicación puede consultar estos resultados sin necesidad de interactuar directamente con el protocolo de comunicación.
+El funcionamiento general del módulo comienza cuando la aplicación solicita
+información a la cámara mediante la interfaz disponible en Lua o directamente
+desde código C. La Capa 2 solicita a la Capa 1 que arme el mensaje correspon-
+diente y lo envía utilizando el controlador I2C del sistema. Una vez recibida
+la respuesta de HuskyLens, la Capa 2 la reconstruye con ayuda de la Capa 1,
+interpreta la información obtenida y actualiza su estado interno. Posteriormente,
+la aplicación puede consultar estos resultados sin necesidad de interactuar
+directamente con el protocolo de comunicación. Es importante notar que la
+Capa 2 actúa como coordinadora entre la Capa 1 y el controlador I2C: ambas
+nunca interactúan directamente entre sí.
 
-Esta organización permite que cada capa se ocupe de una tarea específica: la Capa 1 implementa el protocolo de comunicación, la Capa 2 coordina el intercambio de información con la cámara y la Capa 3 expone una interfaz para la aplicación. Como resultado, se obtiene una implementación modular, sencilla de mantener y consistente con la arquitectura del resto del software de Robotito.
+Esta organización permite que cada capa se ocupe de una tarea específica:
+la Capa 1 implementa el protocolo de comunicación, la Capa 2 coordina el
+intercambio de información con la cámara y la Capa 3 expone una interfaz para
+la aplicación. Como resultado, se obtiene una implementación modular, sencilla
+de mantener y consistente con la arquitectura del resto del software de Robotito.
 
 \begin{figure}[h]
     \centering
@@ -1204,7 +1240,7 @@ Ambas funcionalidades se diseñaron para ser accesibles en base a acciones simpl
 
 \section{Conclusiones del proceso de experimentación}
 La experimentación realizada demuestra que la extensión de Robotito con capacidades de visión artificial y validación de secuencias es técnicamente funcional y pedagógicamente valiosa. La plataforma logra integrar pensamiento computacional, razonamiento secuencial y contenidos curriculares diversos en una experiencia de aprendizaje tangible y motivadora.
-El proceso iterativo de diseño---desde las entrevistas con docentes expertas hasta la validación práctica con estudiantes---resultó fundamental para identificar y resolver aspectos que no habrían sido evidentes desde una perspectiva puramente técnica. Las recomendaciones de las maestras sobre progresión pedagógica, gestión de la frustración y adaptabilidad curricular enriquecieron significativamente el diseño final.
+El proceso iterativo de diseño, desde las entrevistas con docentes expertas hasta la validación práctica con estudiantes, resultó fundamental para identificar y resolver aspectos que no habrían sido evidentes desde una perspectiva puramente técnica. Las recomendaciones de las maestras sobre progresión pedagógica, gestión de la frustración y adaptabilidad curricular enriquecieron significativamente el diseño final.
 Las sesiones con estudiantes confirmaron que la propuesta es accesible y atractiva para el público objetivo, aunque también evidenció la necesidad de herramientas de apoyo para los docentes y protocolos claros para el uso efectivo del sistema. En particular, la incorporación de las funciones de pausa y reset surgió como un elemento crítico para permitir que los docentes mantengan el control pedagógico de la actividad sin sacrificar la autonomía del robot.
 En conjunto, la experimentación valida que Robotito extendido con visión artificial constituye una herramienta educativa viable que puede contribuir al desarrollo del pensamiento computacional y al aprendizaje de contenidos curriculares en edades tempranas, cumpliendo así con los objetivos educativos planteados en este proyecto.
 
