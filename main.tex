@@ -92,15 +92,15 @@ Asimismo, agradecemos el tiempo dedicado a responder nuestras consultas y a comp
 Robotito es una plataforma educativa de software libre y hardware abierto
 utilizada para introducir conceptos de robótica y pensamiento computacional
 en niños de nivel inicial y primeros años de primaria. En su versión
-original, el robot cuenta con sensores básicos —de color y de distancia—
+original, el robot cuenta con sensores básicos de color y de distancia
 que limitan el tipo de actividades que se le pueden proponer a los
 estudiantes.
 
 Este trabajo presenta el diseño e implementación de una extensión de
 Robotito que incorpora capacidades de procesamiento de imágenes mediante
 una cámara HuskyLens, ampliando así su capacidad de percibir el entorno.
-La solución integra tres componentes principales: un módulo de
-comunicación I2C que conecta la cámara a la placa ESP32 del robot y
+La solución integra tres componentes principales: un módulo que permite la
+comunicación entre la cámara HuskyLens y la placa ESP32 del robot y
 permite el seguimiento de líneas y la lectura de marcadores visuales
 (AprilTags); un sistema de control del comportamiento basado en Árboles
 de Comportamiento (\textit{Behavior Trees}), implementado como una
@@ -161,7 +161,7 @@ Para resolver esto se sumaron tres piezas a Robotito: una cámara HuskyLens (mó
 
 \section{Actividad propuesta}
 
-La actividad desarrollada consiste en un recorrido guiado por una línea donde Robotito detecta tags en estaciones y valida el orden de una secuencia previamente configurada por el docente. El docente prepara la actividad desde el configurador web y transfiere la configuración al robot utilizando BLE; El objetivo es que los estudiantes ubiquen tarjetas que contienen tags en las estaciones definidas en el tablero y observen la retroalimentación del robot (acierto o error) en base a la posición de cada una en el recorrido. Las especificaciones de la ejecución del robot se detallan con mayor profundidad en el Capítulo 3.
+La actividad desarrollada consiste en un recorrido guiado por una línea donde Robotito detecta tags en estaciones y valida el orden de una secuencia previamente configurada por el docente. El docente prepara la actividad desde el configurador web y transfiere la configuración al robot utilizando BLE; El objetivo es que los estudiantes ubiquen tarjetas que contienen tags en las estaciones definidas en el tablero y observen la retroalimentación del robot (acierto o error) en base a la posición de cada una en el recorrido. Las especificaciones de la ejecución del robot se detallan con mayor profundidad en el Capítulo~\ref{cap:analisis}.
 
 \section{Alcance funcional y límites}
 
@@ -190,7 +190,7 @@ El objetivo general es desarrollar una extensión de la plataforma Robotito que 
     \item Traducir y adaptar el módulo de control de la cámara al entorno Lua RTOS de Robotito.
     \item Diseñar e implementar un módulo propio de \textit{Behavior Trees}, que funcione como biblioteca de control general reutilizable para futuros proyectos.
     \item Integrar el sistema de percepción visual y el controlador BT dentro del flujo de tareas del robot.
-    \item Desarrollar una actividad educativa basada en las capacidades de lectura de HuskyLens: seguimiento de línea, lectura de tags y validación de secuencias por parte del procesamiento del tobot.
+    \item Desarrollar una actividad educativa basada en las capacidades de lectura de HuskyLens: seguimiento de línea, lectura de tags y validación de secuencias por parte del procesamiento del robot.
     \item Documentar la impresión de docentes y estudiantes sobre la actividad a partir de instancias piloto realizadas en un entorno similar al de una clase real.
     \item Extender el módulo existente de comunicación Bluetooth Low Energy (BLE) de Robotito para permitir la transferencia inalámbrica de configuraciones de actividad, con persistencia de datos en la memoria no volátil (NVS) de ESP32 Thing.
     \item Desarrollar un configurador web que permita registrar tags, definir secuencias de recorrido y enviarlas al robot sin necesidad de modificar el firmware.
@@ -236,11 +236,7 @@ resultados y ajustes realizados a partir del feedback.
 En el Capítulo~\ref{cap:conclusiones} se presentan las conclusiones
 generales y las líneas de trabajo futuro.
 
-Finalmente, el apéndice reúne material complementario de referencia
-técnica, incluyendo detalles de implementación de los distintos módulos,
-documentación de apoyo para el usuario, y contenido visual adicional del
-proyecto.
-
+Finalmente, el apéndice reúne material complementario. 
 Las referencias bibliográficas se presentan al final del documento.
 \chapter{Revisión de antecedentes}
 \label{cap:antecedentes}
@@ -608,7 +604,7 @@ Como se mencionó en capítulos anteriores, uno de los objetivos es incorporar u
 
 Las características principales que se buscan son la compatibilidad con la placa ESP32, la capacidad de detectar colores, objetos y líneas, y la disponibilidad de estos algoritmos implementados directamente en la cámara para reducir el tiempo de integración. Además, se considera importante que la cámara tenga un costo y un tamaño adecuados, este úlitmo con el objetivo para poder instalarla en la parte superior del robot.
 
-A partir de estos criterios, se identificaron varias alternativas disponibles en el mercado, las cuales se describen en \ref{sec:tabla_comparativa_camaras}. Luego de evaluar cada opción, se seleccionó la cámara HuskyLens, ya que cumple con todos los requisitos establecidos. 
+A partir de estos criterios, se identificaron varias alternativas disponibles en el mercado, las cuales se describen en Anexo \ref{sec:tabla_comparativa_camaras}. Luego de evaluar cada opción, se seleccionó la cámara HuskyLens, dado que cumple con todos los requisitos establecidos. 
 
 Antes de describir su integración con Robotito, se presenta a continuación el funcionamiento general de la cámara: los algoritmos de visión que ofrece y la forma en que representa la información que detecta.
 
@@ -649,7 +645,7 @@ Los bloques representan un objeto detectado mediante un rectángulo. Esta estruc
 \end{tabular}
 \end{table}
 
-Con esta información es posible conocer dónde se encuentra el objeto dentro del campo visual de la cámara y el tamaño que ocupa en la imagen.
+Con esta información es posible conocer dónde se encuentra el objeto dentro del campo visual de la cámara y el tamaño que ocupa en la imagen. \\
 
 Las flechas representan una línea mediante un punto de inicio y un punto final. Esta estructura es utilizada por el algoritmo de seguimiento de líneas para describir el recorrido detectado. Además de las coordenadas de ambos puntos, cada flecha incluye un identificador asociado a la detección. La Tabla~\ref{tab:arrow_campos} resume los campos que forman parte de esta estructura.
 
