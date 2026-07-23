@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.7.14)  22 JUL 2026 22:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.7.14)  22 JUL 2026 22:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -742,37 +742,37 @@ Package array Warning: Column L is already defined on input line 1292.
 
 Package array Warning: Column Y is already defined on input line 1294.
 
-[57] [58]
+[57] [58
+
+]
 Anexo C.
-<images/modelos3d/carcasa-original-superior.png, id=867, 598.48593pt x 566.115pt>
+<images/modelos3d/carcasa-original-superior.png, id=866, 598.48593pt x 566.115pt>
 File: images/modelos3d/carcasa-original-superior.png Graphic file (type png)
 <use images/modelos3d/carcasa-original-superior.png>
 Package pdftex.def Info: images/modelos3d/carcasa-original-superior.png  used on input line 1387.
 (pdftex.def)             Requested size: 137.9979pt x 130.53195pt.
-<images/modelos3d/carcasa-original-frontal.png, id=868, 647.41875pt x 239.39438pt>
+<images/modelos3d/carcasa-original-frontal.png, id=867, 647.41875pt x 239.39438pt>
 File: images/modelos3d/carcasa-original-frontal.png Graphic file (type png)
 <use images/modelos3d/carcasa-original-frontal.png>
 Package pdftex.def Info: images/modelos3d/carcasa-original-frontal.png  used on input line 1393.
 (pdftex.def)             Requested size: 137.9979pt x 51.02678pt.
-<images/modelos3d/carcasa-original-3d.png, id=869, 710.655pt x 462.22687pt>
+<images/modelos3d/carcasa-original-3d.png, id=868, 710.655pt x 462.22687pt>
 File: images/modelos3d/carcasa-original-3d.png Graphic file (type png)
 <use images/modelos3d/carcasa-original-3d.png>
 Package pdftex.def Info: images/modelos3d/carcasa-original-3d.png  used on input line 1400.
 (pdftex.def)             Requested size: 207.0021pt x 134.63481pt.
-[59
-
-] [60 <./images/modelos3d/carcasa-original-superior.png> <./images/modelos3d/carcasa-original-frontal.png> <./images/modelos3d/carcasa-original-3d.png>]
-<images/modelos3d/carcasa-husky-superior.png, id=886, 682.04813pt x 429.85594pt>
+[59] [60 <./images/modelos3d/carcasa-original-superior.png> <./images/modelos3d/carcasa-original-frontal.png> <./images/modelos3d/carcasa-original-3d.png>]
+<images/modelos3d/carcasa-husky-superior.png, id=885, 682.04813pt x 429.85594pt>
 File: images/modelos3d/carcasa-husky-superior.png Graphic file (type png)
 <use images/modelos3d/carcasa-husky-superior.png>
 Package pdftex.def Info: images/modelos3d/carcasa-husky-superior.png  used on input line 1416.
 (pdftex.def)             Requested size: 137.9979pt x 86.97319pt.
-<images/modelos3d/carcasa-husky-lateral.png, id=887, 672.26157pt x 100.87688pt>
+<images/modelos3d/carcasa-husky-lateral.png, id=886, 672.26157pt x 100.87688pt>
 File: images/modelos3d/carcasa-husky-lateral.png Graphic file (type png)
 <use images/modelos3d/carcasa-husky-lateral.png>
 Package pdftex.def Info: images/modelos3d/carcasa-husky-lateral.png  used on input line 1422.
 (pdftex.def)             Requested size: 137.9979pt x 20.7076pt.
-<images/modelos3d/carcasa-husky-3d.png, id=888, 670.00313pt x 348.55219pt>
+<images/modelos3d/carcasa-husky-3d.png, id=887, 670.00313pt x 348.55219pt>
 File: images/modelos3d/carcasa-husky-3d.png Graphic file (type png)
 <use images/modelos3d/carcasa-husky-3d.png>
 Package pdftex.def Info: images/modelos3d/carcasa-husky-3d.png  used on input line 1429.
@@ -782,22 +782,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 1460--1461
 
  []
 
-<images/modelos3d/carcasa-nueva-frontal.png, id=899, 666.99188pt x 277.78781pt>
+<images/modelos3d/carcasa-nueva-frontal.png, id=898, 666.99188pt x 277.78781pt>
 File: images/modelos3d/carcasa-nueva-frontal.png Graphic file (type png)
 <use images/modelos3d/carcasa-nueva-frontal.png>
 Package pdftex.def Info: images/modelos3d/carcasa-nueva-frontal.png  used on input line 1468.
 (pdftex.def)             Requested size: 169.0519pt x 70.40471pt.
-<images/modelos3d/carcasa-nueva-lateral.png, id=900, 666.23906pt x 274.77657pt>
+<images/modelos3d/carcasa-nueva-lateral.png, id=899, 666.23906pt x 274.77657pt>
 File: images/modelos3d/carcasa-nueva-lateral.png Graphic file (type png)
 <use images/modelos3d/carcasa-nueva-lateral.png>
 Package pdftex.def Info: images/modelos3d/carcasa-nueva-lateral.png  used on input line 1474.
 (pdftex.def)             Requested size: 169.0519pt x 69.72119pt.
-<images/modelos3d/carcasa-nueva-superior.png, id=901, 663.22781pt x 570.63188pt>
+<images/modelos3d/carcasa-nueva-superior.png, id=900, 663.22781pt x 570.63188pt>
 File: images/modelos3d/carcasa-nueva-superior.png Graphic file (type png)
 <use images/modelos3d/carcasa-nueva-superior.png>
 Package pdftex.def Info: images/modelos3d/carcasa-nueva-superior.png  used on input line 1481.
 (pdftex.def)             Requested size: 169.0519pt x 145.4439pt.
-<images/modelos3d/carcasa-nueva-3d.png, id=902, 647.41875pt x 423.83344pt>
+<images/modelos3d/carcasa-nueva-3d.png, id=901, 647.41875pt x 423.83344pt>
 File: images/modelos3d/carcasa-nueva-3d.png Graphic file (type png)
 <use images/modelos3d/carcasa-nueva-3d.png>
 Package pdftex.def Info: images/modelos3d/carcasa-nueva-3d.png  used on input line 1487.
@@ -821,11 +821,11 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: ABDB9CF66070ECE32C2A5E8033D792CC;13521.
  ) 
 Here is how much of TeX's memory you used:
- 14601 strings out of 467871
- 243157 string characters out of 5418376
+ 14599 strings out of 467871
+ 243138 string characters out of 5418376
  683108 words of memory out of 5000000
- 43045 multiletter control sequences out of 15000+600000
- 635009 words of font info for 64 fonts, out of 8000000 for 9000
+ 43044 multiletter control sequences out of 15000+600000
+ 634701 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  90i,13n,93p,1390b,838s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
@@ -843,10 +843,10 @@ pdfTeX warning (dest): name{cite.robotito2019libro} has been referenced but does
 
 pdfTeX warning (dest): name{cite.bakala2019designing} has been referenced but does not exist, replaced by a fixed one
 
- <C:\Users\facu1\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/facu1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/facu1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/facu1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/facu1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/facu1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Users/facu1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/facu1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/facu1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/facu1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/facu1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/facu1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/facu1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/facu1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/facu1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/facu1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/facu1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (71 pages, 8261996 bytes).
+ <C:\Users\facu1\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/facu1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/facu1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/facu1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/facu1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/facu1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/facu1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/facu1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/facu1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/facu1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/facu1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/facu1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/facu1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/facu1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/facu1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/facu1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on main.pdf (71 pages, 8251186 bytes).
 PDF statistics:
- 1046 PDF objects out of 1200 (max. 8388607)
+ 1041 PDF objects out of 1200 (max. 8388607)
  263 named destinations out of 1000 (max. 500000)
  724 words of extra memory for PDF output out of 10000 (max. 10000000)
 
