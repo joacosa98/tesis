@@ -346,15 +346,13 @@ A partir de los problemas identificados se proponen siguientes requerimientos:
 
 \section{Diseño de la solución}
 
-Para cumplir con los requisitos planteados se propuso una arquitectura organizada en tres dimensiones principales: integración física, percepción visual y control del comportamiento. Esta separación permite abordar la extensión de Robotito como un rediseño parcial de su arquitectura, sin reemplazar la plataforma existente ni modificar innecesariamente sus componentes centrales.
+Para cumplir con los requerimientos planteados se propone extender Robotito mediante una cámara HuskyLens, capaz de procesar imágenes y devolver información de alto nivel sobre los elementos detectados. De esta manera, el procesamiento visual no se realiza en el ESP32 y el robot puede reconocer elementos ubicados dentro del campo de visión de la cámara, sin depender únicamente del sensor situado en la parte inferior de su base.
 
-En primer lugar, la libertad de elección sobre qué herramienta usar permitió encontrar una alternativa (cámara HuskyLens) con dimensiones correctas y entrenamiento previo capaz de reconocer diversos elementos del entorno físico: líneas, tags, colores y algunos objetos predeterminados. Además, la ubicación de la cámara con respecto a Robotito permite reconocer elementos que no se encuentran directamente debajo del mismo, sino que hay cierto rango de visión sobre el que se pudo trabajar que dio lugar a actividades con elementos que rodean al robot. Adicionalmente, la cámara HuskyLens cuenta con dos luces LED ubicadas en su parte frontal que de cierta manera previenen algunos errores generados por iluminación no ideal, aúnque luego de pruebas realizadas se observa que puede haber inconsistencias. La incorporación de la cámara también requirió considerar la adaptación física de Robotito. La ubicación del sensor debía permitir una lectura adecuada del entorno pero de manera que el montaje permaneciera estable, seguro y compatible con el uso del robot en contextos educativos.
-
-Por otro lado, la solución adoptada se basa en una arquitectura de procesamiento distribuido a nivel funcional, donde la percepción visual se delega a un módulo especializado y el ESP32 conserva el rol de coordinación y control. De esta forma, el microcontrolador no procesa imágenes crudas, sino que interpreta resultados visuales de alto nivel y los utiliza dentro de la lógica de control del robot.
+La solución se organiza en módulos específicos que separan la percepción visual, el control del comportamiento y la configuración de la actividad. Esta organización permite integrar las nuevas capacidades con la arquitectura existente de Robotito, facilitar su mantenimiento y habilitar una actividad educativa configurable. A continuación se presentan los módulos necesarios para implementar la solución.
 
 \subsection{Módulos a implementar}
 
-Se define por lo tanto que la solución debe contener la lógica organizada en módulos específicos para facilitar su desarrollo y futura extensión, así como separar correctamente las responsabilidades de cada componente. La implementación de cada uno se describe en detalle en el Capítulo 4.
+La solución se organiza en cuatro módulos principales, cuyas responsabilidades se presentan a continuación. La implementación de cada uno se describe en detalle en el Capítulo 4.
 
 En primer lugar, es necesario un módulo especializado que permita el intercambio de información entre HuskyLens y el robot. Este debe ser capaz de iniciar la comunicación con la cámara, construir mensajes y enviarlos, interpretar y validar sus respuestas, además de exponer los métodos necesarios que luego serán invocados desde el entorno de Lua RTOS.
 
@@ -427,6 +425,8 @@ Se propone entonces una actividad cuyo principal objetivo es generar una instanc
     \label{fig:piezas-tablero}
 \end{figure}
 
+\FloatBarrier
+
 \begin{itemize}
     \item Tarjetas correspondientes a cada elemento de la secuencia determinada por el docente. Cada tarjeta contiene un tag específico que luego será leído por Robotito en cada punto de parada, además de una sección libre donde el estudiante puede hacer dibujos, pegar una imagen o ubicar otro objeto arriba.
 \end{itemize}
@@ -447,7 +447,7 @@ Cada pieza del tablero es un cuadrado encastrable de goma EVA de dimensiones 50c
 
 Un ejemplo de recorrido completo se vería de la siguiente manera:
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
 
     \begin{subfigure}{0.75\textwidth}
