@@ -243,7 +243,7 @@ Las referencias bibliográficas se presentan al final del documento.
 
 \section{Robotito}
 
-El robot Robotito fue desarrollado en la Facultad de Ingeniería de la Universidad de la República, pensado para introducir conceptos de robótica y pensamiento computacional en niños de entre 4 y 7 años. Se programa reorganizando los objetos de su entorno, sin necesidad de una interfaz de programación explícita \cite{bakala2019designing}. Previo a este proyecto, contaba con dos modalidades de interacción \cite{fing2024manualesRobotito}.
+El robot Robotito fue desarrollado en la Facultad de Ingeniería de la Universidad de la República, pensado para introducir conceptos de robótica y pensamiento computacional en niños de entre 4 y 7 años. Se programa reorganizando los objetos de su entorno, sin necesidad de una interfaz de programación explícita. Previo a este proyecto, contaba con dos modalidades de interacción.
 
 La primera modalidad utilizaba un sensor de color, ubicado en la base del robot, para detectar tarjetas de colores colocadas sobre la superficie de juego. Cada color indicaba una dirección de movimiento y el robot cambiaba su trayectoria al pasar sobre una tarjeta manteniendo el nuevo rumbo hasta encontrar otra. El estado activo se comunicaba mediante un anillo de LEDs RGB. El robot se activaba al apoyarlo en el piso y se detenía al levantarlo.
 
@@ -251,7 +251,7 @@ La segunda modalidad empleaba seis sensores de distancia distribuidos alrededor 
 
 \subsection{Actividades}
 
-El equipo de Robotito documentó una serie de actividades organizadas de forma incremental en un libro destinado a docentes \cite{robotito2019libro}.
+El equipo de Robotito documentó una serie de actividades organizadas de forma incremental en un libro destinado a docentes.
 
 Las primeras actividades se centraban en la familiarización con el robot: conocer sus partes, aprender normas de uso y descubrir de forma exploratoria la relación entre las tarjetas de colores y el movimiento. A partir de allí, se introducían tareas de complejidad creciente, como resolver secuencias de tres pasos, planificar trayectorias evitando obstáculos representados con conos, o completar desafíos narrativos como ayudar al robot a recolectar frutas dispersas en la alfombra. Las actividades basadas en el sensor de distancia seguían una lógica similar, comenzando por la exploración libre del comportamiento del robot y avanzando hacia ejercicios de predicción, donde los niños debían anticipar hacia qué objeto se movería el robot antes de encenderlo.
 
@@ -259,37 +259,34 @@ Las primeras actividades se centraban en la familiarización con el robot: conoc
 
 \section{Robots educativos para actividades secuenciales}
 
-Existen en el mercado varios robots educativos para niños de nivel inicial que sirvieron de referencia para definir el alcance de este proyecto. 
-
-Bee-Bot \cite{beebot} se controla mediante botones físicos sobre el propio robot que permiten almacenar una secuencia de movimientos: avanzar, retroceder, girar. Cubetto \cite{cubetto}, en cambio, utiliza un tablero externo con bloques de colores insertables que codifican cada instrucción antes de ejecutar el recorrido, de forma similar a como Robotito se programa disponiendo tarjetas en su entorno.
+Existen varios robots educativos comerciales para niños de nivel inicial y primeros años de primaria que, como Robotito, se programan sin una interfaz de programación explícita. Algunos de ellos sirvieron de referencia para pensar la actividad de este proyecto. Bee-Bot \cite{beebot} se controla mediante botones físicos sobre el propio robot. Estos permiten almacenar una secuencia de movimientos: avanzar, retroceder y girar. Cubetto \cite{cubetto}, en cambio, utiliza un tablero externo con bloques de colores insertables que codifican cada instrucción antes de ejecutar el recorrido, de forma similar a como Robotito se programa disponiendo tarjetas en su entorno.
 
 Qobo \cite{qobo} es un robot con forma de caracol pensado para niños de 3 a 8 años. El robot avanza sobre un recorrido armado con tarjetas tipo puzle y un sensor ubicado en su base lee la instrucción impresa en cada una a medida que las va recorriendo.
 
-En todos estos casos la interacción se resuelve con sensores de contacto, lectura óptica de patrones impresos o pulsadores, sin cámara que permita al robot interpretar su entorno. \\
+En todos estos casos la interacción se resuelve con sensores de contacto, lectura óptica de patrones impresos o pulsadores, sin cámara que permita al robot interpretar su entorno.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
-    \begin{subfigure}{0.32\textwidth}
+    \begin{subfigure}[b]{0.31\textwidth}
         \centering
-        \includegraphics[width=\linewidth]{images/antecedentes/bee-bot.jpg}
+        \includegraphics[height=4cm,width=\linewidth,keepaspectratio]{images/antecedentes/bee-bot.jpg}
         \caption{Bee-Bot}
     \end{subfigure}
     \hfill
-    \begin{subfigure}{0.32\textwidth}
+    \begin{subfigure}[b]{0.31\textwidth}
         \centering
-        \includegraphics[width=\linewidth]{images/antecedentes/cubetto.jpg}
+        \includegraphics[height=4cm,width=\linewidth,keepaspectratio]{images/antecedentes/cubetto.jpg}
         \caption{Cubetto}
     \end{subfigure}
     \hfill
-    \begin{subfigure}{0.32\textwidth}
+    \begin{subfigure}[b]{0.31\textwidth}
         \centering
-        \includegraphics[width=\linewidth]{images/antecedentes/qobo.png}
+        \includegraphics[height=4cm,width=\linewidth,keepaspectratio]{images/antecedentes/qobo.png}
         \caption{Qobo}
     \end{subfigure}
-    \caption{Robots educativos en el mercado.}
+    \caption{Robots educativos con lógica de programación similar a Robotito.}
     \label{fig:robots-antecedentes}
 \end{figure}
-
 
 % ================== INICIO CAP 3 (ANALISIS & DISEÑO) ==================
 

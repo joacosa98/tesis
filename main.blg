@@ -1,64 +1,58 @@
-This is BibTeX, Version 0.99e (TeX Live 2026)
+This is BibTeX, Version 0.99e
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
+Reallocating 'name_of_file' (item size: 1) to 8 items.
 The style file: apacite.bst
-Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
-Reallocated global_strs (elt_size=200001) to 20 items from 10.
-Reallocated glb_str_end (elt_size=4) to 20 items from 10.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocating 'name_of_file' (item size: 1) to 12 items.
+Reallocating 'glb_str_end' (item size: 4) to 20 items.
+Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
+Reallocating 'global_strs' (item size: 1) to 4000000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'wiz_functions' (item size: 4) to 6000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'wiz_functions' (item size: 4) to 9000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
 Database file #1: referencias.bib
-Warning--entry type for "fing2024manualesRobotito" isn't style-file defined
---line 376 of file referencias.bib
-Warning--I didn't find a database entry for "bakala2019designing"
-Warning--I didn't find a database entry for "robotito2019libro"
-Warning--I didn't find a database entry for "beebot"
-Warning--I didn't find a database entry for "cubetto"
-Warning--I didn't find a database entry for "qobo"
 apacite.bst [2013/07/21 v6.03 APA bibliography style]
-You've used 11 entries,
+You've used 13 entries,
             6951 wiz_defined-function locations,
-            1344 strings with 13225 characters,
-and the built_in function-call counts, 19903 in all, are:
-= -- 2557
-> -- 168
-< -- 838
-+ -- 792
-- -- 32
-* -- 1191
-:= -- 3301
-add.period$ -- 50
-call.type$ -- 11
-change.case$ -- 222
+            1345 strings with 13155 characters,
+and the built_in function-call counts, 21737 in all, are:
+= -- 2731
+> -- 187
+< -- 901
++ -- 831
+- -- 39
+* -- 1266
+:= -- 3626
+add.period$ -- 57
+call.type$ -- 13
+change.case$ -- 240
 chr.to.int$ -- 0
-cite$ -- 22
-duplicate$ -- 491
-empty$ -- 863
-format.name$ -- 275
-if$ -- 3981
+cite$ -- 26
+duplicate$ -- 550
+empty$ -- 991
+format.name$ -- 303
+if$ -- 4370
 int.to.chr$ -- 0
-int.to.str$ -- 41
+int.to.str$ -- 43
 missing$ -- 0
-newline$ -- 306
-num.names$ -- 88
-pop$ -- 606
+newline$ -- 350
+num.names$ -- 104
+pop$ -- 793
 preamble$ -- 1
-purify$ -- 46
+purify$ -- 54
 quote$ -- 0
-skip$ -- 1271
+skip$ -- 1288
 stack$ -- 0
-substring$ -- 847
-swap$ -- 272
-text.length$ -- 28
+substring$ -- 894
+swap$ -- 296
+text.length$ -- 34
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 1144
+type$ -- 1232
 warning$ -- 0
-while$ -- 96
+while$ -- 106
 width$ -- 0
-write$ -- 362
-(There were 6 warnings)
+write$ -- 410
