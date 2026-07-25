@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.7.14)  24 JUL 2026 19:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.7.14)  25 JUL 2026 17:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -412,7 +412,7 @@ Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )
 Package caption Info: rotating package is loaded.
 Package caption Info: End \AtBeginDocument code.
-<figs/logo-udelar-fing.png, id=275, 668.4975pt x 171.64125pt>
+<figs/logo-udelar-fing.png, id=271, 668.4975pt x 171.64125pt>
 File: figs/logo-udelar-fing.png Graphic file (type png)
 <use figs/logo-udelar-fing.png>
 Package pdftex.def Info: figs/logo-udelar-fing.png  used on input line 72.
@@ -425,7 +425,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 72.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 72.
-<figs/cc/by.png, id=286, 97.0827pt x 33.9669pt>
+<figs/cc/by.png, id=282, 97.0827pt x 33.9669pt>
 File: figs/cc/by.png Graphic file (type png)
 <use figs/cc/by.png>
 Package pdftex.def Info: figs/cc/by.png  used on input line 72.
@@ -476,17 +476,17 @@ Cap\'{\i }tulo 2.
 [5
 
 ]
-<images/antecedentes/bee-bot.jpg, id=431, 1927.2pt x 1286.55656pt>
+<images/antecedentes/bee-bot.jpg, id=426, 1927.2pt x 1286.55656pt>
 File: images/antecedentes/bee-bot.jpg Graphic file (type jpg)
 <use images/antecedentes/bee-bot.jpg>
 Package pdftex.def Info: images/antecedentes/bee-bot.jpg  used on input line 272.
 (pdftex.def)             Requested size: 106.92264pt x 71.37921pt.
-<images/antecedentes/cubetto.jpg, id=432, 2509.375pt x 1673.25125pt>
+<images/antecedentes/cubetto.jpg, id=427, 2509.375pt x 1673.25125pt>
 File: images/antecedentes/cubetto.jpg Graphic file (type jpg)
 <use images/antecedentes/cubetto.jpg>
 Package pdftex.def Info: images/antecedentes/cubetto.jpg  used on input line 278.
 (pdftex.def)             Requested size: 106.94377pt x 71.3101pt.
-<images/antecedentes/qobo.png, id=433, 846.16125pt x 523.9575pt>
+<images/antecedentes/qobo.png, id=428, 846.16125pt x 523.9575pt>
 File: images/antecedentes/qobo.png Graphic file (type png)
 <use images/antecedentes/qobo.png>
 Package pdftex.def Info: images/antecedentes/qobo.png  used on input line 284.
@@ -496,54 +496,54 @@ Cap\'{\i }tulo 3.
 [7
 
 ] [8] [9]
-<images/tablero/tablero-recta.png, id=462, 454.5783pt x 429.2838pt>
+<images/tablero/tablero-recta.png, id=457, 454.5783pt x 429.2838pt>
 File: images/tablero/tablero-recta.png Graphic file (type png)
 <use images/tablero/tablero-recta.png>
 Package pdftex.def Info: images/tablero/tablero-recta.png  used on input line 384.
 (pdftex.def)             Requested size: 86.25pt x 81.44685pt.
-<images/tablero/tablero-curva-corta.png, id=463, 454.3374pt x 429.2838pt>
+<images/tablero/tablero-curva-corta.png, id=458, 454.3374pt x 429.2838pt>
 File: images/tablero/tablero-curva-corta.png Graphic file (type png)
 <use images/tablero/tablero-curva-corta.png>
 Package pdftex.def Info: images/tablero/tablero-curva-corta.png  used on input line 390.
 (pdftex.def)             Requested size: 86.25pt x 81.4927pt.
-<images/tablero/tablero-curva-larga.png, id=464, 454.5783pt x 429.2838pt>
+<images/tablero/tablero-curva-larga.png, id=459, 454.5783pt x 429.2838pt>
 File: images/tablero/tablero-curva-larga.png Graphic file (type png)
 <use images/tablero/tablero-curva-larga.png>
 Package pdftex.def Info: images/tablero/tablero-curva-larga.png  used on input line 396.
 (pdftex.def)             Requested size: 86.25pt x 81.44685pt.
-<images/tablero/tablero-recta-QR.png, id=465, 454.3374pt x 429.2838pt>
+<images/tablero/tablero-recta-QR.png, id=460, 454.3374pt x 429.2838pt>
 File: images/tablero/tablero-recta-QR.png Graphic file (type png)
 <use images/tablero/tablero-recta-QR.png>
 Package pdftex.def Info: images/tablero/tablero-recta-QR.png  used on input line 405.
 (pdftex.def)             Requested size: 86.25pt x 81.4927pt.
-<images/tablero/tablero-start.png, id=466, 454.3374pt x 429.2838pt>
+<images/tablero/tablero-start.png, id=461, 454.3374pt x 429.2838pt>
 File: images/tablero/tablero-start.png Graphic file (type png)
 <use images/tablero/tablero-start.png>
 Package pdftex.def Info: images/tablero/tablero-start.png  used on input line 411.
 (pdftex.def)             Requested size: 86.25pt x 81.4927pt.
-<images/tablero/tablero-end.png, id=467, 454.5783pt x 429.2838pt>
+<images/tablero/tablero-end.png, id=462, 454.5783pt x 429.2838pt>
 File: images/tablero/tablero-end.png Graphic file (type png)
 <use images/tablero/tablero-end.png>
 Package pdftex.def Info: images/tablero/tablero-end.png  used on input line 417.
 (pdftex.def)             Requested size: 86.25pt x 81.44685pt.
  [10]
-<images/tablero/tarjeta-dibujo.png, id=472, 295.5843pt x 218.0145pt>
+<images/tablero/tarjeta-dibujo.png, id=467, 295.5843pt x 218.0145pt>
 File: images/tablero/tarjeta-dibujo.png Graphic file (type png)
 <use images/tablero/tarjeta-dibujo.png>
 Package pdftex.def Info: images/tablero/tarjeta-dibujo.png  used on input line 436.
 (pdftex.def)             Requested size: 68.99895pt x 50.89076pt.
-<images/tablero/robotito-tablero-recorrido.png, id=473, 1325.9136pt x 1324.4682pt>
+<images/tablero/robotito-tablero-recorrido.png, id=468, 1325.9136pt x 1324.4682pt>
 File: images/tablero/robotito-tablero-recorrido.png Graphic file (type png)
 <use images/tablero/robotito-tablero-recorrido.png>
 Package pdftex.def Info: images/tablero/robotito-tablero-recorrido.png  used on input line 452.
 (pdftex.def)             Requested size: 258.75pt x 258.46225pt.
  [11 <./images/tablero/tablero-recta.png> <./images/tablero/tablero-curva-corta.png> <./images/tablero/tablero-curva-larga.png> <./images/tablero/tablero-recta-QR.png> <./images/tablero/tablero-start.png> <./images/tablero/tablero-end.png> <./images/tablero/tarjeta-dibujo.png>]
-<images/tablero/tarjeta-start.png, id=489, 234.3957pt x 122.6181pt>
+<images/tablero/tarjeta-start.png, id=484, 234.3957pt x 122.6181pt>
 File: images/tablero/tarjeta-start.png Graphic file (type png)
 <use images/tablero/tarjeta-start.png>
 Package pdftex.def Info: images/tablero/tarjeta-start.png  used on input line 466.
 (pdftex.def)             Requested size: 75.90042pt x 39.70445pt.
-<images/tablero/tarjeta-exit-config.png, id=490, 234.3957pt x 122.3772pt>
+<images/tablero/tarjeta-exit-config.png, id=485, 234.3957pt x 122.3772pt>
 File: images/tablero/tarjeta-exit-config.png Graphic file (type png)
 <use images/tablero/tarjeta-exit-config.png>
 Package pdftex.def Info: images/tablero/tarjeta-exit-config.png  used on input line 474.
@@ -563,18 +563,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 505--506
 
  []
 
-<images/tablero/stop-qr.png, id=507, 113.9457pt x 114.1866pt>
+<images/tablero/stop-qr.png, id=502, 113.9457pt x 114.1866pt>
 File: images/tablero/stop-qr.png Graphic file (type png)
 <use images/tablero/stop-qr.png>
 Package pdftex.def Info: images/tablero/stop-qr.png  used on input line 514.
 (pdftex.def)             Requested size: 68.99895pt x 69.1432pt.
 [14 <./images/tablero/stop-qr.png>]
-<images/tablero/tablero-end-real.png, id=515, 1077.5457pt x 444.2196pt>
+<images/tablero/tablero-end-real.png, id=510, 1077.5457pt x 444.2196pt>
 File: images/tablero/tablero-end-real.png Graphic file (type png)
 <use images/tablero/tablero-end-real.png>
 Package pdftex.def Info: images/tablero/tablero-end-real.png  used on input line 536.
 (pdftex.def)             Requested size: 172.5pt x 71.11047pt.
-<images/robotito/robotito-segmento-1.png, id=517, 311.4837pt x 363.9999pt>
+<images/robotito/robotito-segmento-1.png, id=512, 311.4837pt x 363.9999pt>
 File: images/robotito/robotito-segmento-1.png Graphic file (type png)
 <use images/robotito/robotito-segmento-1.png>
 Package pdftex.def Info: images/robotito/robotito-segmento-1.png  used on input line 552.
@@ -584,7 +584,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 553--553
 []\OT1/cmr/m/n/9 (a) |Feed-back fi-nal
  []
 
-<images/robotito/robotito-segmento-2.png, id=518, 311.4837pt x 364.2408pt>
+<images/robotito/robotito-segmento-2.png, id=513, 311.4837pt x 364.2408pt>
 File: images/robotito/robotito-segmento-2.png Graphic file (type png)
 <use images/robotito/robotito-segmento-2.png>
 Package pdftex.def Info: images/robotito/robotito-segmento-2.png  used on input line 558.
@@ -594,13 +594,13 @@ Underfull \hbox (badness 7740) in paragraph at lines 559--559
 []\OT1/cmr/m/n/9 (b) |Feed-back fi-nal
  []
 
-<images/robotito/robotito-segmento-3.png, id=519, 311.4837pt x 364.2408pt>
+<images/robotito/robotito-segmento-3.png, id=514, 311.4837pt x 364.2408pt>
 File: images/robotito/robotito-segmento-3.png Graphic file (type png)
 <use images/robotito/robotito-segmento-3.png>
 Package pdftex.def Info: images/robotito/robotito-segmento-3.png  used on input line 564.
 (pdftex.def)             Requested size: 86.25pt x 100.85847pt.
 [15 <./images/tablero/tablero-end-real.png>]
-<images/tablero/tablero-start-real.png, id=526, 1008.6483pt x 472.4049pt>
+<images/tablero/tablero-start-real.png, id=521, 1008.6483pt x 472.4049pt>
 File: images/tablero/tablero-start-real.png Graphic file (type png)
 <use images/tablero/tablero-start-real.png>
 Package pdftex.def Info: images/tablero/tablero-start-real.png  used on input line 581.
@@ -615,24 +615,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 645--646
  []
 
 [18] [19] [20]
-<images/huskylens/modulo_en_capas.png, id=575, 1541.76pt x 1027.84pt>
+<images/huskylens/modulo_en_capas.png, id=570, 1541.76pt x 1027.84pt>
 File: images/huskylens/modulo_en_capas.png Graphic file (type png)
 <use images/huskylens/modulo_en_capas.png>
 Package pdftex.def Info: images/huskylens/modulo_en_capas.png  used on input line 760.
 (pdftex.def)             Requested size: 345.0pt x 229.99933pt.
  [21 <./images/huskylens/modulo_en_capas.png (PNG copy)>] [22] [23]
-<images/BTRobotito.png, id=595, 5365.04375pt x 3361.55875pt>
+<images/BTRobotito.png, id=590, 5365.04375pt x 3361.55875pt>
 File: images/BTRobotito.png Graphic file (type png)
 <use images/BTRobotito.png>
 Package pdftex.def Info: images/BTRobotito.png  used on input line 855.
 (pdftex.def)             Requested size: 448.50105pt x 280.9841pt.
  [24 <./images/BTRobotito.png>] [25]
-<images/web/tags.jpeg, id=616, 1606.0pt x 1044.90375pt>
+<images/web/tags.jpeg, id=611, 1606.0pt x 1044.90375pt>
 File: images/web/tags.jpeg Graphic file (type jpg)
 <use images/web/tags.jpeg>
 Package pdftex.def Info: images/web/tags.jpeg  used on input line 928.
 (pdftex.def)             Requested size: 448.50105pt x 291.80574pt.
-<images/web/secuencias.png, id=617, 1138.2525pt x 812.03375pt>
+<images/web/secuencias.png, id=612, 1138.2525pt x 812.03375pt>
 File: images/web/secuencias.png Graphic file (type png)
 <use images/web/secuencias.png>
 Package pdftex.def Info: images/web/secuencias.png  used on input line 937.
@@ -642,23 +642,23 @@ Cap\'{\i }tulo 5.
 [31
 
 ] [32]
-<images/experimentacion/Exp1_1.jpeg, id=668, 1606.0pt x 1204.5pt>
+<images/experimentacion/Exp1_1.jpeg, id=663, 1606.0pt x 1204.5pt>
 File: images/experimentacion/Exp1_1.jpeg Graphic file (type jpg)
 <use images/experimentacion/Exp1_1.jpeg>
 Package pdftex.def Info: images/experimentacion/Exp1_1.jpeg  used on input line 1036.
 (pdftex.def)             Requested size: 310.4979pt x 232.86403pt.
-<images/experimentacion/Exp1_2.jpeg, id=669, 1204.5pt x 1606.0pt>
+<images/experimentacion/Exp1_2.jpeg, id=664, 1204.5pt x 1606.0pt>
 File: images/experimentacion/Exp1_2.jpeg Graphic file (type jpg)
 <use images/experimentacion/Exp1_2.jpeg>
 Package pdftex.def Info: images/experimentacion/Exp1_2.jpeg  used on input line 1045.
 (pdftex.def)             Requested size: 310.4979pt x 413.99686pt.
  [33] [34 <./images/experimentacion/Exp1_1.jpeg>] [35 <./images/experimentacion/Exp1_2.jpeg>]
-<images/experimentacion/Exp2_1.jpeg, id=691, 1396.21625pt x 1606.0pt>
+<images/experimentacion/Exp2_1.jpeg, id=686, 1396.21625pt x 1606.0pt>
 File: images/experimentacion/Exp2_1.jpeg Graphic file (type jpg)
 <use images/experimentacion/Exp2_1.jpeg>
 Package pdftex.def Info: images/experimentacion/Exp2_1.jpeg  used on input line 1071.
 (pdftex.def)             Requested size: 310.4979pt x 357.14397pt.
-<images/experimentacion/Exp2_2.jpeg, id=692, 1539.7525pt x 1606.0pt>
+<images/experimentacion/Exp2_2.jpeg, id=687, 1539.7525pt x 1606.0pt>
 File: images/experimentacion/Exp2_2.jpeg Graphic file (type jpg)
 <use images/experimentacion/Exp2_2.jpeg>
 Package pdftex.def Info: images/experimentacion/Exp2_2.jpeg  used on input line 1080.
@@ -718,79 +718,75 @@ Underfull \vbox (badness 1661) has occurred while \output is active []
 
 ]) [56]
 Anexo A.
+
+Package array Warning: Column L is already defined on input line 1307.
+
+
+Package array Warning: Column Y is already defined on input line 1309.
+
 [57
 
 ] [58
 
 ]
 Anexo B.
-
-Package array Warning: Column L is already defined on input line 1310.
-
-
-Package array Warning: Column Y is already defined on input line 1312.
-
-[59] [60
-
-]
-Anexo C.
-<images/modelos3d/carcasa-original-superior.png, id=878, 598.48593pt x 566.115pt>
+<images/modelos3d/carcasa-original-superior.png, id=864, 598.48593pt x 566.115pt>
 File: images/modelos3d/carcasa-original-superior.png Graphic file (type png)
 <use images/modelos3d/carcasa-original-superior.png>
-Package pdftex.def Info: images/modelos3d/carcasa-original-superior.png  used on input line 1405.
+Package pdftex.def Info: images/modelos3d/carcasa-original-superior.png  used on input line 1402.
 (pdftex.def)             Requested size: 137.9979pt x 130.53195pt.
-<images/modelos3d/carcasa-original-frontal.png, id=879, 647.41875pt x 239.39438pt>
+<images/modelos3d/carcasa-original-frontal.png, id=865, 647.41875pt x 239.39438pt>
 File: images/modelos3d/carcasa-original-frontal.png Graphic file (type png)
 <use images/modelos3d/carcasa-original-frontal.png>
-Package pdftex.def Info: images/modelos3d/carcasa-original-frontal.png  used on input line 1411.
+Package pdftex.def Info: images/modelos3d/carcasa-original-frontal.png  used on input line 1408.
 (pdftex.def)             Requested size: 137.9979pt x 51.02678pt.
-<images/modelos3d/carcasa-original-3d.png, id=880, 710.655pt x 462.22687pt>
+<images/modelos3d/carcasa-original-3d.png, id=866, 710.655pt x 462.22687pt>
 File: images/modelos3d/carcasa-original-3d.png Graphic file (type png)
 <use images/modelos3d/carcasa-original-3d.png>
-Package pdftex.def Info: images/modelos3d/carcasa-original-3d.png  used on input line 1418.
+Package pdftex.def Info: images/modelos3d/carcasa-original-3d.png  used on input line 1415.
 (pdftex.def)             Requested size: 207.0021pt x 134.63481pt.
-[61] [62 <./images/modelos3d/carcasa-original-superior.png> <./images/modelos3d/carcasa-original-frontal.png> <./images/modelos3d/carcasa-original-3d.png>]
-<images/modelos3d/carcasa-husky-superior.png, id=896, 682.04813pt x 429.85594pt>
+[59] [60 <./images/modelos3d/carcasa-original-superior.png> <./images/modelos3d/carcasa-original-frontal.png> <./images/modelos3d/carcasa-original-3d.png>]
+<images/modelos3d/carcasa-husky-superior.png, id=883, 682.04813pt x 429.85594pt>
 File: images/modelos3d/carcasa-husky-superior.png Graphic file (type png)
 <use images/modelos3d/carcasa-husky-superior.png>
-Package pdftex.def Info: images/modelos3d/carcasa-husky-superior.png  used on input line 1434.
+Package pdftex.def Info: images/modelos3d/carcasa-husky-superior.png  used on input line 1431.
 (pdftex.def)             Requested size: 137.9979pt x 86.97319pt.
-<images/modelos3d/carcasa-husky-lateral.png, id=897, 672.26157pt x 100.87688pt>
+<images/modelos3d/carcasa-husky-lateral.png, id=884, 672.26157pt x 100.87688pt>
 File: images/modelos3d/carcasa-husky-lateral.png Graphic file (type png)
 <use images/modelos3d/carcasa-husky-lateral.png>
-Package pdftex.def Info: images/modelos3d/carcasa-husky-lateral.png  used on input line 1440.
+Package pdftex.def Info: images/modelos3d/carcasa-husky-lateral.png  used on input line 1437.
 (pdftex.def)             Requested size: 137.9979pt x 20.7076pt.
-<images/modelos3d/carcasa-husky-3d.png, id=898, 670.00313pt x 348.55219pt>
+<images/modelos3d/carcasa-husky-3d.png, id=885, 670.00313pt x 348.55219pt>
 File: images/modelos3d/carcasa-husky-3d.png Graphic file (type png)
 <use images/modelos3d/carcasa-husky-3d.png>
-Package pdftex.def Info: images/modelos3d/carcasa-husky-3d.png  used on input line 1447.
+Package pdftex.def Info: images/modelos3d/carcasa-husky-3d.png  used on input line 1444.
 (pdftex.def)             Requested size: 172.5pt x 89.73856pt.
- [63 <./images/modelos3d/carcasa-husky-superior.png> <./images/modelos3d/carcasa-husky-lateral.png> <./images/modelos3d/carcasa-husky-3d.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1478--1479
+ [61 <./images/modelos3d/carcasa-husky-superior.png> <./images/modelos3d/carcasa-husky-lateral.png> <./images/modelos3d/carcasa-husky-3d.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1475--1476
 
  []
 
-<images/modelos3d/carcasa-nueva-frontal.png, id=909, 666.99188pt x 277.78781pt>
+<images/modelos3d/carcasa-nueva-frontal.png, id=896, 666.99188pt x 277.78781pt>
 File: images/modelos3d/carcasa-nueva-frontal.png Graphic file (type png)
 <use images/modelos3d/carcasa-nueva-frontal.png>
-Package pdftex.def Info: images/modelos3d/carcasa-nueva-frontal.png  used on input line 1486.
+Package pdftex.def Info: images/modelos3d/carcasa-nueva-frontal.png  used on input line 1483.
 (pdftex.def)             Requested size: 169.0519pt x 70.40471pt.
-<images/modelos3d/carcasa-nueva-lateral.png, id=910, 666.23906pt x 274.77657pt>
+<images/modelos3d/carcasa-nueva-lateral.png, id=897, 666.23906pt x 274.77657pt>
 File: images/modelos3d/carcasa-nueva-lateral.png Graphic file (type png)
 <use images/modelos3d/carcasa-nueva-lateral.png>
-Package pdftex.def Info: images/modelos3d/carcasa-nueva-lateral.png  used on input line 1492.
+Package pdftex.def Info: images/modelos3d/carcasa-nueva-lateral.png  used on input line 1489.
 (pdftex.def)             Requested size: 169.0519pt x 69.72119pt.
-<images/modelos3d/carcasa-nueva-superior.png, id=911, 663.22781pt x 570.63188pt>
+<images/modelos3d/carcasa-nueva-superior.png, id=898, 663.22781pt x 570.63188pt>
 File: images/modelos3d/carcasa-nueva-superior.png Graphic file (type png)
 <use images/modelos3d/carcasa-nueva-superior.png>
-Package pdftex.def Info: images/modelos3d/carcasa-nueva-superior.png  used on input line 1499.
+Package pdftex.def Info: images/modelos3d/carcasa-nueva-superior.png  used on input line 1496.
 (pdftex.def)             Requested size: 169.0519pt x 145.4439pt.
-<images/modelos3d/carcasa-nueva-3d.png, id=912, 647.41875pt x 423.83344pt>
+<images/modelos3d/carcasa-nueva-3d.png, id=899, 647.41875pt x 423.83344pt>
 File: images/modelos3d/carcasa-nueva-3d.png Graphic file (type png)
 <use images/modelos3d/carcasa-nueva-3d.png>
-Package pdftex.def Info: images/modelos3d/carcasa-nueva-3d.png  used on input line 1505.
+Package pdftex.def Info: images/modelos3d/carcasa-nueva-3d.png  used on input line 1502.
 (pdftex.def)             Requested size: 169.0519pt x 110.66618pt.
-[64] [65 <./images/modelos3d/carcasa-nueva-frontal.png> <./images/modelos3d/carcasa-nueva-lateral.png> <./images/modelos3d/carcasa-nueva-superior.png> <./images/modelos3d/carcasa-nueva-3d.png>] (main.aux
+[62] [63 <./images/modelos3d/carcasa-nueva-frontal.png> <./images/modelos3d/carcasa-nueva-lateral.png> <./images/modelos3d/carcasa-nueva-superior.png> <./images/modelos3d/carcasa-nueva-3d.png>] (main.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
@@ -806,20 +802,20 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: EEDD3BED93D4FF54E034D34EC6F9EC2F;13823.
+(rerunfilecheck)             Checksum: 5D7B89505D502E02842F3D95D1D45F9D;13683.
  ) 
 Here is how much of TeX's memory you used:
- 14598 strings out of 467871
- 242996 string characters out of 5418376
+ 14594 strings out of 467871
+ 242952 string characters out of 5418376
  683030 words of memory out of 5000000
- 43042 multiletter control sequences out of 15000+600000
+ 43041 multiletter control sequences out of 15000+600000
  634701 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  90i,13n,93p,1434b,838s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\facu1\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/facu1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/facu1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/facu1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/facu1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/facu1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/facu1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/facu1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/facu1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/facu1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/facu1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/facu1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/facu1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/facu1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/facu1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/facu1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (73 pages, 8258627 bytes).
+Output written on main.pdf (71 pages, 8256761 bytes).
 PDF statistics:
- 1054 PDF objects out of 1200 (max. 8388607)
- 264 named destinations out of 1000 (max. 500000)
- 740 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1039 PDF objects out of 1200 (max. 8388607)
+ 261 named destinations out of 1000 (max. 500000)
+ 732 words of extra memory for PDF output out of 10000 (max. 10000000)
 

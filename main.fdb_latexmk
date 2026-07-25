@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1784931783.93884 "main.aux" "main.bbl" "main" 1784931925.16198 0
+["bibtex main"] 1785010345.1125 "main.aux" "main.bbl" "main" 1785010355.897 0
   "./referencias.bib" 1784931674 13842 4760605b3baaacb8a9475777b9745d2a ""
   "C:/Users/facu1/AppData/Local/Programs/MiKTeX/bibtex/bst/apacite/apacite.bst" 1374952728 146156 9d7b79dbf9d91133318126032cff8c27 ""
-  "main.aux" 1784931924 26743 c5ed58a88973aa6bc781894fa161d79d "pdflatex"
+  "main.aux" 1785010354 26547 d3f892d69ac37141a24f4866b1f29449 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1784931916.14276 "c:/Users/facu1/tesis/main.tex" "main.pdf" "main" 1784931925.16282 0
+["pdflatex"] 1785010345.60847 "c:/Users/facu1/tesis/main.tex" "main.pdf" "main" 1785010355.89812 0
   "C:/Users/facu1/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1784765000 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/facu1/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1784069647 11548 c76a4121f7aff8b8ac0ec4c87d32413b ""
   "C:/Users/facu1/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1784069531 13333487 6d4df99f717026c9b6f5c6cc811596ce ""
@@ -110,7 +110,7 @@
   "C:/Users/facu1/AppData/Local/Programs/MiKTeX/tex/latex/tools/tabularx.sty" 1761901070 7243 a2c17f18e2c9b702b84fad03d5f9c78b ""
   "C:/Users/facu1/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/facu1/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "c:/Users/facu1/tesis/main.tex" 1784931915 128306 e452459ae5a6b922ace0bc38da96dd76 ""
+  "c:/Users/facu1/tesis/main.tex" 1785010333 128273 c0c337cd899f937306584800204a2d7b ""
   "figs/cc/by.png" 1784068272 12588 fcfe257810da2b7b457ad2be813a5c77 ""
   "figs/logo-udelar-fing.png" 1784068272 19320 7e3573cbc2c317900565422ce4696ac6 ""
   "images/BTRobotito.png" 1784068272 1506164 3a3a3a72c4deb220e7573006c493491c ""
@@ -150,11 +150,11 @@
   "images/tablero/tarjeta-start.png" 1784762874 6584 dbcd3df3caa658a92c792d87524545f1 ""
   "images/web/secuencias.png" 1784068272 734000 6d8c84de84ab4b69c4b8ecee0aeef239 ""
   "images/web/tags.jpeg" 1784068272 143186 e36a4e47bcfec1e42e8c5fc05ad7081d ""
-  "main.aux" 1784931924 26743 c5ed58a88973aa6bc781894fa161d79d "pdflatex"
-  "main.bbl" 1784931784 9446 e6c3aa7cff5949bb2bedd910141f74ca "bibtex main"
-  "main.out" 1784931924 13823 eedd3bed93d4ff54e034d34ec6f9ec2f "pdflatex"
-  "main.tex" 1784931915 128306 e452459ae5a6b922ace0bc38da96dd76 ""
-  "main.toc" 1784931924 9702 dc24705a2ad751dd76ae9b6fc13c9180 "pdflatex"
+  "main.aux" 1785010354 26547 d3f892d69ac37141a24f4866b1f29449 "pdflatex"
+  "main.bbl" 1785010345 9446 e6c3aa7cff5949bb2bedd910141f74ca "bibtex main"
+  "main.out" 1785010354 13683 5d7b89505d502e02842f3d95d1d45f9d "pdflatex"
+  "main.tex" 1785010333 128273 c0c337cd899f937306584800204a2d7b ""
+  "main.toc" 1785010354 9623 346b1d389798de87b41648d1bfed3a6c "pdflatex"
   "prgrado.cls" 1784068272 3427 6adcb01c6c9146152c716f04522dd730 ""
   (generated)
   "main.aux"
