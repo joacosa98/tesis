@@ -1,42 +1,6 @@
 \begin{thebibliography}{}
 
 \bibitem [\protect \citeauthoryear {%
-Abelda{\~n}o%
-\ \protect \BOthers {.}}{%
-Abelda{\~n}o%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2024}}%
-}]{%
-abeldano2024robotito}
-\APACinsertmetastar {%
-abeldano2024robotito}%
-\begin{APACrefauthors}%
-Abelda{\~n}o, R.%
-, Bakala, E.%
-, Hitta, S.%
-, Pascale, M.%
-, Visca, J.%
-\BCBL {}\ \BBA {} Tejera, G.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2024}{{\APACmonth{06}}}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Robotito 2.0: Avances en interacci{\'o}n y usabilidad}
-  {Robotito 2.0: Avances en interacci{\'o}n y usabilidad}.{\BBCQ}
-\newblock
-\BIn{} \APACrefbtitle {Interacci{\'o}n'24.} {Interacci{\'o}n'24.}
-\newblock
-\APACaddressPublisher{A Coru{\~n}a, Espa{\~n}a}{}.
-\newblock
-\begin{APACrefURL}
-  \url{https://redi.anii.org.uy/jspui/bitstream/20.500.12381/3660/1/INTERACCION_2024_Abeldano.pdf}
-  \end{APACrefURL}
-\newblock
-\APACrefnote{Accedido: 2026-05-19}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
 {Blender Foundation}%
 }{%
 {Blender Foundation}%
@@ -57,8 +21,7 @@ Blender}%
 \newblock
 \APAChowpublished {\url{https://www.blender.org}}.
 \newblock
-\APACrefnote{Software de modelado y renderizado 3D, versi{\'o}n 5.0.1,
-  Accedido: 2026-02}
+\APACrefnote{Software de modelado y renderizado 3D, versi{\'o}n 5.0.1, Accedido: 2026-02}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -84,12 +47,9 @@ Cardozo, F.%
 \newblock
 \APACrefYearMonthDay{2026{\protect \BCnt {1}}}{}{}.
 \newblock
-\APACrefbtitle {Código fuente hardware del proyecto.} {Código fuente hardware
-  del proyecto.}
+\APACrefbtitle {Código fuente hardware del proyecto.} {Código fuente hardware del proyecto.}
 \newblock
-\begin{APACrefURL}
-  \url{https://github.com/naniverdier/Lua-RTOS-ESP32-husky/tree/robotito-huskylens}
-  \end{APACrefURL}
+\begin{APACrefURL} \url{https://github.com/naniverdier/Lua-RTOS-ESP32-husky/tree/robotito-huskylens} \end{APACrefURL}
 \newblock
 \APACrefnote{Accedido: 2026-06-06}
 \PrintBackRefs{\CurrentBib}
@@ -117,12 +77,9 @@ Cardozo, F.%
 \newblock
 \APACrefYearMonthDay{2026{\protect \BCnt {2}}}{}{}.
 \newblock
-\APACrefbtitle {Código fuente software del proyecto.} {Código fuente software
-  del proyecto.}
+\APACrefbtitle {Código fuente software del proyecto.} {Código fuente software del proyecto.}
 \newblock
-\begin{APACrefURL}
-  \url{https://gitlab.fing.edu.uy/nadia.verdier/firmware-husky/-/tree/husky-tree-tags?ref_type=heads}
-  \end{APACrefURL}
+\begin{APACrefURL} \url{https://gitlab.fing.edu.uy/nadia.verdier/firmware-husky/-/tree/husky-tree-tags?ref_type=heads} \end{APACrefURL}
 \newblock
 \APACrefnote{Accedido: 2026-06-06}
 \PrintBackRefs{\CurrentBib}
@@ -144,11 +101,9 @@ DesignLabX, P.%
 \newblock
 \APACrefYearMonthDay{2024}{}{}.
 \newblock
-\APACrefbtitle {Modelo 3D de Case para HuskyLens.} {Modelo 3d de case para
-  huskylens.}
+\APACrefbtitle {Modelo 3D de Case para HuskyLens.} {Modelo 3d de case para huskylens.}
 \newblock
-\APAChowpublished
-  {\url{https://www.printables.com/model/639502-huskylens-case}}.
+\APAChowpublished {\url{https://www.printables.com/model/639502-huskylens-case}}.
 \newblock
 \APACrefnote{Accessed: 2025-10-02}
 \PrintBackRefs{\CurrentBib}
@@ -170,11 +125,9 @@ dfrobot2021huskylens}%
 \newblock
 \APACrefYearMonthDay{2021}{}{}.
 \newblock
-\APACrefbtitle {HuskyLens -- An easy-to-use AI camera.} {Huskylens -- an
-  easy-to-use ai camera.}
+\APACrefbtitle {HuskyLens -- An easy-to-use AI camera.} {Huskylens -- an easy-to-use ai camera.}
 \newblock
-\begin{APACrefURL} \url{https://www.dfrobot.com/product-1922.html}
-  \end{APACrefURL}
+\begin{APACrefURL} \url{https://www.dfrobot.com/product-1922.html} \end{APACrefURL}
 \newblock
 \APACrefnote{Accessed 2026-05-19}
 \PrintBackRefs{\CurrentBib}
@@ -198,8 +151,7 @@ CarcasaRobotito}%
 \newblock
 \APACrefbtitle {Modelo 3D de Robotito.} {Modelo 3d de robotito.}
 \newblock
-\APAChowpublished
-  {\url{https://redata.anii.org.uy/dataset.xhtml?persistentId=doi:10.60895/redata/SRXZ42}}.
+\APAChowpublished {\url{https://redata.anii.org.uy/dataset.xhtml?persistentId=doi:10.60895/redata/SRXZ42}}.
 \newblock
 \APACrefnote{Accessed: 2025-10-02}
 \PrintBackRefs{\CurrentBib}
@@ -223,8 +175,7 @@ beebot}%
 \newblock
 \APACrefbtitle {¿Qué es la Bee-Bot?} {¿qué es la bee-bot?}
 \newblock
-\begin{APACrefURL} \url{https://www.hiperescola.com/es/que-es-bee-bot}
-  \end{APACrefURL}
+\begin{APACrefURL} \url{https://www.hiperescola.com/es/que-es-bee-bot} \end{APACrefURL}
 \newblock
 \APACrefnote{Accedido: 2026-07-22}
 \PrintBackRefs{\CurrentBib}
@@ -247,14 +198,10 @@ Hitta, S.%
 \APACrefYear{2022}.
 \unskip\
 \newblock
-\APACrefbtitle {Interfaz de configuración de Robotito para usuarios no
-  programadores} {Interfaz de configuración de robotito para usuarios no
-  programadores}\ \APACtypeAddressSchool {Tesis de grado}{Montevideo,
-  Uruguay}{Facultad de Ingeniería, Universidad de la República}.
+\APACrefbtitle {Interfaz de configuración de Robotito para usuarios no programadores} {Interfaz de configuración de robotito para usuarios no programadores}\ \APACtypeAddressSchool {Tesis de grado}{Montevideo, Uruguay}{Facultad de Ingeniería, Universidad de la República}.
 \unskip\
 \newblock
-\begin{APACrefURL} \url{https://hdl.handle.net/20.500.12008/34299}
-  \end{APACrefURL}
+\begin{APACrefURL} \url{https://hdl.handle.net/20.500.12008/34299} \end{APACrefURL}
 \unskip\
 \newblock
 \APACrefnote{Instituto de Computación}
@@ -283,16 +230,11 @@ Marwan, S.%
 \newblock
 \APACrefYearMonthDay{2022}{}{}.
 \newblock
-{\BBOQ}\APACrefatitle {Adaptive Immediate Feedback for Block-Based Programming:
-  Design and Evaluation} {Adaptive immediate feedback for block-based
-  programming: Design and evaluation}.{\BBCQ}
+{\BBOQ}\APACrefatitle {Adaptive Immediate Feedback for Block-Based Programming: Design and Evaluation} {Adaptive immediate feedback for block-based programming: Design and evaluation}.{\BBCQ}
 \newblock
-\APACjournalVolNumPages{IEEE Transactions on Learning
-  Technologies}{15}{3}{406--419}.
+\APACjournalVolNumPages{IEEE Transactions on Learning Technologies}{15}{3}{406--419}.
 \newblock
-\begin{APACrefURL}
-  \url{https://isnap.csc.ncsu.edu/home/public/papers/Marwan2022TLT.pdf}
-  \end{APACrefURL}
+\begin{APACrefURL} \url{https://isnap.csc.ncsu.edu/home/public/papers/Marwan2022TLT.pdf} \end{APACrefURL}
 \newblock
 \begin{APACrefDOI} \doi{10.1109/TLT.2022.3180984} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
@@ -314,8 +256,7 @@ cubetto}%
 \newblock
 \APACrefYearMonthDay{2026}{}{}.
 \newblock
-\APACrefbtitle {Cubetto: A Wooden Robot That Teaches Kids to Code.} {Cubetto: A
-  wooden robot that teaches kids to code.}
+\APACrefbtitle {Cubetto: A Wooden Robot That Teaches Kids to Code.} {Cubetto: A wooden robot that teaches kids to code.}
 \newblock
 \begin{APACrefURL} \url{https://www.primotoys.com/} \end{APACrefURL}
 \newblock
@@ -339,8 +280,7 @@ qobo}%
 \newblock
 \APACrefYearMonthDay{2026}{}{}.
 \newblock
-\APACrefbtitle {Qobo: Screen-Free Coding Robot for Early Learners.} {Qobo:
-  Screen-free coding robot for early learners.}
+\APACrefbtitle {Qobo: Screen-Free Coding Robot for Early Learners.} {Qobo: Screen-free coding robot for early learners.}
 \newblock
 \begin{APACrefURL} \url{https://www.robobloq.com/product/qobo} \end{APACrefURL}
 \newblock
@@ -365,18 +305,48 @@ Silveira~Bonino, F.%
 \APACrefYear{2024}.
 \unskip\
 \newblock
-\APACrefbtitle {Diseño de una interfaz tangible de programación para Robotito
-  utilizando tecnología RFID} {Diseño de una interfaz tangible de
-  programación para robotito utilizando tecnología rfid}\
-  \APACtypeAddressSchool {Tesis de grado}{Montevideo, Uruguay}{Facultad de
-  Ingeniería, Universidad de la República}.
+\APACrefbtitle {Diseño de una interfaz tangible de programación para Robotito utilizando tecnología RFID} {Diseño de una interfaz tangible de programación para robotito utilizando tecnología rfid}\ \APACtypeAddressSchool {Tesis de grado}{Montevideo, Uruguay}{Facultad de Ingeniería, Universidad de la República}.
 \unskip\
 \newblock
-\begin{APACrefURL} \url{https://hdl.handle.net/20.500.12008/47172}
-  \end{APACrefURL}
+\begin{APACrefURL} \url{https://hdl.handle.net/20.500.12008/47172} \end{APACrefURL}
 \unskip\
 \newblock
 \APACrefnote{Instituto de Computación}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Tejera%
+\ \protect \BOthers {.}}{%
+Tejera%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2019}}%
+}]{%
+tejera2019robotito}
+\APACinsertmetastar {%
+tejera2019robotito}%
+\begin{APACrefauthors}%
+Tejera, G.%
+, Amorin, G.%
+, Ser{\'e}, A.%
+, Capricho, N.%
+, Margenat, P.%
+\BCBL {}\ \BBA {} Visca, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{{\APACmonth{12}}}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Robotito: Programming Robots from Preschool to Undergraduate School Level} {Robotito: Programming robots from preschool to undergraduate school level}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {2019 19th International Conference on Advanced Robotics (ICAR)} {2019 19th international conference on advanced robotics (icar)}\ (\BPGS\ 296--301).
+\newblock
+\APACaddressPublisher{Belo Horizonte, Brazil}{IEEE}.
+\newblock
+\begin{APACrefURL} \url{https://ieeexplore.ieee.org/document/8981608} \end{APACrefURL}
+\newblock
+\APACrefnote{Accedido: 2026-07-31}
+\newblock
+\begin{APACrefDOI} \doi{10.1109/ICAR46387.2019.8981608} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \end{thebibliography}

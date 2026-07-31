@@ -89,50 +89,18 @@ Asimismo, agradecemos el tiempo dedicado a responder nuestras consultas y a comp
 \chapter*{Resumen}
 \addcontentsline{toc}{chapter}{Resumen}
 
-Robotito es una plataforma educativa de software libre y hardware abierto
-utilizada para introducir conceptos de robótica y pensamiento computacional
-en niños de nivel inicial y primeros años de primaria. En su versión
-original, el robot cuenta con sensores básicos de color y de distancia
-que limitan el tipo de actividades que se le pueden proponer a los
-estudiantes.
+Robotito es una plataforma educativa de software libre y hardware abierto utilizada para introducir conceptos de robótica y pensamiento computacional en niños de nivel inicial y primeros años de primaria. En su versión original, el robot cuenta con sensores básicos de color y de distancia que limitan el tipo de actividades que se le pueden proponer a los estudiantes.
 
-Este trabajo presenta el diseño e implementación de una extensión de
-Robotito que incorpora capacidades de procesamiento de imágenes mediante
-una cámara HuskyLens, ampliando así su capacidad de percibir el entorno.
-La solución integra tres componentes principales: un módulo que permite la
-comunicación entre la cámara HuskyLens y la placa ESP32 del robot y
-permite el seguimiento de líneas y la lectura de marcadores visuales
-(AprilTags); un sistema de control del comportamiento basado en Árboles
-de Comportamiento (\textit{Behavior Trees}), implementado como una
-biblioteca reutilizable en Lua; y un configurador web que permite a
-los docentes definir secuencias de actividad y transferirlas al robot
-de forma inalámbrica mediante comunicación Bluetooth Low Energy (BLE),
-con persistencia de datos en la memoria no volátil del ESP32.
+Este trabajo presenta el diseño e implementación de una extensión de Robotito que incorpora capacidades de procesamiento de imágenes mediante una cámara HuskyLens, ampliando así su capacidad de percibir el entorno. La solución integra tres componentes principales: un módulo que permite la comunicación entre la cámara HuskyLens y la placa ESP32 del robot y permite el seguimiento de líneas y la lectura de marcadores visuales (AprilTags); un sistema de control del comportamiento basado en Árboles de Comportamiento (\textit{Behavior Trees}), implementado como una biblioteca reutilizable en Lua; y un configurador web que permite a los docentes definir secuencias de actividad y transferirlas al robot de forma inalámbrica mediante comunicación Bluetooth Low Energy (BLE), con persistencia de datos en la memoria no volátil del ESP32.
 
-A partir de estas capacidades se diseñó una actividad educativa en la
-que Robotito recorre un circuito siguiendo una línea, se detiene en
-distintas estaciones marcadas con tags y valida si el orden de las
-tarjetas ubicadas por los estudiantes corresponde a una secuencia
-previamente configurada por el docente, brindando retroalimentación
-visual inmediata mediante luces LED.
+A partir de estas capacidades se diseñó una actividad educativa en la que Robotito recorre un circuito siguiendo una línea, se detiene en distintas estaciones marcadas con tags y valida si el orden de las tarjetas ubicadas por los estudiantes corresponde a una secuencia previamente configurada por el docente, brindando retroalimentación visual inmediata mediante luces LED.
 
-La propuesta fue validada mediante entrevistas con docentes de educación
-inicial y primaria, y a través de dos sesiones prácticas con estudiantes
-de distintas edades en contextos reales de aula. Los resultados obtenidos
-muestran que la solución es técnicamente viable, resulta comprensible y
-motivadora para los niños, y permite integrar contenidos curriculares
-diversos. A partir del \textit{feedback} recibido se realizaron ajustes
-al diseño original, entre ellos la incorporación de funciones de pausa y
-reinicio que otorgan a los docentes mayor control sobre el flujo de la
-actividad en el aula.
+La propuesta fue validada mediante entrevistas con docentes de educación inicial y primaria, y a través de dos sesiones prácticas con estudiantes de distintas edades en contextos reales de aula. Los resultados obtenidos muestran que la solución es técnicamente viable, resulta comprensible y motivadora para los niños, y permite integrar contenidos curriculares diversos. A partir del \textit{feedback} recibido se realizaron ajustes al diseño original, entre ellos la incorporación de funciones de pausa y reinicio que otorgan a los docentes mayor control sobre el flujo de la actividad en el aula.
 
-Este trabajo constituye un aporte concreto a la plataforma Robotito,
-sentando las bases para futuras extensiones que aprovechen la percepción
-visual y la arquitectura modular desarrollada.
+Este trabajo constituye un aporte concreto a la plataforma Robotito, sentando las bases para futuras extensiones que aprovechen la percepción visual y la arquitectura modular desarrollada.
 
 \vspace{1cm}
-\noindent\textbf{Palabras clave:} Robótica educativa,  procesamiento de
-imágenes, Robotito, ESP32, Husky-Lens, I2C, Lua RTOS, C++, Árboles de comportamiento, Bluetooth Low Energy, NVS
+\noindent\textbf{Palabras clave:} Robótica educativa,  procesamiento de imágenes, Robotito, ESP32, Husky-Lens, I2C, Lua RTOS, C++, Árboles de comportamiento, Bluetooth Low Energy, NVS
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -151,39 +119,35 @@ imágenes, Robotito, ESP32, Husky-Lens, I2C, Lua RTOS, C++, Árboles de comporta
 % introducción
 \chapter{Introducción}
 
-\section{Motivación}
-
-Robotito es una plataforma educativa de software libre y hardware abierto pensada para actividades de robótica y programación en las primeras etapas de la formación \cite{abeldano2024robotito}. Si bien el robot ya tiene capacidad de uso en el aula, tiene una limitación clara: cuenta con sensores básicos que permiten un reconocimiento acotado de su entorno, limitando el tipo de actividades que se le puede proponer a los estudiantes.
+Robotito es una plataforma educativa de software libre y hardware abierto pensada para actividades de robótica y programación en las primeras etapas de la formación \cite{tejera2019robotito}. Si bien el robot ya tiene capacidad de uso en el aula, tiene una limitación clara: cuenta con sensores que permiten un reconocimiento acotado de su entorno, limitando el tipo de actividades que se le puede proponer a los estudiantes.
 
 A partir de esta carencia, se propone como punto de partida de este trabajo integrar una herramienta de procesamiento de imágenes al robot con el objetivo de extender su capacidad de percibir ciertos elementos de su entorno y reaccionar adecuadamente. Tomando esa propuesta, la tarea se dividió en dos partes: integrar una cámara a Robotito y, una vez disponible la nueva capacidad de percepción visual, diseñar y ejecutar una actividad educativa que la aproveche.
 
-Para resolver esto se sumaron tres piezas a Robotito: una cámara HuskyLens (módulo de procesamiento de imágenes, capaz de seguir líneas y reconocer tags sin sobrecargar al microcontrolador del robot), una aplicación web donde el docente configura la actividad, y un canal BLE (\textit{Bluetooth Low Energy}, una variante de Bluetooth pensada para enviar poca cantidad de datos consumiendo muy poca energía) que transporta esa configuración hacia el robot. Con las tres piezas funcionando juntas, se logra plantear una actividad donde Robotito puede realizar un recorrido siguiendo una línea contínua, reconoce estaciones marcadas con tags (de tipo \textit{AprilTag}) y valida si una secuencia armada por los estudiantes es correcta. El motivo de cada una de estas elecciones técnicas se explica con más detalle en los capítulos siguientes.
+Para resolver esto se incorporaron los siguientes componentes a Robotito: una cámara HuskyLens (módulo de procesamiento de imágenes capaz de seguir líneas y reconocer tags sin sobrecargar al microcontrolador del robot), un sistema de control basado en árboles de comportamiento que organiza y coordina las acciones del robot, una aplicación web donde el docente configura la actividad, y un canal BLE (\textit{Bluetooth Low Energy}, una variante de Bluetooth pensada para enviar poca cantidad de datos consumiendo muy poca energía) que transporta esa configuración hacia el robot. Con estos componentes funcionando en conjunto, se logra plantear una actividad donde Robotito puede realizar un recorrido siguiendo una línea continua, reconocer estaciones (puntos de parada del recorrido) marcadas con tags (de tipo \textit{AprilTag}) y verificar si una secuencia armada por los estudiantes es correcta. El motivo de cada una de estas elecciones técnicas se explica con más detalle en los capítulos siguientes.
 
-\section{Actividad propuesta}
+Para facilitar la comprensión de las secciones siguientes, se presenta una breve descripción de la actividad desarrollada y los objetivos de la solución. Esto permite establecer desde el comienzo el contexto de uso de los nuevos componentes incorporados a Robotito, así como las capacidades y limitaciones consideradas en el proyecto.
 
-La actividad desarrollada consiste en un recorrido guiado por una línea donde Robotito detecta tags en estaciones y valida el orden de una secuencia previamente configurada por el docente. El docente prepara la actividad desde el configurador web y transfiere la configuración al robot utilizando BLE; El objetivo es que los estudiantes ubiquen tarjetas que contienen tags en las estaciones definidas en el tablero y observen la retroalimentación del robot (acierto o error) en base a la posición de cada una en el recorrido. Las especificaciones de la ejecución del robot se detallan con mayor profundidad en el Capítulo~\ref{cap:analisis}.
+\section{Actividad pedagógica}
 
-\section{Alcance funcional y límites}
+La actividad desarrollada consiste en un recorrido guiado por una línea donde Robotito detecta tags en estaciones (puntos de parada del recorrido) y valida el orden de una secuencia previamente configurada por el docente. Su objetivo es estimular la habilidad de secuenciación —entendida como la capacidad de ordenar elementos o acciones siguiendo una relación lógica o temporal— además de acercar a los estudiantes a conceptos de robótica y pensamiento computacional. 
 
-El alcance funcional se define por decisiones que acotan capacidades y destacan la contribución del proyecto: realizar procesamiento visual a partir de la información obtenida por la cámara HuskyLens, preparar actividades desde un configurador web y transferirlas por BLE, y organizar el control de la lógica con Behavior Trees.
+El docente prepara la actividad desde el configurador web y transfiere la configuración al robot utilizando BLE. Luego, los estudiantes ubican tarjetas que contienen tags en las estaciones definidas en el tablero y observan la retroalimentación del robot —acierto o error— según la posición de cada una en el recorrido. Las especificaciones de la ejecución del robot se detallan con mayor profundidad en el Capítulo~\ref{cap:analisis}.
 
-\begin{itemize}
-    \item HuskyLens: seguimiento de línea y lectura de tags (percepción acotada).
-    \item Configuración: definida externamente y transferida vía BLE.
-    \item Control: lógica organizada mediante Árboles de Comportamiento (\textit{Behavior Trees}), como capa de orquestación.
-\end{itemize}
+\begin{figure}[H]
+    \centering
 
-\section{Planteo del problema}
+    \begin{subfigure}{0.8\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/tablero/robotito-recorrido-foto-final.png}
+    \end{subfigure}
 
-Retomando lo planteado en la sección anterior: Robotito está limitado a percibir su entorno con sensores básicos, lo que dificulta la propuesta de actividades más complejas que utilicen materiales diversificados y más atractivos a un entorno infantil, más allá de tarjetas de colores y desplazamientos simples en línea recta.
-
-Resolverlo implica varias cosas a la vez. Del lado técnico, hay que conectar una cámara (HuskyLens) a la placa ESP32 Thing de Robotito mediante el protocolo I2C y hacerla funcionar dentro de un entorno Lua RTOS, donde se ejecuta el firmware del robot, asegurando el correcto funcionamiento del codigo ya existente. Del lado del diseño, hace falta crear una capa de control que coordine lo que la cámara detecta con lo que el robot ejecuta, es ahí donde entran los árboles de comportamiento. No menos importante, hay que diseñar una actividad educativa concreta que le dé sentido a toda esa integración: no alcanza con que el robot "vea", tiene que haber una dinámica de aula donde esa percepción se use.
+    \caption{Montaje completo de la actividad. En la imagen se pueden observar el tablero modular, la línea que sigue Robotito durante el recorrido, el propio Robotito, los tags de referencia utilizados para detener o guiar la ejecución, las estaciones donde se ubican las tarjetas, y las tarjetas con dibujos colocadas por los estudiantes. También se observan el punto de inicio y el punto de fin del recorrido.}
+    \label{fig:foto-tablero-completo}
+\end{figure}
 
 \section{Objetivos}
 
-El objetivo general es desarrollar una extensión de la plataforma Robotito que permita ejecutar una actividad educativa utilizando las capacidades de percepción visual brindada por la cámara HuskyLens, como seguimiento de línea y lectura de tags, además del procesamiento de los datos obtenidos por parte del robot, configuración inalámbrica desde una aplicación web y un sistema de control basado en árboles de comportamiento (\textit{Behavior Trees}).
-
-\subsection*{Objetivos específicos}
+El objetivo general del proyecto es desarrollar una extensión de la plataforma Robotito que permita ejecutar una actividad educativa utilizando las capacidades de percepción visual brindada por la cámara HuskyLens, como seguimiento de línea y lectura de tags, además del procesamiento de los datos obtenidos por parte del robot, configuración inalámbrica desde una aplicación web y un sistema de control basado en árboles de comportamiento (\textit{Behavior Trees}). Para eso se determinaron los siguientes objetivos específicos:
 
 \begin{itemize}
     \item Implementar la comunicación entre la cámara HuskyLens y la placa SparkFun ESP32 Thing mediante el bus I2C.
@@ -196,13 +160,8 @@ El objetivo general es desarrollar una extensión de la plataforma Robotito que 
     \item Desarrollar un configurador web que permita registrar tags, definir secuencias de recorrido y enviarlas al robot sin necesidad de modificar el firmware.
 \end{itemize}
 
-\section{Resultados esperados}
 
-Se espera obtener una versión extendida de Robotito capaz de ejecutar una actividad configurable en la que el robot siga una línea, detecte tags en estaciones del recorrido y valide la secuencia observada mediante un comportamiento autónomo organizado con árboles de comportamiento.
-
-La solución debe permitir separar con claridad la configuración de la actividad, la percepción visual y la lógica de control. Esto se ubicará en una biblioteca desarrollada que debe permitir que otros docentes e investigadores reutilicen los nodos de control en nuevos proyectos sin necesidad de modificar el código base.
-
-Para comprobar que todo esto funciona más allá de la teoría, se llevaron adelante dos instancias con maestras y niños, en las que se puso a prueba el robot en un escenario similar al de una clase real. Esas instancias se describen con más detalle en \ref{cap:experimentacion}
+Finalmente, la solución debe permitir separar con claridad la configuración de la actividad, la percepción visual y la lógica de control. Esto se ubicará en una biblioteca desarrollada que debe permitir que otros docentes e investigadores reutilicen los nodos de control en nuevos proyectos sin necesidad de modificar el código base. Cumpliendo con estos objetivos, se espera obtener una versión extendida de Robotito capaz de ejecutar una actividad configurable mediante un comportamiento autónomo organizado con árboles de comportamiento. 
 
 \section{Organización del documento}
 
@@ -263,7 +222,7 @@ Existen varios robots educativos comerciales para niños de nivel inicial y prim
 
 Qobo \cite{qobo} es un robot con forma de caracol pensado para niños de 3 a 8 años. El robot avanza sobre un recorrido armado con tarjetas tipo puzle y un sensor ubicado en su base lee la instrucción impresa en cada una a medida que las va recorriendo.
 
-En todos estos casos la interacción se resuelve con sensores de contacto, lectura óptica de patrones impresos o pulsadores, sin cámara que permita al robot interpretar su entorno.
+En todos estos casos la interacción se resuelve con sensores de contacto, lectura óptica de patrones impresos o botones, sin cámara que permita al robot interpretar su entorno.
 
 \begin{figure}[H]
     \centering
@@ -357,15 +316,15 @@ Por otro lado, es necesario definir una capa de control organizada mediante el m
 
 Finalmente, con el objetivo de facilitar la interacción del docente con Robotito y posibilitar la customización de la actividad a ser planteada, se decide implementar un configurador web en el que el usuario es capaz de editar la secuencia correcta esperada por el robot y enviársela utilizando el protocolo de comunicación BLE (Bluetooth Low Energy). Del lado del robot, es necesaria la implementación de un módulo capaz de realizar la conexión con el configurador web y transportar datos entre ambas partes, además de guardar correctamente los datos recibidos en el almacenamiento NVS (Non-Volatile Storage) de ESP32.
 
-\subsection{Diseño de la actividad}
+\section{Diseño de la actividad}
 
-Una vez definidos los módulos a implementar se plantearon diversas actividades posibles, aplicables en entornos de educación inicial y acordes a la arquitectura actual de Robotito y las capacidades de percepción de HuskyLens. Luego de establecer ciertos requisitos y realizar algunas pruebas, se logra definir un modelo aceptable de actividad.
+Una vez definidos los módulos a implementar se plantearon diversas actividades posibles, aplicables en entornos de educación inicial y acordes a la arquitectura actual de Robotito y las capacidades de percepción de HuskyLens. Luego de establecer ciertos requisitos y realizar algunas pruebas, se logra definir un modelo de actividad.
 
 Una de las principales premisas establecidas es la de que el robot debe poder obtener información visual de su entorno y trasladarse según los elementos que haya identificado en cada lectura. Luego de realizar distintas pruebas con la cámara ya integrada al robot se determina que utilizar la función de Seguimiento de líneas (\textit{Line Tracking}) es una manera confiable de cumplir con este requisito. Esto trae la necesidad de encontrar una forma de detener y reanudar el recorrido en determinados momentos específicos de la actividad. Entre las funciones disponibles de HuskyLens para cumplir con este requerimiento, se observa que los modos de Reconocimiento de color (\textit{Color recognition}) y Reconocimiento de marcadores visuales (\textit{Tag recognition}) son los que presentan mejores resultados prácticos. Si bien el modo de Reconocimiento de color puede resultar útil en algunas situaciones, se descarta esta opción al encontrar ciertas inconsistencias de lectura en casos de prueba con iluminación no favorable, en los que la cámara parece no detectar un color previamente identificado en otro caso con iluminación distinta del ambiente. Por esta razón, se concluye que la actividad debe contar con diversos marcadores visuales (de tipo \textit{AprilTag}) a lo largo de un recorrido definido por una línea.
 
-\subsection{Actividad propuesta}
+\subsection{Caso de uso}
 
-Se propone entonces una actividad cuyo principal objetivo es generar una instancia donde el docente presenta el concepto de secuencia ordenada utilizando a Robotito como verificador de secuencias, acercando al alumno a conceptos de robótica y pensamiento computacional. Para esto se define un sistema que consiste en tres elementos principales (además de otros que se mencionan más adelante):
+Se propone una actividad cuyo principal objetivo es generar una instancia donde el docente presenta el concepto de secuencia ordenada utilizando a Robotito como verificador de secuencias, acercando al alumno a conceptos de robótica y pensamiento computacional. Para esto se define un sistema que consiste en tres elementos principales (además de otros que se mencionan más adelante):
 
 \begin{itemize}
     \item Robotito con cámara HuskyLens integrada que recibe información visual del exterior y reacciona en base a los datos obtenidos.
@@ -456,7 +415,7 @@ Un ejemplo de recorrido completo se vería de la siguiente manera:
     \label{fig:recorrido-completo}
 \end{figure}
 
-Además de estos materiales, la actividad cuenta con dos tarjetas adicionales, cada una con un tag específico a ser leído por el robot. El funcionamiento de cada una se explica en la sección~\ref{subsec:recorrido-completo} (Recorrido completo).
+Además de estos materiales, la actividad cuenta con dos tarjetas adicionales, cada una con un tag específico a ser leído por el robot. El funcionamiento de cada una se explica en la sección~\ref{subsec:recorrido-completo} (Ejecución del robot).
 
 \begin{figure}[htbp]
     \centering
@@ -472,7 +431,7 @@ Además de estos materiales, la actividad cuenta con dos tarjetas adicionales, c
         \centering
         \vspace{0pt}
         \includegraphics[width=\linewidth]{images/tablero/tarjeta-exit-config.png}
-        \caption{Tarjeta para salir de modo de Configuración}
+        \caption{Tarjeta para salir de modo de configuración}
         \label{subfig:tarjetas-control-config}
     \end{subfigure}
 
@@ -495,7 +454,7 @@ Terminado el paso anterior, se ubica a Robotito en el punto de partida y se da c
 
 Finalmente, al llegar al punto de fin del tablero, el robot devuelve una retroalimentación general del recorrido, con el objetivo de informar si este fue correcto o si hubo errores, indicando cuáles elementos leídos no se encontraban en la posición correcta. Esto permite que el recorrido se realice más de una vez, reubicando las tarjetas para indagar sobre cuál debería ser el comportamiento del robot en cada caso.
 
-\subsection{Recorrido completo}
+\subsection{Ejecución del robot}
 \label{subsec:recorrido-completo}
 
 Al encender Robotito, este se encuentra en modo ``Configuración'', con su anillo LED parpadeando en color azul. En este paso es posible conectarse al robot a través del protocolo BLE utilizando el configurador web y transmitir datos de secuencia esperada entre ambos. En caso de querer empezar el recorrido, el robot se debe ubicar en el punto de inicio del tablero apuntando la cámara hacia la línea del recorrido, y luego mostrarle (a la cámara) la tarjeta correspondiente a ``salir de modo Configuración'' (\ref{subfig:tarjetas-control-config}).
@@ -550,24 +509,26 @@ Al realizar la lectura de alguno de los tags ubicados en el punto de fin del rec
     \begin{subfigure}{0.25\textwidth}
         \centering
         \includegraphics[width=\linewidth]{images/robotito/robotito-segmento-1.png}
-        \caption{Feedback final con error, dos posiciones en total}
+        \caption{Feedback final con un error, dos puntos de parada en total}
     \end{subfigure}
     \hfill
     \begin{subfigure}{0.25\textwidth}
         \centering
         \includegraphics[width=\linewidth]{images/robotito/robotito-segmento-2.png}
-        \caption{Feedback final con error, tres posiciones en total}
+        \caption{Feedback final con dos errores, tres puntos de parada en total}
     \end{subfigure}
     \hfill
     \begin{subfigure}{0.25\textwidth}
         \centering
         \includegraphics[width=\linewidth]{images/robotito/robotito-segmento-3.png}
-        \caption{Feedback final con error, cuatro posiciones en total}
+        \caption{Feedback final con dos errores, cuatro puntos de parada en total}
     \end{subfigure}
 
     \caption{Ejemplos de feedback final con error, con distintas cantidades de puntos de parada en el recorrido}
     \label{fig:feedback-final}
 \end{figure}
+
+\FloatBarrier
 
 En caso que la secuencia verificada sea correcta, Robotito sigue avanzando brevemente (pasando la zona representada por la ``bandera final'' de tags), y luego realiza giros en forma de ``festejo'' con su anillo LED encendido completamente en color verde.
 
@@ -1248,7 +1209,7 @@ En conjunto, la experimentación valida que Robotito extendido con visión artif
 
 %conclusiones
 \chapter{Conclusiones y Trabajo Futuro}
-
+\label{cap:conclusiones}
 \section{Conclusiones}
 
 Este trabajo aporta una extensión concreta y acotada de la plataforma educativa Robotito, desarrollada sobre cuatro frentes: percepción visual limitada al seguimiento de línea y a la lectura de tags mediante la cámara HuskyLens, configuración inalámbrica de actividades mediante un configurador web y un módulo de comunicación Bluetooth con persistencia en NVS, control modular del comportamiento del robot mediante Árboles de Comportamiento e integración de estas tres piezas en una actividad educativa concreta, puesta a prueba en dos instancias con estudiantes de entre 4 y 8 años.

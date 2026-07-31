@@ -1,13 +1,9 @@
 \babel@toc {spanish}{}\relax 
 \contentsline {chapter}{Resumen}{\es@scroman {v}}{chapter*.2}%
 \contentsline {chapter}{\numberline {1}Introducción}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Motivación}{1}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Actividad propuesta}{1}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Alcance funcional y límites}{2}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Planteo del problema}{2}{section.1.4}%
-\contentsline {section}{\numberline {1.5}Objetivos}{2}{section.1.5}%
-\contentsline {section}{\numberline {1.6}Resultados esperados}{3}{section.1.6}%
-\contentsline {section}{\numberline {1.7}Organización del documento}{4}{section.1.7}%
+\contentsline {section}{\numberline {1.1}Actividad pedagógica}{2}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Objetivos}{3}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Organización del documento}{4}{section.1.3}%
 \contentsline {chapter}{\numberline {2}Revisión de antecedentes}{5}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Robotito}{5}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Actividades}{5}{subsection.2.1.1}%
@@ -18,10 +14,10 @@
 \contentsline {subsection}{\numberline {3.1.2}Requerimientos de la solución}{8}{subsection.3.1.2}%
 \contentsline {section}{\numberline {3.2}Diseño de la solución}{9}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Módulos a implementar}{9}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Diseño de la actividad}{9}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Actividad propuesta}{10}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}Desarrollo de la actividad}{12}{subsection.3.2.4}%
-\contentsline {subsection}{\numberline {3.2.5}Recorrido completo}{14}{subsection.3.2.5}%
+\contentsline {section}{\numberline {3.3}Diseño de la actividad}{9}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Caso de uso}{10}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Desarrollo de la actividad}{12}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Ejecución del robot}{14}{subsection.3.3.3}%
 \contentsline {chapter}{\numberline {4}Implementación de la solución}{17}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Módulo de percepción visual con HuskyLens}{17}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}Funcionamiento de HuskyLens}{17}{subsection.4.1.1}%
