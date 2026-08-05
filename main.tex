@@ -20,6 +20,7 @@
 \usepackage{booktabs}
 \usepackage{float}
 \usepackage{rotating}
+\usepackage{pdflscape}
 
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 
@@ -673,48 +674,49 @@ comunicación I2C del sistema. En esta sección se describe el funcionamiento
 del módulo y su implementación a alto nivel. Para una descripción más deta-
 llada, puede consultarse el repositorio de \cite{robotito2026hardware}, donde se encuentra el código completo.
 
-La implementación del módulo se organizó en tres capas, cada una con una
+Como se observa en la figura 4.1, la implementación del módulo se organizó en cuatro capas, cada una con una
 responsabilidad claramente definida. Esta separación permite desacoplar la lógi-
 ca de comunicación de la interfaz utilizada por la aplicación, facilitando el man-
 tenimiento del código y la incorporación de futuras modificaciones.
 
-La \textbf{Capa 1}, correspondiente al protocolo de comunicación, implementa el
+En la base se encuentra la \textbf{capa de protocolo de comunicación}, que implementa el
 protocolo utilizado por la cámara. Su función es construir los mensajes que serán
 enviados a HuskyLens y reconstruir las respuestas recibidas, verificando que la
 información esté completa y sea válida antes de entregarla al resto del sistema.
 Esta capa trabaja únicamente con el formato de los datos intercambiados, sin
 interpretar su significado; no realiza acceso directo al hardware.
 
-Sobre esta se encuentra la \textbf{Capa 2}, correspondiente a la interfaz de acceso en
-C, que constituye el núcleo del módulo y coordina a las otras dos partes. Es la
+Sobre esta se encuentra la \textbf{capa de interfaz de acceso en C,}, que constituye el núcleo del módulo y coordina a las otras dos partes. Es la
 responsable de inicializar la comunicación con la cámara, enviar las solicitudes
 correspondientes apoyándose en la Capa 1 para construir los mensajes, recibir
 las respuestas y, a partir de los datos que la Capa 1 reconstruye, interpretar su
 significado. Además, mantiene internamente los resultados de las detecciones
 para que puedan ser consultados posteriormente por la aplicación.
 
-Finalmente, la \textbf{Capa 3}, correspondiente a la interfaz para Lua, proporciona
+A continuación se encuentra la \textbf{capa de interfaz para Lua}, que proporciona
 la funcionalidad utilizada por los programas escritos en este lenguaje. Su objeti-
 vo es adaptar las funciones implementadas en C al entorno de ejecución de Lua
 empleado por Robotito, ofreciendo una interfaz sencilla y ocultando los detalles
 internos de la comunicación con la cámara.
 
-El funcionamiento general del módulo comienza cuando la aplicación solicita
+Finalmente, en el nivel superior se encuentra la \textbf{capa de aplicación}, correspondiente a los programas Lua ejecutados en Robotito. Esta capa consume la interfaz expuesta por la capa de interfaz Lua para solicitar información a la cámara y consultar los resultados de las detecciones.
+
+El funcionamiento general del módulo comienza cuando la capa de aplicación solicita
 información a la cámara mediante la interfaz disponible en Lua o directamente
-desde código C. La Capa 2 solicita a la Capa 1 que arme el mensaje correspon-
-diente y lo envía utilizando el controlador I2C del sistema. Una vez recibida
-la respuesta de HuskyLens, la Capa 2 la reconstruye con ayuda de la Capa 1,
+desde código C. La interfaz de acceso solicita a la capa de protocolo que arme el mensaje correspondiente
+y lo envía utilizando el controlador I2C del sistema. Una vez recibida
+la respuesta de HuskyLens, la interfaz de acceso la reconstruye con ayuda de la capa de protocolo,
 interpreta la información obtenida y actualiza su estado interno. Posteriormente,
-la aplicación puede consultar estos resultados sin necesidad de interactuar
+la capa de aplicación puede consultar estos resultados sin necesidad de interactuar
 directamente con el protocolo de comunicación. Es importante notar que la
-Capa 2 actúa como coordinadora entre la Capa 1 y el controlador I2C: ambas
+interfaz de acceso actúa como coordinadora entre la capa de protocolo y el controlador I2C: ambas
 nunca interactúan directamente entre sí.
 
 Esta organización permite que cada capa se ocupe de una tarea específica:
-la Capa 1 implementa el protocolo de comunicación, la Capa 2 coordina el
-intercambio de información con la cámara y la Capa 3 expone una interfaz para
-la aplicación. Como resultado, se obtiene una implementación modular, sencilla
-de mantener y consistente con la arquitectura del resto del software de Robotito.
+la capa de protocolo implementa el protocolo de comunicación, la interfaz de acceso coordina el
+intercambio de información con la cámara, la interfaz Lua adapta esa funcionalidad al entorno de
+ejecución de Robotito y la capa de aplicación consume dicha interfaz para resolver la lógica propia de cada actividad. 
+Como resultado, se obtiene una implementación modular, sencilla de mantener y consistente con la arquitectura del resto del software de Robotito.
 
 \begin{figure}[h]
     \centering
@@ -809,16 +811,19 @@ Este conjunto de nodos conforma un motor BT completo y compacto, adecuado para s
 
 A modo de ejemplo, la figura \ref{fig:bt_robotito} muestra el árbol de comportamiento implementado en Robotito, construido a partir de los nodos descritos en esta sección. En él puede observarse cómo los nodos compositores y decoradores se combinan para organizar las distintas tareas del robot en una estructura jerárquica y reactiva.
 
-\begin{figure}[H]
+
+\begin{landscape}
+\begin{figure}[p]
     \centering
-    \makebox[\textwidth][c]{%
-        \includegraphics[width=1.3\textwidth]{images/BTRobotito.png}
+    \makebox[\linewidth][c]{%
+        \includegraphics[height=0.92\textheight,keepaspectratio]{images/BTRobotito.png}
     }
     \caption{Árbol de comportamiento implementado en Robotito.}
     \label{fig:bt_robotito}
 \end{figure}
+\end{landscape}
 
-Para conocer en profunida la implementación del modulo de BT, puede visitar el repositorio con su implementación completo \cite{robotito2026software}
+La implementación del modulo de BT se encuentra en el repositorio  \cite{robotito2026software}.
 
 
 % ===== WEB =====
@@ -836,6 +841,15 @@ Su propósito principal es permitir que el usuario registre tags, defina relacio
 \subsection{Definición de tags y estaciones}
 
 La herramienta permite registrar tags, asociarles nombres o alias y organizarlos según su función dentro de la actividad. De esta forma, el usuario puede trabajar con identificadores comprensibles sin depender únicamente de valores numéricos.
+
+\begin{figure}[!htbp]
+    \centering
+    \makebox[\textwidth][c]{%
+        \includegraphics[width=1.3\textwidth]{images/web/tags.jpeg}
+    }
+    \caption{Lectura de tags.}
+    \label{fig:web_tags}
+\end{figure}
 
 Además, el configurador incorpora un mecanismo de intercambiabilidad para declarar que distintos tags cumplen la misma función dentro de la actividad. Esto permite que varios tags representen una misma estación cuando la consigna lo requiere.
 
@@ -864,6 +878,16 @@ Para ilustrar el uso del configurador, se presentan dos ejemplos concretos de se
 
 Una vez registrados los tags o cargada una actividad predefinida, el usuario puede construir una o más secuencias de recorrido. Cada secuencia representa el orden esperado de tags que el robot deberá validar durante la actividad.
 
+
+\begin{figure}[!htbp]
+    \centering
+    \makebox[\textwidth][c]{%
+        \includegraphics[width=1.3\textwidth]{images/web/secuencias.png}
+    }
+    \caption{Gestión de secuencias.}
+    \label{fig:web_secuencias}
+\end{figure}
+
 Antes de enviar la configuración, el sistema verifica que exista al menos una secuencia definida, que no se superen los límites de tamaño de secuencia admitidos y que todos los tags incluidos se encuentren correctamente registrados. Estas validaciones buscan prevenir inconsistencias antes de transferir la información al robot.
 
 \subsection{Biblioteca de actividades y flujo de uso}
@@ -882,23 +906,8 @@ En términos funcionales, el flujo de uso del configurador es el siguiente:
     \item La configuración queda pronta para ser transferida al robot.
 \end{enumerate}
 
-\begin{figure}[!htbp]
-    \centering
-    \makebox[\textwidth][c]{%
-        \includegraphics[width=1.3\textwidth]{images/web/tags.jpeg}
-    }
-    \caption{Lectura de tags.}
-    \label{fig:web_tags}
-\end{figure}
 
-\begin{figure}[!htbp]
-    \centering
-    \makebox[\textwidth][c]{%
-        \includegraphics[width=1.3\textwidth]{images/web/secuencias.png}
-    }
-    \caption{Gestión de secuencias.}
-    \label{fig:web_secuencias}
-\end{figure}
+
 
 %  ===== BLE =====
 \section{Configuración de actividades y comunicación BLE}
@@ -943,7 +952,7 @@ Para conocer en profunida la implementación del modulo de BLE, puede visitar el
 % experimentación
 \chapter{Experimentación}
 \label{cap:experimentacion}
-\section{Introducción}
+
 La validación de plataformas educativas requiere no solo verificar su funcionamiento técnico, sino también evaluar su adecuación pedagógica y usabilidad en contextos reales de enseñanza. En este capítulo se describe el proceso de experimentación llevado a cabo para validar la propuesta de extensión de Robotito, tanto desde la perspectiva docente como desde la experiencia directa con estudiantes.
 La experimentación se estructuró en dos etapas complementarias: primero, entrevistas semiestructuradas con docentes de nivel inicial y primaria para obtener retroalimentación sobre el diseño de las actividades y la viabilidad práctica de la propuesta; segundo, sesiones presenciales con grupos de estudiantes de educación inicial (entre 4 y 5 años de edad) y educación primaria (entre 7 y 8 años de edad) para observar la interacción directa con el robot y validar los supuestos de diseño.
 
