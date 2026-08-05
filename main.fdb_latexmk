@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex main"] 1785963201.94055 "main.aux" "main.bbl" "main" 1785963209.43292 0
+["bibtex main"] 1785963579.13727 "main.aux" "main.bbl" "main" 1785963587.49619 0
   "./referencias.bib" 1785525456.67893 13533 f16bbd7b3eb3c1c713b6fbc6bcc12e3e ""
   "/usr/local/texlive/2026/texmf-dist/bibtex/bst/apacite/apacite.bst" 1374530685 141073 9d7b79dbf9d91133318126032cff8c27 ""
-  "main.aux" 1785963209.12264 26973 e9fc801206c7156818366a547ba2a51d "pdflatex"
+  "main.aux" 1785963586.76566 26973 e9fc801206c7156818366a547ba2a51d "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1785963202.09926 "/Users/cristian/Documents/Lucho/tesis/tesis/main.tex" "main.pdf" "main" 1785963209.43311 0
-  "/Users/cristian/Documents/Lucho/tesis/tesis/main.tex" 1785963194.07088 126671 72c03c9c470900db014e362faf64b740 ""
+["pdflatex"] 1785963579.26322 "/Users/cristian/Documents/Lucho/tesis/tesis/main.tex" "main.pdf" "main" 1785963587.49668 0
+  "/Users/cristian/Documents/Lucho/tesis/tesis/main.tex" 1785963570.9704 126672 d1e75c8016a4ca15bcaf5bc0617b06d2 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -141,7 +141,7 @@
   "images/robotito/robotito-segmento-1.png" 1784749077.0469 81809 4c741445f666893a455659914e8403d6 ""
   "images/robotito/robotito-segmento-2.png" 1784749077.06415 81007 9213c38fbec9f5daf8889acb8c8355da ""
   "images/robotito/robotito-segmento-3.png" 1784749077.03793 82549 7406d38daa63f62393f6c249e257c3ad ""
-  "images/tablero/robotito-recorrido-foto-final.png" 1785537766.7996 1892093 dcc1bdbf0f9dc55d637cc0f13d5c6164 ""
+  "images/tablero/robotito-recorrido-foto-final.png" 1785963418.90141 4751682 30861b94d37a8d587312c720e31c7c09 ""
   "images/tablero/robotito-tablero-recorrido.png" 1784727003.18302 279434 4fdb5691143e65193d6556b969109501 ""
   "images/tablero/stop-qr.png" 1784746867.75704 5872 99403212c9b3d224450a4fb89c67a056 ""
   "images/tablero/tablero-curva-corta.png" 1784731031.66966 51149 877f0720e424d3e3d859fe10d1b6af36 ""
@@ -157,11 +157,11 @@
   "images/tablero/tarjeta-start.png" 1784735066.89281 6584 c9f11c277c8534d5c8925bd6f74b10e5 ""
   "images/web/secuencias.png" 1784727003.19187 734000 532fb225f1448097fc6d203b3430af3c ""
   "images/web/tags.jpeg" 1784727003.19322 143186 2260367015f006fe835c18e72485c36d ""
-  "main.aux" 1785963209.12264 26973 e9fc801206c7156818366a547ba2a51d "pdflatex"
-  "main.bbl" 1785963202.09594 9169 fa42d1c12c370a6e15f389aea5413467 "bibtex main"
-  "main.out" 1785963209.126 12911 36d314bbb2f6da1635bae9420764a206 "pdflatex"
-  "main.tex" 1785963194.07088 126671 72c03c9c470900db014e362faf64b740 ""
-  "main.toc" 1785963209.12636 9216 b8af3e6931057b49076802ea3b5a3e21 "pdflatex"
+  "main.aux" 1785963586.76566 26973 e9fc801206c7156818366a547ba2a51d "pdflatex"
+  "main.bbl" 1785963579.26039 9169 fa42d1c12c370a6e15f389aea5413467 "bibtex main"
+  "main.out" 1785963586.76881 12911 36d314bbb2f6da1635bae9420764a206 "pdflatex"
+  "main.tex" 1785963570.9704 126672 d1e75c8016a4ca15bcaf5bc0617b06d2 ""
+  "main.toc" 1785963586.76907 9216 b8af3e6931057b49076802ea3b5a3e21 "pdflatex"
   "prgrado.cls" 1784726878.63052 3321 6adcb01c6c9146152c716f04522dd730 ""
   (generated)
   "main.aux"
