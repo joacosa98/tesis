@@ -895,7 +895,7 @@ ul.findings-list li::before{
         <h3 style="font-family:var(--font-display); font-weight:600; font-size:26px;">Percepci&oacute;n</h3>
       </div>
       <div style="display:flex; flex-direction:column; align-items:center; gap:28px;">
-        <div class="icon-wrap" style="background:var(--green-soft);"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.5"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M12 7v5M12 12l-6 5M12 12l6 5"/></svg></div>
+        <div class="icon-wrap" style="background:var(--green-soft);"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.5"><line x1="12" y1="9" x2="5" y2="17"/><line x1="12" y1="9" x2="12" y2="17"/><line x1="12" y1="9" x2="19" y2="17"/><rect x="9" y="3" width="6" height="6" rx="1"/><circle cx="5" cy="19" r="2.2"/><circle cx="12" cy="19" r="2.2"/><circle cx="19" cy="19" r="2.2"/></svg></div>
         <h3 style="font-family:var(--font-display); font-weight:600; font-size:26px;">Comportamiento</h3>
       </div>
       <div style="display:flex; flex-direction:column; align-items:center; gap:28px;">
@@ -1055,35 +1055,59 @@ ul.findings-list li::before{
   </div>
   <div class="content">
     <h1 class="title">Comportamiento: Behavior Trees</h1>
-    <div style="flex:1; display:flex; align-items:center;">
-    <ul class="tile-list" style="width:100%;">
-      <li style="align-items:flex-start;">
-        <span class="sq" style="margin-top:8px;"></span>
-        <div>
-          <div>Estructura jer&aacute;rquica de nodos</div>
-          <div class="node-groups">
+    <div class="split" style="margin-top:22px; flex:1; align-items:center;">
+      <div class="col text" style="flex:1.1;">
+        <ul class="tile-list">
+          <li style="align-items:flex-start;">
+            <span class="sq" style="margin-top:8px;"></span>
             <div>
-              <div class="node-group-label">Ejecuci&oacute;n</div>
-              <ul class="tile-sublist">
-                <li><span class="dot"></span><span>Action</span></li>
-                <li><span class="dot"></span><span>Condition</span></li>
-                <li><span class="dot"></span><span>Decorator</span></li>
-              </ul>
+              <div>Estructura jer&aacute;rquica de nodos</div>
+              <div class="node-groups">
+                <div>
+                  <div class="node-group-label">Ejecuci&oacute;n</div>
+                  <ul class="tile-sublist">
+                    <li><span class="dot"></span><span>Action</span></li>
+                    <li><span class="dot"></span><span>Condition</span></li>
+                    <li><span class="dot"></span><span>Decorator</span></li>
+                  </ul>
+                </div>
+                <div>
+                  <div class="node-group-label">Control</div>
+                  <ul class="tile-sublist">
+                    <li><span class="dot"></span><span>Sequence</span></li>
+                    <li><span class="dot"></span><span>Fallback</span></li>
+                    <li><span class="dot"></span><span>Parallel</span></li>
+                  </ul>
+                </div>
+              </div>
             </div>
-            <div>
-              <div class="node-group-label">Control</div>
-              <ul class="tile-sublist">
-                <li><span class="dot"></span><span>Sequence</span></li>
-                <li><span class="dot"></span><span>Fallback</span></li>
-                <li><span class="dot"></span><span>Parallel</span></li>
-              </ul>
-            </div>
-          </div>
+          </li>
+          <li><span class="sq"></span><span>Resultados posibles: SUCCESS, FAIL, o RUNNING</span></li>
+          <li><span class="sq"></span><span>Comportamiento definido por la estructura del &aacute;rbol</span></li>
+        </ul>
+      </div>
+      <div class="col" style="flex:0.85;">
+        <div class="bracket-frame accent" style="height:340px;">
+          <span></span><span class="bl"></span><span class="br"></span>
+          <svg viewBox="0 0 410 320" style="width:100%;height:100%;" preserveAspectRatio="xMidYMid meet">
+            <defs><marker id="arrEx" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 Z" fill="var(--ink)"/></marker></defs>
+            <line x1="200" y1="70" x2="80" y2="126" stroke="var(--ink)" stroke-width="2" marker-end="url(#arrEx)"/>
+            <line x1="200" y1="70" x2="200" y2="126" stroke="var(--ink)" stroke-width="2" marker-end="url(#arrEx)"/>
+            <line x1="200" y1="70" x2="310" y2="126" stroke="var(--ink)" stroke-width="2" marker-end="url(#arrEx)"/>
+            <line x1="310" y1="180" x2="258" y2="248" stroke="var(--ink)" stroke-width="2" marker-end="url(#arrEx)"/>
+            <line x1="310" y1="180" x2="362" y2="248" stroke="var(--ink)" stroke-width="2" marker-end="url(#arrEx)"/>
+            <rect x="172" y="14" width="56" height="56" rx="10" fill="var(--section-soft)" stroke="var(--ink)" stroke-width="2"/>
+            <line x1="186" y1="42" x2="206" y2="42" stroke="var(--ink)" stroke-width="2"/>
+            <polygon points="214,42 204,37 204,47" fill="var(--ink)"/>
+            <circle cx="80" cy="152" r="28" fill="var(--section-soft)" stroke="var(--ink)" stroke-width="2"/>
+            <circle cx="200" cy="152" r="28" fill="var(--section-soft)" stroke="var(--ink)" stroke-width="2"/>
+            <rect x="282" y="124" width="56" height="56" rx="10" fill="var(--section-soft)" stroke="var(--ink)" stroke-width="2"/>
+            <text x="310" y="161" text-anchor="middle" font-family="var(--font-mono)" font-weight="600" font-size="26" fill="var(--ink)">?</text>
+            <circle cx="258" cy="272" r="26" fill="var(--section-soft)" stroke="var(--ink)" stroke-width="2"/>
+            <circle cx="362" cy="272" r="26" fill="var(--section-soft)" stroke="var(--ink)" stroke-width="2"/>
+          </svg>
         </div>
-      </li>
-      <li><span class="sq"></span><span>Resultados posibles: SUCCESS, FAIL, o RUNNING</span></li>
-      <li><span class="sq"></span><span>Comportamiento definido por la estructura del &aacute;rbol</span></li>
-    </ul>
+      </div>
     </div>
   </div>
   <div class="chrome-bottom"><div class="chrome-footer-text">Cardozo &middot; Sanson &middot; Verdier &middot; Zamora</div><div class="chrome-footer-text">Facultad de Ingenier&iacute;a &mdash; UdelaR &middot; 2026</div></div>
