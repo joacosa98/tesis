@@ -11,11 +11,11 @@ Texto en *cursiva* = lo que decís. `[entre corchetes]` = acotación / cuándo a
 
 *"Ahora voy a hablar del control del comportamiento del robot. Para esto implementamos un módulo propio de Árboles de Comportamiento, o Behavior Trees, en Lua.*
 
-*Un Behavior Tree es una estructura jerárquica de nodos que se ejecuta desde la raíz hacia abajo mediante ticks periódicos. En cada tick el árbol se recorre desde la raíz y cada nodo decide qué hacer y qué devolverle a su padre. Es decir: no es un grafo de estados con transiciones entre sí, sino un árbol que se vuelve a evaluar completo, una y otra vez."*
+*Un Behavior Tree es una estructura jerárquica de nodos que se ejecuta desde la raíz hacia abajo mediante ticks periódicos. En cada tick el árbol se recorre desde la raíz y cada nodo decide qué hacer y qué devolverle a su padre. O sea: no es un grafo de estados con transiciones entre sí, sino un árbol que se vuelve a evaluar completo, una y otra vez."*
 
 **2. Los tipos de nodos (mencionar por arriba, sin detallar)**
 
-*"Los nodos se agrupan en dos familias. Por un lado los nodos de ejecución —action, condition y decorator— que son los que efectivamente hacen algo o miran el estado del sistema. Por otro los nodos de control —sequence, fallback y parallel— que no hacen nada por sí mismos, sino que deciden en qué orden y bajo qué criterio se ejecutan sus hijos. En las próximas dos slides los vemos uno por uno."*
+*"Los nodos se agrupan en dos familias: los de **ejecución** —action, condition y decorator— y los de **control** —sequence, fallback y parallel—. En las próximas dos slides vamos a ver cada uno en detalle."*
 
 **3. Resultados posibles**
 
@@ -27,9 +27,13 @@ Texto en *cursiva* = lo que decís. `[entre corchetes]` = acotación / cuándo a
 
 *"Uno de los principales beneficios de Behavior Trees es dónde vive la lógica de decisión. Debido a la estructura jerárquica del árbol, un nodo no necesita saber quién es su padre, ni quiénes son sus hermanos, ni qué pasa después de él. Un nodo action solo sabe hacer su tarea y reportar cómo le fue. Quien decide qué pasa a continuación es la estructura del árbol, no el nodo, evitando lógica complicada que dificulta el desarrollo y modularización del sistema."*
 
-**5. Los demás beneficios (encadenar con lo anterior: son la consecuencia)**
+**5. Los demás beneficios**
 
-*"De esa propiedad se desprende todo lo demás. Los nodos son independientes entre sí, así que el mismo nodo se puede reutilizar en distintas partes del árbol o en un árbol completamente distinto, y agregar un comportamiento nuevo es colgar un subárbol sin revisar lo que ya funcionaba. El árbol se lee como se lee el comportamiento, así que el diagrama es la documentación. Como se re-evalúa en cada tick, el robot reacciona a lo que pasa en el entorno —perder la línea, que lo levanten de la mesa, leer un tag de parada— sin haber previsto esa transición desde cada punto posible. Y como nuestro motor opera sobre un contexto con el estado del sistema, en vez de llamar directo al hardware, el módulo quedó como una biblioteca reutilizable e independiente del hardware de Robotito, que otros proyectos pueden usar tal cual."*
+*"De esa propiedad se desprende todo lo demás. Los nodos son independientes entre sí, así que el mismo nodo se puede reutilizar en distintas partes del árbol o en un árbol completamente distinto, y agregar un comportamiento nuevo es colgar un subárbol sin la necesidad de revisar lo que ya funcionaba. "*
+
+*"Por otro lado la documentación es clara ya que el árbol representa el comportamiento mismo, lo que hace mucho más fácil retomarlo tiempo después o que lo retome otra persona. Además, como se re-evalúa entero en cada tick, el robot responde a lo que va pasando mientras se mueve —por ejemplo, si pierde la línea, si lo levantan de la mesa, si aparece un tag— sin tener que declarar de antemano qué hacer ante cada evento en cada punto del recorrido. Y los nodos nunca llaman al hardware directamente: trabajan sobre un contexto que concentra el estado del sistema. Gracias a eso el módulo quedó como una biblioteca independiente de Robotito, que otro proyecto puede tomar tal cual."*
+
+*"Ese contexto es además el único canal entre los nodos: el que valida la tarjeta deja el resultado ahí, y el que enciende las luces lo lee de ahí, sin que ninguno sepa que el otro existe. Y como todo el progreso de la actividad vive en ese contexto y no en la posición del robot en el tablero, si un docente lo levanta en el medio del recorrido no se pierde nada: se lo reubica y retoma donde estaba."*
 
 > `[Avanzar]`
 
@@ -51,13 +55,15 @@ Texto en *cursiva* = lo que decís. `[entre corchetes]` = acotación / cuándo a
 
 *"El decorator es un nodo con un único hijo que modifica su comportamiento o su resultado, sin modificar al hijo. Se lo puede pensar como un envoltorio con una política.*
 
-*En nuestro módulo implementamos tres:*
+*En nuestro módulo implementamos un ejemplo del modelo clásico*
 
 - ***repeater**, que repite la ejecución de su hijo n veces —o indefinidamente— reiniciándolo entre repeticiones;*
-- ***interrupt**, que representa un evento prioritario: evalúa una condición externa y, si se cumple, dispara el nodo asociado a esa interrupción;*
-- ***interruptible**, que envuelve un nodo principal con una lista de interrupciones y permite abortar su ejecución de forma preventiva si alguna se activa.*
 
-*Estos dos últimos son un agregado nuestro sobre el modelo clásico, pensados para un entorno reactivo. Son los que le permiten al robot cortar lo que está haciendo cuando pasa algo más importante: en nuestro caso, que lo levanten del tablero, que pierda la línea, o que se venza el tiempo buscando una tarjeta."*
+*Además de agregados nuestros, como por ejemplo*
+
+- ***interrupt**, que representa un evento prioritario: evalúa una condición externa y, si se cumple, dispara el nodo asociado a esa interrupción;*
+
+*Este último es un agregado nuestro sobre el modelo clásico, pensado para un entorno reactivo. Es lo que le permite al robot cortar lo que está haciendo cuando pasa algo más importante: en nuestro caso, que lo levanten del tablero, que pierda la línea, o que se venza el tiempo buscando una tarjeta."*
 
 > `[Avanzar]`
 
@@ -87,7 +93,7 @@ Texto en *cursiva* = lo que decís. `[entre corchetes]` = acotación / cuándo a
 
 *Un nodo **sin memoria** —reactivo— vuelve a empezar desde el primer hijo en cada tick y re-evalúa todas las condiciones previas. Cuesta más, pero garantiza que si una condición dejó de cumplirse, la rama se abandona inmediatamente.*
 
-*En nuestra implementación los compositores son **con memoria**: cada nodo guarda el índice del hijo activo, y por eso una estación ya validada no se vuelve a validar en el tick siguiente. La reactividad la conseguimos por otra vía: los decoradores interrupt e interruptible, que se evalúan antes que la rama principal y pueden abortarla. Así pagamos re-evaluación solo donde hace falta —las condiciones de falla— y no en todo el árbol, que en un ESP32 no es un detalle menor."*
+*En nuestra implementación los compositores son **con memoria**: cada nodo guarda el índice del hijo activo, y por eso una estación ya validada no se vuelve a validar en el tick siguiente. La reactividad la conseguimos por otra vía: con decoradores (interrupt), que se evalúan antes que la rama principal y pueden abortarla. Así pagamos re-evaluación solo donde hace falta —las condiciones de falla— y no en todo el árbol, que en un ESP32 no es un detalle menor."*
 
 > `[Avanzar]`
 
@@ -109,9 +115,9 @@ Texto en *cursiva* = lo que decís. `[entre corchetes]` = acotación / cuándo a
 
 **Los cinco hijos, uno por uno**
 
-*"El primero es una **condition**: 'stop tag seen'. Es la única azul, porque es la única que no actúa: solo mira si entre los tags que la cámara acaba de detectar está el tag de parada. Y acá aparece un patrón muy típico de los Behavior Trees: poner una condición como primer hijo de una secuencia la convierte en la **guarda** de toda la rama. Si no hay tag de parada, devuelve FAILURE, la secuencia entera falla en el primer paso y el fallback de arriba pasa a probar la siguiente alternativa. O sea: el robot no 'decide' entrar acá; entra si y solo si se cumple la guarda.*
+*"El primero es una **condition**: 'stop tag seen'. Solo mira si entre los tags que la cámara acaba de detectar está el tag de parada. Poner una condición como primer hijo de una secuencia la convierte en la **guarda** de toda la rama. Si no hay tag de parada, devuelve FAILURE, la secuencia entera falla en el primer paso y el fallback de arriba pasa a probar la siguiente alternativa. O sea: el robot no 'decide' entrar acá; entra si y solo si se cumple la guarda.*
 
-*El segundo es **scan checkpoint**: la acción que hace el trabajo. Detiene el robot y lo pone a rotar en sentido horario buscando el tag de la tarjeta que el grupo dejó en la estación. Mientras busca devuelve RUNNING, tick tras tick. Cuando lo encuentra, ignora los tags de control y toma solo el de la tarjeta, y lo compara contra la posición actual de la secuencia que el docente configuró desde la web. Si pasa demasiado tiempo sin encontrar nada, devuelve FAILURE.*
+*El segundo es **scan checkpoint**: Detiene el robot y lo pone a rotar en sentido horario buscando el tag de la tarjeta que el grupo dejó en la estación. Mientras busca devuelve RUNNING. Cuando lo encuentra, ignora los tags de control y toma solo el de la tarjeta, y lo compara contra la posición actual de la secuencia que el docente configuró desde la web. Si pasa demasiado tiempo sin encontrar nada, devuelve FAILURE.*
 
 *El tercero es **checkpoint led**: la retroalimentación. Primero hace girar una luz blanca alrededor del anillo —es el estado 'pensativo', que agregamos por recomendación de las maestras para darle tiempo al grupo a entender qué está pasando— y recién después enciende el anillo entero en verde o en rojo.*
 
