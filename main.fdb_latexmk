@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex main"] 1785963579.13727 "main.aux" "main.bbl" "main" 1785963587.49619 0
+["bibtex main"] 1785963579.13727 "main.aux" "main.bbl" "main" 1787622666.00714 0
   "./referencias.bib" 1785525456.67893 13533 f16bbd7b3eb3c1c713b6fbc6bcc12e3e ""
   "/usr/local/texlive/2026/texmf-dist/bibtex/bst/apacite/apacite.bst" 1374530685 141073 9d7b79dbf9d91133318126032cff8c27 ""
-  "main.aux" 1785963586.76566 26973 e9fc801206c7156818366a547ba2a51d "pdflatex"
+  "main.aux" 1787622665.68604 26973 e9fc801206c7156818366a547ba2a51d "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1785963579.26322 "/Users/cristian/Documents/Lucho/tesis/tesis/main.tex" "main.pdf" "main" 1785963587.49668 0
-  "/Users/cristian/Documents/Lucho/tesis/tesis/main.tex" 1785963570.9704 126672 d1e75c8016a4ca15bcaf5bc0617b06d2 ""
+["pdflatex"] 1787622656.94871 "/Users/cristian/Documents/Lucho/tesis/tesis/main.tex" "main.pdf" "main" 1787622666.00733 0
+  "/Users/cristian/Documents/Lucho/tesis/tesis/main.tex" 1787622656.7734 126672 d1e75c8016a4ca15bcaf5bc0617b06d2 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -119,7 +119,7 @@
   "/usr/local/texlive/2026/texmf.cnf" 1774209515 577 648cd9f92f9c0eac486f4c71c85cfbbe ""
   "figs/cc/by.png" 1784727003.11779 12588 04d377d968557a6092bccb1617db5a65 ""
   "figs/logo-udelar-fing.png" 1784727003.11939 19320 c082df2449decf9f17268e891038fc4b ""
-  "images/BTRobotito.png" 1784727003.138 1506164 375fc1f0ea634fa9c1162b50d40908d5 ""
+  "images/BTRobotito.png" 1787622629.64312 2587284 8369cc2c66d3f4911442de9850f95dff ""
   "images/antecedentes/bee-bot.jpg" 1784727003.14436 463663 8c3622a7758c46142be74fc3fb126bbc ""
   "images/antecedentes/cubetto.jpg" 1784727003.14646 686010 09b3b3bc7521955ecd2867241c30dce1 ""
   "images/antecedentes/qobo.png" 1784727003.14986 1288553 acdcd011b84fd4c7ff44c83d1e32e22f ""
@@ -157,11 +157,11 @@
   "images/tablero/tarjeta-start.png" 1784735066.89281 6584 c9f11c277c8534d5c8925bd6f74b10e5 ""
   "images/web/secuencias.png" 1784727003.19187 734000 532fb225f1448097fc6d203b3430af3c ""
   "images/web/tags.jpeg" 1784727003.19322 143186 2260367015f006fe835c18e72485c36d ""
-  "main.aux" 1785963586.76566 26973 e9fc801206c7156818366a547ba2a51d "pdflatex"
+  "main.aux" 1787622665.68604 26973 e9fc801206c7156818366a547ba2a51d "pdflatex"
   "main.bbl" 1785963579.26039 9169 fa42d1c12c370a6e15f389aea5413467 "bibtex main"
-  "main.out" 1785963586.76881 12911 36d314bbb2f6da1635bae9420764a206 "pdflatex"
-  "main.tex" 1785963570.9704 126672 d1e75c8016a4ca15bcaf5bc0617b06d2 ""
-  "main.toc" 1785963586.76907 9216 b8af3e6931057b49076802ea3b5a3e21 "pdflatex"
+  "main.out" 1787622665.68914 12911 36d314bbb2f6da1635bae9420764a206 "pdflatex"
+  "main.tex" 1787622656.7734 126672 d1e75c8016a4ca15bcaf5bc0617b06d2 ""
+  "main.toc" 1787622665.68941 9216 b8af3e6931057b49076802ea3b5a3e21 "pdflatex"
   "prgrado.cls" 1784726878.63052 3321 6adcb01c6c9146152c716f04522dd730 ""
   (generated)
   "main.aux"
