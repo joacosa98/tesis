@@ -29,11 +29,12 @@ Texto en *cursiva* = lo que decís. `[entre corchetes]` = acotación / cuándo a
 
 **5. Los demás beneficios**
 
-*"De esa propiedad se desprende todo lo demás. Los nodos son independientes entre sí, así que el mismo nodo se puede reutilizar en distintas partes del árbol o en un árbol completamente distinto, y agregar un comportamiento nuevo es colgar un subárbol sin la necesidad de revisar lo que ya funcionaba. "*
+*"[ Modularidad + Reutilización ] Entonces, como los nodos son independientes entre sí, el mismo nodo se puede reutilizar en distintas partes del árbol o en un árbol completamente distinto, y agregar un comportamiento nuevo es colgar un subárbol sin la necesidad de revisar lo que ya funcionaba."*
 
-*"Por otro lado la documentación es clara ya que el árbol representa el comportamiento mismo, lo que hace mucho más fácil retomarlo tiempo después o que lo retome otra persona. Además, como se re-evalúa entero en cada tick, el robot responde a lo que va pasando mientras se mueve —por ejemplo, si pierde la línea, si lo levantan de la mesa, si aparece un tag— sin tener que declarar de antemano qué hacer ante cada evento en cada punto del recorrido. Y los nodos nunca llaman al hardware directamente: trabajan sobre un contexto que concentra el estado del sistema. Gracias a eso el módulo quedó como una biblioteca independiente de Robotito, que otro proyecto puede tomar tal cual."*
+*"[ Reactividad ] Por otro lado, en cada tick el árbol se vuelve a entrar desde la raíz, y las condiciones que deben poder interrumpir el comportamiento se chequean antes que la rama que esté en curso. Eso hace que el robot responda a lo que va pasando mientras se mueve —por ejemplo, si pierde la línea, si lo levantan de la mesa, si aparece un tag— sin tener que declarar de antemano qué hacer ante cada evento en cada punto del recorrido."*
 
-*"Ese contexto es además el único canal entre los nodos: el que valida la tarjeta deja el resultado ahí, y el que enciende las luces lo lee de ahí, sin que ninguno sepa que el otro existe. Y como todo el progreso de la actividad vive en ese contexto y no en la posición del robot en el tablero, si un docente lo levanta en el medio del recorrido no se pierde nada: se lo reubica y retoma donde estaba."*
+*"[ Fácil documentacion ] Además la documentación se hace de manera simple, ya que el árbol representa el comportamiento mismo, resultando mucho más visual y fácil de entender. "*
+
 
 > `[Avanzar]`
 
@@ -45,11 +46,11 @@ Texto en *cursiva* = lo que decís. `[entre corchetes]` = acotación / cuándo a
 
 **Action** `[rectángulo]`
 
-*"El nodo action encapsula una operación concreta y potencialmente prolongada: seguir la línea, rotar buscando una tarjeta, mostrar el feedback en el anillo de LEDs. Devuelve SUCCESS si la tarea se completó, FAILURE si es imposible completarla, y se mantiene en RUNNING mientras está en curso a lo largo de varios ticks. Es el único nodo que actúa sobre el mundo."*
+*"El nodo action encapsula una operación concreta y potencialmente prolongada: seguir la línea, rotar buscando una tarjeta, mostrar el feedback en el anillo de LEDs. Devuelve SUCCESS si la tarea se completó, FAILURE si es imposible completarla, y se mantiene en RUNNING mientras está en curso a lo largo de varios ticks."*
 
 **Condition** `[elipse]`
 
-*"El nodo condition evalúa un predicado instantáneo sobre el contexto —'¿estoy viendo un tag de parada?', '¿este tag es el que esperaba en esta posición?'— y devuelve SUCCESS o FAILURE. Nunca devuelve RUNNING y no guarda estado: se resuelve en el mismo tick. Es lo que le da al árbol la información para decidir por dónde seguir."*
+*"El nodo condition evalúa un predicado instantáneo sobre el estado del sistema —'¿estoy viendo un tag de parada?', '¿este tag es el que esperaba en esta posición?'— y devuelve SUCCESS o FAILURE. Nunca devuelve RUNNING y no guarda estado: se resuelve en el mismo tick. Es lo que le da al árbol la información para decidir por dónde seguir."*
 
 **Decorator** `[rombo, un único hijo]`
 
@@ -61,7 +62,7 @@ Texto en *cursiva* = lo que decís. `[entre corchetes]` = acotación / cuándo a
 
 *Además de agregados nuestros, como por ejemplo*
 
-- ***interrupt**, que representa un evento prioritario: evalúa una condición externa y, si se cumple, dispara el nodo asociado a esa interrupción;*
+- ***nodos de interrupción**, que representa un evento prioritario: evalúa una condición externa y, si se cumple, dispara el nodo asociado a esa interrupción;*
 
 *Este último es un agregado nuestro sobre el modelo clásico, pensado para un entorno reactivo. Es lo que le permite al robot cortar lo que está haciendo cuando pasa algo más importante: en nuestro caso, que lo levanten del tablero, que pierda la línea, o que se venza el tiempo buscando una tarjeta."*
 
@@ -93,7 +94,9 @@ Texto en *cursiva* = lo que decís. `[entre corchetes]` = acotación / cuándo a
 
 *Un nodo **sin memoria** —reactivo— vuelve a empezar desde el primer hijo en cada tick y re-evalúa todas las condiciones previas. Cuesta más, pero garantiza que si una condición dejó de cumplirse, la rama se abandona inmediatamente.*
 
-*En nuestra implementación los compositores son **con memoria**: cada nodo guarda el índice del hijo activo, y por eso una estación ya validada no se vuelve a validar en el tick siguiente. La reactividad la conseguimos por otra vía: con decoradores (interrupt), que se evalúan antes que la rama principal y pueden abortarla. Así pagamos re-evaluación solo donde hace falta —las condiciones de falla— y no en todo el árbol, que en un ESP32 no es un detalle menor."*
+*En nuestra implementación los compositores son **con memoria**: cada nodo guarda el índice del hijo activo, y por eso una estación ya validada no se vuelve a validar en el tick siguiente. La reactividad la conseguimos por otra vía: con decoradores de interrupción, que se evalúan antes que la rama principal y pueden abortarla. Así pagamos re-evaluación solo donde hace falta —las condiciones de falla— y no en todo el árbol, que en un ESP32 no es un detalle menor."*
+
+*"Y un último detalle sobre nuestra implementación. Los nodos no se pasan datos entre sí: todos trabajan sobre un mismo objeto compartido, al que llamamos contexto, donde vive el estado del sistema. El que valida la tarjeta deja el resultado ahí, y el que enciende las luces lo lee de ahí, sin que ninguno sepa que el otro existe. Y como todo el progreso de la actividad vive en ese contexto, y no en la posición del robot en el tablero, si un docente lo levanta en el medio del recorrido no se pierde nada: se lo reubica y retoma donde estaba."*
 
 > `[Avanzar]`
 
@@ -181,7 +184,7 @@ Texto en *cursiva* = lo que decís. `[entre corchetes]` = acotación / cuándo a
 
 *"Con los cinco hijos en SUCCESS, la sequence devuelve SUCCESS a su padre. La estación está cerrada: el ciclo de recorrido se completa y vuelve a empezar —seguir la línea, mirar tags— hasta la próxima estación. Y como la rama terminó, su memoria se reinicia: en la próxima vuelta la guarda se vuelve a evaluar desde cero.*
 
-***Y si algo sale mal:** si scan checkpoint no encuentra la tarjeta dentro del tiempo límite, devuelve FAILURE. La sequence se corta ahí —no ejecuta las luces, ni la alineación, ni el retomar— y como el árbol entero está envuelto en un interruptible, se dispara la rama de recuperación: el robot se detiene, parpadea en amarillo y espera a que se lo reubique y se le muestre el tag de inicio, para retomar con el progreso intacto, o el de reinicio, para empezar de cero."*
+***Y si algo sale mal:** si scan checkpoint no encuentra la tarjeta dentro del tiempo límite, devuelve FAILURE. La sequence se corta ahí —no ejecuta las luces, ni la alineación, ni el retomar— y como el árbol entero está envuelto en decoradores de interrupción, se dispara la rama de recuperación: el robot se detiene, parpadea en amarillo y espera a que se lo reubique y se le muestre el tag de inicio, para retomar con el progreso intacto, o el de reinicio, para empezar de cero."*
 
 > `[Avanzar al video]`
 
@@ -194,6 +197,17 @@ Texto en *cursiva* = lo que decís. `[entre corchetes]` = acotación / cuándo a
 *"Y así se ve todo eso a velocidad real: el robot llega a la estación, se detiene, busca la tarjeta, la valida y retoma el recorrido.*
 
 *Lo importante es que ninguno de esos nodos sabe qué viene después. Cambiar la actividad —agregar un paso, cambiar el orden, sumar una bifurcación en el recorrido— es reacomodar el árbol, no reescribir la lógica."*
+
+**Cómo quedó implementado** `[cierre de la sección]`
+
+*"Una última cosa sobre la implementación. Todo esto está repartido en piezas bien separadas.*
+
+*El **motor de Behavior Trees** es un módulo en Lua, independiente y sin dependencias: implementa los nodos que vimos —secuencias, selectores, acciones, condiciones y los decoradores— y no sabe nada de Robotito, de la cámara ni de esta actividad. Es la biblioteca reutilizable que planteamos como objetivo.*
+
+*El **comportamiento concreto** es otro archivo Lua, el de la actividad, que importa esa biblioteca y arma el árbol combinando sus nodos: ahí viven las funciones que efectivamente mueven el robot, leen la cámara, encienden el anillo y validan la secuencia.*
+
+*Esa división es la que hace que cambiar el comportamiento del robot no requiera recompilar ni reflashear nada: se edita el script de la actividad y se sube al robot. El código de los tres está publicado en los repositorios del proyecto."*
+
 
 ---
 
