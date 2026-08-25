@@ -479,7 +479,7 @@ ul.tile-list.big{ gap:36px; }
   height: 36px;
 }
 .arch-arrow::before{
-  content:"↓";
+  content:"↕";
   font-size: 18px;
   color: var(--ink);
 }
@@ -858,31 +858,22 @@ ul.findings-list li::before{
   <div class="content" style="padding-top:56px;">
     <h1 class="title" style="margin-top:0;">Antecedentes</h1>
     <div style="flex:1; display:flex; flex-direction:column; justify-content:center; gap:0;">
-    <div class="arch-outer">
-      <div class="arch-outer-label">Microcontrolador ESP32</div>
-      <div class="arch-stack">
-        <div class="arch-zone" style="top:-16px; height:190px; background:var(--purple-soft);"></div>
-        <div class="arch-zone" style="top:174px; height:190px; background:var(--orange-soft);"></div>
-        <div class="arch-box" style="border-color:var(--purple); background:var(--purple-soft);">
-          <div class="lbl">Lua &mdash; script + VM</div>
-          <div class="sub">capa interpretada, alto nivel &middot; ej: mover_motor(90)</div>
-        </div>
-        <div class="arch-arrow"></div>
-        <div class="arch-box dashed">
-          <div class="lbl">Lua C API &mdash; bindings</div>
-          <div class="sub">comunicaci&oacute;n basada en una pila (stack) entre Lua y C</div>
-        </div>
-        <div class="arch-arrow"></div>
-        <div class="arch-box" style="border-color:var(--orange); background:var(--orange-soft);">
-          <div class="lbl">C &mdash; firmware</div>
-          <div class="sub">motor.c &middot; sensor.c &middot; drivers</div>
-        </div>
+    <div class="arch-stack" style="width:720px; margin:0 auto;">
+      <div class="arch-box" style="border-color:var(--purple); background:var(--purple-soft);">
+        <div class="lbl" style="text-align:center;">Script Lua</div>
       </div>
-    </div>
-    <div class="arch-hw-connector"></div>
-    <div class="arch-hw-box">
-      <div class="lbl">Hardware externo</div>
-      <div class="sub">motores &middot; sensores &middot; actuadores</div>
+      <div class="arch-arrow"></div>
+      <div class="arch-box" style="border-color:var(--skyblue); background:var(--skyblue-soft);">
+        <div class="lbl" style="text-align:center;">LuaRTOS</div>
+      </div>
+      <div class="arch-arrow"></div>
+      <div class="arch-box" style="border-color:var(--orange); background:var(--orange-soft);">
+        <div class="lbl" style="text-align:center;">ESP32-thing</div>
+      </div>
+      <div class="arch-arrow"></div>
+      <div class="arch-box" style="border-color:var(--green); background:var(--green-soft);">
+        <div class="lbl" style="text-align:center;">Perif&eacute;ricos</div>
+      </div>
     </div>
     </div>
   </div>
@@ -1202,15 +1193,15 @@ ul.findings-list li::before{
     <div style="flex:1; display:flex; align-items:center;">
     <div class="step-flow" style="width:100%;">
       <div class="step">
-        <div class="circle-num">01</div>
+        <div class="circle-num">1</div>
         <h4>Entrevistas con docentes</h4>
       </div>
       <div class="step">
-        <div class="circle-num">02</div>
+        <div class="circle-num">2</div>
         <h4>Actividades con ni&ntilde;os</h4>
       </div>
       <div class="step">
-        <div class="circle-num">03</div>
+        <div class="circle-num">3</div>
         <h4>Feedback</h4>
       </div>
     </div>
