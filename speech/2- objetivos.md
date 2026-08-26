@@ -1,6 +1,6 @@
 # Speech — Slide 5: Objetivos
 
-Todo esto que mencionó X recién fue nuestro punto de partida y desde donde empezamos a trabajar en los 3 objetivos de nuestro proyecto.
+Esto que mencionó X recién fue nuestro punto de partida y desde donde empezamos a trabajar en los 3 objetivos de nuestro proyecto.
 
 El primer objetivo fue integrar una cámara al robot capaz de procesar imagenes. 
 El segundo objetivo, implementar un módulo de Behavior tree reutilizable para controlar las acciones del robot. 
