@@ -4,7 +4,7 @@ Bloque temático: "Percepción". Empieza presentando la cámara elegida (slide 6
 
 ## Slide 6 — Percepción: HuskyLens
 
-Como dijimos en los objetivos, lo primero que tuvimos que resolver fue qué cámara usar. Probamos varias opciones y nos quedamos con la HuskyLens.
+A partir de esta actividad, como dijimos en los objetivos, lo primero que tuvimos que resolver fue qué cámara usar. Probamos varias opciones y nos quedamos con la HuskyLens.
 
 ¿Por qué está y no otra?
 
