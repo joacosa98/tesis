@@ -1174,8 +1174,8 @@ ul.findings-list li::before{
     <h1 class="title">Comportamiento: Behavior Trees</h1>
     <div class="slide-kicker">Nodos de control</div>
     <div style="flex:1; display:flex; align-items:center;">
-    <div class="bt-grid">
-      <div class="bt-card">
+    <div class="bt-grid" style="justify-content:center;">
+      <div class="bt-card" style="max-width:440px;">
         <div class="bt-tag">Sequence</div>
         <div class="bracket-frame accent" style="height:200px;">
           <span></span><span class="bl"></span><span class="br"></span>
@@ -1194,7 +1194,7 @@ ul.findings-list li::before{
           </svg>
         </div>
       </div>
-      <div class="bt-card">
+      <div class="bt-card" style="max-width:440px;">
         <div class="bt-tag">Fallback</div>
         <div class="bracket-frame accent" style="height:200px;">
           <span></span><span class="bl"></span><span class="br"></span>
@@ -1204,27 +1204,6 @@ ul.findings-list li::before{
             <line x1="180" y1="62" x2="287" y2="116" stroke="var(--ink)" stroke-width="2" marker-end="url(#arrFb)"/>
             <rect x="130" y="10" width="100" height="52" rx="12" fill="var(--yellow-soft)" stroke="var(--ink)" stroke-width="2"/>
             <text x="180" y="45" text-anchor="middle" font-family="var(--font-mono)" font-weight="600" font-size="28" fill="var(--ink)">?</text>
-            <rect x="14" y="118" width="118" height="50" rx="10" fill="var(--section-soft)" stroke="var(--ink)" stroke-width="1.75"/>
-            <text x="73" y="149" text-anchor="middle" font-family="var(--font-mono)" font-weight="500" font-size="17" fill="var(--ink)">Child 1</text>
-            <text x="180" y="153" text-anchor="middle" font-family="var(--font-mono)" font-size="26" fill="var(--ink-faint)">&hellip;</text>
-            <rect x="228" y="118" width="118" height="50" rx="10" fill="var(--section-soft)" stroke="var(--ink)" stroke-width="1.75"/>
-            <text x="287" y="149" text-anchor="middle" font-family="var(--font-mono)" font-weight="500" font-size="17" fill="var(--ink)">Child N</text>
-          </svg>
-        </div>
-      </div>
-      <div class="bt-card">
-        <div class="bt-tag">Parallel</div>
-        <div class="bracket-frame accent" style="height:200px;">
-          <span></span><span class="bl"></span><span class="br"></span>
-          <svg viewBox="0 0 360 172" style="width:100%;height:100%;" preserveAspectRatio="xMidYMid meet">
-            <defs><marker id="arrPar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 Z" fill="var(--ink)"/></marker></defs>
-            <line x1="180" y1="62" x2="73" y2="116" stroke="var(--ink)" stroke-width="2" marker-end="url(#arrPar)"/>
-            <line x1="180" y1="62" x2="287" y2="116" stroke="var(--ink)" stroke-width="2" marker-end="url(#arrPar)"/>
-            <rect x="130" y="10" width="100" height="52" rx="12" fill="var(--red-soft)" stroke="var(--ink)" stroke-width="2"/>
-            <line x1="155" y1="25" x2="195" y2="25" stroke="var(--ink)" stroke-width="2.5"/>
-            <polygon points="205,25 193,19 193,31" fill="var(--ink)"/>
-            <line x1="155" y1="47" x2="195" y2="47" stroke="var(--ink)" stroke-width="2.5"/>
-            <polygon points="205,47 193,41 193,53" fill="var(--ink)"/>
             <rect x="14" y="118" width="118" height="50" rx="10" fill="var(--section-soft)" stroke="var(--ink)" stroke-width="1.75"/>
             <text x="73" y="149" text-anchor="middle" font-family="var(--font-mono)" font-weight="500" font-size="17" fill="var(--ink)">Child 1</text>
             <text x="180" y="153" text-anchor="middle" font-family="var(--font-mono)" font-size="26" fill="var(--ink-faint)">&hellip;</text>
