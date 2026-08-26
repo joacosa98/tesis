@@ -9,7 +9,7 @@ Texto en *cursiva* = lo que decís. `[entre corchetes]` = acotación / cuándo a
 
 **1. Presentar el concepto**
 
-*"Ahora voy a hablar del control del comportamiento del robot. Para esto implementamos un módulo propio de Árboles de Comportamiento, o Behavior Trees, en Lua.*
+*"Con la percepción resuelta, ahora voy a hablar del control del comportamiento del robot. Para esto implementamos un módulo propio de Árboles de Comportamiento, o Behavior Trees, en Lua.*
 
 *Un Behavior Tree es una estructura jerárquica de nodos que se ejecuta desde la raíz hacia abajo mediante ticks periódicos. En cada tick el árbol se recorre desde la raíz y cada nodo decide qué hacer y qué devolverle a su padre. O sea: no es un grafo de estados con transiciones entre sí, sino un árbol que se vuelve a evaluar completo, una y otra vez."*
 

@@ -2,7 +2,7 @@
 
 *(Guion narrativo para decir en voz alta durante la defensa. Duración aproximada: 1 a 1:30 min.)*
 
-Si bien la actividad fue en lo ultimo que trabajamos, creemos que tiene sentido comenzar explicandola, para que tegan un cotexto general de como funciona y ademas, va a ser el hilo conductor de la presentacion
+Con ese punto de partida, si bien la actividad fue en lo ultimo que trabajamos, creemos que tiene sentido comenzar explicandola, para que tegan un cotexto general de como funciona y ademas, va a ser el hilo conductor de la presentacion
 
 El objetivo de la actividad es validar secuencias.
 
