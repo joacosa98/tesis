@@ -1,12 +1,12 @@
 # Speech — Slide 6: "Actividad"
 
-Si bien la actividad fue el ultimo paso, creemos que es util mostrarle la actividad que construimos antes de comenzar a hablar del resto de los objetivos, para que entiendan como funciona, que partes tiene, y que cuando mas adelante se mencionen las diferentes partes de la activdad, ya sepan de que se trata  
+Si bien la actividad fue el ultimo paso, creemos que es util mostrarle la actividad que construimos antes de comenzar a hablar del resto de los objetivos, para que entiendan como funciona y que partes tiene. Asi, cuando mas adelante se mencionen las diferentes partes de la activdad, ya sepan de que se trata  
 
 **Las partes.**
 La actividad tiene 3 elementos imporantes:
-1- Robotito, que ahora cuenta con una cámara que le permite ver su entorno. 
+1- Robotito, que ahora cuenta con la cámara integrada. 
 2- Un tablero modular con un recorrido marcado por una línea continua, que tiene distintas estaciones de parada señalizadas con tags, como si fueran carteles de PARE. 
-3 - Un conjunto de tarjetas que representan una secuancia, que por ejemplo, puede ser una historia, y que como toda secuencia, tiene un numero ordenado de pasos. Cada una de estas tarjetas representa un paso de la secuencia. Estas tienen un tag unico que la cámara puede leer, y un espacio libre para agregar algo que representa ese paso de la secuencia, por ejemplo, un dibujo.
+3 - Un conjunto de tarjetas que representan una secuancia, que por ejemplo, puede ser una historia, y que como toda secuencia, tiene un numero ordenado de pasos. Cada una de estas tarjetas representa un paso de la secuencia, tiene un tag unico que la cámara puede leer, y un espacio libre para agregar algo que representa ese paso de la secuencia, por ejemplo, un dibujo.
 
 El objetivo de la actividad es colocar las tarjetas en las estaciones de parada, y que el robot valide el orden de la secuencia mientras va avanzando por el tablero
 
