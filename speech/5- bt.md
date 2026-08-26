@@ -9,19 +9,11 @@ Texto en *cursiva* = lo que decís. `[entre corchetes]` = acotación / cuándo a
 
 **1. Presentar el concepto**
 
-*"Con la percepción resuelta, ahora voy a hablar del control del comportamiento del robot. Para esto implementamos un módulo propio de Árboles de Comportamiento, o Behavior Trees, en Lua.*
+*"Con la percepción visual resuelta, el siguiente problema a resolver fue el de estructurar la toma de decisiones (control de compotamiento) del robot utilizando Behavior Trees.*
 
-*Entonces, qué es un Behavior Tree? Es básicamente una estructura jerárquica de nodos que se ejecuta desde la raíz hacia abajo mediante ticks periódicos. En cada tick el árbol se recorre desde la raíz y cada nodo decide qué hacer y qué devolverle a su padre. O sea: no es un grafo de estados con transiciones entre sí, sino un árbol que se vuelve a evaluar completo, una y otra vez."*
+*Entonces, qué es un Behavior Tree? Es básicamente una estructura jerárquica de nodos que se ejecuta mediante ticks, siempre partiendo la ejecución de la raíz. Ahora voy a explicar qué es un tick, pero primero quiero comentar que hay dos tipos de nodos, los de **ejecución** (que realizan tareas específicas) y los de **control** (que sirven para agrupar nodos y así definir la estructura y jerarquía del árbol) - que en las próximas dos slides vamos a explicar los usados en el árbol que definimos - Y además cada nodo (sin importar el tipo) al ejecutarse debe retornar uno de tres valores posibles (SUCCESS, que representa "la tarea se completó correctamente". FAILURE, si se completó con error. Y RUNNING, si la tarea todavia no terminó, sigue en progreso) Entonces, qué es un tick? Unas vez definido el árbol, un tick una señal periódica que se envía desde la raíz del árbol y se propaga de arriba hacia abajo, y de izquierda a derecha en la estructura del mismo. La idea es que en cada tick se realice un recorrido completo en el árbol partiendo desde la raíz, y cada nodo que ejecuta debe retornar uno de los valores establecidos. Esto solamente se puede aplicar a un sistema como el nuestro por el valor retornado RUNNING. Si no existiera este estado, el robot quedaría trancado en una acción específica, y esto permite que no suceda, liberando el control de la memoria y retomando en el tick siguiente."*
 
-**2. Los tipos de nodos (mencionar por arriba, sin detallar)**
-
-*"Los nodos se agrupan en dos familias: los de **ejecución** y los de **control**, que son los que se muestran ahi. Y en las próximas dos slides vamos a explicar la ejecución de los nodos usados en el árbol que definimos"*
-
-**3. Resultados posibles**
-
-*"Algo importante a entender de los nodos es que estos, en cada tick, devuelven uno de tres valores. SUCCESS, que representa "la tarea se completó correctamente". FAILURE, si no se pudo completar o se completó con error. Y RUNNING, si la tarea sigue en progreso y hay que retomarla en los ticks siguientes.*
-
-*Este último estado permite que el robot nunca se quede trabado adentro de una acción, sino que cede el control y en el próximo tick retoma."*
+*"Entonces, en conclusión: no es un grafo de estados con transiciones entre sí, sino un árbol que se recorre completamente, una y otra vez."*
 
 **4. La estructura toma las decisiones**
 
