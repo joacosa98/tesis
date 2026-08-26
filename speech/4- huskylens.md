@@ -1,12 +1,12 @@
 ## Slide 6 — Percepción: HuskyLens
 
-A partir de esta actividad, como dijimos en los objetivos, lo primero que tuvimos que resolver fue qué cámara usar. Probamos varias opciones y nos quedamos con la HuskyLens.
+Como dijimos en los objetivos, lo primero que tuvimos que resolver fue qué cámara usar. Probamos varias opciones y nos quedamos con la HuskyLens.
 
 ¿Por qué está y no otra?
 
 Primero, porque el procesamiento de imagen ya viene integrado: no nos manda una imagen cruda, sino datos ya procesados. Eso era clave, porque implementar eso nos hubiera llevado un montón de tiempo, y no era el foco del proyecto.
 
-Segundo, trae varios algoritmos ya implementados: reconoce caras, colores, objetos, tags, y puede seguir líneas u objetos. De todo eso, nosotros usamos solo dos: seguimiento de línea y reconocimiento de tags.
+Segundo, trae varios algoritmos ya implementados: reconoce caras, colores, objetos, tags, y puede seguir líneas u objetos.
 
 Tercero, es fácil de entrenar: desde la propia interfaz de la cámara le enseñas los tags que necesitás o la línea que tiene que seguir, sin la necesidad de entrenar un modelo. Otro ahorro grande de tiempo.
 
