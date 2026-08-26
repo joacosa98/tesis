@@ -1,6 +1,6 @@
 ## Diapositiva 15 — Portal Web y comunicación Bluetooth (3 min)
 
-Con el comportamiento del robot ya definido, apareció otro problema importante: **¿cómo hacemos para que un docente pueda definir una actividad sin tener que modificar el código?**
+A partir de lo que vimos en la experimentación, apareció otro problema importante: **¿cómo hacemos para que un docente pueda definir una actividad sin tener que modificar el código?**
 
 No queríamos que Robotito tuviera siempre una única secuencia fija, ni que fuera necesario conectarlo a una computadora y modificar su firmware cada vez que se quisiera preparar una actividad diferente.
 
