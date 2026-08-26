@@ -1,7 +1,3 @@
-# Speech — Slides 6, 7, 8 y 9 (Percepción visual con HuskyLens)
-
-Bloque temático: "Percepción". Empieza presentando la cámara elegida (slide 6) y luego entra en el detalle de sus dos capacidades usadas: seguimiento de línea (slides 7 y 8) y detección de tags (slide 9).
-
 ## Slide 6 — Percepción: HuskyLens
 
 A partir de esta actividad, como dijimos en los objetivos, lo primero que tuvimos que resolver fue qué cámara usar. Probamos varias opciones y nos quedamos con la HuskyLens.
