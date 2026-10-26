@@ -80,7 +80,7 @@
 
 Agradecemos especialmente a las maestras Elisa, Cecilia y María José por su valiosa colaboración durante la etapa de validación del proyecto en contexto real de aula. Su disposición para permitir la realización de pruebas con Robotito en sus clases fue fundamental para evaluar la propuesta en condiciones auténticas de uso educativo.
 
-Asimismo, agradecemos el tiempo dedicado a responder nuestras consultas y a compartir observaciones pedagógicas y operativas a partir de su experiencia docente. Sus aportes y retroalimentación contribuyeron de forma directa a mejorar tanto el diseño de las actividades como decisiones técnicas del sistema, fortaleciendo la calidad y pertinencia de este trabajo.
+Asimismo, agradecemos el tiempo dedicado a responder nuestras consultas y a compartir observaciones didácticas y operativas a partir de su experiencia docente. Sus aportes y retroalimentación contribuyeron de forma directa a mejorar tanto el diseño de las actividades como decisiones técnicas del sistema, fortaleciendo la calidad y pertinencia de este trabajo.
 
 
 
@@ -128,11 +128,18 @@ Para resolver esto se incorporaron los siguientes componentes a Robotito: una c�
 
 Para facilitar la comprensión de las secciones siguientes, se presenta una breve descripción de la actividad desarrollada y los objetivos de la solución. Esto permite establecer desde el comienzo el contexto de uso de los nuevos componentes incorporados a Robotito, así como las capacidades y limitaciones consideradas en el proyecto.
 
-\section{Actividad pedagógica}
+\section{Actividad didáctica}
+\label{sec:actividad-didactica}
 
-La actividad desarrollada consiste en un recorrido guiado por una línea donde Robotito detecta tags en estaciones (puntos de parada del recorrido) y valida el orden de una secuencia previamente configurada por el docente. Su objetivo es estimular la habilidad de secuenciación —entendida como la capacidad de ordenar elementos o acciones siguiendo una relación lógica o temporal— además de acercar a los estudiantes a conceptos de robótica y pensamiento computacional. 
+La actividad desarrollada consiste en lograr que el robot realice un recorrido guiado por una línea y verifique, en sus estaciones de parada, si las tarjetas ubicadas por los estudiantes respetan una secuencia previamente configurada por el docente. Su objetivo es estimular la habilidad de secuenciación —entendida como la capacidad de ordenar elementos o acciones siguiendo una relación lógica o temporal— además de acercar a los estudiantes a conceptos de robótica y pensamiento computacional.
 
-El docente prepara la actividad desde el configurador web y transfiere la configuración al robot utilizando BLE. Luego, los estudiantes ubican tarjetas que contienen tags en las estaciones definidas en el tablero y observan la retroalimentación del robot —acierto o error— según la posición de cada una en el recorrido. Las especificaciones de la ejecución del robot se detallan con mayor profundidad en el Capítulo~\ref{cap:analisis}.
+El docente elige el contenido y el orden de la secuencia que se va a trabajar, por ejemplo, los pasos de una rutina diaria o los episodios de un cuento. Cada paso se representa mediante una tarjeta que contiene un marcador visual de tipo \textit{AprilTag} (en adelante, tag) y un espacio libre para un dibujo, una imagen o un objeto. El docente se asegura de que cada representación esté asociada a la tarjeta cuyo tag ocupa la posición correspondiente en la secuencia esperada; luego configura esa lista ordenada de tags en el configurador web y la transfiere al robot mediante BLE. También prepara el tablero modular, con una línea continua entre el inicio y el fin y estaciones señalizadas con tags de parada, presenta la consigna y acompaña el trabajo del grupo.
+
+Los estudiantes representan los pasos de la secuencia con dibujos, imágenes u objetos, acuerdan su orden y ubican las tarjetas en los espacios destinados a ellas junto a las estaciones del tablero. Por ejemplo, para una rutina de lavado de manos pueden ordenar las tarjetas que representan mojarse las manos, enjabonarse y enjuagarse. El dibujo permite a los escolares identificar el paso; el tag permite al robot identificar la tarjeta y compararla con la secuencia configurada por el docente. Robotito reconoce los tags, sin interpretar el contenido de los dibujos u objetos.
+
+Una vez ubicadas las tarjetas, se coloca a Robotito al inicio y se da comienzo al recorrido mediante las tarjetas de control. El robot sigue la línea y, al detectar el tag de una estación, se detiene y gira para leer el tag de la tarjeta colocada allí. Si coincide con el esperado para esa posición, enciende su anillo LED en verde; si no coincide, lo enciende en rojo. Tras mostrar el resultado, retoma el recorrido hacia la siguiente estación en ambos casos. Al llegar al final, si toda la secuencia fue correcta, realiza giros de festejo con el anillo encendido en verde; si hubo errores, se detiene y muestra los aciertos y errores de cada posición mediante los colores verde y rojo en su anillo LED. El grupo puede revisar el orden, reubicar las tarjetas y realizar un nuevo intento, con la mediación del docente.
+
+Esta descripción sirve de referencia para el resto del informe. Los materiales y la dinámica de aula se detallan en el Capítulo~\ref{cap:analisis}, mientras que los estados del robot, las señales luminosas y los controles de pausa y reinicio se explican en la sección~\ref{subsec:recorrido-completo}.
 
 \begin{figure}[H]
     \centering
@@ -148,7 +155,9 @@ El docente prepara la actividad desde el configurador web y transfiere la config
 
 \section{Objetivos}
 
-El objetivo general del proyecto es desarrollar una extensión de la plataforma Robotito que permita ejecutar una actividad educativa utilizando las capacidades de percepción visual brindada por la cámara HuskyLens, como seguimiento de línea y lectura de tags, además del procesamiento de los datos obtenidos por parte del robot, configuración inalámbrica desde una aplicación web y un sistema de control basado en árboles de comportamiento (\textit{Behavior Trees}). Para eso se determinaron los siguientes objetivos específicos:
+El objetivo general del proyecto es desarrollar una extensión de la plataforma Robotito que integre la cámara HuskyLens para ampliar sus capacidades de percepción visual y permitir que el robot procese la información obtenida y reaccione a ella. El alcance de la integración comprende el seguimiento de líneas y la lectura de tags, junto con un sistema de control basado en árboles de comportamiento (\textit{Behavior Trees}) y la configuración inalámbrica desde una aplicación web.
+
+Entre las actividades posibles que habilita esta extensión, se eligió diseñar e implementar la actividad didáctica de verificación de secuencias descrita en la sección~\ref{sec:actividad-didactica}, como caso de aplicación y validación de las capacidades incorporadas. Para alcanzar el objetivo general se determinaron los siguientes objetivos específicos:
 
 \begin{itemize}
     \item Implementar la comunicación entre la cámara HuskyLens y la placa SparkFun ESP32 Thing mediante el bus I2C.
@@ -189,7 +198,7 @@ la preparación de secuencias, y finalmente se detalla la configuración de
 actividades y la comunicación BLE entre el configurador y el robot.
 
 En el Capítulo~\ref{cap:experimentacion} se documenta la experimentación
-realizada, tanto desde el punto de vista técnico como pedagógico:
+realizada, tanto desde el punto de vista técnico como didáctico:
 entrevistas con docentes, sesiones prácticas con estudiantes, análisis de
 resultados y ajustes realizados a partir del feedback.
 
@@ -298,7 +307,7 @@ A partir de los problemas identificados se proponen siguientes requerimientos:
 
     \item \textbf{Integración física robusta:} la incorporación de nuevos componentes no debe afectar negativamente la estabilidad, ergonomía ni facilidad de uso del robot. La cámara debe ubicarse en una posición adecuada para la detección visual y su montaje debía ser seguro y replicable.
 
-    \item \textbf{Aplicabilidad pedagógica:} la solución debe habilitar actividades comprensibles y manipulables por docentes y estudiantes, utilizando elementos más atractivos como parte activa de la experiencia educativa.
+    \item \textbf{Aplicabilidad didáctica:} la solución debe habilitar actividades comprensibles y manipulables por docentes y estudiantes, utilizando elementos más atractivos como parte activa de la experiencia educativa.
 \end{itemize}
 
 \section{Diseño de la solución}
@@ -325,7 +334,7 @@ Una de las principales premisas establecidas es la de que el robot debe poder ob
 
 \subsection{Caso de uso}
 
-Se propone una actividad cuyo principal objetivo es generar una instancia donde el docente presenta el concepto de secuencia ordenada utilizando a Robotito como verificador de secuencias, acercando al alumno a conceptos de robótica y pensamiento computacional. Para esto se define un sistema que consiste en tres elementos principales (además de otros que se mencionan más adelante):
+Para desarrollar la actividad de verificación de secuencias descrita en la sección~\ref{sec:actividad-didactica}, se define un sistema que consiste en tres elementos principales (además de otros que se mencionan más adelante):
 
 \begin{itemize}
     \item Robotito con cámara HuskyLens integrada que recibe información visual del exterior y reacciona en base a los datos obtenidos.
@@ -369,13 +378,13 @@ Se propone una actividad cuyo principal objetivo es generar una instancia donde 
     \begin{subfigure}{0.25\textwidth}
         \centering
         \includegraphics[width=\linewidth]{images/tablero/tablero-start.png}
-        \caption{Pieza del tablero con curva corta}
+        \caption{Pieza del tablero de inicio}
     \end{subfigure}
     \hfill
     \begin{subfigure}{0.25\textwidth}
         \centering
         \includegraphics[width=\linewidth, angle=180]{images/tablero/tablero-end.png}
-        \caption{Pieza del tablero con curva larga}
+        \caption{Pieza del tablero de fin}
     \end{subfigure}
 
     \caption{Piezas del tablero}
@@ -441,7 +450,7 @@ Además de estos materiales, la actividad cuenta con dos tarjetas adicionales, c
 
 \subsection{Desarrollo de la actividad}
 
-Definidos los materiales, la actividad a desarrollar consiste en una serie de pasos. En primer lugar, el docente debe configurar previamente la secuencia que será verificada por Robotito en el recorrido. Esto se traduce a definir una lista ordenada de tags a ser leída por Robotito durante el recorrido (un tag de cada tarjeta a ubicar en el tablero) y enviarla al robot. Este paso es explicado con más detalle en la sección~\ref{sec:configurador-web}, correspondiente al configurador web. En resúmen, en esta parte el docente define qué tarjeta debe ir ubicada en qué lugar del recorrido.
+Definidos los materiales, se detalla la preparación y el desarrollo en el aula de la actividad presentada en la sección~\ref{sec:actividad-didactica}. En primer lugar, el docente debe configurar previamente la secuencia que será verificada por Robotito en el recorrido. Esto se traduce a definir una lista ordenada de tags a ser leída por Robotito durante el recorrido (un tag de cada tarjeta a ubicar en el tablero) y enviarla al robot. Este paso es explicado con más detalle en la sección~\ref{sec:configurador-web}, correspondiente al configurador web. En resúmen, en esta parte el docente define qué tarjeta debe ir ubicada en qué lugar del recorrido.
 
 Luego de configurada la actividad, en una instancia con alumnos el docente presenta el concepto de secuencia ordenada, poniendo como ejemplo secuencias que sean entendibles por niños de educación inicial, como las partes de un cuento conocido, las estaciones del año, pasos de la rutina diaria, o incluso una secuencia ordenada de números, entre otros.
 
@@ -953,7 +962,7 @@ Para conocer en profunida la implementación del modulo de BLE, puede visitar el
 \chapter{Experimentación}
 \label{cap:experimentacion}
 
-La validación de plataformas educativas requiere no solo verificar su funcionamiento técnico, sino también evaluar su adecuación pedagógica y usabilidad en contextos reales de enseñanza. En este capítulo se describe el proceso de experimentación llevado a cabo para validar la propuesta de extensión de Robotito, tanto desde la perspectiva docente como desde la experiencia directa con estudiantes.
+La validación de plataformas educativas requiere no solo verificar su funcionamiento técnico, sino también evaluar su adecuación didáctica y usabilidad en contextos reales de enseñanza. En este capítulo se describe el proceso de experimentación llevado a cabo para validar la propuesta de extensión de Robotito, tanto desde la perspectiva docente como desde la experiencia directa con estudiantes.
 La experimentación se estructuró en dos etapas complementarias: primero, entrevistas semiestructuradas con docentes de nivel inicial y primaria para obtener retroalimentación sobre el diseño de las actividades y la viabilidad práctica de la propuesta; segundo, sesiones presenciales con grupos de estudiantes de educación inicial (entre 4 y 5 años de edad) y educación primaria (entre 7 y 8 años de edad) para observar la interacción directa con el robot y validar los supuestos de diseño.
 
 \section{Metodología}
@@ -1067,7 +1076,7 @@ Respecto a los puntos de parada, ambas docentes recomendaron reforzar la señal 
 El diseño propuesto de tarjetas---con un tag pequeño para la validación técnica ubicado en una esquina y una imagen central grande para los niños---fue bien recibido. Las maestras destacaron que esta dualidad permite que el contenido educativo sea visualmente predominante, mientras que el aspecto técnico queda en segundo plano.
 Elisa y Cecilia plantearon la necesidad de contar con una herramienta auxiliar (aplicación móvil o sistema web) que les permita a los docentes identificar rápidamente qué tag corresponde a cada tarjeta (o qué posición en la secuencia) al momento de preparar las actividades. Sugirieron también implementar un sistema de codificación visual en los bordes de las tarjetas (colores o patrones) que facilite la organización del material sin depender exclusivamente de la tecnología.
 Para evitar que los niños memoricen las secuencias por la ubicación física de las tarjetas, propusieron implementar un sistema de rotación de tag, para que en distintas sesiones identifiquen distintos pasos de la secuencia propuesta.
-\subsubsection{Progresión pedagógica y etapas diferenciadas}
+\subsubsection{Progresión didáctica y etapas diferenciadas}
 Una de las recomendaciones más consistentes fue la necesidad de presentar la actividad en etapas claramente diferenciadas, especialmente para niños más pequeños (3 a 5 años). Elisa propuso la siguiente secuencia de complejidad creciente:
 \begin{enumerate}
 \item \textbf{Etapa inicial}: Introducción al robot y seguimiento libre de líneas sin puntos de parada ni validación.
@@ -1081,11 +1090,11 @@ Las docentes coincidieron en que la retroalimentación inmediata es fundamental 
 \item \textbf{Verde}: Imagen en la posición correcta dentro de la secuencia.
 \item \textbf{Rojo}: Imagen en una posición incorrecta dentro de la secuencia.
 \end{itemize}
-Para el manejo de errores, sugirieron evitar que el robot vuelva automáticamente al inicio tras cada error, ya que esto podría resultar frustrante. En su lugar, propusieron que el robot se detenga en el punto de error, emita la señal visual correspondiente y espere a que los niños corrijan la tarjeta antes de continuar. Esta estrategia mantiene el flujo de la actividad y convierte el error en una oportunidad de reflexión y corrección inmediata.
+Para el manejo de errores, sugirieron evitar que el robot vuelva automáticamente al inicio tras cada error, ya que esto podría resultar frustrante. En su lugar, propusieron que el robot se detenga en el punto de error, emita la señal visual correspondiente y espere a que los niños corrijan la tarjeta antes de continuar. Esta sugerencia buscaba mantener el flujo de la actividad y convertir el error en una oportunidad de reflexión y corrección inmediata. En la ejecución implementada, descrita en la sección~\ref{subsec:recorrido-completo}, Robotito señala el error y continúa hacia la siguiente estación; el docente puede utilizar la función de pausa para intervenir y el grupo puede reordenar las tarjetas antes de un nuevo intento.
 Al completar exitosamente toda la secuencia, las maestras sugirieron una celebración multimodal: combinación de luces verdes parpadeantes, sonido festivo y, si es posible, algún movimiento expresivo del robot (giro, baile simple).
 \subsubsection{Control del flujo de la actividad}
 Un aspecto crítico identificado durante las entrevistas fue la necesidad de que los docentes puedan controlar el flujo de ejecución de la actividad. Las maestras plantearon dos situaciones recurrentes en el aula que requerían funcionalidades específicas:
-\paragraph{Función de pausa} Los docentes necesitan poder detener el robot en cualquier momento del recorrido para realizar intervenciones pedagógicas oportunas. Situaciones típicas incluyen:
+\paragraph{Función de pausa} Los docentes necesitan poder detener el robot en cualquier momento del recorrido para realizar intervenciones didácticas oportunas. Situaciones típicas incluyen:
 \begin{itemize}
 \item Aprovechar un momento de error para generar una discusión grupal sobre la secuencia correcta
 \item Atender interrupciones externas (llegada de otro docente, situaciones de convivencia)
@@ -1099,7 +1108,7 @@ Un aspecto crítico identificado durante las entrevistas fue la necesidad de que
 \item Corregir errores de configuración inicial sin perder tiempo en reinicios manuales
 \item Mantener el ritmo de la clase cuando se trabaja con actividades breves y repetitivas
 \end{itemize}
-Estas sugerencias evidenciaron que el robot no solo debe ejecutar secuencias de manera autónoma, sino también ofrecer puntos de control que permitan al docente mantener la gestión pedagógica de la actividad.
+Estas sugerencias evidenciaron que el robot no solo debe ejecutar secuencias de manera autónoma, sino también ofrecer puntos de control que permitan al docente mantener la gestión didáctica de la actividad.
 \subsubsection{Aplicaciones curriculares}
 Las docentes identificaron múltiples posibilidades de integración curricular. La plataforma permite trabajar con secuencias asociadas a diversas áreas: narrativas de cuentos tradicionales en lenguaje y literatura, procesos naturales como el ciclo de vida de una planta en ciencias naturales, secuencias numéricas y patrones en matemática, o recorridos espaciales que conecten diferentes contextos sociales. Particularmente valoraron la posibilidad de que los niños creen sus propias secuencias mediante dibujos, otorgando mayor sentido de autoría a la actividad.
 
@@ -1128,7 +1137,7 @@ El nivel de motivación fue consistentemente alto durante toda la sesión. Los n
 
 Los niños celebraban espontáneamente cuando el robot completaba exitosamente una secuencia, lo que sugiere que la actividad genera un sentido genuino de logro.
 \subsubsection{Reacción ante errores}
-Las señales de error (luz roja) no generaron frustración significativa. En la mayoría de los casos, los niños reaccionaron con curiosidad, intentando identificar qué tarjeta estaba en el lugar incorrecto. La recomendación docente de no hacer que el robot vuelva al inicio resultó acertada: permitir que los niños corrigieran el error in situ mantuvo el flujo de la actividad y convirtió el error en una oportunidad de aprendizaje inmediato.
+Las señales de error (luz roja) no generaron frustración significativa. En la mayoría de los casos, los niños reaccionaron con curiosidad, intentando identificar qué tarjeta estaba en el lugar incorrecto. La decisión de que el robot continuara el recorrido tras señalar un error, sin regresar automáticamente al inicio, permitió mantener el flujo de la actividad. La señal luminosa sirvió como referencia para discutir el orden de las tarjetas y preparar nuevos intentos.
 \subsubsection{Colaboración}
 Las dinámicas colaborativas funcionaron bien en general. Los niños negociaban espontáneamente quién colocaba cada tarjeta y se ayudaban mutuamente a identificar errores. Sin embargo, en algunos grupos surgieron conflictos menores por el control del material o diferencias de opinión sobre el orden correcto.
 La maestra Cecilia intervino en estos casos sugiriendo turnos rotativos y promoviendo el diálogo sobre las razones de cada propuesta, lo que resultó en una experiencia más enriquecedora.
@@ -1153,7 +1162,7 @@ La sesión permitió comprobar que la propuesta también resulta atractiva para 
 En este sentido, la actividad funcionó adecuadamente cuando fue presentada de forma breve, visual y altamente mediada por las maestras. La experiencia mostró que los niños de cuatro y cinco años pueden comprender qué hace el robot, identificar situaciones simples como el movimiento y la detención ante señales, y participar en la toma de decisiones durante la actividad, aunque todavía no logren formular con precisión qué es un robot o explicar su funcionamiento de manera abstracta.
 
 \section{Análisis, discusión y ajustes}
-Los resultados de la experimentación validan la viabilidad tanto técnica como pedagógica de la propuesta. La integración de la cámara HuskyLens con el sistema de tags funciona de manera confiable en condiciones reales de aula, y el diseño de la actividad resulta comprensible y motivador para los estudiantes del rango etario objetivo.
+Los resultados de la experimentación validan la viabilidad tanto técnica como didáctica de la propuesta. La integración de la cámara HuskyLens con el sistema de tags funciona de manera confiable en condiciones reales de aula, y el diseño de la actividad resulta comprensible y motivador para los estudiantes del rango etario objetivo.
 
 \subsection{Fortalezas identificadas}
 \paragraph{Tangibilidad y manipulación física} El uso de materiales físicos (piezas de tatami, tarjetas) favorece el aprendizaje activo y permite que niños con diferentes estilos de aprendizaje se involucren en la actividad. La posibilidad de reconfigurar el circuito otorga un sentido de agencia y creatividad.
@@ -1165,7 +1174,7 @@ Los resultados de la experimentación validan la viabilidad tanto técnica como 
 \subsection{Desafíos y áreas de mejora}
 \paragraph{Curva de aprendizaje inicial} Los estudiantes de segundo año de primaria con quienes se realizó la sesión práctica lograron comprender e integrar todos los elementos del sistema (armado del circuito, comprensión de secuencias y validación por tags) dentro de una misma sesión de clase. Sin embargo, para niños de edades más tempranas, es probable que sea necesario planificar sesiones introductorias progresivas que presenten cada componente por separado, tal como sugirieron las docentes entrevistadas.
 \paragraph{Gestión de materiales} El sistema requiere múltiples componentes (piezas de tatami, tarjetas, robot) que deben organizarse, almacenarse y mantenerse. Esto puede representar una carga logística para los docentes, especialmente si trabajan con grupos numerosos o tienen limitaciones de espacio físico.
-\paragraph{Necesidad de control del flujo de actividad} La experiencia inicial mostró que sin mecanismos de pausa y reinicio, los docentes iban a tener dificultades para gestionar el ritmo de la clase. La imposibilidad de detener el robot para hacer intervenciones pedagógicas o de reiniciar rápidamente para nuevos intentos se determinó como limitante para la flexibilidad de uso en el aula. Este feedback fue determinante para la incorporación de los controles de flujo mencionados.
+\paragraph{Necesidad de control del flujo de actividad} La experiencia inicial mostró que sin mecanismos de pausa y reinicio, los docentes iban a tener dificultades para gestionar el ritmo de la clase. La imposibilidad de detener el robot para hacer intervenciones didácticas o de reiniciar rápidamente para nuevos intentos se determinó como limitante para la flexibilidad de uso en el aula. Este feedback fue determinante para la incorporación de los controles de flujo mencionados.
 \paragraph{Dependencia de elementos técnicos} Aunque el sistema es robusto, depende del correcto funcionamiento de la cámara y de la lectura de tags. En la primera sesión con estudiantes se observó una falla de lectura asociada a las condiciones de iluminación del salón, dado que en ese momento el robot utilizaba reconocimiento de colores para identificar las zonas de parada. Esta situación motivó un ajuste en el funcionamiento del sistema: las acciones del recorrido dejaron de depender de la detección de colores y pasaron a ser activadas mediante la lectura de tags. A partir de este cambio, la lógica principal de la actividad quedó basada en el seguimiento de líneas y el reconocimiento de tags, reduciendo la dependencia respecto a la iluminación ambiente para la detección de los puntos de parada. De todos modos, tags dañados, mal alineados o mal ubicados pueden interrumpir la actividad, por lo que es importante desarrollar protocolos para el mantenimiento y la resolución rápida de este tipo de problemas.
 \paragraph{Necesidad de herramientas auxiliares para docentes} La solicitud de una herramienta que permita a los docentes identificar tags mediante sus teléfonos móviles es legítima y necesaria. Sin esta herramienta, la preparación de actividades se vuelve más compleja y propensa a errores.
 \paragraph{Riesgo de memorización} Sin un sistema de rotación de tags, los niños podrían memorizar posiciones físicas en lugar de razonar sobre secuencias lógicas. Esto disminuiría el valor educativo de la actividad.
@@ -1175,7 +1184,7 @@ La experimentación validó varias decisiones de diseño tomadas durante el desa
 \begin{enumerate}
 \item \textbf{Uso de HuskyLens sobre otras cámaras}: La capacidad de reconocimiento confiable de tags en tiempo real demostró ser adecuada para el contexto educativo. La alternativa de procesamiento remoto habría agregado complejidad innecesaria.
 \item \textbf{Eliminación del reconocimiento de colores en puntos de parada}: La primera instancia con estudiantes permitió identificar que la detección de colores podía verse afectada por las condiciones de iluminación del salón. A partir de esta observación, se decidió que las acciones del recorrido no fueran activadas por reconocimiento de colores, sino mediante la lectura de tags. Esta modificación fue validada en la segunda instancia, donde no se observaron problemas de lectura asociados a la iluminación de la sala.
-\item \textbf{Retroalimentación paso a paso vs. final}: La retroalimentación inmediata en cada punto de parada resultó más efectiva pedagógicamente que esperar al final del recorrido \cite{marwan2022adaptiveFeedback}.  Permite correcciones oportunas y mantiene el foco de los niños.
+\item \textbf{Retroalimentación paso a paso vs. final}: La retroalimentación inmediata en cada punto de parada resultó más efectiva didácticamente que esperar al final del recorrido \cite{marwan2022adaptiveFeedback}.  Permite correcciones oportunas y mantiene el foco de los niños.
 \item \textbf{Sistema modular de piezas de tatami}: El formato de puzzle resultó intuitivo y práctico. La modularidad permite escalabilidad (circuitos más largos o complejos) sin requerir nuevos materiales fundamentalmente diferentes.
 \item \textbf{Integración de árboles de comportamiento}: Aunque no fue visible para los usuarios finales, la arquitectura basada en Behavior Trees facilitó la implementación de la lógica de control y permitirá futuras extensiones del comportamiento del robot de forma ordenada y mantenible.
 \end{enumerate}
@@ -1192,7 +1201,7 @@ Como resultado de la experimentación, se implementaron y planificaron diversos 
 \item El robot detiene su movimiento inmediatamente y se activa el modo ``pausa''
 \item Se mantiene el contexto de la actividad (no pierde el progreso)
 \item Puede reanudarse desde el mismo punto al reubicarlo en el recorrido y mostrar el tag correspondiente a ``iniciar''
-\item Permite intervenciones pedagógicas sin interrumpir el flujo lógico de la secuencia
+\item Permite intervenciones didácticas sin interrumpir el flujo lógico de la secuencia
 \end{itemize}
 \item \textbf{Función de reset}: Se agregó una etiqueta específica (tag) que permite reiniciar el recorrido y comenzarlo desde cero. Esta función:
 \begin{itemize}
@@ -1202,13 +1211,13 @@ Como resultado de la experimentación, se implementaron y planificaron diversos 
 \item Permite comenzar una nueva ejecución rápidamente sin manipulación física del robot
 \end{itemize}
 \end{enumerate}
-Ambas funcionalidades se diseñaron para ser accesibles en base a acciones simples, permitiendo que los docentes mantengan el control pedagógico de la actividad en tiempo real sin depender de conocimientos técnicos avanzados.
-\paragraph{Documentación de progresión pedagógica} Se elaboró material de guía para docentes que describe explícitamente las tres etapas de complejidad creciente (seguimiento libre, paradas simples, validación completa) con ejemplos de actividades para cada nivel, incluyendo ahora recomendaciones sobre cuándo y cómo utilizar las funciones de pausa y reset.
+Ambas funcionalidades se diseñaron para ser accesibles en base a acciones simples, permitiendo que los docentes mantengan el control didáctico de la actividad en tiempo real sin depender de conocimientos técnicos avanzados.
+\paragraph{Documentación de progresión didáctica} Se elaboró material de guía para docentes que describe explícitamente las tres etapas de complejidad creciente (seguimiento libre, paradas simples, validación completa) con ejemplos de actividades para cada nivel, incluyendo ahora recomendaciones sobre cuándo y cómo utilizar las funciones de pausa y reset.
 
 \section{Conclusiones del proceso de experimentación}
-La experimentación realizada demuestra que la extensión de Robotito con capacidades de visión artificial y validación de secuencias es técnicamente funcional y pedagógicamente valiosa. La plataforma logra integrar pensamiento computacional, razonamiento secuencial y contenidos curriculares diversos en una experiencia de aprendizaje tangible y motivadora.
-El proceso iterativo de diseño, desde las entrevistas con docentes expertas hasta la validación práctica con estudiantes, resultó fundamental para identificar y resolver aspectos que no habrían sido evidentes desde una perspectiva puramente técnica. Las recomendaciones de las maestras sobre progresión pedagógica, gestión de la frustración y adaptabilidad curricular enriquecieron significativamente el diseño final.
-Las sesiones con estudiantes confirmaron que la propuesta es accesible y atractiva para el público objetivo, aunque también evidenció la necesidad de herramientas de apoyo para los docentes y protocolos claros para el uso efectivo del sistema. En particular, la incorporación de las funciones de pausa y reset surgió como un elemento crítico para permitir que los docentes mantengan el control pedagógico de la actividad sin sacrificar la autonomía del robot.
+La experimentación realizada demuestra que la extensión de Robotito con capacidades de visión artificial y validación de secuencias es técnicamente funcional y didácticamente valiosa. La plataforma logra integrar pensamiento computacional, razonamiento secuencial y contenidos curriculares diversos en una experiencia de aprendizaje tangible y motivadora.
+El proceso iterativo de diseño, desde las entrevistas con docentes expertas hasta la validación práctica con estudiantes, resultó fundamental para identificar y resolver aspectos que no habrían sido evidentes desde una perspectiva puramente técnica. Las recomendaciones de las maestras sobre progresión didáctica, gestión de la frustración y adaptabilidad curricular enriquecieron significativamente el diseño final.
+Las sesiones con estudiantes confirmaron que la propuesta es accesible y atractiva para el público objetivo, aunque también evidenció la necesidad de herramientas de apoyo para los docentes y protocolos claros para el uso efectivo del sistema. En particular, la incorporación de las funciones de pausa y reset surgió como un elemento crítico para permitir que los docentes mantengan el control didáctico de la actividad sin sacrificar la autonomía del robot.
 En conjunto, la experimentación valida que Robotito extendido con visión artificial constituye una herramienta educativa viable que puede contribuir al desarrollo del pensamiento computacional y al aprendizaje de contenidos curriculares en edades tempranas, cumpliendo así con los objetivos educativos planteados en este proyecto.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1227,11 +1236,11 @@ Desde el punto de vista técnico, se desarrollaron tres componentes reutilizable
 
 Un resultado adicional del proceso de desarrollo fue la importancia de iterar sobre decisiones técnicas a partir de la puesta a prueba con usuarios reales, dentro de ese mismo frente de integración: la primera sesión con estudiantes evidenció que la detección de puntos de parada basada en reconocimiento de colores era sensible a las condiciones de iluminación del aula, lo que llevó a rediseñar esa lógica para depender exclusivamente de la lectura de tags. Este cambio fue validado en la segunda sesión, donde no se observaron problemas de lectura asociados a la iluminación, y confirma que someter la solución a condiciones de uso reales permitió detectar y corregir un problema que no era evidente desde un análisis puramente técnico.
 
-Desde el punto de vista pedagógico, la experimentación con tres maestras de nivel inicial y primaria y dos sesiones con estudiantes de entre 4 y 8 años permitió observar indicios de accesibilidad y motivación en los grupos participantes, dentro del alcance acotado de la actividad propuesta. Los niños de segundo año de primaria comprendieron rápidamente el mecanismo de seguimiento de línea y el significado de los puntos de parada; el concepto de secuencia correcta resultó inicialmente más abstracto, pero se volvió comprensible al presentarlo mediante ejemplos concretos y narrativas conocidas. Los niños de nivel inicial, por su parte, requirieron una mediación docente más fuerte para seguir la dinámica de la actividad, aunque mostraron interés y participación activa durante toda la sesión. En ambas instancias el nivel de motivación fue alto, y el feedback inmediato en cada punto de parada resultó, según lo observado y lo señalado por las docentes, útil para sostener la dinámica de corrección durante la actividad.
+Desde el punto de vista didáctico, la experimentación con tres maestras de nivel inicial y primaria y dos sesiones con estudiantes de entre 4 y 8 años permitió observar indicios de accesibilidad y motivación en los grupos participantes, dentro del alcance acotado de la actividad propuesta. Los niños de segundo año de primaria comprendieron rápidamente el mecanismo de seguimiento de línea y el significado de los puntos de parada; el concepto de secuencia correcta resultó inicialmente más abstracto, pero se volvió comprensible al presentarlo mediante ejemplos concretos y narrativas conocidas. Los niños de nivel inicial, por su parte, requirieron una mediación docente más fuerte para seguir la dinámica de la actividad, aunque mostraron interés y participación activa durante toda la sesión. En ambas instancias el nivel de motivación fue alto, y el feedback inmediato en cada punto de parada resultó, según lo observado y lo señalado por las docentes, útil para sostener la dinámica de corrección durante la actividad.
 
 Las entrevistas y sesiones prácticas permitieron además identificar necesidades que no formaban parte del diseño original, en particular la falta de mecanismos para que las y los docentes pausaran o reiniciaran el recorrido sin perder el estado de la actividad. A partir de ese feedback se incorporaron al sistema funciones de pausa y reset, dentro del mismo frente de integración con la actividad educativa.
 
-En conjunto, este trabajo constituye una extensión concreta y acotada de Robotito en percepción visual, configuración inalámbrica, control modular y una actividad educativa que integra las tres capacidades anteriores. La experimentación realizada es una validación inicial, en dos instituciones y con grupos reducidos, de que esta extensión es técnica y pedagógicamente viable dentro de ese alcance. Su desempeño en otros contextos, edades e instituciones queda abierto, y se retoma a continuación como líneas de trabajo futuro que extienden naturalmente los cuatro frentes ya desarrollados.
+En conjunto, este trabajo constituye una extensión concreta y acotada de Robotito en percepción visual, configuración inalámbrica, control modular y una actividad educativa que integra las tres capacidades anteriores. La experimentación realizada es una validación inicial, en dos instituciones y con grupos reducidos, de que esta extensión es técnica y didácticamente viable dentro de ese alcance. Su desempeño en otros contextos, edades e instituciones queda abierto, y se retoma a continuación como líneas de trabajo futuro que extienden naturalmente los cuatro frentes ya desarrollados.
 
 \section{Líneas de trabajo futuro}
 
@@ -1246,7 +1255,7 @@ Las siguientes líneas se plantean como extensiones naturales del alcance actual
 
 
 
-\textbf{Evaluación a mayor escala (integración educativa).} Las dos sesiones realizadas constituyeron una validación inicial con grupos acotados en dos instituciones específicas. Una evaluación con múltiples docentes, niveles educativos e instituciones distintas, manteniendo la misma actividad como base, permitiría obtener evidencia más robusta sobre el impacto pedagógico real y detectar aspectos de diseño que no emergen en contextos controlados. Esta línea no busca demostrar que la solución escala a un uso masivo, sino ampliar de forma gradual la evidencia disponible sobre su viabilidad.
+\textbf{Evaluación a mayor escala (integración educativa).} Las dos sesiones realizadas constituyeron una validación inicial con grupos acotados en dos instituciones específicas. Una evaluación con múltiples docentes, niveles educativos e instituciones distintas, manteniendo la misma actividad como base, permitiría obtener evidencia más robusta sobre el impacto didáctico real y detectar aspectos de diseño que no emergen en contextos controlados. Esta línea no busca demostrar que la solución escala a un uso masivo, sino ampliar de forma gradual la evidencia disponible sobre su viabilidad.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
